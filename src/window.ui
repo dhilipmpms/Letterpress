@@ -1,0 +1,190 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface>
+  <requires lib="gtk" version="4.0" />
+  <requires lib="Adw" version="1.0" />
+  <template class="AsciiimagesWindow" parent="AdwApplicationWindow">
+    <property name="title">ASCII Images</property>
+    <property name="width-request">300</property>
+    <property name="height-request">300</property>
+    <property name="default-width">600</property>
+    <property name="default-height">600</property>
+    <child>
+      <object class="GtkBox">
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkHeaderBar">
+            <child type="end">
+              <object class="GtkMenuButton">
+                <property name="icon-name">open-menu-symbolic</property>
+                <property name="menu-model">primary_menu</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="AdwToastOverlay" id="toast_overlay">
+            <property name="vexpand">1</property>
+            <property name="child">
+              <object class="GtkBox">
+                <property name="orientation">vertical</property>
+                <child>
+                  <object class="GtkStack" id="main_stack">
+                    <property name="transition-type">crossfade</property>
+                    <child>
+                      <object class="GtkStackPage">
+                        <property name="name">welcome</property>
+                        <property name="child">
+                          <object class="AdwStatusPage">
+                            <property name="title" translatable="yes">ASCII Images</property>
+                            <property name="description" translatable="yes">Drag and drop images here</property>
+                            <property name="icon-name">io.gitlab.gregorni.ASCIIImages-symbolic</property>
+                            <property name="child">
+                              <object class="GtkBox">
+                                <property name="vexpand">1</property>
+                                <property name="orientation">vertical</property>
+                                <property name="spacing">12</property>
+                                <child>
+                                  <object class="GtkButton" id="open_file_btn">
+                                    <property name="halign">center</property>
+                                    <property name="action_name">app.open-file</property>
+                                    <property name="label" translatable="yes">Open File…</property>
+                                    <style>
+                                      <class name="pill" />
+                                      <class name="suggested-action" />
+                                    </style>
+                                  </object>
+                                </child>
+                              </object>
+                            </property>
+                          </object>
+                        </property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkStackPage">
+                        <property name="name">drop-page</property>
+                        <property name="child">
+                          <object class="AdwStatusPage" id="drop_overlay">
+                            <property name="icon-name">system-run-symbolic</property>
+                            <property name="title" translatable="yes">Drop Here to Open</property>
+                            <style>
+                              <class name="dragndrop_overlay" />
+                            </style>
+                          </object>
+                        </property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkStackPage">
+                        <property name="name">spinner-page</property>
+                        <property name="child">
+                          <object class="GtkSpinner" id="spinner">
+                            <property name="valign">center</property>
+                          </object>
+                        </property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkStackPage">
+                        <property name="name">view-page</property>
+                        <property name="child">
+                          <object class="GtkScrolledWindow">
+                            <property name="hexpand">1</property>
+                            <property name="vexpand">1</property>
+                            <child>
+                              <object class="GtkTextView" id="output_text_view">
+                                <property name="editable">0</property>
+                                <property name="monospace">1</property>
+                                <property name="cursor-visible">0</property>
+                                <property name="hexpand">1</property>
+                                <property name="vexpand">1</property>
+                              </object>
+                            </child>
+                          </object>
+                        </property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkRevealer" id="toolbox">
+                    <property name="transition-type">slide-up</property>
+                    <property name="child">
+                      <object class="GtkBox">
+                        <property name="orientation">vertical</property>
+                        <child>
+                          <object class="GtkSeparator" />
+                        </child>
+                        <child>
+                          <object class="GtkBox">
+                            <property name="margin-start">8</property>
+                            <property name="margin-end">8</property>
+                            <property name="margin-top">8</property>
+                            <property name="margin-bottom">8</property>
+                            <property name="spacing">8</property>
+                            <child>
+                              <object class="AdwActionRow">
+                                <property name="title" translatable="yes">Output Width</property>
+                                <property name="subtitle" translatable="yes">Width of the ASCII image in characters</property>
+                                <child>
+                                  <object class="GtkSpinButton" id="width_spin">
+                                    <property name="halign">start</property>
+                                    <property name="valign">center</property>
+                                    <property name="numeric">1</property>
+                                  </object>
+                                </child>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkBox">
+                                <property name="hexpand">1</property>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkButton" id="to_file_btn">
+                                <property name="valign">center</property>
+                                <property name="halign">end</property>
+                                <property name="icon-name">document-save-symbolic</property>
+                                <property name="tooltip-text" translatable="yes">Save to file</property>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkButton" id="to_clipboard_btn">
+                                <property name="valign">center</property>
+                                <property name="halign">end</property>
+                                <property name="icon-name">edit-copy-symbolic</property>
+                                <property name="tooltip-text" translatable="yes">Copy to clipboard</property>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </property>
+                  </object>
+                </child>
+              </object>
+            </property>
+          </object>
+        </child>
+      </object>
+    </child>
+  </template>
+  <menu id="primary_menu">
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">_Open…</attribute>
+        <attribute name="action">app.open-file</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">_Keyboard Shortcuts</attribute>
+        <attribute name="action">win.show-help-overlay</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">_About ASCII Images</attribute>
+        <attribute name="action">app.about</attribute>
+      </item>
+    </section>
+  </menu>
+</interface>

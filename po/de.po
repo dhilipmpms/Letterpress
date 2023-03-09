@@ -1,0 +1,123 @@
+# German translation for the asciiimages' package.
+# Copyright (C) 2023 THE asciiimages' COPYRIGHT HOLDER
+# This file is distributed under the same license as the asciiimages package.
+# gregorni <gregorniehl@web.de>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: asciiimages\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-09 21:00+0100\n"
+"PO-Revision-Date: 2023-03-09 21:01+0100\n"
+"Last-Translator: gregorni <gregorniehl@web.de>\n"
+"Language-Team: German <gnome-de@gnome.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Translators: App Name: Please translate as "ASCII Images" unless you have good reason not to.
+#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:4
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:7 src/window.ui:38
+msgid "ASCII Images"
+msgstr "ASCII Images"
+
+#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:5
+msgid "Convert images into ASCII characters"
+msgstr "Bilder in ASCII-Zeichen umwandeln"
+
+#. Translators: These are search terms for the application;
+#. the translation should contain the original list AND the translated strings.
+#. The list must end with a semicolon.
+#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:14
+msgid "image;ascii;convert;conversion;text;"
+msgstr "image;ascii;convert;conversion;text;bild;ascii;konvertieren;konversion;"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:8 src/main.py:113
+msgid "ASCII Images Contributors"
+msgstr "Mitwirkende von ASCII Images"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:9
+msgid "Turn images into text"
+msgstr "Bilder in Text umwandeln"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:12
+msgid ""
+"ASCII images uses jp2a to convert images into ASCII characters. You can save "
+"the output to a file, copy it, and even change its resolution!"
+msgstr ""
+"ASCII Images benutzt jp2a, um Bilder in ASCII-Zeichen unzuwandeln. Der Output "
+"kann gespeichert und kopiert werden. Sogar seine Auflösung kann eingestellt werden!"
+
+#: src/main.py:117
+msgid "Copyright © 2023 ASCII Images Contributors"
+msgstr "Copyright © 2023 Mitwirkende von ASCII Images"
+
+#: src/main.py:129
+msgid "Code and Design Borrowed from"
+msgstr "Code und Design entlehnt von"
+
+#. Translators: Do not translate "{basename(file_path)}"
+#: src/window.py:75
+msgid "\"{basename(file_path)}\" is not a valid image."
+msgstr "\"{basename(file_path)}\" is not a valid image."
+
+#: src/window.py:119
+msgid "Output copied to clipboard"
+msgstr "Output in die Zwischenablage kopiert"
+
+#. Translators: Do not translate "{display_name}"
+#: src/window.py:156
+#, python-brace-format
+msgid "Unable to save \"{display_name}\""
+msgstr "\"{display_name}\" konnte nicht gespeichert werden"
+
+#. Translators: Do not translate "{display_name}"
+#: src/window.py:159
+#, python-brace-format
+msgid "\"{display_name}\" saved"
+msgstr "\"{display_name}\" gespeichert"
+
+#: src/window.py:160
+msgid "Open"
+msgstr "Öffnen"
+
+#: src/window.ui:39
+msgid "Drag and drop images here"
+msgstr "Bilder hier ablegen"
+
+#: src/window.ui:50
+msgid "Open File…"
+msgstr "Datei Öffnen…"
+
+#: src/window.ui:69
+msgid "Drop Here to Open"
+msgstr "Zum Öffnen hier ablegen"
+
+#: src/window.ui:127
+msgid "Output Width"
+msgstr "Output-Breite"
+
+#: src/window.ui:128
+msgid "Width of the ASCII image in characters"
+msgstr "Breite des ASCII-Bilds in Zeichen"
+
+#: src/window.ui:148
+msgid "Save to file"
+msgstr "Als Datei speichern"
+
+#: src/window.ui:156
+msgid "Copy to clipboard"
+msgstr "In die Zwischenablage kopieren"
+
+#: src/window.ui:175
+msgid "_Open…"
+msgstr "_Öffnen"
+
+#: src/window.ui:181
+msgid "_Keyboard Shortcuts"
+msgstr "_Tastenkürzel"
+
+#: src/window.ui:185
+msgid "_About ASCII Images"
+msgstr "_Über ASCII Images"

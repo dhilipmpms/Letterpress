@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+	<id>io.gitlab.gregorni.ASCIIImages.desktop</id>
+	<metadata_license>CC0-1.0</metadata_license>
+	<project_license>GPL-3.0-or-later</project_license>
+  
+  <name>ASCII Images</name>
+  <developer_name>ASCII Images Contributors</developer_name>
+  <summary>Turn images into text</summary>
+  
+	<description>
+	  <p>
+	    ASCII images uses jp2a to convert images into ASCII characters. 
+	    You can save the output to a file, copy it, and even change its resolution!
+	  </p>
+	</description>
+  
+  <categories>
+    <category>GTK</category>
+    <category>GNOME</category>
+    <category>Image</category>
+    <category>ASCII</category>
+    <category>Text</category>
+    <category>Graphics</category>
+    <category>ImageProcessing</category>
+  </categories>
+  
+  <keywords>
+    <keyword>image</keyword>
+    <keyword>ascii</keyword>
+    <keyword>convert</keyword>
+    <keyword>conversion</keyword>
+    <keyword>text</keyword>
+  </keywords>
+  
+  <requires>
+    <internet>offline-only</internet>
+    <display_length compare="ge">360</display_length>
+  </requires>
+  
+  <recommends>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>touch</control>
+  </recommends>
+  
+  <!--<screenshots>
+    <screenshot>
+      <image></image>
+      <caption></caption>
+    </screenshot>
+  </screenshots>-->
+  
+  <launchable type="desktop-id">io.gitlab.gregorni.ASCIIImages.desktop</launchable>
+  
+  <url type="homepage">https://gitlab.com/gregorni/ASCIIImages</url>
+  <url type="bugtracker">https://gitlab.com/gregorni/ASCIIImages/-/issues</url>
+  <url type="help">https://gitlab.com/gregorni/ASCIIImages/-/issues</url>
+  <url type="vcs-browser">https://gitlab.com/gregorni/ASCIIImages</url>
+  <url type="contribute">https://gitlab.com/gregorni/ASCIIImages</url>
+  <url type="contact">https://matrix.to/#/@gregorni:matrix.org</url>
+  
+  <update_contact>gregorniehl@web.de</update_contact>
+  
+  <content_rating type="oars-1.1" />
+  
+  <project_group>GNOME</project_group>
+  
+  <!--<releases>
+    <release version="1.0.0" date="">
+      <description>
+        <p>First Release! 🎉</p>
+      </description>
+    </release>
+  </releases>-->
+  
+  <kudos>
+      <!--
+        GNOME Software kudos:
+        https://gitlab.gnome.org/GNOME/gnome-software/blob/master/doc/kudos.md
+      -->
+      <kudo>ModernToolkit</kudo>
+      <!--<kudo>HiDpiIcon</kudo>-->
+  </kudos>
+
+  <custom>
+    <value key="Purism::form_factor">workstation</value>
+    <value key="Purism::form_factor">mobile</value>
+  </custom>
+
+</component>

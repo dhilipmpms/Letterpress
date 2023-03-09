@@ -1,0 +1,16 @@
+[Desktop Entry]
+# Translators: App Name: Please translate as "ASCII Images" unless you have good reason not to.
+Name=ASCII Images
+Comment=Convert images into ASCII characters
+Exec=asciiimages %u
+Icon=io.gitlab.gregorni.ASCIIImages
+Terminal=false
+Type=Application
+Categories=GTK;GNOME;Image;ASCII;Text;Graphics;ImageProcessing;
+# Translators: These are search terms for the application;
+# the translation should contain the original list AND the translated strings.
+# The list must end with a semicolon.
+Keywords=image;ascii;convert;conversion;text;
+StartupNotify=true
+X-Purism-FormFactor=Workstation;Mobile;
+MimeType=image/png;image/jpeg;image/jpg
