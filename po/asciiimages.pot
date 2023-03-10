@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: asciiimages\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-09 21:00+0100\n"
+"POT-Creation-Date: 2023-03-10 14:56+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,20 +17,21 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. Translators: App Name: Please translate as "ASCII Images" unless you have good reason not to.
-#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:4
+#. Translators: App Name: Translate as "ASCII Images"
+#. unless you have good reason not to.
+#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:5
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:7 src/window.ui:38
 msgid "ASCII Images"
 msgstr ""
 
-#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:5
+#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:6
 msgid "Convert images into ASCII characters"
 msgstr ""
 
 #. Translators: These are search terms for the application;
 #. the translation should contain the original list AND the translated strings.
 #. The list must end with a semicolon.
-#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:14
+#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:15
 msgid "image;ascii;convert;conversion;text;"
 msgstr ""
 

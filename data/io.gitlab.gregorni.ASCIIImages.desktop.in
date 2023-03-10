@@ -1,5 +1,6 @@
 [Desktop Entry]
-# Translators: App Name: Please translate as "ASCII Images" unless you have good reason not to.
+# Translators: App Name: Translate as "ASCII Images"
+# unless you have good reason not to.
 Name=ASCII Images
 Comment=Convert images into ASCII characters
 Exec=asciiimages %u
