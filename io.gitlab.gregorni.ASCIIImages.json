@@ -23,6 +23,7 @@
         "*.a"
     ],
     "modules" : [
+    	"build-aux/blueprint-compiler.json",
 	{
             "name" : "jpeglib",
             "builddir" : true,
