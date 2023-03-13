@@ -1,0 +1,182 @@
+using Gtk 4.0;
+using Adw 1;
+
+template AsciiimagesWindow : Adw.ApplicationWindow {
+  title: "ASCII Images";
+  width-request: 300;
+  height-request: 300;
+  default-width: 600;
+  default-height: 600;
+
+  Box {
+    orientation: vertical;
+
+    HeaderBar {
+      [end]
+      MenuButton {
+        icon-name: "open-menu-symbolic";
+        menu-model: primary_menu;
+      }
+    }
+
+    Adw.ToastOverlay toast_overlay {
+      vexpand: true;
+      child: 
+      Box {
+        orientation: vertical;
+
+        Stack main_stack {
+          transition-type: crossfade;
+
+          StackPage {
+            name: "welcome";
+            child: 
+            Adw.StatusPage {
+              title: _("ASCII Images");
+              description: _("Drag and drop images here");
+              icon-name: "io.gitlab.gregorni.ASCIIImages-symbolic";
+              child: 
+              Box {
+                vexpand: true;
+                orientation: vertical;
+                spacing: 12;
+
+                Button open_file_btn {
+                  halign: center;
+                  action-name: "app.open-file";
+                  label: _("Open File…");
+
+                  styles [
+                    "pill",
+                    "suggested-action",
+                  ]
+                }
+              }
+
+              ;
+            }
+
+            ;
+          }
+
+          StackPage {
+            name: "drop-page";
+            child: 
+            Adw.StatusPage drop_overlay {
+              icon-name: "system-run-symbolic";
+              title: _("Drop Here to Open");
+
+              styles [
+                "dragndrop_overlay",
+              ]
+            }
+
+            ;
+          }
+
+          StackPage {
+            name: "spinner-page";
+            child: 
+            Spinner spinner {
+              valign: center;
+            }
+
+            ;
+          }
+
+          StackPage {
+            name: "view-page";
+            child: 
+            ScrolledWindow {
+              hexpand: true;
+              vexpand: true;
+
+              TextView output_text_view {
+                editable: false;
+                monospace: true;
+                cursor-visible: false;
+                hexpand: true;
+                vexpand: true;
+              }
+            }
+
+            ;
+          }
+        }
+
+        Revealer toolbox {
+          transition-type: slide_up;
+          child: 
+          Box {
+            orientation: vertical;
+
+            Separator {
+            }
+
+            Box {
+              margin-start: 8;
+              margin-end: 8;
+              margin-top: 8;
+              margin-bottom: 8;
+              spacing: 8;
+
+              Adw.ActionRow {
+                title: _("Output Width");
+                subtitle: _("Width of the ASCII image in characters");
+
+                SpinButton width_spin {
+                  halign: start;
+                  valign: center;
+                  numeric: true;
+                }
+              }
+
+              Box {
+                hexpand: true;
+              }
+
+              Button to_file_btn {
+                valign: center;
+                halign: end;
+                icon-name: "document-save-symbolic";
+                tooltip-text: _("Save to file");
+              }
+
+              Button to_clipboard_btn {
+                valign: center;
+                halign: end;
+                icon-name: "edit-copy-symbolic";
+                tooltip-text: _("Copy to clipboard");
+              }
+            }
+          }
+
+          ;
+        }
+      }
+
+      ;
+    }
+  }
+}
+
+menu primary_menu {
+  section {
+    item {
+      label: _("_Open…");
+      action: "app.open-file";
+    }
+  }
+
+  section {
+    item {
+      label: _("_Keyboard Shortcuts");
+      action: "win.show-help-overlay";
+    }
+
+    item {
+      label: _("_About ASCII Images");
+      action: "app.about";
+    }
+  }
+}
