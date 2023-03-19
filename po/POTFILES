@@ -3,4 +3,5 @@ data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in
 data/io.gitlab.gregorni.ASCIIImages.gschema.xml
 src/main.py
 src/window.py
-src/window.ui
+src/window.blp
+src/gtk/help-overlay.blp
