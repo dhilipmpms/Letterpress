@@ -3,5 +3,7 @@ data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in
 data/io.gitlab.gregorni.ASCIIImages.gschema.xml
 src/main.py
 src/window.py
+src/file_chooser.py
+src/error_dialog.py
 src/window.blp
 src/gtk/help-overlay.blp

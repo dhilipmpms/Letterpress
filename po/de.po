@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: asciiimages\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-19 17:11+0100\n"
-"PO-Revision-Date: 2023-03-19 17:11+0100\n"
+"POT-Creation-Date: 2023-03-20 15:23+0100\n"
+"PO-Revision-Date: 2023-03-20 15:25+0100\n"
 "Last-Translator: gregorni <gregorniehl@web.de>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "Language: de\n"
@@ -103,6 +103,24 @@ msgstr "\"{display_name}\" gespeichert"
 #: src/window.py:161
 msgid "Open"
 msgstr "Öffnen"
+
+#: src/file_chooser.py:38 src/file_chooser.py:64
+msgid "Select a file"
+msgstr "Datei auswählen"
+
+#: src/file_chooser.py:47
+msgid "Supported image files"
+msgstr "Unterstützte Bilddateien"
+
+#: src/error_dialog.py:34
+msgid "The output is too large to be copied."
+msgstr "Der Output ist zu groß, um kopiert zu werden."
+
+#: src/error_dialog.py:35
+msgid "Please save the file instead or decrease the output width."
+msgstr ""
+"Sie können den Output stattdessen als Datei speichern oder die "
+"Output-Breite verringern."
 
 #: src/window.blp:19
 msgid "Main Menu"

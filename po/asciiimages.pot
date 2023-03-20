@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: asciiimages\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-19 17:11+0100\n"
+"POT-Creation-Date: 2023-03-20 15:30+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -100,6 +100,22 @@ msgstr ""
 
 #: src/window.py:161
 msgid "Open"
+msgstr ""
+
+#: src/file_chooser.py:38 src/file_chooser.py:64
+msgid "Select a file"
+msgstr ""
+
+#: src/file_chooser.py:47
+msgid "Supported image files"
+msgstr ""
+
+#: src/error_dialog.py:34
+msgid "The output is too large to be copied."
+msgstr ""
+
+#: src/error_dialog.py:35
+msgid "Please save it to a file instead or decrease the output width."
 msgstr ""
 
 #: src/window.blp:19

@@ -32,7 +32,7 @@ class ErrorDialog():
             transient_for=parent,
             buttons=Gtk.ButtonsType(1),
             text=_('The output is too large to be copied.'),
-            secondary_text=_('Please save the file instead or decrease the output width.'),
+            secondary_text=_('Please save it to a file instead or decrease the output width.'),
         )
         
         dialog.connect('response', on_response)
