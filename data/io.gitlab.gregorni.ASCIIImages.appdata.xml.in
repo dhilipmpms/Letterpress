@@ -66,13 +66,13 @@
   
   <project_group>GNOME</project_group>
   
-  <!--<releases>
+  <releases>
     <release version="1.0.0" date="">
       <description>
         <p>First Release! 🎉</p>
       </description>
     </release>
-  </releases>-->
+  </releases>
   
   <kudos>
       <!--
