@@ -121,7 +121,7 @@ class AsciiimagesApplication(Adw.Application):
                                 support_url='https://matrix.to/#/#ASCIIImages:matrix.org')
                                 
         about.add_credit_section(
-            ('Icon by'),
+            _('Icon by'),
             ['Jakub Steiner https://jimmac.eu']
         )
         

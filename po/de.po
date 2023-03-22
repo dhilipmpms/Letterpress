@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: asciiimages\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-20 15:23+0100\n"
-"PO-Revision-Date: 2023-03-20 15:25+0100\n"
+"POT-Creation-Date: 2023-03-22 16:24+0100\n"
+"PO-Revision-Date: 2023-03-22 16:26+0100\n"
 "Last-Translator: gregorni <gregorniehl@web.de>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "Language: de\n"
@@ -74,6 +74,10 @@ msgstr "text"
 #: src/main.py:117
 msgid "Copyright © 2023 ASCII Images Contributors"
 msgstr "Copyright © 2023 Mitwirkende von ASCII Images"
+
+#: src/main.py:124
+msgid "Icon by"
+msgstr "Icon von"
 
 #: src/main.py:129
 msgid "Code and Design Borrowed from"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: asciiimages\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-20 15:30+0100\n"
+"POT-Creation-Date: 2023-03-22 16:24+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -71,6 +71,10 @@ msgstr ""
 
 #: src/main.py:117
 msgid "Copyright © 2023 ASCII Images Contributors"
+msgstr ""
+
+#: src/main.py:124
+msgid "Icon by"
 msgstr ""
 
 #: src/main.py:129
