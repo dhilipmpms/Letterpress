@@ -120,10 +120,10 @@ class AsciiimagesApplication(Adw.Application):
                                 issue_url='https://gitlab.com/gregorni/ASCIIImages/-/issues',
                                 support_url='https://matrix.to/#/#ASCIIImages:matrix.org')
                                 
-        # about.add_credit_section(
-        #     ('Icon by'),
-        #     ['']
-        # )
+        about.add_credit_section(
+            ('Icon by'),
+            ['Jakub Steiner https://jimmac.eu']
+        )
         
         about.add_acknowledgement_section(
             _('Code and Design Borrowed from'),

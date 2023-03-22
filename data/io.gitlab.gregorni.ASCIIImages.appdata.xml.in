@@ -80,7 +80,7 @@
         https://gitlab.gnome.org/GNOME/gnome-software/blob/master/doc/kudos.md
       -->
       <kudo>ModernToolkit</kudo>
-      <!--<kudo>HiDpiIcon</kudo>-->
+      <kudo>HiDpiIcon</kudo>
   </kudos>
 
   <custom>
