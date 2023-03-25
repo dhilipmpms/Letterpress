@@ -67,6 +67,15 @@
   <project_group>GNOME</project_group>
   
   <releases>
+    <release version="1.1.0" date="">
+      <description>
+        <ul>
+          <li>Update runtime to GNOME 44</li>
+          <li>Add German translation</li>
+          <li>Update Matrix link</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.0.0" date="">
       <description>
         <p>First Release! 🎉</p>
