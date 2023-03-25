@@ -44,12 +44,20 @@
     <control>touch</control>
   </recommends>
   
-  <!--<screenshots>
+  <screenshots>
     <screenshot>
-      <image></image>
-      <caption></caption>
+      <image>https://gitlab.com/gregorni/asciiimages/-/raw/main/data/screenshots/copied.png</image>
+      <caption>Copy output</caption>
     </screenshot>
-  </screenshots>-->
+    <screenshot>
+      <image>https://gitlab.com/gregorni/asciiimages/-/raw/main/data/screenshots/saved.png</image>
+      <caption>Save output</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://gitlab.com/gregorni/asciiimages/-/raw/main/data/screenshots/width.png</image>
+      <caption>Adjust output width</caption>
+    </screenshot>
+  </screenshots>
   
   <launchable type="desktop-id">io.gitlab.gregorni.ASCIIImages.desktop</launchable>
   
@@ -67,16 +75,7 @@
   <project_group>GNOME</project_group>
   
   <releases>
-    <release version="1.1.0" date="">
-      <description>
-        <ul>
-          <li>Update runtime to GNOME 44</li>
-          <li>Add German translation</li>
-          <li>Update Matrix link</li>
-        </ul>
-      </description>
-    </release>
-    <release version="1.0.0" date="">
+    <release version="1.0.0" date="2023-03-25">
       <description>
         <p>First Release! 🎉</p>
       </description>
