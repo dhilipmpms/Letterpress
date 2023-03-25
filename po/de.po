@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: asciiimages\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-22 16:24+0100\n"
-"PO-Revision-Date: 2023-03-22 16:26+0100\n"
+"POT-Creation-Date: 2023-03-25 18:44+0100\n"
+"PO-Revision-Date: 2023-03-25 18:46+0100\n"
 "Last-Translator: gregorni <gregorniehl@web.de>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "Language: de\n"
@@ -32,7 +32,8 @@ msgstr "Bilder in ASCII-Zeichen umwandeln"
 #. The list must end with a semicolon.
 #: data/io.gitlab.gregorni.ASCIIImages.desktop.in:15
 msgid "image;ascii;convert;conversion;text;"
-msgstr "image;ascii;convert;conversion;text;bild;ascii;konvertieren;konversion;"
+msgstr ""
+"image;ascii;convert;conversion;text;bild;ascii;konvertieren;konversion;"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:8 src/main.py:113
 msgid "ASCII Images Contributors"
@@ -47,9 +48,9 @@ msgid ""
 "ASCII images uses jp2a to convert images into ASCII characters. You can save "
 "the output to a file, copy it, and even change its resolution!"
 msgstr ""
-"ASCII Images benutzt jp2a, um Bilder in ASCII-Zeichen umzuwandeln. Der Output "
-"kann sowohl gespeichert als auch kopiert werden, und sogar dessen Auflösung "
-"kann eingestellt werden!"
+"ASCII Images benutzt jp2a, um Bilder in ASCII-Zeichen umzuwandeln. Der "
+"Output kann sowohl gespeichert als auch kopiert werden, und sogar dessen "
+"Auflösung kann eingestellt werden!"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:29
 msgid "image"
@@ -70,6 +71,26 @@ msgstr "konversion"
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:33
 msgid "text"
 msgstr "text"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:50
+msgid "Overview"
+msgstr "Übersicht"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:54
+msgid "Copy output"
+msgstr "Output kopieren"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:58
+msgid "Save output"
+msgstr "Output speichern"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:62
+msgid "Adjust output width"
+msgstr "Output-Breite anpassen"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:84
+msgid "First Release! 🎉"
+msgstr "Erste Version! 🎉"
 
 #: src/main.py:117
 msgid "Copyright © 2023 ASCII Images Contributors"
@@ -121,10 +142,11 @@ msgid "The output is too large to be copied."
 msgstr "Der Output ist zu groß, um kopiert zu werden."
 
 #: src/error_dialog.py:35
-msgid "Please save the file instead or decrease the output width."
+#, fuzzy
+msgid "Please save it to a file instead or decrease the output width."
 msgstr ""
-"Sie können den Output stattdessen als Datei speichern oder die "
-"Output-Breite verringern."
+"Sie können den Output stattdessen als Datei speichern oder die Output-Breite "
+"verringern."
 
 #: src/window.blp:19
 msgid "Main Menu"

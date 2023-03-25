@@ -111,7 +111,7 @@ class AsciiimagesApplication(Adw.Application):
                                 application_name='ASCII Images',
                                 application_icon='io.gitlab.gregorni.ASCIIImages',
                                 developer_name=_('ASCII Images Contributors'),
-                                version='1.0.0',
+                                version='1.0.1',
                                 developers=devs_list,
                                 translator_credits=translators_list,
                                 copyright=_('Copyright © 2023 ASCII Images Contributors'),
