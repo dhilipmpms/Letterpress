@@ -10,7 +10,7 @@
   
 	<description>
 	  <p>
-	    ASCII images uses jp2a to convert images into ASCII characters. 
+	    ASCII Images uses jp2a to convert images into ASCII characters. 
 	    You can save the output to a file, copy it, and even change its resolution!
 	  </p>
 	</description>
