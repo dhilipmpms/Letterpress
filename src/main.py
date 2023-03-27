@@ -25,7 +25,6 @@ gi.require_version('Adw', '1')
 
 from gi.repository import Gtk, Gio, Adw, GLib
 from .window import AsciiimagesWindow
-from gettext import gettext as _
 
 class AsciiimagesApplication(Adw.Application):
     """The main application singleton class."""
