@@ -25,7 +25,6 @@ gi.require_version('Adw', '1')
 
 from gi.repository import Gtk, Gio, Adw, GLib
 from .window import AsciiimagesWindow
-from gettext import gettext as _
 
 class AsciiimagesApplication(Adw.Application):
     """The main application singleton class."""
@@ -104,7 +103,7 @@ class AsciiimagesApplication(Adw.Application):
         # This is a Python list: Add your string to the list (separated by a comma)
         devs_list = ['gregorni https://gitlab.com/gregorni']
         # This is a string: Add your name to the string (separated by a newline '\n')
-        translators_list = 'gregorni https://gitlab.com/gregorni\nIrénée Thirion'
+        translators_list = 'gregorni https://gitlab.com/gregorni\nIrénée Thirion\nFyodor Sobolev https://github.com/fsobolev'
 
         
         """Callback for the app.about action."""

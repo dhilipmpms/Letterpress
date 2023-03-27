@@ -1,0 +1,209 @@
+# Russian translation for the asciiimages' package.
+# Copyright (C) 2023 the asciiimages' COPYRIGHT HOLDER
+# This file is distributed under the same license as the asciiimages package.
+# Fyodor Sobolev, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: asciiimages\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-25 18:44+0100\n"
+"PO-Revision-Date: 2023-03-27 02:35+0300\n"
+"Last-Translator: Fyodor Sobolev\n"
+"Language-Team: \n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Translators: App Name: Translate as "ASCII Images"
+#. unless you have good reason not to.
+#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:5
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:7 src/window.blp:36
+msgid "ASCII Images"
+msgstr "ASCII Images"
+
+#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:6
+msgid "Convert images into ASCII characters"
+msgstr "Конвертируйте изображения в символы ASCII"
+
+#. Translators: These are search terms for the application;
+#. the translation should contain the original list AND the translated strings.
+#. The list must end with a semicolon.
+#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:15
+msgid "image;ascii;convert;conversion;text;"
+msgstr "изображение;ascii;конвертация;конверсия;текст"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:8 src/main.py:113
+msgid "ASCII Images Contributors"
+msgstr "Разработчики ASCII Images"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:9
+msgid "Turn images into text"
+msgstr "Превратите изображения в текст"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:12
+msgid ""
+"ASCII images uses jp2a to convert images into ASCII characters. You can save "
+"the output to a file, copy it, and even change its resolution!"
+msgstr ""
+"ASCII Images использует jp2a для конвертирования изображений в символы "
+"ASCII. Вы можете сохранить результат в файл, копировать, и даже менять "
+"его разрешение!"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:29
+msgid "image"
+msgstr "изображение"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:30
+msgid "ascii"
+msgstr "ascii"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:31
+msgid "convert"
+msgstr "конвертация"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:32
+msgid "conversion"
+msgstr "конверсия"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:33
+msgid "text"
+msgstr "текст"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:50
+msgid "Overview"
+msgstr "Обзор"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:54
+msgid "Copy output"
+msgstr "Скопировать результат"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:58
+msgid "Save output"
+msgstr "Сохранить результат"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:62
+msgid "Adjust output width"
+msgstr "Изменить ширину вывода"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:84
+msgid "First Release! 🎉"
+msgstr "Первый выпуск! 🎉"
+
+#: src/main.py:117
+msgid "Copyright © 2023 ASCII Images Contributors"
+msgstr "Copyright © 2023 Разработчики ASCII Images"
+
+#: src/main.py:124
+msgid "Icon by"
+msgstr "Автор иконки"
+
+#: src/main.py:129
+msgid "Code and Design Borrowed from"
+msgstr "Код и дизайн позаимствованы из"
+
+#. Translators: Do not translate "{basename(file_path)}"
+#: src/window.py:74
+msgid "\"{basename(file_path)}\" is not a valid image."
+msgstr "\"{basename(file_path)}\" не является подходящим изображением."
+
+#: src/window.py:120
+msgid "Output copied to clipboard"
+msgstr "Результат скопирован в буфер обмена"
+
+#. Translators: Do not translate "{display_name}"
+#: src/window.py:157
+#, python-brace-format
+msgid "Unable to save \"{display_name}\""
+msgstr "Невозможно сохранить \"{display_name}\""
+
+#. Translators: Do not translate "{display_name}"
+#: src/window.py:160
+#, python-brace-format
+msgid "\"{display_name}\" saved"
+msgstr "\"{display_name}\" сохранено"
+
+#: src/window.py:161
+msgid "Open"
+msgstr "Открыть"
+
+#: src/file_chooser.py:38 src/file_chooser.py:64
+msgid "Select a file"
+msgstr "Выбрать файл"
+
+#: src/file_chooser.py:47
+msgid "Supported image files"
+msgstr "Поддерживаемые форматы изображений"
+
+#: src/error_dialog.py:34
+msgid "The output is too large to be copied."
+msgstr "Результат слишком большой, копирование не удалось."
+
+#: src/error_dialog.py:35
+msgid "Please save it to a file instead or decrease the output width."
+msgstr "Пожалуйста, сохраните его в файл или уменьшите ширину."
+
+#: src/window.blp:19
+msgid "Main Menu"
+msgstr "Главное меню"
+
+#: src/window.blp:37
+msgid "Drag and drop images here"
+msgstr "Перетащите изображение сюда"
+
+#: src/window.blp:48
+msgid "Open File…"
+msgstr "Открыть файл..."
+
+#: src/window.blp:68
+msgid "Drop Here to Open"
+msgstr "Перетащите сюда, чтобы открыть"
+
+#: src/window.blp:125
+msgid "Output Width"
+msgstr "Ширина вывода"
+
+#: src/window.blp:126
+msgid "Width of the ASCII image in characters"
+msgstr "Ширина ASCII изображения в символах"
+
+#: src/window.blp:143
+msgid "Save to file"
+msgstr "Сохранить в файл"
+
+#: src/window.blp:150
+msgid "Copy to clipboard"
+msgstr "Скопировать в буфер обмена"
+
+#: src/window.blp:167
+msgid "_Open…"
+msgstr "_Открыть..."
+
+#: src/window.blp:174
+msgid "_Keyboard Shortcuts"
+msgstr "_Комбинации клавиш"
+
+#: src/window.blp:179
+msgid "_About ASCII Images"
+msgstr "_О приложении"
+
+#: src/gtk/help-overlay.blp:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Основное"
+
+#: src/gtk/help-overlay.blp:14
+msgctxt "shortcut window"
+msgid "Open File"
+msgstr "Открыть файл"
+
+#: src/gtk/help-overlay.blp:19
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "Показать комбинации клавиш"
+
+#: src/gtk/help-overlay.blp:24
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Выход"
