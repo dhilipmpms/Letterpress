@@ -24,7 +24,7 @@ class FileChooser:
     """ Open and load file. """
     @staticmethod
     def open_file(parent, last_view_page, *args):
-        def on_response(_dialog, response):
+        def __on_response(_dialog, response):
 
             """ Run if the user selects a file. """
             if response == Gtk.ResponseType.ACCEPT:
@@ -41,7 +41,7 @@ class FileChooser:
         )
 
         dialog.set_modal(True)
-        dialog.connect('response', on_response)
+        dialog.connect('response', __on_response)
 
         file_filter = Gtk.FileFilter.new()
         file_filter.set_name(_('Supported image files'))
@@ -54,7 +54,7 @@ class FileChooser:
     
     @staticmethod
     def save_file(parent, *args):
-        def on_response(_dialog, response):
+        def __on_response(_dialog, response):
 
             """ Run if the user selects a file. """
             if response == Gtk.ResponseType.ACCEPT:
@@ -67,6 +67,6 @@ class FileChooser:
         )
 
         dialog.set_modal(True)
-        dialog.connect('response', on_response)
+        dialog.connect('response', __on_response)
         dialog.set_current_name('output.txt')
         dialog.show()

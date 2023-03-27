@@ -24,7 +24,7 @@ class ErrorDialog():
     @staticmethod
     def too_large(parent, *args):
         
-        def on_response(_dialog, response):
+        def __on_response(_dialog, response):
             _dialog.close()
         
         # Replace with Gtk.AlertDialog for Gtk 4.10
@@ -35,6 +35,6 @@ class ErrorDialog():
             secondary_text=_('Please save it to a file instead or decrease the output width.'),
         )
         
-        dialog.connect('response', on_response)
+        dialog.connect('response', __on_response)
 
         dialog.show()

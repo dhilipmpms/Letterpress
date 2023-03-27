@@ -55,19 +55,19 @@ class AsciiimagesWindow(Adw.ApplicationWindow):
         self.width_adj = Gtk.Adjustment.new(self.settings['output-width'], 100, 2000, 10, 100, 0)
         self.width_spin.set_adjustment(self.width_adj)
         
-        self.to_clipboard_btn.connect('clicked', self.copy_output_to_clipboard)
-        self.to_file_btn.connect('clicked', self.save_output_to_file)
-        self.width_spin.connect('value-changed', self.on_spin_value_changed)
+        self.to_clipboard_btn.connect('clicked', self.__copy_output_to_clipboard)
+        self.to_file_btn.connect('clicked', self.__save_output_to_file)
+        self.width_spin.connect('value-changed', self.__on_spin_value_changed)
         
         self.buffer = self.output_text_view.get_buffer()
         self.previous_stack = 'welcome'
         self.file = None
 
     def on_open_file(self):
-        self.show_spinner()
+        self.__show_spinner()
         FileChooser.open_file(self, self.previous_stack)
         
-    def on_open_error(self, error, file_path):
+    def __on_open_error(self, error, file_path):
         if error:
             print(f'Unable to open file, {error}')
             # Translators: Do not translate "{basename(file_path)}"
@@ -75,7 +75,7 @@ class AsciiimagesWindow(Adw.ApplicationWindow):
             self.main_stack.set_visible_child_name(self.previous_stack)
             
     def check_is_image(self, file):
-        self.show_spinner()
+        self.__show_spinner()
         
         if self.file and file:
             if cmp(self.file.get_path(), file.get_path()):
@@ -87,39 +87,39 @@ class AsciiimagesWindow(Adw.ApplicationWindow):
         try:
             Gdk.Texture.new_from_file(file) # Just to see if that's a valid image
         except GLib.Error as error:
-            self.on_open_error(error, file.get_path())
+            self.__on_open_error(error, file.get_path())
             return
             
         self.file = file
-        self.convert_image(file)
+        self.__convert_image(file)
         
-    def convert_image(self, file):
+    def __convert_image(self, file):
     
         file = file.get_path()
         
         process = subprocess.Popen(['jp2a', f'--width={self.width_spin.get_value()}', file],
                                    stdout=subprocess.PIPE, universal_newlines=True)
-        self.image_as_text = self.read_lines(process)
+        self.image_as_text = self.__read_lines(process)
         self.buffer.set_text(self.image_as_text)
         
         self.toolbox.set_reveal_child(True)
         self.main_stack.set_visible_child_name('view-page')
         self.previous_stack = 'view-page'
         
-    def read_lines(self, process):
+    def __read_lines(self, process):
         output = ''
         for line in iter(process.stdout.readline, ''):
             output += line
         return output
         
-    def copy_output_to_clipboard(self, *args):
+    def __copy_output_to_clipboard(self, *args):
         if self.buffer.get_char_count() > 262088:
             ErrorDialog.too_large(self)
             return
         Gdk.Display.get_default().get_clipboard().set(self.image_as_text)
         self.toast_overlay.add_toast(Adw.Toast(title=_('Output copied to clipboard')))
         
-    def save_output_to_file(self, *args):
+    def __save_output_to_file(self, *args):
         FileChooser.save_file(self)
         
     def on_save_file(self, file):
@@ -141,9 +141,9 @@ class AsciiimagesWindow(Adw.ApplicationWindow):
                                           False,
                                           Gio.FileCreateFlags.NONE,
                                           None,
-                                          self.save_file_complete)
+                                          self.__save_file_complete)
                                           
-    def save_file_complete(self, file, result):
+    def __save_file_complete(self, file, result):
         res = file.replace_contents_finish(result)
         info = file.query_info('standard::display-name',
                                Gio.FileQueryInfoFlags.NONE)
@@ -163,11 +163,11 @@ class AsciiimagesWindow(Adw.ApplicationWindow):
             toast.props.action_target = GLib.Variant('s', file.get_path())
             self.toast_overlay.add_toast(toast)
                                           
-    def on_spin_value_changed(self, spin_button):
-        self.show_spinner()
-        self.convert_image(self.file)
+    def __on_spin_value_changed(self, spin_button):
+        self.__show_spinner()
+        self.__convert_image(self.file)
         
-    def show_spinner(self):
+    def __show_spinner(self):
         self.main_stack.set_visible_child_name('spinner-page')
         self.spinner.start()
         
