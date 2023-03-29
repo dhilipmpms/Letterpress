@@ -50,9 +50,19 @@ class AsciiimagesWindow(Adw.ApplicationWindow):
         self.add_controller(self.target)
         
         self.settings = Gio.Settings(schema_id='io.gitlab.gregorni.ASCIIImages')
+        self.settings.bind("width", self, "default-width",
+                           Gio.SettingsBindFlags.DEFAULT)
+        self.settings.bind("height", self, "default-height",
+                           Gio.SettingsBindFlags.DEFAULT)
+        self.settings.bind("is-maximized", self, "maximized",
+                           Gio.SettingsBindFlags.DEFAULT)
+        self.settings.bind("is-fullscreen", self, "fullscreened",
+                           Gio.SettingsBindFlags.DEFAULT)
+
         self.settings.bind('output-width', self.width_spin, 'value',
                            Gio.SettingsBindFlags.DEFAULT)
-        self.width_adj = Gtk.Adjustment.new(self.settings['output-width'], 100, 2000, 10, 100, 0)
+        self.width_adj = Gtk.Adjustment.new(self.settings['output-width'],
+                                            100, 2000, 10, 100, 0)
         self.width_spin.set_adjustment(self.width_adj)
         
         self.to_clipboard_btn.connect('clicked', self.__copy_output_to_clipboard)
