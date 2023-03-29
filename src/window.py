@@ -50,13 +50,13 @@ class AsciiimagesWindow(Adw.ApplicationWindow):
         self.add_controller(self.target)
         
         self.settings = Gio.Settings(schema_id='io.gitlab.gregorni.ASCIIImages')
-        self.settings.bind("width", self, "default-width",
+        self.settings.bind('width', self, 'default-width',
                            Gio.SettingsBindFlags.DEFAULT)
-        self.settings.bind("height", self, "default-height",
+        self.settings.bind('height', self, 'default-height',
                            Gio.SettingsBindFlags.DEFAULT)
-        self.settings.bind("is-maximized", self, "maximized",
+        self.settings.bind('is-maximized', self, 'maximized',
                            Gio.SettingsBindFlags.DEFAULT)
-        self.settings.bind("is-fullscreen", self, "fullscreened",
+        self.settings.bind('is-fullscreen', self, 'fullscreened',
                            Gio.SettingsBindFlags.DEFAULT)
 
         self.settings.bind('output-width', self.width_spin, 'value',
