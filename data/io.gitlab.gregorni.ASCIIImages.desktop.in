@@ -14,4 +14,4 @@ Categories=GTK;GNOME;Image;ASCII;Text;Graphics;ImageProcessing;
 Keywords=image;ascii;convert;conversion;text;
 StartupNotify=true
 X-Purism-FormFactor=Workstation;Mobile;
-MimeType=image/png;image/jpeg;image/jpg
+MimeType=image/png;image/jpeg
