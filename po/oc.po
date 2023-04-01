@@ -1,4 +1,4 @@
-# Occitan translation for the asciiimages package.
+# Occitan translation for the asciiimages' package.
 # Copyright (C) 2023 THE asciiimages' COPYRIGHT HOLDER
 # This file is distributed under the same license as the asciiimages package.
 # Quentin PAGÈS, 2023.
@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: asciiimages\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-25 18:44+0100\n"
+"POT-Creation-Date: 2023-04-01 16:07+0200\n"
 "PO-Revision-Date: 2023-04-01 15:12+0200\n"
 "Last-Translator: Quentin PAGÈS\n"
 "Language-Team: \n"
@@ -17,21 +17,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.2.2\n"
 
-#. Translators: App Name: Translate as "ASCII Images"
-#. unless you have good reason not to.
-#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:5
+#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:3
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:7 src/window.blp:36
 msgid "ASCII Images"
 msgstr "Imatges ASCII"
 
-#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:6
+#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:4
 msgid "Convert images into ASCII characters"
 msgstr "Convertir d’imatges en caractèrs ASCII"
 
 #. Translators: These are search terms for the application;
 #. the translation should contain the original list AND the translated strings.
 #. The list must end with a semicolon.
-#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:15
+#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:13
 msgid "image;ascii;convert;conversion;text;"
 msgstr "imatge;ascii;art;convertir;conversion;tèxte;"
 
@@ -45,7 +43,7 @@ msgstr "Transformar d’imatges en tèxt"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:12
 msgid ""
-"ASCII images uses jp2a to convert images into ASCII characters. You can save "
+"ASCII Images uses jp2a to convert images into ASCII characters. You can save "
 "the output to a file, copy it, and even change its resolution!"
 msgstr ""
 "Imatges ASCII utiliza jp2a per convertir los imatges en caractèrs ASCII. "
@@ -105,27 +103,27 @@ msgid "Code and Design Borrowed from"
 msgstr "Còdi e design manlevats de"
 
 #. Translators: Do not translate "{basename(file_path)}"
-#: src/window.py:74
+#: src/window.py:84
 msgid "\"{basename(file_path)}\" is not a valid image."
 msgstr "« {basename(file_path)} » es pas un imatge valid."
 
-#: src/window.py:120
+#: src/window.py:130
 msgid "Output copied to clipboard"
 msgstr "Sortida copiada al quichapapièrs"
 
 #. Translators: Do not translate "{display_name}"
-#: src/window.py:157
+#: src/window.py:167
 #, python-brace-format
 msgid "Unable to save \"{display_name}\""
 msgstr "Enregistrament impossible de « {display_name} »"
 
 #. Translators: Do not translate "{display_name}"
-#: src/window.py:160
+#: src/window.py:170
 #, python-brace-format
 msgid "\"{display_name}\" saved"
 msgstr "« {display_name} » enregistrat"
 
-#: src/window.py:161
+#: src/window.py:171
 msgid "Open"
 msgstr "Dobrir"
 

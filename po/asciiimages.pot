@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: asciiimages\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-25 18:44+0100\n"
+"POT-Creation-Date: 2023-04-01 16:07+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,21 +17,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. Translators: App Name: Translate as "ASCII Images"
-#. unless you have good reason not to.
-#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:5
+#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:3
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:7 src/window.blp:36
 msgid "ASCII Images"
 msgstr ""
 
-#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:6
+#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:4
 msgid "Convert images into ASCII characters"
 msgstr ""
 
 #. Translators: These are search terms for the application;
 #. the translation should contain the original list AND the translated strings.
 #. The list must end with a semicolon.
-#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:15
+#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:13
 msgid "image;ascii;convert;conversion;text;"
 msgstr ""
 
@@ -45,7 +43,7 @@ msgstr ""
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:12
 msgid ""
-"ASCII images uses jp2a to convert images into ASCII characters. You can save "
+"ASCII Images uses jp2a to convert images into ASCII characters. You can save "
 "the output to a file, copy it, and even change its resolution!"
 msgstr ""
 
@@ -102,27 +100,27 @@ msgid "Code and Design Borrowed from"
 msgstr ""
 
 #. Translators: Do not translate "{basename(file_path)}"
-#: src/window.py:74
+#: src/window.py:84
 msgid "\"{basename(file_path)}\" is not a valid image."
 msgstr ""
 
-#: src/window.py:120
+#: src/window.py:130
 msgid "Output copied to clipboard"
 msgstr ""
 
 #. Translators: Do not translate "{display_name}"
-#: src/window.py:157
+#: src/window.py:167
 #, python-brace-format
 msgid "Unable to save \"{display_name}\""
 msgstr ""
 
 #. Translators: Do not translate "{display_name}"
-#: src/window.py:160
+#: src/window.py:170
 #, python-brace-format
 msgid "\"{display_name}\" saved"
 msgstr ""
 
-#: src/window.py:161
+#: src/window.py:171
 msgid "Open"
 msgstr ""
 

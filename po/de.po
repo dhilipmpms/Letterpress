@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: asciiimages\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-25 18:44+0100\n"
+"POT-Creation-Date: 2023-04-01 16:07+0200\n"
 "PO-Revision-Date: 2023-03-25 18:46+0100\n"
 "Last-Translator: gregorni <gregorniehl@web.de>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
@@ -16,21 +16,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. Translators: App Name: Translate as "ASCII Images"
-#. unless you have good reason not to.
-#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:5
+#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:3
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:7 src/window.blp:36
 msgid "ASCII Images"
 msgstr "ASCII Images"
 
-#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:6
+#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:4
 msgid "Convert images into ASCII characters"
 msgstr "Bilder in ASCII-Zeichen umwandeln"
 
 #. Translators: These are search terms for the application;
 #. the translation should contain the original list AND the translated strings.
 #. The list must end with a semicolon.
-#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:15
+#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:13
 msgid "image;ascii;convert;conversion;text;"
 msgstr ""
 "image;ascii;convert;conversion;text;bild;ascii;konvertieren;konversion;"
@@ -45,7 +43,7 @@ msgstr "Bilder in Text umwandeln"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:12
 msgid ""
-"ASCII images uses jp2a to convert images into ASCII characters. You can save "
+"ASCII Images uses jp2a to convert images into ASCII characters. You can save "
 "the output to a file, copy it, and even change its resolution!"
 msgstr ""
 "ASCII Images benutzt jp2a, um Bilder in ASCII-Zeichen umzuwandeln. Der "
@@ -105,27 +103,27 @@ msgid "Code and Design Borrowed from"
 msgstr "Code und Design entlehnt von"
 
 #. Translators: Do not translate "{basename(file_path)}"
-#: src/window.py:74
+#: src/window.py:84
 msgid "\"{basename(file_path)}\" is not a valid image."
 msgstr "\"{basename(file_path)}\" ist kein gültiges Bild."
 
-#: src/window.py:120
+#: src/window.py:130
 msgid "Output copied to clipboard"
 msgstr "Output in die Zwischenablage kopiert"
 
 #. Translators: Do not translate "{display_name}"
-#: src/window.py:157
+#: src/window.py:167
 #, python-brace-format
 msgid "Unable to save \"{display_name}\""
 msgstr "\"{display_name}\" konnte nicht gespeichert werden"
 
 #. Translators: Do not translate "{display_name}"
-#: src/window.py:160
+#: src/window.py:170
 #, python-brace-format
 msgid "\"{display_name}\" saved"
 msgstr "\"{display_name}\" gespeichert"
 
-#: src/window.py:161
+#: src/window.py:171
 msgid "Open"
 msgstr "Öffnen"
 
@@ -142,7 +140,6 @@ msgid "The output is too large to be copied."
 msgstr "Der Output ist zu groß, um kopiert zu werden."
 
 #: src/error_dialog.py:35
-#, fuzzy
 msgid "Please save it to a file instead or decrease the output width."
 msgstr ""
 "Sie können den Output stattdessen als Datei speichern oder die Output-Breite "
