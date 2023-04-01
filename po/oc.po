@@ -1,0 +1,212 @@
+# Occitan translation file.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the asciiimages package.
+# Quentin PAGÈS, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: asciiimages\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-25 18:44+0100\n"
+"PO-Revision-Date: 2023-04-01 15:12+0200\n"
+"Last-Translator: Quentin PAGÈS\n"
+"Language-Team: \n"
+"Language: oc\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.2.2\n"
+
+#. Translators: App Name: Translate as "ASCII Images"
+#. unless you have good reason not to.
+#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:5
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:7 src/window.blp:36
+msgid "ASCII Images"
+msgstr "Imatges ASCII"
+
+#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:6
+msgid "Convert images into ASCII characters"
+msgstr "Convertir d’imatges en caractèrs ASCII"
+
+#. Translators: These are search terms for the application;
+#. the translation should contain the original list AND the translated strings.
+#. The list must end with a semicolon.
+#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:15
+msgid "image;ascii;convert;conversion;text;"
+msgstr "imatge;ascii;art;convertir;conversion;tèxte;"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:8 src/main.py:113
+msgid "ASCII Images Contributors"
+msgstr "Contributors d’Imatges ASCII"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:9
+msgid "Turn images into text"
+msgstr "Transformar d’imatges en tèxt"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:12
+msgid ""
+"ASCII images uses jp2a to convert images into ASCII characters. You can save "
+"the output to a file, copy it, and even change its resolution!"
+msgstr ""
+"Imatges ASCII utiliza jp2a per convertir los imatges en caractèrs ASCII. "
+"Podètz enregistrar lo resultat dins un fichièr, lo copiar e quitament "
+"cambiar sa resolucion !"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:29
+msgid "image"
+msgstr "imatge"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:30
+msgid "ascii"
+msgstr "ascii"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:31
+msgid "convert"
+msgstr "convertir"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:32
+msgid "conversion"
+msgstr "conversion"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:33
+msgid "text"
+msgstr "tèxt"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:50
+msgid "Overview"
+msgstr "Vista d'ensemble"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:54
+msgid "Copy output"
+msgstr "Copiar la sortida"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:58
+msgid "Save output"
+msgstr "Enregistrar la sortida"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:62
+msgid "Adjust output width"
+msgstr "Ajustar la largor de la sortida"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:84
+msgid "First Release! 🎉"
+msgstr "Primièra version !"
+
+#: src/main.py:117
+msgid "Copyright © 2023 ASCII Images Contributors"
+msgstr "Copyright © 2023 Los contributors d’ASCII Images"
+
+#: src/main.py:124
+msgid "Icon by"
+msgstr "Icòna per"
+
+#: src/main.py:129
+msgid "Code and Design Borrowed from"
+msgstr "Còdi e design manlevats de"
+
+#. Translators: Do not translate "{basename(file_path)}"
+#: src/window.py:74
+msgid "\"{basename(file_path)}\" is not a valid image."
+msgstr "« {basename(file_path)} » es pas un imatge valid."
+
+#: src/window.py:120
+msgid "Output copied to clipboard"
+msgstr "Sortida copiada al quichapapièrs"
+
+#. Translators: Do not translate "{display_name}"
+#: src/window.py:157
+#, python-brace-format
+msgid "Unable to save \"{display_name}\""
+msgstr "Enregistrament impossible de « {display_name} »"
+
+#. Translators: Do not translate "{display_name}"
+#: src/window.py:160
+#, python-brace-format
+msgid "\"{display_name}\" saved"
+msgstr "« {display_name} » enregistrat"
+
+#: src/window.py:161
+msgid "Open"
+msgstr "Dobrir"
+
+#: src/file_chooser.py:38 src/file_chooser.py:64
+msgid "Select a file"
+msgstr "Seleccionar un fichièr"
+
+#: src/file_chooser.py:47
+msgid "Supported image files"
+msgstr "Fichièrs imatge preses en carga"
+
+#: src/error_dialog.py:34
+msgid "The output is too large to be copied."
+msgstr "La sortida es tròp granda per la còpia."
+
+#: src/error_dialog.py:35
+msgid "Please save it to a file instead or decrease the output width."
+msgstr ""
+"A la plaça enregistratz-la dins un fichièr o demesissètz la largor de la "
+"sortida."
+
+#: src/window.blp:19
+msgid "Main Menu"
+msgstr "Menú principal"
+
+#: src/window.blp:37
+msgid "Drag and drop images here"
+msgstr "Lisatz e depausatz los imatges aquí"
+
+#: src/window.blp:48
+msgid "Open File…"
+msgstr "Dobrir un fichièr…"
+
+#: src/window.blp:68
+msgid "Drop Here to Open"
+msgstr "Depausatz aicí per dobrir"
+
+#: src/window.blp:125
+msgid "Output Width"
+msgstr "Largor de la sortida"
+
+#: src/window.blp:126
+msgid "Width of the ASCII image in characters"
+msgstr "Largor en caractèrs de l’imatge en ASCII"
+
+#: src/window.blp:143
+msgid "Save to file"
+msgstr "Enregistrar lo fichièr"
+
+#: src/window.blp:150
+msgid "Copy to clipboard"
+msgstr "Copiar al quichapapièrs"
+
+#: src/window.blp:167
+msgid "_Open…"
+msgstr "_Dobrir…"
+
+#: src/window.blp:174
+msgid "_Keyboard Shortcuts"
+msgstr "_Acorchis de clavièr"
+
+#: src/window.blp:179
+msgid "_About ASCII Images"
+msgstr "_A prepaus d’Imatges ASCII"
+
+#: src/gtk/help-overlay.blp:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "General"
+
+#: src/gtk/help-overlay.blp:14
+msgctxt "shortcut window"
+msgid "Open File"
+msgstr "Dobrir un fichièr"
+
+#: src/gtk/help-overlay.blp:19
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "Afichar los acorchis"
+
+#: src/gtk/help-overlay.blp:24
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Sortir"
