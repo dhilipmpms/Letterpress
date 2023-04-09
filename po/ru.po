@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: asciiimages\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-01 16:07+0200\n"
+"POT-Creation-Date: 2023-04-10 01:47+0200\n"
 "PO-Revision-Date: 2023-03-27 02:35+0300\n"
 "Last-Translator: Fyodor Sobolev\n"
 "Language-Team: \n"
@@ -30,7 +30,9 @@ msgstr "Конвертируйте изображения в символы ASCI
 #. The list must end with a semicolon.
 #: data/io.gitlab.gregorni.ASCIIImages.desktop.in:13
 msgid "image;ascii;convert;conversion;text;"
-msgstr "изображение;ascii;конвертация;конверсия;текст"
+msgstr ""
+"image;ascii;convert;conversion;text;изображение;ascii;конвертация;конверсия;"
+"текст;"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:8 src/main.py:113
 msgid "ASCII Images Contributors"
