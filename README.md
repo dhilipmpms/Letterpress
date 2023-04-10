@@ -2,6 +2,10 @@
 
 ASCII Images uses [jp2a](https://github.com/Talinx/jp2a) to turn your pictures into images made up of ASCII Characters.
 
+<div align="center">
+  <img height='400' src="data/screenshots/saved.png">
+</div>
+
 ## Installation
 
 The currently supported method of installation is via Flathub:
