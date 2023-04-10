@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: asciiimages\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-10 01:47+0200\n"
+"POT-Creation-Date: 2023-04-10 02:01+0200\n"
 "PO-Revision-Date: 2023-03-27 02:35+0300\n"
 "Last-Translator: Fyodor Sobolev\n"
 "Language-Team: \n"
@@ -34,7 +34,7 @@ msgstr ""
 "image;ascii;convert;conversion;text;изображение;ascii;конвертация;конверсия;"
 "текст;"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:8 src/main.py:113
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:8 src/main.py:112
 msgid "ASCII Images Contributors"
 msgstr "Разработчики ASCII Images"
 
@@ -91,15 +91,15 @@ msgstr "Изменить ширину вывода"
 msgid "First Release! 🎉"
 msgstr "Первый выпуск! 🎉"
 
-#: src/main.py:117
+#: src/main.py:116
 msgid "Copyright © 2023 ASCII Images Contributors"
 msgstr "Copyright © 2023 Разработчики ASCII Images"
 
-#: src/main.py:124
+#: src/main.py:123
 msgid "Icon by"
 msgstr "Автор иконки"
 
-#: src/main.py:129
+#: src/main.py:128
 msgid "Code and Design Borrowed from"
 msgstr "Код и дизайн позаимствованы из"
 

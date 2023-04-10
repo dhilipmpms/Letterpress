@@ -1,59 +1,57 @@
-# French translation for the asciiimages' package.
-# Copyright (C) 2023 THE asciiimages' COPYRIGHT HOLDER
+# Italian translation for the asciiimages package.
+# Copyright (C) 2023 THE asciiimages'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the asciiimages package.
-# Irénée Thirion <irenee.thirion@e.email>, 2023.
+# Albano Battistella <albano_battistella@hotmail.com>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: asciiimages\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-10 02:01+0200\n"
-"PO-Revision-Date: 2023-03-26 12:57+0200\n"
-"Last-Translator: Irénée Thirion <irenee.thirion@e.email>\n"
-"Language-Team: \n"
-"Language: fr_FR\n"
+"PO-Revision-Date: 2023-03-26 14:31+0100\n"
+"Last-Translator: Albano Battistella <albano_battistella@hotmail.com>\n"
+"Language-Team: Italian <LL@li.org>\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.2.2\n"
 
 #: data/io.gitlab.gregorni.ASCIIImages.desktop.in:3
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:7 src/window.blp:36
 msgid "ASCII Images"
-msgstr "Images ASCII"
+msgstr "Immagini ASCII"
 
 #: data/io.gitlab.gregorni.ASCIIImages.desktop.in:4
 msgid "Convert images into ASCII characters"
-msgstr "Convertir des images en caractères ASCII"
+msgstr "Converti le immagini in caratteri ASCII"
 
 #. Translators: These are search terms for the application;
 #. the translation should contain the original list AND the translated strings.
 #. The list must end with a semicolon.
 #: data/io.gitlab.gregorni.ASCIIImages.desktop.in:13
 msgid "image;ascii;convert;conversion;text;"
-msgstr "image;ascii;convert;conversion;text;convertir;texte;caractère;"
+msgstr "image;ascii;convert;conversion;text;immagine;convertire;conversione;testo;"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:8 src/main.py:112
 msgid "ASCII Images Contributors"
-msgstr "Les contributeurs de Images ASCII"
+msgstr "Contributori di immagini ASCII"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:9
 msgid "Turn images into text"
-msgstr "Transformer des images en texte"
+msgstr "Trasforma le immagini in testo"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:12
 msgid ""
 "ASCII Images uses jp2a to convert images into ASCII characters. You can save "
 "the output to a file, copy it, and even change its resolution!"
 msgstr ""
-"Images ASCII utilise jp2a pour convertir des images en caractères ASCII. "
-"Vous pouvez enregistrer le résultat dans un fichier, le copier, et même "
-"modifier sa résolution !"
+"Le immagini ASCII usano jp2a per convertire le immagini in caratteri ASCII. "
+"Puoi salvare l'output in un file, copiarlo e cambiarlo anche la sua "
+"risoluzione!"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:29
 msgid "image"
-msgstr "image"
+msgstr "Immagine"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:30
 msgid "ascii"
@@ -61,151 +59,149 @@ msgstr "ascii"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:31
 msgid "convert"
-msgstr "convertir"
+msgstr "converti"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:32
 msgid "conversion"
-msgstr "conversion"
+msgstr "conversione"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:33
 msgid "text"
-msgstr "texte"
+msgstr "testo"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:50
 msgid "Overview"
-msgstr "Aperçu"
+msgstr "Panoramica"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:54
 msgid "Copy output"
-msgstr "Copier le résultat"
+msgstr "Copia output"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:58
 msgid "Save output"
-msgstr "Enregistrer le résultat"
+msgstr "Salva output"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:62
 msgid "Adjust output width"
-msgstr "Ajuster la largeur du résultat"
+msgstr "Regola la larghezza dell'output"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:84
 msgid "First Release! 🎉"
-msgstr "Première version ! 🎉"
+msgstr "Primo rilascio! 🎉"
 
 #: src/main.py:116
 msgid "Copyright © 2023 ASCII Images Contributors"
-msgstr "Copyright © 2023 Les contributeurs de Images ASCII"
+msgstr "Copyright © 2023 Contributori di immagini ASCII"
 
 #: src/main.py:123
 msgid "Icon by"
-msgstr "Icône par"
+msgstr "Icona di"
 
 #: src/main.py:128
 msgid "Code and Design Borrowed from"
-msgstr "Code et conception empruntés à"
+msgstr "Codice e design presi in prestito da"
 
 #. Translators: Do not translate "{basename(file_path)}"
 #: src/window.py:84
 msgid "\"{basename(file_path)}\" is not a valid image."
-msgstr "« {basename(file_path)} » n’est pas une image valide."
+msgstr "\"{basename(file_path)}\" non è un'immagine valida."
 
 #: src/window.py:130
 msgid "Output copied to clipboard"
-msgstr "Résultat copié dans le presse-papiers"
+msgstr "Output copiato negli appunti"
 
 #. Translators: Do not translate "{display_name}"
 #: src/window.py:167
 #, python-brace-format
 msgid "Unable to save \"{display_name}\""
-msgstr "Impossible d’enregistrer « {display_name} »"
+msgstr "Impossibile salvare \"{display_name}\""
 
 #. Translators: Do not translate "{display_name}"
 #: src/window.py:170
 #, python-brace-format
 msgid "\"{display_name}\" saved"
-msgstr "« {display_name} » enregistré"
+msgstr "\"{display_name}\" salvato"
 
 #: src/window.py:171
 msgid "Open"
-msgstr "Ouvrir"
+msgstr "Apri"
 
 #: src/file_chooser.py:38 src/file_chooser.py:64
 msgid "Select a file"
-msgstr "Sélectionnez un fichier"
+msgstr "Seleziona un file"
 
 #: src/file_chooser.py:47
 msgid "Supported image files"
-msgstr "Fichiers images pris en charge"
+msgstr "File immagine supportati"
 
 #: src/error_dialog.py:34
 msgid "The output is too large to be copied."
-msgstr "Le résultat est trop grand pour être copié."
+msgstr "L'output è troppo grande per essere copiato."
 
 #: src/error_dialog.py:35
 msgid "Please save it to a file instead or decrease the output width."
-msgstr ""
-"Veuillez l’enregistrer dans un fichier à la place, ou réduire la largeur du "
-"résultat."
+msgstr "Salvalo invece in un file o riduci la larghezza dell'output."
 
 #: src/window.blp:19
 msgid "Main Menu"
-msgstr "Menu principal"
+msgstr "Menu principale"
 
 #: src/window.blp:37
 msgid "Drag and drop images here"
-msgstr "Faites glisser vos images ici"
+msgstr "Trascina e rilascia le immagini qui"
 
 #: src/window.blp:48
 msgid "Open File…"
-msgstr "Ouvrir un fichier…"
+msgstr "Apri file…"
 
 #: src/window.blp:68
 msgid "Drop Here to Open"
-msgstr "Déposez ici pour ouvrir"
+msgstr "Rilascia qui per aprire"
 
 #: src/window.blp:125
 msgid "Output Width"
-msgstr "Largeur du résultat"
+msgstr "Larghezza Output"
 
 #: src/window.blp:126
 msgid "Width of the ASCII image in characters"
-msgstr "Largeur de l’image ASCII en caractères"
+msgstr "Larghezza dell'immagine ASCII in caratteri"
 
 #: src/window.blp:143
 msgid "Save to file"
-msgstr "Enregistrer dans un fichier"
+msgstr "Salva su file"
 
 #: src/window.blp:150
 msgid "Copy to clipboard"
-msgstr "Copier dans le presse-papiers"
+msgstr "Copia negli appunti"
 
 #: src/window.blp:167
 msgid "_Open…"
-msgstr "_Ouvrir…"
+msgstr "_Apri…"
 
 #: src/window.blp:174
 msgid "_Keyboard Shortcuts"
-msgstr "_Raccourcis clavier"
+msgstr "_Scorciatoie da tastiera"
 
 #: src/window.blp:179
 msgid "_About ASCII Images"
-msgstr "À _propos de Images ASCII"
+msgstr "_Informazioni su immagini ASCII"
 
 #: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "General"
-msgstr "Général"
+msgstr "Generale"
 
 #: src/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
 msgid "Open File"
-msgstr "Ouvrir un fichier"
+msgstr "Apri file"
 
 #: src/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr "Afficher les raccourcis"
+msgstr "Mostra scorciatoie"
 
 #: src/gtk/help-overlay.blp:24
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr "Quitter"
+msgstr "Esci"

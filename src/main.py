@@ -103,8 +103,7 @@ class AsciiimagesApplication(Adw.Application):
         # This is a Python list: Add your string to the list (separated by a comma)
         devs_list = ['gregorni https://gitlab.com/gregorni']
         # This is a string: Add your name to the string (separated by a newline '\n')
-        translators_list = 'gregorni https://gitlab.com/gregorni\nIrénée Thirion\nFyodor Sobolev https://github.com/fsobolev'
-
+        translators_list = 'gregorni https://gitlab.com/gregorni\nIrénée Thirion\nFyodor Sobolev https://github.com/fsobolev\nAlbano Battistella https://gitlab.com/albanobattistella'
         
         """Callback for the app.about action."""
         about = Adw.AboutWindow(transient_for=self.props.active_window,
