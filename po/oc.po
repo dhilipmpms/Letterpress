@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: asciiimages\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-10 01:47+0200\n"
+"POT-Creation-Date: 2023-04-10 02:01+0200\n"
 "PO-Revision-Date: 2023-04-01 15:12+0200\n"
 "Last-Translator: Quentin PAGÈS\n"
 "Language-Team: \n"
@@ -35,7 +35,7 @@ msgstr ""
 "image;ascii;convert;conversion;text;imatge;ascii;art;convertir;conversion;"
 "tèxte;"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:8 src/main.py:113
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:8 src/main.py:112
 msgid "ASCII Images Contributors"
 msgstr "Contributors d’Imatges ASCII"
 
@@ -92,15 +92,15 @@ msgstr "Ajustar la largor de la sortida"
 msgid "First Release! 🎉"
 msgstr "Primièra version !"
 
-#: src/main.py:117
+#: src/main.py:116
 msgid "Copyright © 2023 ASCII Images Contributors"
 msgstr "Copyright © 2023 Los contributors d’ASCII Images"
 
-#: src/main.py:124
+#: src/main.py:123
 msgid "Icon by"
 msgstr "Icòna per"
 
-#: src/main.py:129
+#: src/main.py:128
 msgid "Code and Design Borrowed from"
 msgstr "Còdi e design manlevats de"
 
