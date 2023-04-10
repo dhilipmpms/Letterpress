@@ -79,6 +79,18 @@
   <project_group>GNOME</project_group>
   
   <releases>
+    <release version="1.2.0" date="2023-04-10">
+      <description>
+        <ul>
+          <li>Added French translation</li>
+          <li>Added Russian translation</li>
+          <li>Added Occitan translation</li>
+          <li>Added Italian translation</li>
+          <li>Fixed "Open with…" functionality</li>
+          <li>The app now remembers window size and state</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.0.1" date="2023-03-25">
       <description>
         <p>First Release! 🎉</p>
