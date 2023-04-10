@@ -31,7 +31,7 @@ class AsciiimagesApplication(Adw.Application):
 
     def __init__(self):
         super().__init__(application_id='io.gitlab.gregorni.ASCIIImages',
-                         flags=Gio.ApplicationFlags.FLAGS_NONE)
+                         flags=Gio.ApplicationFlags.HANDLES_COMMAND_LINE)
         self.create_action('quit', self.__quit, ['<primary>q'])
         self.create_action('about', self.on_about_action)
         self.create_action('open-file', self.__open_file, ['<primary>o'])
