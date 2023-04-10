@@ -31,7 +31,7 @@ msgstr "Bilder in ASCII-Zeichen umwandeln"
 #: data/io.gitlab.gregorni.ASCIIImages.desktop.in:13
 msgid "image;ascii;convert;conversion;text;"
 msgstr ""
-"image;ascii;convert;conversion;text;bild;ascii;konvertieren;konversion;"
+"image;ascii;convert;conversion;text;bild;konvertieren;konversion;"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:8 src/main.py:112
 msgid "ASCII Images Contributors"
