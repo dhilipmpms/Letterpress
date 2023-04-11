@@ -17,7 +17,7 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-from gi.repository import Gtk, Adw
+from gi.repository import Gtk
 
 class ErrorDialog():
     
