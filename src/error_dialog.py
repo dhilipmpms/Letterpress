@@ -1,4 +1,4 @@
-# file_chooser.py
+# error_dialog.py
 #
 # Copyright 2023 ASCII Images Contributors
 #
