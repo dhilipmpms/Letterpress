@@ -56,8 +56,6 @@ class AsciiimagesWindow(Adw.ApplicationWindow):
                            Gio.SettingsBindFlags.DEFAULT)
         self.settings.bind('is-maximized', self, 'maximized',
                            Gio.SettingsBindFlags.DEFAULT)
-        self.settings.bind('is-fullscreen', self, 'fullscreened',
-                           Gio.SettingsBindFlags.DEFAULT)
 
         self.settings.bind('output-width', self.width_spin, 'value',
                            Gio.SettingsBindFlags.DEFAULT)
