@@ -22,7 +22,7 @@ from gi.repository import Gtk
 class ErrorDialog():
     
     @staticmethod
-    def too_large(parent, *args):
+    def too_large(parent):
         
         def __on_response(_dialog, response):
             _dialog.close()
