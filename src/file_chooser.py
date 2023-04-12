@@ -28,7 +28,6 @@ class FileChooser:
 
             """ Run if the user selects a file. """
             if response == Gtk.ResponseType.ACCEPT:
-                file = _dialog.get_file()
                 parent.check_is_image(_dialog.get_file())
                     
             else:
