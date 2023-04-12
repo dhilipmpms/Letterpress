@@ -26,3 +26,4 @@ If you want to propose a Merge Request, please open an issue first so that the i
 ## Code of Conduct
 
 This project follows the [GNOME Code of Conduct](https://wiki.gnome.org/Foundation/CodeOfConduct)
+

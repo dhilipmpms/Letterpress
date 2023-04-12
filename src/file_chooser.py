@@ -69,3 +69,4 @@ class FileChooser:
         dialog.connect('response', __on_response)
         dialog.set_current_name('output.txt')
         dialog.show()
+

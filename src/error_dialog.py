@@ -17,24 +17,18 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-from gi.repository import Gtk
+from gi.repository import Adw
 
 class ErrorDialog():
     
     @staticmethod
     def too_large(parent):
         
-        def __on_response(_dialog, response):
-            _dialog.close()
-        
-        # Replace with Gtk.AlertDialog for Gtk 4.10
-        dialog = Gtk.MessageDialog(
+        dialog = Adw.MessageDialog(
             transient_for=parent,
-            buttons=Gtk.ButtonsType(1),
-            text=_('The output is too large to be copied.'),
-            secondary_text=_('Please save it to a file instead or decrease the output width.'),
+            heading=_('The output is too large to be copied.'),
+            body=_('Please save it to a file instead or decrease the output width.'),
         )
-        
-        dialog.connect('response', __on_response)
+        dialog.add_response('ok', _('_OK'))
+        dialog.present()
 
-        dialog.show()

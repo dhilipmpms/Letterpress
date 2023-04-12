@@ -189,3 +189,4 @@ class AsciiimagesWindow(Adw.ApplicationWindow):
     
     def __on_leave(self, *args):
         self.main_stack.set_visible_child_name(self.previous_stack)
+
