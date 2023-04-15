@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: asciiimages\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-10 02:01+0200\n"
+"POT-Creation-Date: 2023-04-15 17:53+0200\n"
 "PO-Revision-Date: 2023-03-27 02:35+0300\n"
 "Last-Translator: Fyodor Sobolev\n"
 "Language-Team: \n"
@@ -34,7 +34,7 @@ msgstr ""
 "image;ascii;convert;conversion;text;изображение;ascii;конвертация;конверсия;"
 "текст;"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:8 src/main.py:112
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:8 src/main.py:116
 msgid "ASCII Images Contributors"
 msgstr "Разработчики ASCII Images"
 
@@ -87,62 +87,90 @@ msgstr "Сохранить результат"
 msgid "Adjust output width"
 msgstr "Изменить ширину вывода"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:84
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:85
+msgid "Added French translation"
+msgstr ""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:86
+msgid "Added Russian translation"
+msgstr ""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:87
+msgid "Added Occitan translation"
+msgstr ""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:88
+msgid "Added Italian translation"
+msgstr ""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:89
+msgid "Fixed \"Open with…\" functionality"
+msgstr ""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:90
+msgid "The app now remembers window size and state"
+msgstr ""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:96
 msgid "First Release! 🎉"
 msgstr "Первый выпуск! 🎉"
 
-#: src/main.py:116
+#: src/main.py:120
 msgid "Copyright © 2023 ASCII Images Contributors"
 msgstr "Copyright © 2023 Разработчики ASCII Images"
 
-#: src/main.py:123
+#: src/main.py:127
 msgid "Icon by"
 msgstr "Автор иконки"
 
-#: src/main.py:128
+#: src/main.py:132
 msgid "Code and Design Borrowed from"
 msgstr "Код и дизайн позаимствованы из"
 
 #. Translators: Do not translate "{basename(file_path)}"
-#: src/window.py:84
+#: src/window.py:83
 msgid "\"{basename(file_path)}\" is not a valid image."
 msgstr "\"{basename(file_path)}\" не является подходящим изображением."
 
-#: src/window.py:130
+#: src/window.py:129
 msgid "Output copied to clipboard"
 msgstr "Результат скопирован в буфер обмена"
 
 #. Translators: Do not translate "{display_name}"
-#: src/window.py:167
+#: src/window.py:166
 #, python-brace-format
 msgid "Unable to save \"{display_name}\""
 msgstr "Невозможно сохранить \"{display_name}\""
 
 #. Translators: Do not translate "{display_name}"
-#: src/window.py:170
+#: src/window.py:169
 #, python-brace-format
 msgid "\"{display_name}\" saved"
 msgstr "\"{display_name}\" сохранено"
 
-#: src/window.py:171
+#: src/window.py:170
 msgid "Open"
 msgstr "Открыть"
 
-#: src/file_chooser.py:38 src/file_chooser.py:64
+#: src/file_chooser.py:37 src/file_chooser.py:63
 msgid "Select a file"
 msgstr "Выбрать файл"
 
-#: src/file_chooser.py:47
+#: src/file_chooser.py:46
 msgid "Supported image files"
 msgstr "Поддерживаемые форматы изображений"
 
-#: src/error_dialog.py:34
+#: src/error_dialog.py:29
 msgid "The output is too large to be copied."
 msgstr "Результат слишком большой, копирование не удалось."
 
-#: src/error_dialog.py:35
+#: src/error_dialog.py:30
 msgid "Please save it to a file instead or decrease the output width."
 msgstr "Пожалуйста, сохраните его в файл или уменьшите ширину."
+
+#: src/error_dialog.py:32
+msgid "_OK"
+msgstr ""
 
 #: src/window.blp:19
 msgid "Main Menu"
