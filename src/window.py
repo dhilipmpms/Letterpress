@@ -29,6 +29,7 @@ import subprocess
 class AsciiimagesWindow(Adw.ApplicationWindow):
     __gtype_name__ = 'AsciiimagesWindow'
     
+    menu_button = Gtk.Template.Child()
     toast_overlay = Gtk.Template.Child()
     main_stack = Gtk.Template.Child()
     spinner = Gtk.Template.Child()

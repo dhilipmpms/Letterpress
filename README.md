@@ -3,7 +3,7 @@
 ASCII Images uses [jp2a](https://github.com/Talinx/jp2a) to turn your pictures into images made up of ASCII Characters.
 
 <div align="center">
-  <img height='500' src="data/screenshots/saved.png">
+  <img src="data/screenshots/saved.png">
 </div>
 
 ## Installation

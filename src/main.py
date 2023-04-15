@@ -33,6 +33,7 @@ class AsciiimagesApplication(Adw.Application):
         super().__init__(application_id='io.gitlab.gregorni.ASCIIImages',
                          flags=Gio.ApplicationFlags.HANDLES_COMMAND_LINE)
         self.create_action('quit', self.__quit, ['<primary>q'])
+        self.create_action('open-menu', self.__open_menu, ['F10'])
         self.create_action('about', self.on_about_action)
         self.create_action('open-file', self.__open_file, ['<primary>o'])
         self.create_action('open-output', self.__open_output, param=GLib.VariantType('s'))
@@ -76,6 +77,9 @@ class AsciiimagesApplication(Adw.Application):
                                               None)
         except Exception as e:
             print(f'Error: {e}')
+
+    def __open_menu(self, *args):
+        self.props.active_window.menu_button.activate()
 
     def do_command_line(self, command_line):
         args = command_line.get_arguments()
