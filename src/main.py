@@ -34,7 +34,7 @@ class AsciiimagesApplication(Adw.Application):
                          flags=Gio.ApplicationFlags.HANDLES_COMMAND_LINE)
         self.create_action('quit', self.__quit, ['<primary>q'])
         self.create_action('open-menu', self.__open_menu, ['F10'])
-        self.create_action('about', self.on_about_action)
+        self.create_action('about', self.__on_about_action)
         self.create_action('open-file', self.__open_file, ['<primary>o'])
         self.create_action('open-output', self.__open_output, param=GLib.VariantType('s'))
         self.file = None
@@ -93,7 +93,7 @@ class AsciiimagesApplication(Adw.Application):
         if win:
             win.destroy()
 
-    def on_about_action(self, *args):
+    def __on_about_action(self, *args):
     
         """ If you contributed code or translations,
             feel free to add yourself to the appropriate list.
