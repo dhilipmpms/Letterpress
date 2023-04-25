@@ -1,6 +1,6 @@
-# ASCII Images
+# Letterpress
 
-ASCII Images uses [jp2a](https://github.com/Talinx/jp2a) to turn your pictures into images made up of ASCII Characters.
+Letterpress uses [jp2a](https://github.com/Talinx/jp2a) to turn your pictures into images made up of ASCII Characters.
 
 <div align="center">
   <img src="data/screenshots/saved.png">
@@ -18,7 +18,7 @@ The easiest way to work on this project is by cloning it with GNOME Builder:
 
 1. Install and open [GNOME Builder](https://flathub.org/apps/details/org.gnome.Builder)
 2. Select "Clone Repository..."
-3. Clone `https://gitlab.com/gregorni/asciiimages.git` (or your fork)
+3. Clone `https://gitlab.com/gregorni/letterpress.git` (or your fork)
 4. Run the project with the ▶ button at the top, or by pressing `Ctrl`+`Shift`+`Space`.
 
 If you want to propose a Merge Request, please open an issue first so that the idea can be discussed.

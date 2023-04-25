@@ -1,6 +1,6 @@
 # window.py
 #
-# Copyright 2023 ASCII Images Contributors
+# Copyright 2023 Letterpress Contributors
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -26,8 +26,8 @@ from filecmp import cmp
 import subprocess
 
 @Gtk.Template(resource_path='/io/gitlab/gregorni/ASCIIImages/window.ui')
-class AsciiimagesWindow(Adw.ApplicationWindow):
-    __gtype_name__ = 'AsciiimagesWindow'
+class LetterpressWindow(Adw.ApplicationWindow):
+    __gtype_name__ = 'LetterpressWindow'
     
     menu_button = Gtk.Template.Child()
     toast_overlay = Gtk.Template.Child()

@@ -1,8 +1,8 @@
 #!@PYTHON@
 
-# asciiimages.in
+# letterpress.in
 #
-# Copyright 2023 gregorni
+# Copyright 2023 Letterpress Contributors
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -31,16 +31,16 @@ localedir = '@localedir@'
 
 sys.path.insert(1, pkgdatadir)
 signal.signal(signal.SIGINT, signal.SIG_DFL)
-locale.bindtextdomain('asciiimages', localedir)
-locale.textdomain('asciiimages')
-gettext.install('asciiimages', localedir)
+locale.bindtextdomain('letterpress', localedir)
+locale.textdomain('letterpress')
+gettext.install('letterpress', localedir)
 
 if __name__ == '__main__':
     import gi
 
     from gi.repository import Gio
-    resource = Gio.Resource.load(os.path.join(pkgdatadir, 'asciiimages.gresource'))
+    resource = Gio.Resource.load(os.path.join(pkgdatadir, 'letterpress.gresource'))
     resource._register()
 
-    from asciiimages import main
+    from letterpress import main
     sys.exit(main.main(VERSION))

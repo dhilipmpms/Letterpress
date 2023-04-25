@@ -1,6 +1,6 @@
 # main.py
 #
-# Copyright 2023 ASCII Images Contributors
+# Copyright 2023 Letterpress Contributors
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -24,9 +24,9 @@ gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
 
 from gi.repository import Gtk, Gio, Adw, GLib
-from .window import AsciiimagesWindow
+from .window import LetterpressWindow
 
-class AsciiimagesApplication(Adw.Application):
+class LetterpressApplication(Adw.Application):
     """The main application singleton class."""
 
     def __init__(self):
@@ -47,7 +47,7 @@ class AsciiimagesApplication(Adw.Application):
         """
         win = self.props.active_window
         if not win:
-            win = AsciiimagesWindow(application=self)
+            win = LetterpressWindow(application=self)
         win.present()
         if self.file is not None:
             win.check_is_image(Gio.File.new_for_path(self.file))
@@ -111,22 +111,18 @@ class AsciiimagesApplication(Adw.Application):
         
         """Callback for the app.about action."""
         about = Adw.AboutWindow(transient_for=self.props.active_window,
-                                application_name='ASCII Images',
+                                application_name=_('Letterpress'),
                                 application_icon='io.gitlab.gregorni.ASCIIImages',
-                                developer_name=_('ASCII Images Contributors'),
+                                developer_name=_('Letterpress Contributors'),
                                 version='1.2.0',
                                 developers=devs_list,
+                                artists=['Brage Fuglseth'],
                                 translator_credits=translators_list,
-                                copyright=_('Copyright © 2023 ASCII Images Contributors'),
+                                copyright=_('Copyright © 2023 Letterpress Contributors'),
                                 license_type=Gtk.License.GPL_3_0,
-                                website='https://gitlab.com/gregorni/ASCIIImages',
-                                issue_url='https://gitlab.com/gregorni/ASCIIImages/-/issues',
-                                support_url='https://matrix.to/#/#ASCIIImages:matrix.org')
-                                
-        about.add_credit_section(
-            _('Icon by'),
-            ['Jakub Steiner https://jimmac.eu']
-        )
+                                website='https://gitlab.com/gregorni/Letterpress',
+                                issue_url='https://gitlab.com/gregorni/Letterpress/-/issues',
+                                support_url='https://matrix.to/#/#gregorni-apps:matrix.org')
         
         about.add_acknowledgement_section(
             _('Code and Design Borrowed from'),
@@ -162,6 +158,6 @@ class AsciiimagesApplication(Adw.Application):
 
 def main(version):
     """The application's entry point."""
-    app = AsciiimagesApplication()
+    app = LetterpressApplication()
     return app.run(sys.argv)
 

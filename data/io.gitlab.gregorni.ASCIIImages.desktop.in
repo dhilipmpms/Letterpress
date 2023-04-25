@@ -1,7 +1,8 @@
 [Desktop Entry]
-Name=ASCII Images
+# Translators: Translate as "Letterpress"
+Name=Letterpress
 Comment=Convert images into ASCII characters
-Exec=asciiimages %u
+Exec=letterpress %u
 Icon=io.gitlab.gregorni.ASCIIImages
 Terminal=false
 Type=Application

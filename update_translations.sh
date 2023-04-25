@@ -6,7 +6,7 @@ if [ -d "$BUILD_DIR" ]; then
 fi
 
 meson translation-build
-meson compile -C translation-build asciiimages-pot
-meson compile -C translation-build asciiimages-update-po
+meson compile -C translation-build letterpress-pot
+meson compile -C translation-build letterpress-update-po
 
 rm -r translation-build

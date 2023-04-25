@@ -1,1 +1,1 @@
-i18n.gettext('asciiimages', preset: 'glib')
+i18n.gettext('letterpress', preset: 'glib')

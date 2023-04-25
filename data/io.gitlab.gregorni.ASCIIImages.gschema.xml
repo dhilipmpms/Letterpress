@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schemalist gettext-domain="asciiimages">
+<schemalist gettext-domain="letterpress">
 	<schema id="io.gitlab.gregorni.ASCIIImages" path="/io/gitlab/gregorni/ASCIIImages/">
 	  <key name="width" type="i">
       <default>640</default>

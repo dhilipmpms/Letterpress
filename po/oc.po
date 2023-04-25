@@ -1,13 +1,13 @@
-# Occitan translation for the asciiimages' package.
-# Copyright (C) 2023 THE asciiimages' COPYRIGHT HOLDER
-# This file is distributed under the same license as the asciiimages package.
+# Occitan translation for the letterpress' package.
+# Copyright (C) 2023 THE letterpress' COPYRIGHT HOLDER
+# This file is distributed under the same license as the letterpress package.
 # Quentin PAGÈS, 2023.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: asciiimages\n"
+"Project-Id-Version: letterpress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-15 17:53+0200\n"
+"POT-Creation-Date: 2023-04-25 17:32+0200\n"
 "PO-Revision-Date: 2023-04-01 15:12+0200\n"
 "Last-Translator: Quentin PAGÈS\n"
 "Language-Team: \n"
@@ -17,27 +17,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.2.2\n"
 
-#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:3
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:7 src/window.blp:36
-msgid "ASCII Images"
-msgstr "Imatges ASCII"
-
+#. Translators: Translate as "Letterpress"
 #: data/io.gitlab.gregorni.ASCIIImages.desktop.in:4
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:7 src/main.py:114
+#: src/window.blp:36
+msgid "Letterpress"
+msgstr "Letterpress"
+
+#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:5
 msgid "Convert images into ASCII characters"
 msgstr "Convertir d’imatges en caractèrs ASCII"
 
 #. Translators: These are search terms for the application;
 #. the translation should contain the original list AND the translated strings.
 #. The list must end with a semicolon.
-#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:13
+#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:14
 msgid "image;ascii;convert;conversion;text;"
-msgstr ""
-"image;ascii;convert;conversion;text;imatge;ascii;art;convertir;conversion;"
-"tèxte;"
+msgstr "image;ascii;convert;conversion;text;imatge;art;convertir;tèxte;"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:8 src/main.py:116
-msgid "ASCII Images Contributors"
-msgstr "Contributors d’Imatges ASCII"
+msgid "Letterpress Contributors"
+msgstr "Contributors de Letterpress"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:9
 msgid "Turn images into text"
@@ -45,10 +45,10 @@ msgstr "Transformar d’imatges en tèxt"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:12
 msgid ""
-"ASCII Images uses jp2a to convert images into ASCII characters. You can save "
+"Letterpress uses jp2a to convert images into ASCII characters. You can save "
 "the output to a file, copy it, and even change its resolution!"
 msgstr ""
-"Imatges ASCII utiliza jp2a per convertir los imatges en caractèrs ASCII. "
+"Letterpress utiliza jp2a per convertir los imatges en caractèrs ASCII. "
 "Podètz enregistrar lo resultat dins un fichièr, lo copiar e quitament "
 "cambiar sa resolucion !"
 
@@ -116,15 +116,11 @@ msgstr ""
 msgid "First Release! 🎉"
 msgstr "Primièra version !"
 
-#: src/main.py:120
-msgid "Copyright © 2023 ASCII Images Contributors"
-msgstr "Copyright © 2023 Los contributors d’ASCII Images"
+#: src/main.py:121
+msgid "Copyright © 2023 Letterpress Contributors"
+msgstr "Copyright © 2023 Los contributors de Letterpress"
 
-#: src/main.py:127
-msgid "Icon by"
-msgstr "Icòna per"
-
-#: src/main.py:132
+#: src/main.py:128
 msgid "Code and Design Borrowed from"
 msgstr "Còdi e design manlevats de"
 
@@ -173,7 +169,7 @@ msgstr ""
 
 #: src/error_dialog.py:32
 msgid "_OK"
-msgstr ""
+msgstr "_OK"
 
 #: src/window.blp:19
 msgid "Main Menu"
@@ -191,33 +187,33 @@ msgstr "Dobrir un fichièr…"
 msgid "Drop Here to Open"
 msgstr "Depausatz aicí per dobrir"
 
-#: src/window.blp:125
+#: src/window.blp:126
 msgid "Output Width"
 msgstr "Largor de la sortida"
 
-#: src/window.blp:126
+#: src/window.blp:127
 msgid "Width of the ASCII image in characters"
 msgstr "Largor en caractèrs de l’imatge en ASCII"
 
-#: src/window.blp:143
+#: src/window.blp:144
 msgid "Save to file"
 msgstr "Enregistrar lo fichièr"
 
-#: src/window.blp:150
+#: src/window.blp:151
 msgid "Copy to clipboard"
 msgstr "Copiar al quichapapièrs"
 
-#: src/window.blp:167
+#: src/window.blp:168
 msgid "_Open…"
 msgstr "_Dobrir…"
 
-#: src/window.blp:174
+#: src/window.blp:175
 msgid "_Keyboard Shortcuts"
 msgstr "_Acorchis de clavièr"
 
-#: src/window.blp:179
-msgid "_About ASCII Images"
-msgstr "_A prepaus d’Imatges ASCII"
+#: src/window.blp:180
+msgid "_About Letterpress"
+msgstr ""
 
 #: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
@@ -238,3 +234,12 @@ msgstr "Afichar los acorchis"
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Sortir"
+
+#~ msgid "Icon by"
+#~ msgstr "Icòna per"
+
+#~ msgid "ASCII Images"
+#~ msgstr "Imatges ASCII"
+
+#~ msgid "_About ASCII Images"
+#~ msgstr "_A prepaus d’Imatges ASCII"

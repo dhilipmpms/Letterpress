@@ -3,7 +3,7 @@
     "runtime" : "org.gnome.Platform",
     "runtime-version" : "44",
     "sdk" : "org.gnome.Sdk",
-    "command" : "asciiimages",
+    "command" : "letterpress",
     "finish-args" : [
         "--share=ipc",
         "--socket=fallback-x11",
@@ -40,7 +40,7 @@
             ]
         },
         {
-            "name" : "asciiimages",
+            "name" : "letterpress",
             "builddir" : true,
             "buildsystem" : "meson",
             "sources" : [
