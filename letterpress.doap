@@ -4,10 +4,10 @@
          xmlns:gnome="http://api.gnome.org/doap-extensions#"
          xmlns="http://usefulinc.com/ns/doap#">
 
-  <name xml:lang="en">ASCII Images</name>
+  <name xml:lang="en">Letterpress</name>
   <shortdesc xml:lang="en">Turn images into text</shortdesc>
-  <homepage rdf:resource="https://gitlab.com/gregorni/asciiimages" />
-  <bug-database rdf:resource="https://gitlab.com/World/asciiimages/-/issues/"/>
+  <homepage rdf:resource="https://gitlab.com/gregorni/Letterpress" />
+  <bug-database rdf:resource="https://gitlab.com/gregorni/Letterpress/-/issues/"/>
   <programming-language>Python</programming-language>
 
   <platform>GTK 4</platform>

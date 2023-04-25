@@ -1,5 +1,5 @@
 pkgdatadir = join_paths(get_option('prefix'), get_option('datadir'), meson.project_name())
-moduledir = join_paths(pkgdatadir, 'asciiimages')
+moduledir = join_paths(pkgdatadir, 'letterpress')
 gnome = import('gnome')
 
 blueprints = custom_target('blueprints',
@@ -11,8 +11,8 @@ blueprints = custom_target('blueprints',
   command: [find_program('blueprint-compiler'), 'batch-compile', '@OUTPUT@', '@CURRENT_SOURCE_DIR@', '@INPUT@'],
 )
 
-gnome.compile_resources('asciiimages',
-  'asciiimages.gresource.xml',
+gnome.compile_resources('letterpress',
+  'letterpress.gresource.xml',
   gresource_bundle: true,
   install: true,
   install_dir: pkgdatadir,
@@ -28,14 +28,14 @@ conf.set('localedir', join_paths(get_option('prefix'), get_option('localedir')))
 conf.set('pkgdatadir', pkgdatadir)
 
 configure_file(
-  input: 'asciiimages.in',
-  output: 'asciiimages',
+  input: 'letterpress.in',
+  output: 'letterpress',
   configuration: conf,
   install: true,
   install_dir: get_option('bindir')
 )
 
-asciiimages_sources = [
+letterpress_sources = [
   '__init__.py',
   'main.py',
   'window.py',
@@ -43,4 +43,4 @@ asciiimages_sources = [
   'error_dialog.py',
 ]
 
-install_data(asciiimages_sources, install_dir: moduledir)
+install_data(letterpress_sources, install_dir: moduledir)

@@ -1,6 +1,6 @@
 # file_chooser.py
 #
-# Copyright 2023 ASCII Images Contributors
+# Copyright 2023 Letterpress Contributors
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by

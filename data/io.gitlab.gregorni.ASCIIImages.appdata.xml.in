@@ -4,13 +4,13 @@
 	<metadata_license>CC0-1.0</metadata_license>
 	<project_license>GPL-3.0-or-later</project_license>
   
-  <name>ASCII Images</name>
-  <developer_name>ASCII Images Contributors</developer_name>
+  <name>Letterpress</name>
+  <developer_name>Letterpress Contributors</developer_name>
   <summary>Turn images into text</summary>
   
 	<description>
 	  <p>
-	    ASCII Images uses jp2a to convert images into ASCII characters. 
+	    Letterpress uses jp2a to convert images into ASCII characters.
 	    You can save the output to a file, copy it, and even change its resolution!
 	  </p>
 	</description>
@@ -46,31 +46,31 @@
   
   <screenshots>
     <screenshot>
-      <image>https://gitlab.com/gregorni/asciiimages/-/raw/main/data/screenshots/overview.png</image>
+      <image>https://gitlab.com/gregorni/Letterpress/-/raw/main/data/screenshots/overview.png</image>
       <caption>Overview</caption>
     </screenshot>
     <screenshot>
-      <image>https://gitlab.com/gregorni/asciiimages/-/raw/main/data/screenshots/copied.png</image>
+      <image>https://gitlab.com/gregorni/Letterpress/-/raw/main/data/screenshots/copied.png</image>
       <caption>Copy output</caption>
     </screenshot>
     <screenshot>
-      <image>https://gitlab.com/gregorni/asciiimages/-/raw/main/data/screenshots/saved.png</image>
+      <image>https://gitlab.com/gregorni/Letterpress/-/raw/main/data/screenshots/saved.png</image>
       <caption>Save output</caption>
     </screenshot>
     <screenshot>
-      <image>https://gitlab.com/gregorni/asciiimages/-/raw/main/data/screenshots/width.png</image>
+      <image>https://gitlab.com/gregorni/Letterpress/-/raw/main/data/screenshots/width.png</image>
       <caption>Adjust output width</caption>
     </screenshot>
   </screenshots>
   
   <launchable type="desktop-id">io.gitlab.gregorni.ASCIIImages.desktop</launchable>
   
-  <url type="homepage">https://gitlab.com/gregorni/ASCIIImages</url>
-  <url type="bugtracker">https://gitlab.com/gregorni/ASCIIImages/-/issues</url>
-  <url type="help">https://gitlab.com/gregorni/ASCIIImages/-/issues</url>
-  <url type="vcs-browser">https://gitlab.com/gregorni/ASCIIImages</url>
-  <url type="contribute">https://gitlab.com/gregorni/ASCIIImages</url>
-  <url type="contact">https://matrix.to/#/@gregorni:hackliberty.org</url>
+  <url type="homepage">https://gitlab.com/gregorni/Letterpress</url>
+  <url type="bugtracker">https://gitlab.com/gregorni/Letterpress/-/issues</url>
+  <url type="help">https://gitlab.com/gregorni/Letterpress/-/issues</url>
+  <url type="vcs-browser">https://gitlab.com/gregorni/Letterpress</url>
+  <url type="contribute">https://gitlab.com/gregorni/Letterpress</url>
+  <url type="contact">https://matrix.to/#/#gregorni-apps:matrix.org</url>
   
   <update_contact>gregorniehl@web.de</update_contact>
   

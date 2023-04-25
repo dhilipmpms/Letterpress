@@ -1,13 +1,13 @@
-# Italian translation for the asciiimages package.
-# Copyright (C) 2023 THE asciiimages'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the asciiimages package.
+# Italian translation for the letterpress package.
+# Copyright (C) 2023 THE letterpress'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the letterpress package.
 # Albano Battistella <albano_battistella@hotmail.com>, 2023.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: asciiimages\n"
+"Project-Id-Version: letterpress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-15 17:53+0200\n"
+"POT-Creation-Date: 2023-04-25 17:32+0200\n"
 "PO-Revision-Date: 2023-03-26 14:31+0100\n"
 "Last-Translator: Albano Battistella <albano_battistella@hotmail.com>\n"
 "Language-Team: Italian <LL@li.org>\n"
@@ -16,26 +16,28 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:3
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:7 src/window.blp:36
-msgid "ASCII Images"
-msgstr "Immagini ASCII"
-
+#. Translators: Translate as "Letterpress"
 #: data/io.gitlab.gregorni.ASCIIImages.desktop.in:4
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:7 src/main.py:114
+#: src/window.blp:36
+msgid "Letterpress"
+msgstr "Letterpress"
+
+#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:5
 msgid "Convert images into ASCII characters"
 msgstr "Converti le immagini in caratteri ASCII"
 
 #. Translators: These are search terms for the application;
 #. the translation should contain the original list AND the translated strings.
 #. The list must end with a semicolon.
-#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:13
+#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:14
 msgid "image;ascii;convert;conversion;text;"
 msgstr ""
 "image;ascii;convert;conversion;text;immagine;convertire;conversione;testo;"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:8 src/main.py:116
-msgid "ASCII Images Contributors"
-msgstr "Contributori di immagini ASCII"
+msgid "Letterpress Contributors"
+msgstr "Contributori di Letterpress"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:9
 msgid "Turn images into text"
@@ -43,10 +45,10 @@ msgstr "Trasforma le immagini in testo"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:12
 msgid ""
-"ASCII Images uses jp2a to convert images into ASCII characters. You can save "
+"Letterpress uses jp2a to convert images into ASCII characters. You can save "
 "the output to a file, copy it, and even change its resolution!"
 msgstr ""
-"Le immagini ASCII usano jp2a per convertire le immagini in caratteri ASCII. "
+"Le Letterpress usano jp2a per convertire le immagini in caratteri ASCII. "
 "Puoi salvare l'output in un file, copiarlo e cambiarlo anche la sua "
 "risoluzione!"
 
@@ -114,15 +116,11 @@ msgstr ""
 msgid "First Release! 🎉"
 msgstr "Primo rilascio! 🎉"
 
-#: src/main.py:120
-msgid "Copyright © 2023 ASCII Images Contributors"
-msgstr "Copyright © 2023 Contributori di immagini ASCII"
+#: src/main.py:121
+msgid "Copyright © 2023 Letterpress Contributors"
+msgstr "Copyright © 2023 Contributori di Letterpress"
 
-#: src/main.py:127
-msgid "Icon by"
-msgstr "Icona di"
-
-#: src/main.py:132
+#: src/main.py:128
 msgid "Code and Design Borrowed from"
 msgstr "Codice e design presi in prestito da"
 
@@ -169,7 +167,7 @@ msgstr "Salvalo invece in un file o riduci la larghezza dell'output."
 
 #: src/error_dialog.py:32
 msgid "_OK"
-msgstr ""
+msgstr "_OK"
 
 #: src/window.blp:19
 msgid "Main Menu"
@@ -187,33 +185,33 @@ msgstr "Apri file…"
 msgid "Drop Here to Open"
 msgstr "Rilascia qui per aprire"
 
-#: src/window.blp:125
+#: src/window.blp:126
 msgid "Output Width"
 msgstr "Larghezza Output"
 
-#: src/window.blp:126
+#: src/window.blp:127
 msgid "Width of the ASCII image in characters"
 msgstr "Larghezza dell'immagine ASCII in caratteri"
 
-#: src/window.blp:143
+#: src/window.blp:144
 msgid "Save to file"
 msgstr "Salva su file"
 
-#: src/window.blp:150
+#: src/window.blp:151
 msgid "Copy to clipboard"
 msgstr "Copia negli appunti"
 
-#: src/window.blp:167
+#: src/window.blp:168
 msgid "_Open…"
 msgstr "_Apri…"
 
-#: src/window.blp:174
+#: src/window.blp:175
 msgid "_Keyboard Shortcuts"
 msgstr "_Scorciatoie da tastiera"
 
-#: src/window.blp:179
-msgid "_About ASCII Images"
-msgstr "_Informazioni su immagini ASCII"
+#: src/window.blp:180
+msgid "_About Letterpress"
+msgstr ""
 
 #: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
@@ -234,3 +232,12 @@ msgstr "Mostra scorciatoie"
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Esci"
+
+#~ msgid "Icon by"
+#~ msgstr "Icona di"
+
+#~ msgid "ASCII Images"
+#~ msgstr "Immagini ASCII"
+
+#~ msgid "_About ASCII Images"
+#~ msgstr "_Informazioni su immagini ASCII"
