@@ -1,0 +1,23 @@
+include: https://gitlab.gnome.org/GNOME/citemplates/raw/master/flatpak/flatpak_ci_initiative.yml
+
+.vars:
+  variables:
+    MANIFEST_PATH: io.gitlab.gregorni.ASCIIImages.json
+    FLATPAK_MODULE: letterpress
+    APP_ID: io.gitlab.gregorni.ASCIIImages
+    RUNTIME_REPO: https://nightly.gnome.org/gnome-nightly.flatpakrepo
+    BUNDLE: letterpress.flatpak
+
+# Build Flatpak for x86_64
+flatpak@x86_64:
+  stage: build
+  extends:
+    - .flatpak@x86_64
+    - .vars
+
+# Build Flatpak for aarch64
+flatpak@aarch64:
+  stage: build
+  extends:
+    - .flatpak@aarch64
+    - .vars
