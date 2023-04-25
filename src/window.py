@@ -79,8 +79,8 @@ class LetterpressWindow(Adw.ApplicationWindow):
     def __on_open_error(self, error, file_path):
         if error:
             print(f'Unable to open file, {error}')
-            # Translators: Do not translate "{basename(file_path)}"
-            self.toast_overlay.add_toast(Adw.Toast.new(_(f'"{basename(file_path)}" is not a valid image.')))
+            # Translators: Do not translate "{basename}"
+            self.toast_overlay.add_toast(Adw.Toast.new(_('"{basename}" is not a valid image.').format(basename=basename(file_path))))
             self.main_stack.set_visible_child_name(self.previous_stack)
             
     def check_is_image(self, file):
@@ -163,10 +163,10 @@ class LetterpressWindow(Adw.ApplicationWindow):
         if not res:
             print(f'Unable to save {display_name}')
             # Translators: Do not translate "{display_name}"
-            self.toast_overlay.add_toast(Adw.Toast(title=_(f'Unable to save "{display_name}"')))
+            self.toast_overlay.add_toast(Adw.Toast(title=_('Unable to save "{display_name}"').format(display_name=display_name)))
         else:
             # Translators: Do not translate "{display_name}"
-            toast = Adw.Toast(title=_(f'"{display_name}" saved'))
+            toast = Adw.Toast(title=_('"{display_name}" saved').format(display_name=display_name))
             toast.set_button_label(_('Open'))
             toast.props.action_name = 'app.open-output'
             toast.props.action_target = GLib.Variant('s', file.get_path())

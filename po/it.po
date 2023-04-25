@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: letterpress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-25 17:32+0200\n"
+"POT-Creation-Date: 2023-04-25 23:17+0300\n"
 "PO-Revision-Date: 2023-03-26 14:31+0100\n"
 "Last-Translator: Albano Battistella <albano_battistella@hotmail.com>\n"
 "Language-Team: Italian <LL@li.org>\n"
@@ -51,26 +51,6 @@ msgstr ""
 "Le Letterpress usano jp2a per convertire le immagini in caratteri ASCII. "
 "Puoi salvare l'output in un file, copiarlo e cambiarlo anche la sua "
 "risoluzione!"
-
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:29
-msgid "image"
-msgstr "Immagine"
-
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:30
-msgid "ascii"
-msgstr "ascii"
-
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:31
-msgid "convert"
-msgstr "converti"
-
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:32
-msgid "conversion"
-msgstr "conversione"
-
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:33
-msgid "text"
-msgstr "testo"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:50
 msgid "Overview"
@@ -124,10 +104,11 @@ msgstr "Copyright © 2023 Contributori di Letterpress"
 msgid "Code and Design Borrowed from"
 msgstr "Codice e design presi in prestito da"
 
-#. Translators: Do not translate "{basename(file_path)}"
+#. Translators: Do not translate "{basename}"
 #: src/window.py:83
-msgid "\"{basename(file_path)}\" is not a valid image."
-msgstr "\"{basename(file_path)}\" non è un'immagine valida."
+#, python-brace-format
+msgid "\"{basename}\" is not a valid image."
+msgstr "\"{basename}\" non è un'immagine valida."
 
 #: src/window.py:129
 msgid "Output copied to clipboard"
@@ -232,6 +213,21 @@ msgstr "Mostra scorciatoie"
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Esci"
+
+#~ msgid "image"
+#~ msgstr "Immagine"
+
+#~ msgid "ascii"
+#~ msgstr "ascii"
+
+#~ msgid "convert"
+#~ msgstr "converti"
+
+#~ msgid "conversion"
+#~ msgstr "conversione"
+
+#~ msgid "text"
+#~ msgstr "testo"
 
 #~ msgid "Icon by"
 #~ msgstr "Icona di"

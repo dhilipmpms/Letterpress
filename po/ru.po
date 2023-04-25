@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: letterpress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-25 17:32+0200\n"
-"PO-Revision-Date: 2023-03-27 02:35+0300\n"
+"POT-Creation-Date: 2023-04-25 23:17+0300\n"
+"PO-Revision-Date: 2023-04-25 23:18+0300\n"
 "Last-Translator: Fyodor Sobolev\n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -33,8 +33,7 @@ msgstr "Конвертируйте изображения в символы ASCI
 #: data/io.gitlab.gregorni.ASCIIImages.desktop.in:14
 msgid "image;ascii;convert;conversion;text;"
 msgstr ""
-"image;ascii;convert;conversion;text;изображение;конвертация;конверсия;"
-"текст;"
+"image;ascii;convert;conversion;text;изображение;конвертация;конверсия;текст;"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:8 src/main.py:116
 msgid "Letterpress Contributors"
@@ -52,26 +51,6 @@ msgstr ""
 "Letterpress использует jp2a для конвертирования изображений в символы ASCII. "
 "Вы можете сохранить результат в файл, копировать, и даже менять его "
 "разрешение!"
-
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:29
-msgid "image"
-msgstr "изображение"
-
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:30
-msgid "ascii"
-msgstr "ascii"
-
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:31
-msgid "convert"
-msgstr "конвертация"
-
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:32
-msgid "conversion"
-msgstr "конверсия"
-
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:33
-msgid "text"
-msgstr "текст"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:50
 msgid "Overview"
@@ -125,10 +104,11 @@ msgstr "Copyright © 2023 Разработчики Letterpress"
 msgid "Code and Design Borrowed from"
 msgstr "Код и дизайн позаимствованы из"
 
-#. Translators: Do not translate "{basename(file_path)}"
+#. Translators: Do not translate "{basename}"
 #: src/window.py:83
-msgid "\"{basename(file_path)}\" is not a valid image."
-msgstr "\"{basename(file_path)}\" не является корректным файлом изображения."
+#, python-brace-format
+msgid "\"{basename}\" is not a valid image."
+msgstr "\"{basename}\" не является корректным файлом изображения."
 
 #: src/window.py:129
 msgid "Output copied to clipboard"
@@ -233,3 +213,18 @@ msgstr "Показать комбинации клавиш"
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Выход"
+
+#~ msgid "image"
+#~ msgstr "изображение"
+
+#~ msgid "ascii"
+#~ msgstr "ascii"
+
+#~ msgid "convert"
+#~ msgstr "конвертация"
+
+#~ msgid "conversion"
+#~ msgstr "конверсия"
+
+#~ msgid "text"
+#~ msgstr "текст"
