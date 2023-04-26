@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: letterpress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-25 17:32+0200\n"
+"POT-Creation-Date: 2023-04-25 23:17+0300\n"
 "PO-Revision-Date: 2023-03-26 12:57+0200\n"
 "Last-Translator: Irénée Thirion <irenee.thirion@e.email>\n"
 "Language-Team: \n"
@@ -52,26 +52,6 @@ msgstr ""
 "Letterpress utilise jp2a pour convertir des images en caractères ASCII. Vous "
 "pouvez enregistrer le résultat dans un fichier, le copier, et même modifier "
 "sa résolution !"
-
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:29
-msgid "image"
-msgstr "image"
-
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:30
-msgid "ascii"
-msgstr "ascii"
-
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:31
-msgid "convert"
-msgstr "convertir"
-
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:32
-msgid "conversion"
-msgstr "conversion"
-
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:33
-msgid "text"
-msgstr "texte"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:50
 msgid "Overview"
@@ -125,10 +105,11 @@ msgstr "Copyright © 2023 Les contributeurs de Letterpress"
 msgid "Code and Design Borrowed from"
 msgstr "Code et conception empruntés à"
 
-#. Translators: Do not translate "{basename(file_path)}"
+#. Translators: Do not translate "{basename}"
 #: src/window.py:83
-msgid "\"{basename(file_path)}\" is not a valid image."
-msgstr "« {basename(file_path)} » n’est pas une image valide."
+#, python-brace-format
+msgid "\"{basename}\" is not a valid image."
+msgstr "« {basename} » n’est pas une image valide."
 
 #: src/window.py:129
 msgid "Output copied to clipboard"
@@ -235,6 +216,21 @@ msgstr "Afficher les raccourcis"
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Quitter"
+
+#~ msgid "image"
+#~ msgstr "image"
+
+#~ msgid "ascii"
+#~ msgstr "ascii"
+
+#~ msgid "convert"
+#~ msgstr "convertir"
+
+#~ msgid "conversion"
+#~ msgstr "conversion"
+
+#~ msgid "text"
+#~ msgstr "texte"
 
 #~ msgid "Icon by"
 #~ msgstr "Icône par"
