@@ -4,7 +4,7 @@ using Adw 1;
 template LetterpressWindow : Adw.ApplicationWindow {
   title: "Letterpress";
   width-request: 300;
-  height-request: 400;
+  height-request: 300;
   default-width: 800;
   default-height: 600;
 
@@ -25,8 +25,6 @@ template LetterpressWindow : Adw.ApplicationWindow {
       child: 
       Box {
         orientation: vertical;
-        margin-top: 24;
-        margin-bottom: 36;
 
         Stack main_stack {
           transition-type: crossfade;
@@ -37,10 +35,14 @@ template LetterpressWindow : Adw.ApplicationWindow {
               Box {
                 orientation: vertical;
                 spacing: 12;
+                margin-top: 24;
+                margin-bottom: 36;
                 halign: center;
                 valign: center;
 
-                Picture welcome_illustration {}
+                Picture welcome_illustration {
+                  height-request: 100;
+                }
 
                 Label {
                   label: _("Letterpress");
