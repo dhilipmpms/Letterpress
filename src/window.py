@@ -32,6 +32,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
     menu_button = Gtk.Template.Child()
     toast_overlay = Gtk.Template.Child()
     main_stack = Gtk.Template.Child()
+    welcome_illustration = Gtk.Template.Child()
     spinner = Gtk.Template.Child()
     output_text_view = Gtk.Template.Child()
     to_file_btn = Gtk.Template.Child()
@@ -68,6 +69,9 @@ class LetterpressWindow(Adw.ApplicationWindow):
         self.to_file_btn.connect('clicked', self.__save_output_to_file)
         self.width_spin.connect('value-changed', self.__on_spin_value_changed)
         
+        file = Gio.File.new_for_uri("resource:///io/gitlab/gregorni/ASCIIImages/assets/welcome.svg")
+        self.welcome_illustration.set_file(file)
+
         self.buffer = self.output_text_view.get_buffer()
         self.previous_stack = 'welcome'
         self.file = None
