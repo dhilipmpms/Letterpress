@@ -31,21 +31,37 @@ template LetterpressWindow : Adw.ApplicationWindow {
 
           StackPage {
             name: "welcome";
-            child: 
-            Adw.StatusPage {
-              title: _("Letterpress");
-              description: _("Drag and drop images here");
-              icon-name: "io.gitlab.gregorni.ASCIIImages-symbolic";
-              child: 
+            child:
               Box {
-                vexpand: true;
                 orientation: vertical;
                 spacing: 12;
+                margin-top: 24;
+                margin-bottom: 36;
+                halign: center;
+                valign: center;
+
+                Picture welcome_illustration {
+                  height-request: 100;
+                }
+
+                Label {
+                  label: _("Letterpress");
+                  margin-top: 36;
+
+                  styles [
+                    "title-1",
+                  ]
+                }
+
+                Label {
+                  label: _("Drag and drop images here");
+                }
 
                 Button open_file_btn {
                   halign: center;
                   action-name: "app.open-file";
                   label: _("Open File…");
+                  margin-top: 24;
 
                   styles [
                     "pill",
@@ -53,10 +69,6 @@ template LetterpressWindow : Adw.ApplicationWindow {
                   ]
                 }
               }
-
-              ;
-            }
-
             ;
           }
 
