@@ -138,18 +138,18 @@ template LetterpressWindow : Adw.ApplicationWindow {
                 hexpand: true;
               }
 
-              Button to_file_btn {
-                valign: center;
-                halign: end;
-                icon-name: "document-save-symbolic";
-                tooltip-text: _("Save to file");
-              }
-
               Button to_clipboard_btn {
                 valign: center;
                 halign: end;
                 icon-name: "edit-copy-symbolic";
                 tooltip-text: _("Copy to clipboard");
+              }
+
+              Button to_file_btn {
+                valign: center;
+                halign: end;
+                icon-name: "document-save-symbolic";
+                tooltip-text: _("Save to file");
               }
             }
           }
