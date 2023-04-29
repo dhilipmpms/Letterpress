@@ -69,7 +69,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
         self.to_file_btn.connect('clicked', self.__save_output_to_file)
         self.width_spin.connect('value-changed', self.__on_spin_value_changed)
         
-        file = Gio.File.new_for_uri("resource:///io/gitlab/gregorni/ASCIIImages/assets/welcome.svg")
+        file = Gio.File.new_for_uri('resource:///io/gitlab/gregorni/ASCIIImages/assets/welcome.svg')
         self.welcome_illustration.set_file(file)
 
         self.buffer = self.output_text_view.get_buffer()
