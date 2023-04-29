@@ -37,6 +37,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
     to_file_btn = Gtk.Template.Child()
     to_clipboard_btn = Gtk.Template.Child()
     width_spin = Gtk.Template.Child()
+    width_row = Gtk.Template.Child()
     toolbox = Gtk.Template.Child()
 
     def __init__(self, **kwargs):
@@ -71,6 +72,14 @@ class LetterpressWindow(Adw.ApplicationWindow):
         self.buffer = self.output_text_view.get_buffer()
         self.previous_stack = 'welcome'
         self.file = None
+
+    def do_size_allocate(self, width, height, baseline):
+        if width < 350:
+            self.width_row.set_subtitle('')
+        else:
+            self.width_row.set_subtitle('Width of the ASCII image in characters')
+
+        Adw.ApplicationWindow.do_size_allocate(self, width, height, baseline)
 
     def on_open_file(self):
         self.__show_spinner()
