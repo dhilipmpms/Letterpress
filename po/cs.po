@@ -34,7 +34,7 @@ msgstr "Převeďte obrázky na ASCII znaky"
 #. The list must end with a semicolon.
 #: data/io.gitlab.gregorni.ASCIIImages.desktop.in:14
 msgid "image;ascii;convert;conversion;text;"
-msgstr "image;ascii;convert;conversion;text;obrázek;převést;převod;text;"
+msgstr "image;ascii;convert;conversion;text;obrázek;převést;převod;"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:8 src/main.py:116
 msgid "Letterpress Contributors"
