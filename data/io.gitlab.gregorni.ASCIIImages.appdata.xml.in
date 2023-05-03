@@ -18,9 +18,7 @@
   <categories>
     <category>GTK</category>
     <category>GNOME</category>
-    <category>Image</category>
-    <category>ASCII</category>
-    <category>Text</category>
+    <category>TextTools</category>
     <category>Graphics</category>
     <category>ImageProcessing</category>
   </categories>
