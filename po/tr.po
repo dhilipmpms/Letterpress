@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: letterpress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-25 23:17+0300\n"
+"POT-Creation-Date: 2023-05-03 16:56+0200\n"
 "PO-Revision-Date: 2023-05-03 00:40+0300\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Turkish <takim@gnome.org.tr>\n"
@@ -22,7 +22,7 @@ msgstr ""
 #. Translators: Translate as "Letterpress"
 #: data/io.gitlab.gregorni.ASCIIImages.desktop.in:4
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:7 src/main.py:114
-#: src/window.blp:36
+#: src/window.blp:48
 msgid "Letterpress"
 msgstr "Letterpress"
 
@@ -54,47 +54,67 @@ msgstr ""
 "kullanır. Çıktıyı bir dosyaya kaydedebilir, kopyalayabilir ve hatta "
 "çözünürlüğünü değiştirebilirsiniz!"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:50
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:27
+msgid "image"
+msgstr ""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:28
+msgid "ascii"
+msgstr ""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:29
+msgid "convert"
+msgstr ""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:30
+msgid "conversion"
+msgstr ""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:31
+msgid "text"
+msgstr ""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:48
 msgid "Overview"
 msgstr "Genel Görünüm"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:54
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:52
 msgid "Copy output"
 msgstr "Çıktıyı kopyala"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:58
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:56
 msgid "Save output"
 msgstr "Çıktıyı kaydet"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:62
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:60
 msgid "Adjust output width"
 msgstr "Çıktı genişliğini ayarla"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:85
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:83
 msgid "Added French translation"
 msgstr "Fransızca çeviri eklendi"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:86
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:84
 msgid "Added Russian translation"
 msgstr "Rusça çeviri eklendi"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:87
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:85
 msgid "Added Occitan translation"
 msgstr "Oksitanca çeviri eklendi"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:88
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:86
 msgid "Added Italian translation"
 msgstr "İtalyanca çeviri eklendi"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:89
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:87
 msgid "Fixed \"Open with…\" functionality"
 msgstr "\"Birlikte Aç…\" işlevselliği düzeltildi"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:90
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:88
 msgid "The app now remembers window size and state"
 msgstr "Uygulama artık pencere boyutunu hatırlıyor"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:96
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:94
 msgid "First Release! 🎉"
 msgstr "İlk sürüm! 🎉"
 
@@ -106,29 +126,33 @@ msgstr "Telif Hakkı © 2023 Letterpress Katkıcıları"
 msgid "Code and Design Borrowed from"
 msgstr "Kod ve Tasarımın Ödünç Alındığı Kaynak"
 
+#: src/window.py:84
+msgid "Width of the ASCII image in characters"
+msgstr "ASCII görüntünün karakter cinsinden genişliği"
+
 #. Translators: Do not translate "{basename}"
-#: src/window.py:83
+#: src/window.py:96
 #, python-brace-format
 msgid "\"{basename}\" is not a valid image."
 msgstr "\"{basename}\" geçerli bir görüntü değil."
 
-#: src/window.py:129
+#: src/window.py:142
 msgid "Output copied to clipboard"
 msgstr "Çıktı panoya kopyalandı"
 
 #. Translators: Do not translate "{display_name}"
-#: src/window.py:166
+#: src/window.py:179
 #, python-brace-format
 msgid "Unable to save \"{display_name}\""
 msgstr "\"{display_name}\" kaydedilemedi"
 
 #. Translators: Do not translate "{display_name}"
-#: src/window.py:169
+#: src/window.py:182
 #, python-brace-format
 msgid "\"{display_name}\" saved"
 msgstr "\"{display_name}\" kaydedildi"
 
-#: src/window.py:170
+#: src/window.py:183
 msgid "Open"
 msgstr "Aç"
 
@@ -157,43 +181,39 @@ msgstr "_Tamam"
 msgid "Main Menu"
 msgstr "Ana Menü"
 
-#: src/window.blp:37
+#: src/window.blp:57
 msgid "Drag and drop images here"
 msgstr "Görüntüleri sürükleyip buraya bırakın"
 
-#: src/window.blp:48
+#: src/window.blp:63
 msgid "Open File…"
 msgstr "Dosya Aç…"
 
-#: src/window.blp:68
+#: src/window.blp:80
 msgid "Drop Here to Open"
 msgstr "Açmak İçin Buraya Bırakın"
 
-#: src/window.blp:126
+#: src/window.blp:138
 msgid "Output Width"
 msgstr "Çıktı Genişliği"
 
-#: src/window.blp:127
-msgid "Width of the ASCII image in characters"
-msgstr "ASCII görüntünün karakter cinsinden genişliği"
-
-#: src/window.blp:144
-msgid "Save to file"
-msgstr "Dosyaya kaydet"
-
-#: src/window.blp:151
+#: src/window.blp:156
 msgid "Copy to clipboard"
 msgstr "Panoya kopyala"
 
-#: src/window.blp:168
+#: src/window.blp:163
+msgid "Save to file"
+msgstr "Dosyaya kaydet"
+
+#: src/window.blp:180
 msgid "_Open…"
 msgstr "_Aç…"
 
-#: src/window.blp:175
+#: src/window.blp:187
 msgid "_Keyboard Shortcuts"
 msgstr "_Klavye Kısayolları"
 
-#: src/window.blp:180
+#: src/window.blp:192
 msgid "_About Letterpress"
 msgstr "Letterpress _Hakkında"
 

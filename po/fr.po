@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: letterpress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-25 23:17+0300\n"
+"POT-Creation-Date: 2023-05-03 16:56+0200\n"
 "PO-Revision-Date: 2023-03-26 12:57+0200\n"
 "Last-Translator: Irénée Thirion <irenee.thirion@e.email>\n"
 "Language-Team: \n"
@@ -21,7 +21,7 @@ msgstr ""
 #. Translators: Translate as "Letterpress"
 #: data/io.gitlab.gregorni.ASCIIImages.desktop.in:4
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:7 src/main.py:114
-#: src/window.blp:36
+#: src/window.blp:48
 msgid "Letterpress"
 msgstr "Letterpress"
 
@@ -53,47 +53,67 @@ msgstr ""
 "pouvez enregistrer le résultat dans un fichier, le copier, et même modifier "
 "sa résolution !"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:50
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:27
+msgid "image"
+msgstr "image"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:28
+msgid "ascii"
+msgstr "ascii"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:29
+msgid "convert"
+msgstr "convertir"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:30
+msgid "conversion"
+msgstr "conversion"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:31
+msgid "text"
+msgstr "texte"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:48
 msgid "Overview"
 msgstr "Aperçu"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:54
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:52
 msgid "Copy output"
 msgstr "Copier le résultat"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:58
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:56
 msgid "Save output"
 msgstr "Enregistrer le résultat"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:62
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:60
 msgid "Adjust output width"
 msgstr "Ajuster la largeur du résultat"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:85
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:83
 msgid "Added French translation"
 msgstr ""
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:86
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:84
 msgid "Added Russian translation"
 msgstr ""
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:87
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:85
 msgid "Added Occitan translation"
 msgstr ""
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:88
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:86
 msgid "Added Italian translation"
 msgstr ""
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:89
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:87
 msgid "Fixed \"Open with…\" functionality"
 msgstr ""
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:90
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:88
 msgid "The app now remembers window size and state"
 msgstr ""
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:96
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:94
 msgid "First Release! 🎉"
 msgstr "Première version ! 🎉"
 
@@ -105,29 +125,33 @@ msgstr "Copyright © 2023 Les contributeurs de Letterpress"
 msgid "Code and Design Borrowed from"
 msgstr "Code et conception empruntés à"
 
+#: src/window.py:84
+msgid "Width of the ASCII image in characters"
+msgstr "Largeur de l’image ASCII en caractères"
+
 #. Translators: Do not translate "{basename}"
-#: src/window.py:83
+#: src/window.py:96
 #, python-brace-format
 msgid "\"{basename}\" is not a valid image."
 msgstr "« {basename} » n’est pas une image valide."
 
-#: src/window.py:129
+#: src/window.py:142
 msgid "Output copied to clipboard"
 msgstr "Résultat copié dans le presse-papiers"
 
 #. Translators: Do not translate "{display_name}"
-#: src/window.py:166
+#: src/window.py:179
 #, python-brace-format
 msgid "Unable to save \"{display_name}\""
 msgstr "Impossible d’enregistrer « {display_name} »"
 
 #. Translators: Do not translate "{display_name}"
-#: src/window.py:169
+#: src/window.py:182
 #, python-brace-format
 msgid "\"{display_name}\" saved"
 msgstr "« {display_name} » enregistré"
 
-#: src/window.py:170
+#: src/window.py:183
 msgid "Open"
 msgstr "Ouvrir"
 
@@ -157,43 +181,39 @@ msgstr "_OK"
 msgid "Main Menu"
 msgstr "Menu principal"
 
-#: src/window.blp:37
+#: src/window.blp:57
 msgid "Drag and drop images here"
 msgstr "Faites glisser vos images ici"
 
-#: src/window.blp:48
+#: src/window.blp:63
 msgid "Open File…"
 msgstr "Ouvrir un fichier…"
 
-#: src/window.blp:68
+#: src/window.blp:80
 msgid "Drop Here to Open"
 msgstr "Déposez ici pour ouvrir"
 
-#: src/window.blp:126
+#: src/window.blp:138
 msgid "Output Width"
 msgstr "Largeur du résultat"
 
-#: src/window.blp:127
-msgid "Width of the ASCII image in characters"
-msgstr "Largeur de l’image ASCII en caractères"
-
-#: src/window.blp:144
-msgid "Save to file"
-msgstr "Enregistrer dans un fichier"
-
-#: src/window.blp:151
+#: src/window.blp:156
 msgid "Copy to clipboard"
 msgstr "Copier dans le presse-papiers"
 
-#: src/window.blp:168
+#: src/window.blp:163
+msgid "Save to file"
+msgstr "Enregistrer dans un fichier"
+
+#: src/window.blp:180
 msgid "_Open…"
 msgstr "_Ouvrir…"
 
-#: src/window.blp:175
+#: src/window.blp:187
 msgid "_Keyboard Shortcuts"
 msgstr "_Raccourcis clavier"
 
-#: src/window.blp:180
+#: src/window.blp:192
 msgid "_About Letterpress"
 msgstr ""
 
@@ -216,21 +236,6 @@ msgstr "Afficher les raccourcis"
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Quitter"
-
-#~ msgid "image"
-#~ msgstr "image"
-
-#~ msgid "ascii"
-#~ msgstr "ascii"
-
-#~ msgid "convert"
-#~ msgstr "convertir"
-
-#~ msgid "conversion"
-#~ msgstr "conversion"
-
-#~ msgid "text"
-#~ msgstr "texte"
 
 #~ msgid "Icon by"
 #~ msgstr "Icône par"
