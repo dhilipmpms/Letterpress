@@ -114,7 +114,7 @@ class LetterpressApplication(Adw.Application):
                                 application_name=_('Letterpress'),
                                 application_icon='io.gitlab.gregorni.ASCIIImages',
                                 developer_name=_('Letterpress Contributors'),
-                                version='1.2.0',
+                                version='1.3.0',
                                 developers=devs_list,
                                 artists=['Brage Fuglseth'],
                                 translator_credits=translators_list,
