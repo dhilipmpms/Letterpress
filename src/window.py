@@ -81,7 +81,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
         if width < 350:
             self.width_row.set_subtitle('')
         else:
-            self.width_row.set_subtitle('Width of the ASCII image in characters')
+            self.width_row.set_subtitle(_('Width of the ASCII image in characters'))
 
         Adw.ApplicationWindow.do_size_allocate(self, width, height, baseline)
 
