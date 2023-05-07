@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: letterpress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-03 16:56+0200\n"
+"POT-Creation-Date: 2023-05-07 16:13+0200\n"
 "PO-Revision-Date: 2023-03-26 12:57+0200\n"
 "Last-Translator: Irénée Thirion <irenee.thirion@e.email>\n"
 "Language-Team: \n"
@@ -90,30 +90,63 @@ msgid "Adjust output width"
 msgstr "Ajuster la largeur du résultat"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:83
-msgid "Added French translation"
-msgstr ""
+#, fuzzy
+msgid "Rebrand to Letterpress"
+msgstr "Letterpress"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:84
-msgid "Added Russian translation"
+msgid "Replaced icon on welcome screen with illustration"
 msgstr ""
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:85
-msgid "Added Occitan translation"
+msgid "Changed warning dialog to Adw.MessageDialog"
 msgstr ""
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:86
-msgid "Added Italian translation"
+msgid "Improved adaptiveness of \"Output Width\" subtitle"
 msgstr ""
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:87
-msgid "Fixed \"Open with…\" functionality"
+msgid "Swapped buttons for copying and saving output"
 msgstr ""
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:88
+msgid "Added a string to translations"
+msgstr ""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:89
+msgid "Added Turkish translation"
+msgstr ""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:90
+msgid "Added Czech translation"
+msgstr ""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:97
+msgid "Added French translation"
+msgstr ""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:98
+msgid "Added Russian translation"
+msgstr ""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:99
+msgid "Added Occitan translation"
+msgstr ""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:100
+msgid "Added Italian translation"
+msgstr ""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:101
+msgid "Fixed \"Open with…\" functionality"
+msgstr ""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:102
 msgid "The app now remembers window size and state"
 msgstr ""
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:94
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:108
 msgid "First Release! 🎉"
 msgstr "Première version ! 🎉"
 

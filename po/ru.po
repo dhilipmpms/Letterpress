@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: letterpress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-03 16:56+0200\n"
+"POT-Creation-Date: 2023-05-07 16:13+0200\n"
 "PO-Revision-Date: 2023-04-25 23:18+0300\n"
 "Last-Translator: Fyodor Sobolev\n"
 "Language-Team: \n"
@@ -89,30 +89,66 @@ msgid "Adjust output width"
 msgstr "Изменить ширину вывода"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:83
+#, fuzzy
+msgid "Rebrand to Letterpress"
+msgstr "_О приложении"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:84
+msgid "Replaced icon on welcome screen with illustration"
+msgstr ""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:85
+msgid "Changed warning dialog to Adw.MessageDialog"
+msgstr ""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:86
+msgid "Improved adaptiveness of \"Output Width\" subtitle"
+msgstr ""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:87
+msgid "Swapped buttons for copying and saving output"
+msgstr ""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:88
+#, fuzzy
+msgid "Added a string to translations"
+msgstr "Добавлен русский перевод"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:89
+#, fuzzy
+msgid "Added Turkish translation"
+msgstr "Добавлен французский перевод"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:90
+#, fuzzy
+msgid "Added Czech translation"
+msgstr "Добавлен французский перевод"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:97
 msgid "Added French translation"
 msgstr "Добавлен французский перевод"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:84
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:98
 msgid "Added Russian translation"
 msgstr "Добавлен русский перевод"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:85
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:99
 msgid "Added Occitan translation"
 msgstr "Добавлен окситанский перевод"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:86
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:100
 msgid "Added Italian translation"
 msgstr "Добавлен итальянский перевод"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:87
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:101
 msgid "Fixed \"Open with…\" functionality"
 msgstr "Исправлена функция \"Открыть с помощью...\""
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:88
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:102
 msgid "The app now remembers window size and state"
 msgstr "Приложение теперь запоминает размер окна и состояние"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:94
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:108
 msgid "First Release! 🎉"
 msgstr "Первый выпуск! 🎉"
 
