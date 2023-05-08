@@ -125,7 +125,7 @@ class LetterpressApplication(Adw.Application):
                                 support_url='https://matrix.to/#/#gregorni-apps:matrix.org')
         
         about.add_acknowledgement_section(
-            _('Code and Design Borrowed from'),
+            _('Code and Design borrowed from'),
             [
                 'Upscaler https://gitlab.com/TheEvilSkeleton/Upscaler',
                 'Frog https://github.com/TenderOwl/Frog',

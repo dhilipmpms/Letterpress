@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: letterpress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-07 16:13+0200\n"
+"POT-Creation-Date: 2023-05-08 17:12+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -150,7 +150,7 @@ msgid "Copyright © 2023 Letterpress Contributors"
 msgstr ""
 
 #: src/main.py:128
-msgid "Code and Design Borrowed from"
+msgid "Code and Design borrowed from"
 msgstr ""
 
 #: src/window.py:84

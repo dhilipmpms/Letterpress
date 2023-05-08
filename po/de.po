@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: letterpress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-07 16:13+0200\n"
+"POT-Creation-Date: 2023-05-08 17:12+0200\n"
 "PO-Revision-Date: 2023-04-15 17:58+0200\n"
 "Last-Translator: gregorni <gregorniehl@web.de>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
@@ -88,40 +88,36 @@ msgid "Adjust output width"
 msgstr "Output-Breite anpassen"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:83
-#, fuzzy
 msgid "Rebrand to Letterpress"
-msgstr "_Über Letterpress"
+msgstr "Umbenannt zu \"Letterpress\""
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:84
 msgid "Replaced icon on welcome screen with illustration"
-msgstr ""
+msgstr "Symbol auf der Startseite durch Illustration ersetzt"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:85
 msgid "Changed warning dialog to Adw.MessageDialog"
-msgstr ""
+msgstr "Warnungsdialog zu einem Adw.MessageDialog geändert"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:86
 msgid "Improved adaptiveness of \"Output Width\" subtitle"
-msgstr ""
+msgstr "Anpassungsfähigkeit des \"Output-Breite\"-Untertitels verbessert"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:87
 msgid "Swapped buttons for copying and saving output"
-msgstr ""
+msgstr "Buttons zum Kopieren und Speichern des Outputs getauscht"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:88
-#, fuzzy
 msgid "Added a string to translations"
-msgstr "Russische Übersetzung hinzugefügt"
+msgstr "Einen String zu Übersetzungen hinzugefügt"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:89
-#, fuzzy
 msgid "Added Turkish translation"
-msgstr "Französische Übersetzung hinzugefügt"
+msgstr "Türkische Übersetzung hinzugefügt"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:90
-#, fuzzy
 msgid "Added Czech translation"
-msgstr "Französische Übersetzung hinzugefügt"
+msgstr "Tschechische Übersetzung hinzugefügt"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:97
 msgid "Added French translation"
@@ -156,7 +152,7 @@ msgid "Copyright © 2023 Letterpress Contributors"
 msgstr "Copyright © 2023 Mitwirkende von Letterpress"
 
 #: src/main.py:128
-msgid "Code and Design Borrowed from"
+msgid "Code and Design borrowed from"
 msgstr "Code und Design entlehnt von"
 
 #: src/window.py:84
