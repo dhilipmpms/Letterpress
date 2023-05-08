@@ -29,7 +29,7 @@ import subprocess
 class LetterpressWindow(Adw.ApplicationWindow):
     __gtype_name__ = 'LetterpressWindow'
     
-    menu_button = Gtk.Template.Child()
+    menu_btn = Gtk.Template.Child()
     toast_overlay = Gtk.Template.Child()
     main_stack = Gtk.Template.Child()
     welcome_illustration = Gtk.Template.Child()
