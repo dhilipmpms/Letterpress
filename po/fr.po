@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: letterpress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-08 17:12+0200\n"
-"PO-Revision-Date: 2023-03-26 12:57+0200\n"
+"PO-Revision-Date: 2023-05-08 09:44+0200\n"
 "Last-Translator: Irénée Thirion <irenee.thirion@e.email>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -90,61 +90,62 @@ msgid "Adjust output width"
 msgstr "Ajuster la largeur du résultat"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:83
-#, fuzzy
 msgid "Rebrand to Letterpress"
-msgstr "Letterpress"
+msgstr "Changement de nom pour Letterpress"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:84
 msgid "Replaced icon on welcome screen with illustration"
-msgstr ""
+msgstr "Îcone de l’écran d’accueil remplacée par une illustration"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:85
 msgid "Changed warning dialog to Adw.MessageDialog"
 msgstr ""
+"Boîte de dialogue d’avertissement changée pour utiliser Adw.MessageDialog à "
+"la place"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:86
 msgid "Improved adaptiveness of \"Output Width\" subtitle"
-msgstr ""
+msgstr "Adaptabilité du sous-titre « Largeur du résultat » améliorée"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:87
 msgid "Swapped buttons for copying and saving output"
-msgstr ""
+msgstr "Boutons pour copier et enregistrer le résultat échangés"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:88
 msgid "Added a string to translations"
-msgstr ""
+msgstr "Ajout d’une chaîne aux traductions"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:89
 msgid "Added Turkish translation"
-msgstr ""
+msgstr "Ajout d’une traduction turque"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:90
 msgid "Added Czech translation"
-msgstr ""
+msgstr "Ajout d’une traduction tchèque"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:97
 msgid "Added French translation"
-msgstr ""
+msgstr "Ajout d’une traduction française"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:98
 msgid "Added Russian translation"
-msgstr ""
+msgstr "Ajout d’une traduction russe"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:99
 msgid "Added Occitan translation"
-msgstr ""
+msgstr "Ajout d’une traduction occitane"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:100
 msgid "Added Italian translation"
-msgstr ""
+msgstr "Ajout d’une traduction italienne"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:101
 msgid "Fixed \"Open with…\" functionality"
-msgstr ""
+msgstr "Fonctionnalité « Ouvrir avec… » corrigée"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:102
 msgid "The app now remembers window size and state"
-msgstr ""
+msgstr "L’application enregistre maintenant sa taille et son état"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:108
 msgid "First Release! 🎉"
@@ -248,7 +249,7 @@ msgstr "_Raccourcis clavier"
 
 #: src/window.blp:192
 msgid "_About Letterpress"
-msgstr ""
+msgstr "À _propos de Letterpress"
 
 #: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
