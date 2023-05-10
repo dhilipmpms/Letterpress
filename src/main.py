@@ -79,7 +79,7 @@ class LetterpressApplication(Adw.Application):
             print(f'Error: {e}')
 
     def __open_menu(self, *args):
-        self.props.active_window.menu_button.activate()
+        self.props.active_window.menu_btn.activate()
 
     def do_command_line(self, command_line):
         args = command_line.get_arguments()
