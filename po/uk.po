@@ -1,0 +1,269 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the letterpress package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: letterpress\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-08 17:12+0200\n"
+"PO-Revision-Date: 2023-05-17 20:18+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 3.1.1\n"
+
+#. Translators: Translate as "Letterpress"
+#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:4
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:7 src/main.py:114
+#: src/window.blp:48
+msgid "Letterpress"
+msgstr "Letterpress"
+
+#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:5
+msgid "Convert images into ASCII characters"
+msgstr "Перетворює зображення у символи ASCII"
+
+#. Translators: These are search terms for the application;
+#. the translation should contain the original list AND the translated strings.
+#. The list must end with a semicolon.
+#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:14
+msgid "image;ascii;convert;conversion;text;"
+msgstr "image;ascii;convert;conversion;text;зображення;конвертувати;текст;"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:8 src/main.py:116
+msgid "Letterpress Contributors"
+msgstr "Спільнота Letterpress"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:9
+msgid "Turn images into text"
+msgstr "Перетворити зображення у текст"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:12
+msgid ""
+"Letterpress uses jp2a to convert images into ASCII characters. You can save "
+"the output to a file, copy it, and even change its resolution!"
+msgstr ""
+"Letterpress використовує jp2a щоб конвертувати зображення у символи ASCII. "
+"Ви можете зберегти кінцевий результат у файл, скопіювати і навіть змінити "
+"розмір!"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:27
+msgid "image"
+msgstr "зображення"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:28
+msgid "ascii"
+msgstr "ascii"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:29
+msgid "convert"
+msgstr "конвертувати"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:30
+msgid "conversion"
+msgstr "конвертування"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:31
+msgid "text"
+msgstr "текст"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:48
+msgid "Overview"
+msgstr "Огляд"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:52
+msgid "Copy output"
+msgstr "Скопіювати результат"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:56
+msgid "Save output"
+msgstr "Зберегти результат"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:60
+msgid "Adjust output width"
+msgstr "Змінити ширину"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:83
+msgid "Rebrand to Letterpress"
+msgstr "Ребрендовано у Letterpress"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:84
+msgid "Replaced icon on welcome screen with illustration"
+msgstr "Змінено піктограму на зображення на сторінці привітання"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:85
+msgid "Changed warning dialog to Adw.MessageDialog"
+msgstr "Замінено діалогове вікно застереження на Adw.MessageDialog"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:86
+msgid "Improved adaptiveness of \"Output Width\" subtitle"
+msgstr "Покращена адаптивність підзаголовку \"Ширина результату\""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:87
+msgid "Swapped buttons for copying and saving output"
+msgstr "Змінені місцями кнопки \"Скопіювати\" і \"Зберегти\" результат"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:88
+msgid "Added a string to translations"
+msgstr "Додані строки для перекладу"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:89
+msgid "Added Turkish translation"
+msgstr "Додано турецький переклад"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:90
+msgid "Added Czech translation"
+msgstr "Додано чеський переклад"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:97
+msgid "Added French translation"
+msgstr "Додано французький переклад"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:98
+msgid "Added Russian translation"
+msgstr "Додано російський переклад"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:99
+msgid "Added Occitan translation"
+msgstr "Додано окситанський переклад"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:100
+msgid "Added Italian translation"
+msgstr "Додано італійський переклад"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:101
+msgid "Fixed \"Open with…\" functionality"
+msgstr "Виправлено \"ВІдкрити у програмі...\""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:102
+msgid "The app now remembers window size and state"
+msgstr "Тепер додаток запам'ятовує розмір і стан вікна"
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:108
+msgid "First Release! 🎉"
+msgstr "Перший реліз! 🎉"
+
+#: src/main.py:121
+msgid "Copyright © 2023 Letterpress Contributors"
+msgstr "Copyright © 2023 Спільнота Letterpress"
+
+#: src/main.py:128
+msgid "Code and Design borrowed from"
+msgstr "Код і дизайн був запозичений у"
+
+#: src/window.py:84
+msgid "Width of the ASCII image in characters"
+msgstr "Ширина ASCII зображення у символах"
+
+#. Translators: Do not translate "{basename}"
+#: src/window.py:96
+#, python-brace-format
+msgid "\"{basename}\" is not a valid image."
+msgstr "\"{basename}\" не є правильним файлом зображення."
+
+#: src/window.py:142
+msgid "Output copied to clipboard"
+msgstr "Результат був скопійовано у буфер обміну"
+
+#. Translators: Do not translate "{display_name}"
+#: src/window.py:179
+#, python-brace-format
+msgid "Unable to save \"{display_name}\""
+msgstr "Не вдалося зберегти \"{display_name}\""
+
+#. Translators: Do not translate "{display_name}"
+#: src/window.py:182
+#, python-brace-format
+msgid "\"{display_name}\" saved"
+msgstr "\"{display_name}\" збережено"
+
+#: src/window.py:183
+msgid "Open"
+msgstr "Відкрити"
+
+#: src/file_chooser.py:37 src/file_chooser.py:63
+msgid "Select a file"
+msgstr "Обрати файл"
+
+#: src/file_chooser.py:46
+msgid "Supported image files"
+msgstr "Підтримувані файли зображень"
+
+#: src/error_dialog.py:29
+msgid "The output is too large to be copied."
+msgstr "Результат занадто великий, щоб бути скопійованим у буфер обміну."
+
+#: src/error_dialog.py:30
+msgid "Please save it to a file instead or decrease the output width."
+msgstr "Будь ласка, збережіть його у файл або зменшіть ширину результату."
+
+#: src/error_dialog.py:32
+msgid "_OK"
+msgstr "_Добре"
+
+#: src/window.blp:19
+msgid "Main Menu"
+msgstr "Головне меню"
+
+#: src/window.blp:57
+msgid "Drag and drop images here"
+msgstr "Перетягніть зображення сюди"
+
+#: src/window.blp:63
+msgid "Open File…"
+msgstr "Відкрити файл…"
+
+#: src/window.blp:80
+msgid "Drop Here to Open"
+msgstr "Перетягніть сюди, щоб відкрити"
+
+#: src/window.blp:138
+msgid "Output Width"
+msgstr "Ширина результату"
+
+#: src/window.blp:156
+msgid "Copy to clipboard"
+msgstr "Скопіювати у буфер обміну"
+
+#: src/window.blp:163
+msgid "Save to file"
+msgstr "Зберегти у файл"
+
+#: src/window.blp:180
+msgid "_Open…"
+msgstr "_Відкрити…"
+
+#: src/window.blp:187
+msgid "_Keyboard Shortcuts"
+msgstr "_Клавіатурні скорочення"
+
+#: src/window.blp:192
+msgid "_About Letterpress"
+msgstr "_Про Letterpress"
+
+#: src/gtk/help-overlay.blp:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Загальні"
+
+#: src/gtk/help-overlay.blp:14
+msgctxt "shortcut window"
+msgid "Open File"
+msgstr "Відкрити файл"
+
+#: src/gtk/help-overlay.blp:19
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "Показати клавіатурні скорочення"
+
+#: src/gtk/help-overlay.blp:24
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Вийти"
