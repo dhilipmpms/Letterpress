@@ -20,6 +20,7 @@
 from gi.repository import Adw, Gtk, Gio, GLib, Gdk
 from .file_chooser import FileChooser
 from .error_dialog import ErrorDialog
+from .zoom_box import ZoomBox
 
 from os.path import basename
 from filecmp import cmp
@@ -77,6 +78,9 @@ class LetterpressWindow(Adw.ApplicationWindow):
         self.previous_stack = 'welcome'
         self.file = None
 
+        self.zoom_box = ZoomBox()
+        self.menu_btn.props.popover.add_child(self.zoom_box, 'zoom')
+
     def do_size_allocate(self, width, height, baseline):
         if width < 350:
             self.width_row.set_subtitle('')
@@ -115,8 +119,29 @@ class LetterpressWindow(Adw.ApplicationWindow):
         self.file = file
         self.__convert_image(file)
         
+    def zoom(self, zoom_out=False, zoom_reset=False):
+        new_font_size_percent = int(self.zoom_box.zoom_indicator.get_label()[:-1])
+        if zoom_out:
+            new_font_size_percent -= 11
+        elif zoom_reset:
+            new_font_size_percent = 100
+        else:
+            new_font_size_percent += 11
+
+        if new_font_size_percent < 1 or new_font_size_percent > 100 or not self.zoom_box.get_sensitive():
+            return
+
+        self.zoom_box.decrease_btn.set_sensitive(new_font_size_percent > 1)
+        self.zoom_box.increase_btn.set_sensitive(new_font_size_percent < 100)
+
+        css_provider = Gtk.CssProvider.new()
+        css_provider.load_from_data(f'textview{{font-size:{new_font_size_percent / 10 + 1}pt;}}', -1)
+        context = self.output_text_view.get_style_context() # get_style_context will be deprecated in Gtk 4.10
+        context.add_provider(css_provider, 10)
+
+        self.zoom_box.zoom_indicator.set_label(f'{new_font_size_percent}%')
+
     def __convert_image(self, file):
-    
         file = file.get_path()
         
         process = subprocess.Popen(['jp2a', f'--width={self.width_spin.get_value()}', file],
@@ -128,6 +153,9 @@ class LetterpressWindow(Adw.ApplicationWindow):
         self.main_stack.set_visible_child_name('view-page')
         self.previous_stack = 'view-page'
         
+        self.zoom_box.set_sensitive(True)
+        self.zoom_box.increase_btn.set_sensitive(False)
+
     def __read_lines(self, process):
         output = ''
         for line in iter(process.stdout.readline, ''):

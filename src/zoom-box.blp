@@ -1,0 +1,46 @@
+using Gtk 4.0;
+
+template $ZoomBox: Box {
+  sensitive: false;
+  margin-top: 2;
+  margin-bottom: 2;
+  margin-start: 10;
+  margin-end: 10;
+
+  Button decrease_btn {
+    icon-name: "zoom-out-symbolic";
+    tooltip-text: _("Zoom out");
+    action-name: "app.zoom-out";
+    styles [
+      "flat",
+      "circular",
+    ]
+  }
+
+  Box {
+    hexpand: true;
+  }
+
+  Button zoom_indicator {
+    label: "100%";
+    halign: center;
+    action-name: "app.reset-zoom";
+    styles [
+      "flat",
+    ]
+  }
+
+  Box {
+    hexpand: true;
+  }
+
+  Button increase_btn {
+    icon-name: "zoom-in-symbolic";
+    tooltip-text: _("Zoom in");
+    action-name: "app.zoom-in";
+    styles [
+      "flat",
+      "circular",
+    ]
+  }
+}
