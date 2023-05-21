@@ -45,7 +45,7 @@ template $LetterpressWindow : Adw.ApplicationWindow {
                 }
 
                 Label {
-                  label: _("Letterpress");
+                  label: _("Create ASCII Art");
                   margin-top: 36;
 
                   styles [
@@ -54,7 +54,11 @@ template $LetterpressWindow : Adw.ApplicationWindow {
                 }
 
                 Label {
-                  label: _("Drag and drop images here");
+                  label: _("Open or drag and drop an image to generate an ASCII art version of it");
+                  wrap: true;
+                  halign: center;
+                  margin-start: 20;
+                  margin-end: 20;
                 }
 
                 Button open_file_btn {
