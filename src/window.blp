@@ -181,7 +181,13 @@ template $LetterpressWindow : Adw.ApplicationWindow {
 menu primary_menu {
   section {
     item {
-      label: _("_Open…");
+      custom: "zoom";
+    }
+  }
+
+  section {
+    item {
+      label: _("_Open File…");
       action: "app.open-file";
     }
   }

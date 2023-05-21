@@ -2,6 +2,7 @@
 <gresources>
   <gresource prefix="/io/gitlab/gregorni/ASCIIImages">
     <file preprocess="xml-stripblanks">window.ui</file>
+    <file preprocess="xml-stripblanks">zoom-box.ui</file>
     <file preprocess="xml-stripblanks">gtk/help-overlay.ui</file>
 
     <file>style.css</file>

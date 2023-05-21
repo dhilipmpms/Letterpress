@@ -6,6 +6,7 @@ blueprints = custom_target('blueprints',
   input: files(
     'gtk/help-overlay.blp',
     'window.blp',
+    'zoom-box.blp'
   ),
   output: '.',
   command: [find_program('blueprint-compiler'), 'batch-compile', '@OUTPUT@', '@CURRENT_SOURCE_DIR@', '@INPUT@'],
@@ -41,6 +42,7 @@ letterpress_sources = [
   'window.py',
   'file_chooser.py',
   'error_dialog.py',
+  'zoom_box.py',
 ]
 
 install_data(letterpress_sources, install_dir: moduledir)

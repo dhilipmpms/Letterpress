@@ -36,6 +36,9 @@ class LetterpressApplication(Adw.Application):
         self.create_action('open-menu', self.__open_menu, ['F10'])
         self.create_action('about', self.__on_about_action)
         self.create_action('open-file', self.__open_file, ['<primary>o'])
+        self.create_action('zoom-out', self.__zoom_out, ['<primary>minus'])
+        self.create_action('zoom-in', self.__zoom_in, ['<primary>plus'])
+        self.create_action('reset-zoom', self.__reset_zoom)
         self.create_action('open-output', self.__open_output, param=GLib.VariantType('s'))
         self.file = None
         
@@ -54,6 +57,15 @@ class LetterpressApplication(Adw.Application):
 
     def __open_file(self, *args):
         self.props.active_window.on_open_file()
+
+    def __zoom_out(self, *args):
+        self.props.active_window.zoom(zoom_out=True)
+
+    def __zoom_in(self, *args):
+        self.props.active_window.zoom()
+
+    def __reset_zoom(self, *args):
+        self.props.active_window.zoom(zoom_reset=True)
         
     def __open_output(self, app, data):
         file_path = data.unpack()
