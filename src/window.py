@@ -26,7 +26,7 @@ from os.path import basename
 from filecmp import cmp
 import subprocess
 
-@Gtk.Template(resource_path='/io/gitlab/gregorni/ASCIIImages/window.ui')
+@Gtk.Template(resource_path='/io/gitlab/gregorni/ASCIIImages/gtk/window.ui')
 class LetterpressWindow(Adw.ApplicationWindow):
     __gtype_name__ = 'LetterpressWindow'
     

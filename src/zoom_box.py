@@ -19,7 +19,7 @@
 
 from gi.repository import Gtk
 
-@Gtk.Template(resource_path='/io/gitlab/gregorni/ASCIIImages/zoom-box.ui')
+@Gtk.Template(resource_path='/io/gitlab/gregorni/ASCIIImages/gtk/zoom-box.ui')
 class ZoomBox(Gtk.Box):
     __gtype_name__ = 'ZoomBox'
 
