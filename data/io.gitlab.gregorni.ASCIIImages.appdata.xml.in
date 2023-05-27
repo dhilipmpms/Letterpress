@@ -5,7 +5,7 @@
 	<project_license>GPL-3.0-or-later</project_license>
   
   <name>Letterpress</name>
-  <developer_name>gregorni</developer_name>
+  <developer_name>Letterpress Contributors</developer_name>
   <summary>Create beautiful ASCII art</summary>
   
 	<description>
