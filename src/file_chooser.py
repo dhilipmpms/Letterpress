@@ -19,54 +19,49 @@
 
 from gi.repository import Gtk
 
+
 class FileChooser:
 
-    """ Open and load file. """
+    """Open and load file."""
+
     @staticmethod
     def open_file(parent, last_view_page, *args):
         def __on_response(_dialog, response):
-
-            """ Run if the user selects a file. """
+            """Run if the user selects a file."""
             if response == Gtk.ResponseType.ACCEPT:
                 parent.check_is_image(_dialog.get_file())
-                    
+
             else:
                 parent.main_stack.set_visible_child_name(last_view_page)
 
         dialog = Gtk.FileChooserNative.new(
-            title=_('Select a file'),
-            parent=parent,
-            action=Gtk.FileChooserAction.OPEN
+            title=_("Select a file"), parent=parent, action=Gtk.FileChooserAction.OPEN
         )
 
         dialog.set_modal(True)
-        dialog.connect('response', __on_response)
+        dialog.connect("response", __on_response)
 
         file_filter = Gtk.FileFilter.new()
-        file_filter.set_name(_('Supported image files'))
-        file_filter.add_mime_type('image/png')
-        file_filter.add_mime_type('image/jpeg')
-        file_filter.add_mime_type('image/jpg')
+        file_filter.set_name(_("Supported image files"))
+        file_filter.add_mime_type("image/png")
+        file_filter.add_mime_type("image/jpeg")
+        file_filter.add_mime_type("image/jpg")
         dialog.add_filter(file_filter)
 
         dialog.show()
-    
+
     @staticmethod
     def save_file(parent, *args):
         def __on_response(_dialog, response):
-
-            """ Run if the user selects a file. """
+            """Run if the user selects a file."""
             if response == Gtk.ResponseType.ACCEPT:
                 parent.on_save_file(_dialog.get_file())
 
         dialog = Gtk.FileChooserNative.new(
-            title=_('Select a file'),
-            parent=parent,
-            action=Gtk.FileChooserAction.SAVE
+            title=_("Select a file"), parent=parent, action=Gtk.FileChooserAction.SAVE
         )
 
         dialog.set_modal(True)
-        dialog.connect('response', __on_response)
-        dialog.set_current_name('output.txt')
+        dialog.connect("response", __on_response)
+        dialog.set_current_name("output.txt")
         dialog.show()
-

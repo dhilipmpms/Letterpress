@@ -21,3 +21,15 @@ flatpak@aarch64:
   extends:
     - .flatpak@aarch64
     - .vars
+
+# Linter enforcing black coding style
+black:
+  script:
+    - pip install black --quiet
+    - black --check src/
+
+# Sorting imports
+isort:
+  script:
+    - pip install isort --quiet
+    - isort --check-only src/

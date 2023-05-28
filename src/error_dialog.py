@@ -19,16 +19,14 @@
 
 from gi.repository import Adw
 
-class ErrorDialog():
-    
+
+class ErrorDialog:
     @staticmethod
     def too_large(parent):
-        
         dialog = Adw.MessageDialog(
             transient_for=parent,
-            heading=_('The output is too large to be copied.'),
-            body=_('Please save it to a file instead or decrease the output width.'),
+            heading=_("The output is too large to be copied."),
+            body=_("Please save it to a file instead or decrease the output width."),
         )
-        dialog.add_response('ok', _('_OK'))
+        dialog.add_response("ok", _("_OK"))
         dialog.present()
-

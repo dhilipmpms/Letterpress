@@ -18,30 +18,37 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 import sys
+
 import gi
 
-gi.require_version('Gtk', '4.0')
-gi.require_version('Adw', '1')
+gi.require_version("Gtk", "4.0")
+gi.require_version("Adw", "1")
 
-from gi.repository import Gtk, Gio, Adw, GLib
+from gi.repository import Adw, Gio, GLib, Gtk
+
 from .window import LetterpressWindow
+
 
 class LetterpressApplication(Adw.Application):
     """The main application singleton class."""
 
     def __init__(self):
-        super().__init__(application_id='io.gitlab.gregorni.ASCIIImages',
-                         flags=Gio.ApplicationFlags.HANDLES_COMMAND_LINE)
-        self.create_action('quit', self.__quit, ['<primary>q'])
-        self.create_action('open-menu', self.__open_menu, ['F10'])
-        self.create_action('about', self.__on_about_action)
-        self.create_action('open-file', self.__open_file, ['<primary>o'])
-        self.create_action('zoom-out', self.__zoom_out, ['<primary>minus'])
-        self.create_action('zoom-in', self.__zoom_in, ['<primary>plus'])
-        self.create_action('reset-zoom', self.__reset_zoom)
-        self.create_action('open-output', self.__open_output, param=GLib.VariantType('s'))
+        super().__init__(
+            application_id="io.gitlab.gregorni.ASCIIImages",
+            flags=Gio.ApplicationFlags.HANDLES_COMMAND_LINE,
+        )
+        self.create_action("quit", self.__quit, ["<primary>q"])
+        self.create_action("open-menu", self.__open_menu, ["F10"])
+        self.create_action("about", self.__on_about_action)
+        self.create_action("open-file", self.__open_file, ["<primary>o"])
+        self.create_action("zoom-out", self.__zoom_out, ["<primary>minus"])
+        self.create_action("zoom-in", self.__zoom_in, ["<primary>plus"])
+        self.create_action("reset-zoom", self.__reset_zoom)
+        self.create_action(
+            "open-output", self.__open_output, param=GLib.VariantType("s")
+        )
         self.file = None
-        
+
     def do_activate(self):
         """Called when the application is activated.
 
@@ -66,29 +73,33 @@ class LetterpressApplication(Adw.Application):
 
     def __reset_zoom(self, *args):
         self.props.active_window.zoom(zoom_reset=True)
-        
+
     def __open_output(self, app, data):
         file_path = data.unpack()
-        file = open(file_path, 'r')
+        file = open(file_path, "r")
         fid = file.fileno()
         connection = Gio.bus_get_sync(Gio.BusType.SESSION, None)
-        proxy = Gio.DBusProxy.new_sync(connection,
-                                       Gio.DBusProxyFlags.NONE,
-                                       None,
-                                       'org.freedesktop.portal.Desktop',
-                                       '/org/freedesktop/portal/desktop',
-                                       'org.freedesktop.portal.OpenURI',
-                                       None)
+        proxy = Gio.DBusProxy.new_sync(
+            connection,
+            Gio.DBusProxyFlags.NONE,
+            None,
+            "org.freedesktop.portal.Desktop",
+            "/org/freedesktop/portal/desktop",
+            "org.freedesktop.portal.OpenURI",
+            None,
+        )
 
         try:
-            proxy.call_with_unix_fd_list_sync('OpenFile',
-                                              GLib.Variant('(sha{sv})', ('', 0, {'ask': GLib.Variant('b', True)})),
-                                              Gio.DBusCallFlags.NONE,
-                                              -1,
-                                              Gio.UnixFDList.new_from_array([fid]),
-                                              None)
+            proxy.call_with_unix_fd_list_sync(
+                "OpenFile",
+                GLib.Variant("(sha{sv})", ("", 0, {"ask": GLib.Variant("b", True)})),
+                Gio.DBusCallFlags.NONE,
+                -1,
+                Gio.UnixFDList.new_from_array([fid]),
+                None,
+            )
         except Exception as e:
-            print(f'Error: {e}')
+            print(f"Error: {e}")
 
     def __open_menu(self, *args):
         self.props.active_window.menu_btn.activate()
@@ -99,57 +110,58 @@ class LetterpressApplication(Adw.Application):
             self.file = command_line.create_file_for_arg(args[1]).get_path()
         self.activate()
         return 0
-        
+
     def __quit(self, *args):
         win = self.props.active_window
         if win:
             win.destroy()
 
     def __on_about_action(self, *args):
-    
-        """ If you contributed code or translations,
-            feel free to add yourself to the appropriate list.
-            To add yourself into the list, you can add your
-            name/username, and optionally an email or URL:
+        """If you contributed code or translations,
+        feel free to add yourself to the appropriate list.
+        To add yourself into the list, you can add your
+        name/username, and optionally an email or URL:
 
-            Name only:    gregorni
-            Name + URL:   gregorni https://gitlab.com/gregorni/
-            Name + Email: gregorni <gregorniehl@web.de>
+        Name only:    gregorni
+        Name + URL:   gregorni https://gitlab.com/gregorni/
+        Name + Email: gregorni <gregorniehl@web.de>
         """
         # This is a Python list: Add your string to the list (separated by a comma)
-        devs_list = ['gregorni https://gitlab.com/gregorni']
+        devs_list = ["gregorni https://gitlab.com/gregorni"]
         # This is a string: Add your name to the string (separated by a newline '\n')
-        translators_list = 'gregorni https://gitlab.com/gregorni\nIrénée Thirion\nAlbano Battistella https://gitlab.com/albanobattistella\nQuentin PAGÈS https://github.com/mejans\nFyodor Sobolev https://github.com/fsobolev\nSabri Ünal <libreajans@gmail.com>\nAmerey https://amerey.eu\nvolkov https://matrix.to/#/@vovkiv:matrix.org'
-        
+        translators_list = "gregorni https://gitlab.com/gregorni\nIrénée Thirion\nAlbano Battistella https://gitlab.com/albanobattistella\nQuentin PAGÈS https://github.com/mejans\nFyodor Sobolev https://github.com/fsobolev\nSabri Ünal <libreajans@gmail.com>\nAmerey https://amerey.eu\nvolkov https://matrix.to/#/@vovkiv:matrix.org"
+
         """Callback for the app.about action."""
-        about = Adw.AboutWindow(transient_for=self.props.active_window,
-                                application_name=_('Letterpress'),
-                                application_icon='io.gitlab.gregorni.ASCIIImages',
-                                developer_name=_('Letterpress Contributors'),
-                                version='1.3.0',
-                                developers=devs_list,
-                                artists=['Brage Fuglseth'],
-                                translator_credits=translators_list,
-                                copyright=_('Copyright © 2023 Letterpress Contributors'),
-                                license_type=Gtk.License.GPL_3_0,
-                                website='https://gitlab.com/gregorni/Letterpress',
-                                issue_url='https://gitlab.com/gregorni/Letterpress/-/issues',
-                                support_url='https://matrix.to/#/#gregorni-apps:matrix.org')
-        
-        about.add_acknowledgement_section(
-            _('Code and Design borrowed from'),
-            [
-                'Upscaler https://gitlab.com/TheEvilSkeleton/Upscaler',
-                'Frog https://github.com/TenderOwl/Frog',
-            ]
+        about = Adw.AboutWindow(
+            transient_for=self.props.active_window,
+            application_name=_("Letterpress"),
+            application_icon="io.gitlab.gregorni.ASCIIImages",
+            developer_name=_("Letterpress Contributors"),
+            version="1.3.0",
+            developers=devs_list,
+            artists=["Brage Fuglseth"],
+            translator_credits=translators_list,
+            copyright=_("Copyright © 2023 Letterpress Contributors"),
+            license_type=Gtk.License.GPL_3_0,
+            website="https://gitlab.com/gregorni/Letterpress",
+            issue_url="https://gitlab.com/gregorni/Letterpress/-/issues",
+            support_url="https://matrix.to/#/#gregorni-apps:matrix.org",
         )
-        
+
+        about.add_acknowledgement_section(
+            _("Code and Design borrowed from"),
+            [
+                "Upscaler https://gitlab.com/TheEvilSkeleton/Upscaler",
+                "Frog https://github.com/TenderOwl/Frog",
+            ],
+        )
+
         about.add_legal_section(
-            title='jp2a',
-            copyright='Copyright © 2020 Christoph Raitzig',
+            title="jp2a",
+            copyright="Copyright © 2020 Christoph Raitzig",
             license_type=Gtk.License.GPL_2_0,
         )
-        
+
         about.present()
 
     def create_action(self, name, callback, shortcuts=None, param=None):
@@ -168,8 +180,8 @@ class LetterpressApplication(Adw.Application):
         if shortcuts:
             self.set_accels_for_action(f"app.{name}", shortcuts)
 
+
 def main(version):
     """The application's entry point."""
     app = LetterpressApplication()
     return app.run(sys.argv)
-
