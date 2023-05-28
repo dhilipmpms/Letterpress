@@ -161,8 +161,12 @@ class LetterpressWindow(Adw.ApplicationWindow):
     def __convert_image(self, file):
         file = file.get_path()
 
+        arguments = ["jp2a", f"--width={self.width_spin.get_value()}", file]
+        if not Adw.StyleManager.get_default().get_dark():
+            arguments.append("--invert")
+
         process = subprocess.Popen(
-            ["jp2a", f"--width={self.width_spin.get_value()}", file],
+            arguments,
             stdout=subprocess.PIPE,
             universal_newlines=True,
         )
