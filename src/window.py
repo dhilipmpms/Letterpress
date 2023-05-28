@@ -47,6 +47,9 @@ class LetterpressWindow(Adw.ApplicationWindow):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
+        self.style_manager = Adw.StyleManager.get_default()
+        self.style_manager.connect("notify", self.__set_color_scheme)
+
         content = Gdk.ContentFormats.new_for_gtype(Gio.File)
         self.target = Gtk.DropTarget(formats=content, actions=Gdk.DragAction.COPY)
 
@@ -162,7 +165,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
         file = file.get_path()
 
         arguments = ["jp2a", f"--width={self.width_spin.get_value()}", file]
-        if not Adw.StyleManager.get_default().get_dark():
+        if not self.style_manager.get_dark():
             arguments.append("--invert")
 
         process = subprocess.Popen(
@@ -245,6 +248,10 @@ class LetterpressWindow(Adw.ApplicationWindow):
             toast.props.action_name = "app.open-output"
             toast.props.action_target = GLib.Variant("s", file.get_path())
             self.toast_overlay.add_toast(toast)
+
+    def __set_color_scheme(self, *args):
+        if self.file:
+            self.__convert_image(self.file)
 
     def __on_spin_value_changed(self, spin_button):
         self.__show_spinner()
