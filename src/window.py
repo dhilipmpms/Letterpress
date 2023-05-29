@@ -98,18 +98,6 @@ class LetterpressWindow(Adw.ApplicationWindow):
         self.__show_spinner()
         FileChooser.open_file(self, self.previous_stack)
 
-    def __on_open_error(self, file_path):
-        print(f"{file_path} is not of a supported image type.")
-        # Translators: Do not translate "{basename}"
-        self.toast_overlay.add_toast(
-            Adw.Toast.new(
-                _('"{basename}" is not of a supported image type.').format(
-                    basename=basename(file_path)
-                )
-            )
-        )
-        self.main_stack.set_visible_child_name(self.previous_stack)
-
     def check_is_image(self, file):
         self.__show_spinner()
 
@@ -121,7 +109,16 @@ class LetterpressWindow(Adw.ApplicationWindow):
         print(f"Input file: {file.get_path()}")
 
         if what(file.get_path()) != "png" and what(file.get_path()) != "jpeg":
-            self.__on_open_error(file.get_path())
+            print(f"{file.get_path()} is not of a supported image type.")
+            self.toast_overlay.add_toast(
+                Adw.Toast.new(
+                    # Translators: Do not translate "{basename}"
+                    _('"{basename}" is not of a supported image type.').format(
+                        basename=basename(file.get_path())
+                    )
+                )
+            )
+            self.main_stack.set_visible_child_name(self.previous_stack)
             return
 
         self.file = file
@@ -224,15 +221,15 @@ class LetterpressWindow(Adw.ApplicationWindow):
         else:
             display_name = file.get_basename()
 
-        # Translators: Do not translate "{display_name}"
         toast = Adw.Toast(
+            # Translators: Do not translate "{display_name}"
             title=_('Unable to save "{display_name}"').format(display_name=display_name)
         )
         if not file.replace_contents_finish(result):
             print(f"Unable to save {display_name}")
         else:
-            # Translators: Do not translate "{display_name}"
             toast.set_title(
+                # Translators: Do not translate "{display_name}"
                 _('"{display_name}" saved').format(display_name=display_name)
             )
             toast.set_button_label(_("Open"))
