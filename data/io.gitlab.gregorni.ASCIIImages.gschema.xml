@@ -2,10 +2,10 @@
 <schemalist gettext-domain="letterpress">
 	<schema id="io.gitlab.gregorni.ASCIIImages" path="/io/gitlab/gregorni/ASCIIImages/">
 	  <key name="width" type="i">
-      <default>640</default>
+      <default>800</default>
     </key>
     <key name="height" type="i">
-      <default>480</default>
+      <default>600</default>
     </key>
     <key name="is-maximized" type="b">
       <default>false</default>

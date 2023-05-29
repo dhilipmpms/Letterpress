@@ -41,8 +41,6 @@ letterpress_sources = [
   'main.py',
   'window.py',
   'file_chooser.py',
-  'error_dialog.py',
-  'zoom_box.py',
 ]
 
 install_data(letterpress_sources, install_dir: moduledir)
