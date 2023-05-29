@@ -23,9 +23,7 @@ from os.path import basename
 
 from gi.repository import Adw, Gdk, Gio, GLib, Gtk
 
-from .error_dialog import ErrorDialog
 from .file_chooser import FileChooser
-from .zoom_box import ZoomBox
 
 
 @Gtk.Template(resource_path="/io/gitlab/gregorni/ASCIIImages/gtk/window.ui")
@@ -191,7 +189,15 @@ class LetterpressWindow(Adw.ApplicationWindow):
 
     def __copy_output_to_clipboard(self, *args):
         if self.buffer.get_char_count() > 262088:
-            ErrorDialog.too_large(self)
+            dialog = Adw.MessageDialog(
+                transient_for=self,
+                heading=_("The output is too large to be copied."),
+                body=_(
+                    "Please save it to a file instead or decrease the output width."
+                ),
+            )
+            dialog.add_response("ok", _("_OK"))
+            dialog.present()
             return
         Gdk.Display.get_default().get_clipboard().set(self.image_as_text)
         self.toast_overlay.add_toast(Adw.Toast(title=_("Output copied to clipboard")))
@@ -271,3 +277,12 @@ class LetterpressWindow(Adw.ApplicationWindow):
 
     def __on_leave(self, *args):
         self.main_stack.set_visible_child_name(self.previous_stack)
+
+
+@Gtk.Template(resource_path="/io/gitlab/gregorni/ASCIIImages/gtk/zoom-box.ui")
+class ZoomBox(Gtk.Box):
+    __gtype_name__ = "ZoomBox"
+
+    zoom_indicator = Gtk.Template.Child()
+    decrease_btn = Gtk.Template.Child()
+    increase_btn = Gtk.Template.Child()
