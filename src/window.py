@@ -19,6 +19,7 @@
 
 import subprocess
 from filecmp import cmp
+from imghdr import what
 from os.path import basename
 
 from gi.repository import Adw, Gdk, Gio, GLib, Gtk
@@ -97,18 +98,17 @@ class LetterpressWindow(Adw.ApplicationWindow):
         self.__show_spinner()
         FileChooser.open_file(self, self.previous_stack)
 
-    def __on_open_error(self, error, file_path):
-        if error:
-            print(f"Unable to open file, {error}")
-            # Translators: Do not translate "{basename}"
-            self.toast_overlay.add_toast(
-                Adw.Toast.new(
-                    _('"{basename}" is not a valid image.').format(
-                        basename=basename(file_path)
-                    )
+    def __on_open_error(self, file_path):
+        print(f"{file_path} is not of a supported image type.")
+        # Translators: Do not translate "{basename}"
+        self.toast_overlay.add_toast(
+            Adw.Toast.new(
+                _('"{basename}" is not of a supported image type.').format(
+                    basename=basename(file_path)
                 )
             )
-            self.main_stack.set_visible_child_name(self.previous_stack)
+        )
+        self.main_stack.set_visible_child_name(self.previous_stack)
 
     def check_is_image(self, file):
         self.__show_spinner()
@@ -120,10 +120,8 @@ class LetterpressWindow(Adw.ApplicationWindow):
 
         print(f"Input file: {file.get_path()}")
 
-        try:
-            Gdk.Texture.new_from_file(file)  # Just to see if that's a valid image
-        except GLib.Error as error:
-            self.__on_open_error(error, file.get_path())
+        if what(file.get_path()) != "png" and what(file.get_path()) != "jpeg":
+            self.__on_open_error(file.get_path())
             return
 
         self.file = file
@@ -171,7 +169,10 @@ class LetterpressWindow(Adw.ApplicationWindow):
             stdout=subprocess.PIPE,
             universal_newlines=True,
         )
-        self.image_as_text = self.__read_lines(process)
+
+        self.image_as_text = ""
+        for line in iter(process.stdout.readline, ""):
+            self.image_as_text += line
         self.buffer.set_text(self.image_as_text)
 
         self.toolbox.set_reveal_child(True)
@@ -180,12 +181,6 @@ class LetterpressWindow(Adw.ApplicationWindow):
 
         self.zoom_box.set_sensitive(True)
         self.zoom_box.increase_btn.set_sensitive(False)
-
-    def __read_lines(self, process):
-        output = ""
-        for line in iter(process.stdout.readline, ""):
-            output += line
-        return output
 
     def __copy_output_to_clipboard(self, *args):
         if self.buffer.get_char_count() > 262088:
