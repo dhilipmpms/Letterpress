@@ -48,13 +48,15 @@ class LetterpressWindow(Adw.ApplicationWindow):
         self.style_manager = Adw.StyleManager.get_default()
         self.style_manager.connect("notify", self.__set_color_scheme)
 
-        content = Gdk.ContentFormats.new_for_gtype(Gio.File)
-        self.target = Gtk.DropTarget(formats=content, actions=Gdk.DragAction.COPY)
+        target = Gtk.DropTarget(
+            formats=Gdk.ContentFormats.new_for_gtype(Gio.File),
+            actions=Gdk.DragAction.COPY,
+        )
 
-        self.target.connect("drop", self.__on_drop)
-        self.target.connect("enter", self.__on_enter)
-        self.target.connect("leave", self.__on_leave)
-        self.add_controller(self.target)
+        target.connect("drop", self.__on_drop)
+        target.connect("enter", self.__on_enter)
+        target.connect("leave", self.__on_leave)
+        self.add_controller(target)
 
         settings = Gio.Settings(schema_id="io.gitlab.gregorni.ASCIIImages")
         settings.bind("width", self, "default-width", Gio.SettingsBindFlags.DEFAULT)
@@ -64,10 +66,9 @@ class LetterpressWindow(Adw.ApplicationWindow):
         settings.bind(
             "output-width", self.width_spin, "value", Gio.SettingsBindFlags.DEFAULT
         )
-        self.width_adj = Gtk.Adjustment.new(
-            settings["output-width"], 100, 2000, 10, 100, 0
+        self.width_spin.set_adjustment(
+            Gtk.Adjustment.new(settings["output-width"], 100, 2000, 10, 100, 0)
         )
-        self.width_spin.set_adjustment(self.width_adj)
 
         self.to_clipboard_btn.connect("clicked", self.__copy_output_to_clipboard)
         self.to_file_btn.connect("clicked", self.__save_output_to_file)
@@ -86,10 +87,9 @@ class LetterpressWindow(Adw.ApplicationWindow):
         self.menu_btn.props.popover.add_child(self.zoom_box, "zoom")
 
     def do_size_allocate(self, width, height, baseline):
+        self.width_row.set_subtitle(_("Width of the ASCII image in characters"))
         if width < 350:
             self.width_row.set_subtitle("")
-        else:
-            self.width_row.set_subtitle(_("Width of the ASCII image in characters"))
 
         Adw.ApplicationWindow.do_size_allocate(self, width, height, baseline)
 
@@ -207,18 +207,12 @@ class LetterpressWindow(Adw.ApplicationWindow):
 
     def on_save_file(self, file):
         print(f"Output file: {file.get_path()}")
-        buffer = self.output_text_view.get_buffer()
-        # Retrieve the iterator at the start of the buffer
-        start = buffer.get_start_iter()
-        # Retrieve the iterator at the end of the buffer
-        end = buffer.get_end_iter()
-        # Retrieve all the visible text between the two bounds
-        text = buffer.get_text(start, end, False)
-        # If there is nothing to save, return early
+        text = self.buffer.get_text(
+            self.buffer.get_start_iter(), self.buffer.get_end_iter(), False
+        )
         if not text:
             return
         bytes = GLib.Bytes.new(text.encode("utf-8"))
-        # Start the asynchronous operation to save the data into the file
         file.replace_contents_bytes_async(
             bytes,
             None,
@@ -229,31 +223,27 @@ class LetterpressWindow(Adw.ApplicationWindow):
         )
 
     def __save_file_complete(self, file, result):
-        res = file.replace_contents_finish(result)
         info = file.query_info("standard::display-name", Gio.FileQueryInfoFlags.NONE)
         if info:
             display_name = info.get_attribute_string("standard::display-name")
         else:
             display_name = file.get_basename()
-        if not res:
+
+        # Translators: Do not translate "{display_name}"
+        toast = Adw.Toast(
+            title=_('Unable to save "{display_name}"').format(display_name=display_name)
+        )
+        if not file.replace_contents_finish(result):
             print(f"Unable to save {display_name}")
-            # Translators: Do not translate "{display_name}"
-            self.toast_overlay.add_toast(
-                Adw.Toast(
-                    title=_('Unable to save "{display_name}"').format(
-                        display_name=display_name
-                    )
-                )
-            )
         else:
             # Translators: Do not translate "{display_name}"
-            toast = Adw.Toast(
-                title=_('"{display_name}" saved').format(display_name=display_name)
+            toast.set_title(
+                _('"{display_name}" saved').format(display_name=display_name)
             )
             toast.set_button_label(_("Open"))
             toast.props.action_name = "app.open-output"
             toast.props.action_target = GLib.Variant("s", file.get_path())
-            self.toast_overlay.add_toast(toast)
+        self.toast_overlay.add_toast(toast)
 
     def __set_color_scheme(self, *args):
         if self.file:
