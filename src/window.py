@@ -261,7 +261,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
         self.main_stack.set_visible_child_name("spinner-page")
         self.spinner.start()
 
-    def __on_drop(self, _, file, *args):
+    def __on_drop(self, widget, file, *args):
         self.check_is_image(file)
 
     def __on_enter(self, *args):
