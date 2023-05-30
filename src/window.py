@@ -42,6 +42,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
     width_spin = Gtk.Template.Child()
     width_row = Gtk.Template.Child()
     toolbox = Gtk.Template.Child()
+    gesture_zoom = Gtk.Template.Child()
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -74,6 +75,9 @@ class LetterpressWindow(Adw.ApplicationWindow):
         self.to_clipboard_btn.connect("clicked", self.__copy_output_to_clipboard)
         self.to_file_btn.connect("clicked", self.__save_output_to_file)
         self.width_spin.connect("value-changed", self.__on_spin_value_changed)
+
+        self.gesture_zoom.connect("scale-changed", self.__on_gesture)
+        self.scale_delta = 1
 
         file = Gio.File.new_for_uri(
             "resource:///io/gitlab/gregorni/ASCIIImages/assets/welcome.svg"
@@ -124,14 +128,14 @@ class LetterpressWindow(Adw.ApplicationWindow):
         self.file = file
         self.__convert_image(file)
 
-    def zoom(self, zoom_out=False, zoom_reset=False):
+    def zoom(self, zoom_out=False, zoom_reset=False, step=11):
         new_font_size_percent = int(self.zoom_box.zoom_indicator.get_label()[:-1])
         if zoom_out:
-            new_font_size_percent -= 11
+            new_font_size_percent -= step
         elif zoom_reset:
             new_font_size_percent = 100
         else:
-            new_font_size_percent += 11
+            new_font_size_percent += step
 
         if (
             new_font_size_percent < 1
@@ -236,6 +240,14 @@ class LetterpressWindow(Adw.ApplicationWindow):
             toast.props.action_name = "app.open-output"
             toast.props.action_target = GLib.Variant("s", file.get_path())
         self.toast_overlay.add_toast(toast)
+
+    def __on_gesture(self, *args):
+        new_scale_delta = self.gesture_zoom.get_scale_delta()
+        if new_scale_delta > self.scale_delta:
+            self.zoom(step=1)
+        if new_scale_delta < self.scale_delta:
+            self.zoom(zoom_out=True, step=1)
+        self.scale_delta = new_scale_delta
 
     def __set_color_scheme(self, *args):
         if self.file:
