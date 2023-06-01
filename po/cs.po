@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: letterpress\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: https://gitlab.com/gregorni/Letterpress/-/issues\n"
 "POT-Creation-Date: 2023-05-08 17:12+0200\n"
 "PO-Revision-Date: 2023-05-01 12:52+0200\n"
 "Last-Translator: Amerey.eu <info@amerey.eu>\n"
