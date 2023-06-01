@@ -267,4 +267,3 @@ msgstr "Показати клавіатурні скорочення"
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Вийти"
-https://gitlab.com/gregorni/Letterpress/-/issues
