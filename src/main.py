@@ -128,8 +128,6 @@ class LetterpressApplication(Adw.Application):
         """
         # This is a Python list: Add your string to the list (separated by a comma)
         devs_list = ["gregorni https://gitlab.com/gregorni"]
-        # This is a string: Add your name to the string (separated by a newline '\n')
-        translators_list = "gregorni https://gitlab.com/gregorni\nIrénée Thirion\nAlbano Battistella https://gitlab.com/albanobattistella\nQuentin PAGÈS https://github.com/mejans\nFyodor Sobolev https://github.com/fsobolev\nSabri Ünal <libreajans@gmail.com>\nAmerey https://amerey.eu\nvolkov https://matrix.to/#/@vovkiv:matrix.org"
 
         """Callback for the app.about action."""
         about = Adw.AboutWindow(
@@ -140,7 +138,11 @@ class LetterpressApplication(Adw.Application):
             version="1.3.0",
             developers=devs_list,
             artists=["Brage Fuglseth", "kramo https://kramo.hu"],
-            translator_credits=translators_list,
+            # Translators: Translate this string as your translator credits.
+            # Name only:    gregorni
+            # Name + URL:   gregorni https://gitlab.com/gregorni/
+            # Name + Email: gregorni <gregorniehl@web.de>
+            translator_credits=_("translator-credits"),
             copyright=_("Copyright © 2023 Letterpress Contributors"),
             license_type=Gtk.License.GPL_3_0,
             website="https://gitlab.com/gregorni/Letterpress",

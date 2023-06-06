@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: letterpress\n"
 "Report-Msgid-Bugs-To: https://gitlab.com/gregorni/Letterpress/-/issues\n"
-"POT-Creation-Date: 2023-05-08 17:12+0200\n"
+"POT-Creation-Date: 2023-06-06 18:10+0200\n"
 "PO-Revision-Date: 2023-05-01 12:52+0200\n"
 "Last-Translator: Amerey.eu <info@amerey.eu>\n"
 "Language-Team: \n"
@@ -20,8 +20,8 @@ msgstr ""
 
 #. Translators: Translate as "Letterpress"
 #: data/io.gitlab.gregorni.ASCIIImages.desktop.in:4
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:7 src/main.py:114
-#: src/window.blp:48
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:7 src/main.py:137
+#: src/gtk/window.blp:5
 msgid "Letterpress"
 msgstr "Letterpress"
 
@@ -36,219 +36,246 @@ msgstr "Převeďte obrázky na ASCII znaky"
 msgid "image;ascii;convert;conversion;text;"
 msgstr "image;ascii;convert;conversion;text;obrázek;převést;převod;"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:8 src/main.py:116
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:8 src/main.py:139
 msgid "Letterpress Contributors"
 msgstr "Přispěvatelé Letterpress"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:9
-msgid "Turn images into text"
-msgstr "Převeďte obrázky na text"
+msgid "Create beautiful ASCII art"
+msgstr ""
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:12
+#, fuzzy
 msgid ""
-"Letterpress uses jp2a to convert images into ASCII characters. You can save "
-"the output to a file, copy it, and even change its resolution!"
+"Letterpress converts your images into a picture made up of ASCII characters. "
+"You can save the output to a file, copy it, and even change its resolution! "
+"High-res output can still be viewed comfortably by lowering the zoom factor."
 msgstr ""
 "Letterpress používá jp2a k převodu obrázků na znaky ASCII. Výstup můžete "
 "uložit do souboru, zkopírovat a dokonce změnit jeho rozlišení!"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:27
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:28
 msgid "image"
 msgstr "obrázek"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:28
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:29
 msgid "ascii"
 msgstr "ascii"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:29
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:30
 msgid "convert"
 msgstr "převést"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:30
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:31
 msgid "conversion"
 msgstr "převod"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:31
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:32
 msgid "text"
 msgstr "text"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:48
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:49
 msgid "Overview"
 msgstr "Přehled"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:52
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:53
 msgid "Copy output"
 msgstr "Kopírovat výstup"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:56
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:57
 msgid "Save output"
 msgstr "Uložit výstup"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:60
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:61
 msgid "Adjust output width"
 msgstr "Upravit šířku výstupu"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:83
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:84
 #, fuzzy
 msgid "Rebrand to Letterpress"
 msgstr "O aplikaci Letterpress"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:84
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:85
 msgid "Replaced icon on welcome screen with illustration"
 msgstr ""
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:85
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:86
 msgid "Changed warning dialog to Adw.MessageDialog"
 msgstr ""
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:86
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:87
 msgid "Improved adaptiveness of \"Output Width\" subtitle"
 msgstr ""
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:87
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:88
 msgid "Swapped buttons for copying and saving output"
 msgstr ""
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:88
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:89
 #, fuzzy
 msgid "Added a string to translations"
 msgstr "Přidán ruský překlad"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:89
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:90
 #, fuzzy
 msgid "Added Turkish translation"
 msgstr "Přidán francouzský překlad"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:90
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:91
 #, fuzzy
 msgid "Added Czech translation"
 msgstr "Přidán francouzský překlad"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:97
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:98
 msgid "Added French translation"
 msgstr "Přidán francouzský překlad"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:98
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:99
 msgid "Added Russian translation"
 msgstr "Přidán ruský překlad"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:99
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:100
 msgid "Added Occitan translation"
 msgstr "Přidán okcitánský překlad"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:100
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:101
 msgid "Added Italian translation"
 msgstr "Přidán italský překlad"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:101
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:102
 msgid "Fixed \"Open with…\" functionality"
 msgstr "Opravena funkce „Otevřít pomocí…“."
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:102
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:103
 msgid "The app now remembers window size and state"
 msgstr "Aplikace si nyní pamatuje velikost a stav okna"
 
-#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:108
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:109
 msgid "First Release! 🎉"
 msgstr "První verze! 🎉"
 
-#: src/main.py:121
+#. Translators: Translate this string as your translator credits.
+#. Name only:    gregorni
+#. Name + URL:   gregorni https://gitlab.com/gregorni/
+#. Name + Email: gregorni <gregorniehl@web.de>
+#: src/main.py:147
+msgid "translator-credits"
+msgstr "Amerey https://amerey.eu"
+
+#: src/main.py:148
 msgid "Copyright © 2023 Letterpress Contributors"
 msgstr "Autorská práva © 2023 Přispěvatelé Letterpress"
 
-#: src/main.py:128
+#: src/main.py:156
 msgid "Code and Design borrowed from"
 msgstr "Kód a design půjčen od"
 
-#: src/window.py:84
+#: src/window.py:95
 msgid "Width of the ASCII image in characters"
 msgstr "Šířka obrázku ASCII ve znacích"
 
 #. Translators: Do not translate "{basename}"
-#: src/window.py:96
-#, python-brace-format
-msgid "\"{basename}\" is not a valid image."
+#: src/window.py:120
+#, fuzzy, python-brace-format
+msgid "\"{basename}\" is not of a supported image type."
 msgstr "\"{basename}\" není platný obrázek."
 
-#: src/window.py:142
+#: src/window.py:190
+msgid "The output is too large to be copied."
+msgstr "Výstup je příliš velký na kopírování."
+
+#: src/window.py:192
+msgid "Please save it to a file instead or decrease the output width."
+msgstr "Místo toho jej uložte do souboru nebo zmenšete výstupní šířku."
+
+#: src/window.py:195
+msgid "_OK"
+msgstr "OK"
+
+#: src/window.py:199
 msgid "Output copied to clipboard"
 msgstr "Výstup zkopírován do schránky"
 
 #. Translators: Do not translate "{display_name}"
-#: src/window.py:179
+#: src/window.py:230
 #, python-brace-format
 msgid "Unable to save \"{display_name}\""
 msgstr "Nelze uložit „{display_name}“"
 
 #. Translators: Do not translate "{display_name}"
-#: src/window.py:182
+#: src/window.py:237
 #, python-brace-format
 msgid "\"{display_name}\" saved"
 msgstr "„{display_name}“ byl uložen"
 
-#: src/window.py:183
+#: src/window.py:239
 msgid "Open"
 msgstr "Otevřít"
 
-#: src/file_chooser.py:37 src/file_chooser.py:63
+#: src/file_chooser.py:38 src/file_chooser.py:61
 msgid "Select a file"
 msgstr "Vybrat soubor"
 
-#: src/file_chooser.py:46
+#: src/file_chooser.py:45
 msgid "Supported image files"
 msgstr "Podporované soubory obrázků"
 
-#: src/error_dialog.py:29
-msgid "The output is too large to be copied."
-msgstr "Výstup je příliš velký na kopírování."
-
-#: src/error_dialog.py:30
-msgid "Please save it to a file instead or decrease the output width."
-msgstr "Místo toho jej uložte do souboru nebo zmenšete výstupní šířku."
-
-#: src/error_dialog.py:32
-msgid "_OK"
-msgstr "OK"
-
-#: src/window.blp:19
+#: src/gtk/window.blp:17
 msgid "Main Menu"
 msgstr "Hlavní menu"
 
-#: src/window.blp:57
-msgid "Drag and drop images here"
-msgstr "Sem přetáhněte obrázky"
+#: src/gtk/window.blp:46
+msgid "Create ASCII Art"
+msgstr ""
 
-#: src/window.blp:63
+#: src/gtk/window.blp:55
+msgid "Open or drag and drop an image to generate an ASCII art version of it"
+msgstr ""
+
+#: src/gtk/window.blp:65
 msgid "Open File…"
 msgstr "Otevřít soubor…"
 
-#: src/window.blp:80
+#: src/gtk/window.blp:82
 msgid "Drop Here to Open"
 msgstr "Přetažením sem otevřete"
 
-#: src/window.blp:138
+#: src/gtk/window.blp:143
 msgid "Output Width"
 msgstr "Šířka výstupu"
 
-#: src/window.blp:156
+#: src/gtk/window.blp:161
 msgid "Copy to clipboard"
 msgstr "Zkopírovat do schránky"
 
-#: src/window.blp:163
+#: src/gtk/window.blp:168
 msgid "Save to file"
 msgstr "Uložit do souboru"
 
-#: src/window.blp:180
-msgid "_Open…"
-msgstr "Otevřít…"
+#: src/gtk/window.blp:191
+#, fuzzy
+msgid "_Open File…"
+msgstr "Otevřít soubor…"
 
-#: src/window.blp:187
+#: src/gtk/window.blp:198
 msgid "_Keyboard Shortcuts"
 msgstr "Klávesové zkratky"
 
-#: src/window.blp:192
+#: src/gtk/window.blp:203
 msgid "_About Letterpress"
 msgstr "O aplikaci Letterpress"
+
+#: src/gtk/zoom-box.blp:12
+msgid "Zoom out"
+msgstr ""
+
+#: src/gtk/zoom-box.blp:28
+msgid "Reset zoom"
+msgstr ""
+
+#: src/gtk/zoom-box.blp:40
+msgid "Zoom in"
+msgstr ""
 
 #: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
@@ -269,6 +296,30 @@ msgstr "Zobrazit zkratky"
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Ukončit"
+
+#: src/gtk/help-overlay.blp:30
+msgctxt "shortcut window"
+msgid "Text View"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:33
+msgctxt "shortcut window"
+msgid "Zoom in"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:38
+msgctxt "shortcut window"
+msgid "Zoom out"
+msgstr ""
+
+#~ msgid "Turn images into text"
+#~ msgstr "Převeďte obrázky na text"
+
+#~ msgid "Drag and drop images here"
+#~ msgstr "Sem přetáhněte obrázky"
+
+#~ msgid "_Open…"
+#~ msgstr "Otevřít…"
 
 #~ msgid "ASCII Images"
 #~ msgstr "ASCII Obrázky"
