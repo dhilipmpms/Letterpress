@@ -129,7 +129,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
         self.__convert_image(file)
 
     def zoom(self, zoom_out=False, zoom_reset=False, step=11):
-        new_font_size_percent = int(self.zoom_box.zoom_indicator.get_label()[:-1])
+        new_font_size_percent = int(round(float(self.zoom_box.zoom_indicator.get_label()[:-1]), 0))
         if zoom_out:
             new_font_size_percent -= step
         elif zoom_reset:
@@ -182,6 +182,18 @@ class LetterpressWindow(Adw.ApplicationWindow):
 
         self.zoom_box.set_sensitive(True)
         self.zoom_box.increase_btn.set_sensitive(False)
+
+        css_provider = Gtk.CssProvider.new()
+        new_font_size = min(2000 / self.width_spin.get_value(), 11)
+        css_provider.load_from_data(
+            f"textview{{font-size:{new_font_size}pt;}}", -1
+        )
+        context = (
+            self.output_text_view.get_style_context()
+        )  # get_style_context will be deprecated in Gtk 4.10
+        context.add_provider(css_provider, 10)
+
+        self.zoom_box.zoom_indicator.set_label(f"{round((new_font_size - 1)*10, 1)}%")
 
     def __copy_output_to_clipboard(self, *args):
         if self.buffer.get_char_count() > 262088:
