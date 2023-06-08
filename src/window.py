@@ -201,46 +201,6 @@ class LetterpressWindow(Adw.ApplicationWindow):
     def __save_output_to_file(self, *args):
         FileChooser.save_file(self)
 
-    def on_save_file(self, file):
-        print(f"Output file: {file.get_path()}")
-        text = self.buffer.get_text(
-            self.buffer.get_start_iter(), self.buffer.get_end_iter(), False
-        )
-        if not text:
-            return
-        bytes = GLib.Bytes.new(text.encode("utf-8"))
-        file.replace_contents_bytes_async(
-            bytes,
-            None,
-            False,
-            Gio.FileCreateFlags.NONE,
-            None,
-            self.__save_file_complete,
-        )
-
-    def __save_file_complete(self, file, result):
-        info = file.query_info("standard::display-name", Gio.FileQueryInfoFlags.NONE)
-        if info:
-            display_name = info.get_attribute_string("standard::display-name")
-        else:
-            display_name = file.get_basename()
-
-        toast = Adw.Toast(
-            # Translators: Do not translate "{display_name}"
-            title=_('Unable to save "{display_name}"').format(display_name=display_name)
-        )
-        if not file.replace_contents_finish(result):
-            print(f"Unable to save {display_name}")
-        else:
-            toast.set_title(
-                # Translators: Do not translate "{display_name}"
-                _('"{display_name}" saved').format(display_name=display_name)
-            )
-            toast.set_button_label(_("Open"))
-            toast.props.action_name = "app.open-output"
-            toast.props.action_target = GLib.Variant("s", file.get_path())
-        self.toast_overlay.add_toast(toast)
-
     def __on_gesture(self, *args):
         new_scale_delta = self.gesture_zoom.get_scale_delta()
         if new_scale_delta != self.scale_delta:

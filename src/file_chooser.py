@@ -17,7 +17,7 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-from gi.repository import Gtk
+from gi.repository import Gtk, GLib, Gio, Adw
 
 
 class FileChooser:
@@ -52,10 +52,51 @@ class FileChooser:
 
     @staticmethod
     def save_file(parent, *args):
+
+        def on_save_file(file):
+            print(f"Output file: {file.get_path()}")
+            text = parent.buffer.get_text(
+                parent.buffer.get_start_iter(), parent.buffer.get_end_iter(), False
+            )
+            if not text:
+                return
+            bytes = GLib.Bytes.new(text.encode("utf-8"))
+            file.replace_contents_bytes_async(
+                bytes,
+                None,
+                False,
+                Gio.FileCreateFlags.NONE,
+                None,
+                __save_file_complete,
+            )
+
+        def __save_file_complete(file, result):
+            info = file.query_info("standard::display-name", Gio.FileQueryInfoFlags.NONE)
+            if info:
+                display_name = info.get_attribute_string("standard::display-name")
+            else:
+                display_name = file.get_basename()
+
+            toast = Adw.Toast(
+                # Translators: Do not translate "{display_name}"
+                title=_('Unable to save "{display_name}"').format(display_name=display_name)
+            )
+            if not file.replace_contents_finish(result):
+                print(f"Unable to save {display_name}")
+            else:
+                toast.set_title(
+                    # Translators: Do not translate "{display_name}"
+                    _('"{display_name}" saved').format(display_name=display_name)
+                )
+                toast.set_button_label(_("Open"))
+                toast.props.action_name = "app.open-output"
+                toast.props.action_target = GLib.Variant("s", file.get_path())
+            parent.toast_overlay.add_toast(toast)
+
         def __on_response(_dialog, response):
             """Run if the user selects a file."""
             if response == Gtk.ResponseType.ACCEPT:
-                parent.on_save_file(_dialog.get_file())
+                on_save_file(_dialog.get_file())
 
         dialog = Gtk.FileChooserNative.new(
             title=_("Select a file"), parent=parent, action=Gtk.FileChooserAction.SAVE
@@ -65,3 +106,4 @@ class FileChooser:
         dialog.connect("response", __on_response)
         dialog.set_current_name("output.txt")
         dialog.show()
+        
