@@ -180,7 +180,6 @@ class LetterpressWindow(Adw.ApplicationWindow):
         self.previous_stack = "view-page"
 
         self.zoom_box.set_sensitive(True)
-
         self.zoom(zoom_reset=True)
 
     def __copy_output_to_clipboard(self, *args):
