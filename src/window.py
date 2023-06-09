@@ -200,11 +200,10 @@ class LetterpressWindow(Adw.ApplicationWindow):
     def __save_output_to_file(self, *args):
         FileChooser.save_file(self)
 
-    def __on_gesture(self, *args):
-        new_scale_delta = self.gesture_zoom.get_scale_delta()
-        if new_scale_delta != self.scale_delta:
-            self.zoom(zoom_out=new_scale_delta < self.scale_delta, step=1)
-        self.scale_delta = new_scale_delta
+    def __on_gesture(self, gesture, scale, *args):
+        if scale != self.scale_delta:
+            self.zoom(zoom_out=scale < self.scale_delta, step=1)
+        self.scale_delta = scale
 
     def __set_color_scheme(self, *args):
         if self.file:
