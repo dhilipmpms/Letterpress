@@ -129,23 +129,20 @@ class LetterpressWindow(Adw.ApplicationWindow):
         self.__convert_image(file)
 
     def zoom(self, zoom_out=False, zoom_reset=False, step=11):
+        if not self.zoom_box.get_sensitive():
+            return
+
         new_font_size_percent = int(self.zoom_box.zoom_indicator.get_label()[:-1])
         if zoom_out:
             new_font_size_percent -= step
         elif zoom_reset:
-            new_font_size_percent = 100
+            new_font_size_percent = int(
+                round((min(2000 / self.width_spin.get_value(), 11) - 1) * 10, 0)
+            )
         else:
             new_font_size_percent += step
 
-        if (
-            new_font_size_percent < 1
-            or new_font_size_percent > 100
-            or not self.zoom_box.get_sensitive()
-        ):
-            return
-
-        self.zoom_box.decrease_btn.set_sensitive(new_font_size_percent > 1)
-        self.zoom_box.increase_btn.set_sensitive(new_font_size_percent < 100)
+        new_font_size_percent = min(max(new_font_size_percent, 1), 100)
 
         css_provider = Gtk.CssProvider.new()
         css_provider.load_from_data(
@@ -157,6 +154,8 @@ class LetterpressWindow(Adw.ApplicationWindow):
         context.add_provider(css_provider, 10)
 
         self.zoom_box.zoom_indicator.set_label(f"{new_font_size_percent}%")
+        self.zoom_box.decrease_btn.set_sensitive(new_font_size_percent > 1)
+        self.zoom_box.increase_btn.set_sensitive(new_font_size_percent < 100)
 
     def __convert_image(self, file):
         file = file.get_path()
@@ -181,7 +180,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
         self.previous_stack = "view-page"
 
         self.zoom_box.set_sensitive(True)
-        self.zoom_box.increase_btn.set_sensitive(False)
+        self.zoom(zoom_reset=True)
 
     def __copy_output_to_clipboard(self, *args):
         if self.buffer.get_char_count() > 262088:
