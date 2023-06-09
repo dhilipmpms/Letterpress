@@ -17,7 +17,7 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-from gi.repository import Gtk, GLib, Gio, Adw
+from gi.repository import Adw, Gio, GLib, Gtk
 
 
 class FileChooser:
@@ -52,7 +52,6 @@ class FileChooser:
 
     @staticmethod
     def save_file(parent, *args):
-
         def on_save_file(file):
             print(f"Output file: {file.get_path()}")
             text = parent.buffer.get_text(
@@ -71,7 +70,9 @@ class FileChooser:
             )
 
         def __save_file_complete(file, result):
-            info = file.query_info("standard::display-name", Gio.FileQueryInfoFlags.NONE)
+            info = file.query_info(
+                "standard::display-name", Gio.FileQueryInfoFlags.NONE
+            )
             if info:
                 display_name = info.get_attribute_string("standard::display-name")
             else:
@@ -79,7 +80,9 @@ class FileChooser:
 
             toast = Adw.Toast(
                 # Translators: Do not translate "{display_name}"
-                title=_('Unable to save "{display_name}"').format(display_name=display_name)
+                title=_('Unable to save "{display_name}"').format(
+                    display_name=display_name
+                )
             )
             if not file.replace_contents_finish(result):
                 print(f"Unable to save {display_name}")
@@ -106,4 +109,3 @@ class FileChooser:
         dialog.connect("response", __on_response)
         dialog.set_current_name("output.txt")
         dialog.show()
-        
