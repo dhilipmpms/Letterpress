@@ -202,7 +202,10 @@ class LetterpressWindow(Adw.ApplicationWindow):
 
     def __on_gesture(self, gesture, scale, *args):
         if scale != self.scale_delta:
-            self.zoom(zoom_out=scale < self.scale_delta, step=1)
+            self.zoom(
+                zoom_out=scale < self.scale_delta,
+                step=max(int(abs(scale - self.scale_delta) * 100), 1),
+            )
         self.scale_delta = scale
 
     def __set_color_scheme(self, *args):
