@@ -41,14 +41,18 @@ class LetterpressApplication(Adw.Application):
         self.create_action("open-menu", self.__open_menu, ["F10"])
         self.create_action("about", self.__on_about_action)
         self.create_action("open-file", self.__open_file, ["<primary>o"])
-        self.create_action("zoom-out", self.__zoom_out)
-        self.create_action("zoom-in", self.__zoom_in)
+        self.create_action("zoom-out", self.__zoom_out, ["<primary>minus"])
+        self.create_action("zoom-in", self.__zoom_in, ["<primary>plus"])
         self.create_action("reset-zoom", self.__reset_zoom)
         self.create_action(
-            "increase-output-width", self.__increase_output_width, ["<primary>plus"]
+            "increase-output-width",
+            self.__increase_output_width,
+            ["<primary><alt>plus"],
         )
         self.create_action(
-            "decrease-output-width", self.__decrease_output_width, ["<primary>minus"]
+            "decrease-output-width",
+            self.__decrease_output_width,
+            ["<primary><alt>minus"],
         )
         self.create_action(
             "open-output", self.__open_output, param=GLib.VariantType("s")
@@ -82,12 +86,12 @@ class LetterpressApplication(Adw.Application):
 
     def __increase_output_width(self, *args):
         self.props.active_window.width_spin.set_value(
-            self.props.active_window.width_spin.get_value() + 10
+            self.props.active_window.width_spin.get_value() + 100
         )
 
     def __decrease_output_width(self, *args):
         self.props.active_window.width_spin.set_value(
-            self.props.active_window.width_spin.get_value() - 10
+            self.props.active_window.width_spin.get_value() - 100
         )
 
     def __open_output(self, app, data):
