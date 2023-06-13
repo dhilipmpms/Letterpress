@@ -34,7 +34,6 @@ class LetterpressWindow(Adw.ApplicationWindow):
     menu_btn = Gtk.Template.Child()
     toast_overlay = Gtk.Template.Child()
     main_stack = Gtk.Template.Child()
-    welcome_illustration = Gtk.Template.Child()
     spinner = Gtk.Template.Child()
     output_text_view = Gtk.Template.Child()
     to_file_btn = Gtk.Template.Child()
@@ -78,11 +77,6 @@ class LetterpressWindow(Adw.ApplicationWindow):
 
         self.gesture_zoom.connect("scale-changed", self.__on_gesture)
         self.scale_delta = 1
-
-        file = Gio.File.new_for_uri(
-            "resource:///io/gitlab/gregorni/ASCIIImages/assets/welcome.svg"
-        )
-        self.welcome_illustration.set_file(file)
 
         self.buffer = self.output_text_view.get_buffer()
         self.previous_stack = "welcome"
