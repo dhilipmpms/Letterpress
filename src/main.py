@@ -162,6 +162,8 @@ class LetterpressApplication(Adw.Application):
             # Name only:    gregorni
             # Name + URL:   gregorni https://gitlab.com/gregorni/
             # Name + Email: gregorni <gregorniehl@web.de>
+            # Do not remove existing names.
+            # Names are separated with newlines.
             translator_credits=_("translator-credits"),
             copyright=_("Copyright © 2023 Letterpress Contributors"),
             license_type=Gtk.License.GPL_3_0,
