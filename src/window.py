@@ -154,7 +154,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
     def __convert_image(self, file):
         file = file.get_path()
 
-        arguments = ["jp2a", f"--width={self.width_spin.get_value()}", file]
+        arguments = ["artem", f"--size={int(self.width_spin.get_value())}", file]
         if not self.style_manager.get_dark():
             arguments.append("--invert")
 
