@@ -30,37 +30,57 @@ template $LetterpressWindow : Adw.ApplicationWindow {
           StackPage {
             name: "welcome";
             child:
-              Box {
-                orientation: vertical;
-                spacing: 12;
-                margin-top: 24;
-                margin-bottom: 36;
-                halign: center;
-                valign: center;
+              // If we want an illustration
 
-                Picture {
-                  height-request: 100;
-                  file: "resource:///io/gitlab/gregorni/ASCIIImages/assets/welcome.svg";
-                }
+              // Box {
+              //   orientation: vertical;
+              //   spacing: 12;
+              //   margin-top: 24;
+              //   margin-bottom: 36;
+              //   halign: center;
+              //   valign: center;
 
-                Label {
-                  label: _("Create ASCII Art");
-                  margin-top: 36;
+              //   Picture {
+              //     height-request: 100;
+              //     file: "resource:///io/gitlab/gregorni/ASCIIImages/assets/welcome.svg";
+              //   }
 
-                  styles [
-                    "title-1",
-                  ]
-                }
+              //   Label {
+              //     label: _("Create ASCII Art");
+              //     margin-top: 36;
 
-                Label {
-                  label: _("Open or drag and drop an image to generate an ASCII art version of it");
-                  wrap: true;
-                  halign: center;
-                  margin-start: 20;
-                  margin-end: 20;
-                }
+              //     styles [
+              //       "title-1",
+              //     ]
+              //   }
 
-                Button open_file_btn {
+              //   Label {
+              //     label: _("Open or drag and drop an image to generate an ASCII art version of it");
+              //     wrap: true;
+              //     halign: center;
+              //     margin-start: 20;
+              //     margin-end: 20;
+              //   }
+
+              //   Button open_file_btn {
+              //     halign: center;
+              //     action-name: "app.open-file";
+              //     label: _("Open File…");
+              //     margin-top: 24;
+
+              //     styles [
+              //       "pill",
+              //       "suggested-action",
+              //     ]
+              //   }
+              // }
+
+              Adw.StatusPage {
+                icon-name: "io.gitlab.gregorni.ASCIIImages";
+                title: _("Create ASCII Art");
+                description: _("Open or drag and drop an image to generate an ASCII art version of it");
+
+                child: Button open_file_btn {
                   halign: center;
                   action-name: "app.open-file";
                   label: _("Open File…");
@@ -71,6 +91,8 @@ template $LetterpressWindow : Adw.ApplicationWindow {
                     "suggested-action",
                   ]
                 }
+
+                ;
               }
             ;
           }
