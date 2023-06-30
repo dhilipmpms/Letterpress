@@ -68,7 +68,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
             "output-width", self.width_spin, "value", Gio.SettingsBindFlags.DEFAULT
         )
         self.width_spin.set_adjustment(
-            Gtk.Adjustment.new(settings["output-width"], 100, 2000, 10, 100, 0)
+            Gtk.Adjustment.new(settings["output-width"], 100, 5000, 10, 100, 0)
         )
 
         self.to_clipboard_btn.connect("clicked", self.__copy_output_to_clipboard)
@@ -131,7 +131,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
             new_font_size_percent -= step
         elif zoom_reset:
             new_font_size_percent = int(
-                round((min(2000 / self.width_spin.get_value(), 11) - 1) * 10, 0)
+                round((min(15000 / self.width_spin.get_value(), 11) - 1) * 10, 0)
             )
         else:
             new_font_size_percent += step
@@ -154,7 +154,12 @@ class LetterpressWindow(Adw.ApplicationWindow):
     def __convert_image(self, file):
         file = file.get_path()
 
-        arguments = ["artem", f"--size={int(self.width_spin.get_value())}", file]
+        arguments = [
+            "artem",
+            f"--size={int(self.width_spin.get_value())}",
+            "--ratio=0.5",
+            file,
+        ]
         if not self.style_manager.get_dark():
             arguments.append("--invert")
 
