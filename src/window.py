@@ -18,9 +18,9 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 import subprocess
-from filecmp import cmp
-from imghdr import what
-from os.path import basename
+import filecmp
+import imghdr
+from os import path
 
 from gi.repository import Adw, Gdk, Gio, GLib, Gtk
 
@@ -100,19 +100,19 @@ class LetterpressWindow(Adw.ApplicationWindow):
         self.__show_spinner()
 
         if self.file and file:
-            if cmp(self.file.get_path(), file.get_path()):
+            if filecmp.cmp(self.file.get_path(), file.get_path()):
                 self.main_stack.set_visible_child_name(self.previous_stack)
                 return
 
         print(f"Input file: {file.get_path()}")
 
-        if what(file.get_path()) != "png" and what(file.get_path()) != "jpeg":
+        if imghdr.what(file.get_path()) != "png" and imghdr.what(file.get_path()) != "jpeg":
             print(f"{file.get_path()} is not of a supported image type.")
             self.toast_overlay.add_toast(
                 Adw.Toast.new(
                     # Translators: Do not translate "{basename}"
                     _('"{basename}" is not of a supported image type.').format(
-                        basename=basename(file.get_path())
+                        basename=path.basename(file.get_path())
                     )
                 )
             )
