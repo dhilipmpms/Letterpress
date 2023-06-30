@@ -45,6 +45,16 @@ class LetterpressApplication(Adw.Application):
         self.create_action("zoom-in", self.__zoom_in, ["<primary>plus"])
         self.create_action("reset-zoom", self.__reset_zoom)
         self.create_action(
+            "increase-output-width",
+            self.__increase_output_width,
+            ["<primary><alt>plus"],
+        )
+        self.create_action(
+            "decrease-output-width",
+            self.__decrease_output_width,
+            ["<primary><alt>minus"],
+        )
+        self.create_action(
             "open-output", self.__open_output, param=GLib.VariantType("s")
         )
         self.file = None
@@ -73,6 +83,16 @@ class LetterpressApplication(Adw.Application):
 
     def __reset_zoom(self, *args):
         self.props.active_window.zoom(zoom_reset=True)
+
+    def __increase_output_width(self, *args):
+        self.props.active_window.width_spin.set_value(
+            self.props.active_window.width_spin.get_value() + 100
+        )
+
+    def __decrease_output_width(self, *args):
+        self.props.active_window.width_spin.set_value(
+            self.props.active_window.width_spin.get_value() - 100
+        )
 
     def __open_output(self, app, data):
         file_path = data.unpack()
@@ -128,8 +148,6 @@ class LetterpressApplication(Adw.Application):
         """
         # This is a Python list: Add your string to the list (separated by a comma)
         devs_list = ["gregorni https://gitlab.com/gregorni"]
-        # This is a string: Add your name to the string (separated by a newline '\n')
-        translators_list = "gregorni https://gitlab.com/gregorni\nIrénée Thirion\nAlbano Battistella https://gitlab.com/albanobattistella\nQuentin PAGÈS https://github.com/mejans\nFyodor Sobolev https://github.com/fsobolev\nSabri Ünal <libreajans@gmail.com>\nAmerey https://amerey.eu\nvolkov https://matrix.to/#/@vovkiv:matrix.org"
 
         """Callback for the app.about action."""
         about = Adw.AboutWindow(
@@ -137,10 +155,16 @@ class LetterpressApplication(Adw.Application):
             application_name=_("Letterpress"),
             application_icon="io.gitlab.gregorni.ASCIIImages",
             developer_name=_("Letterpress Contributors"),
-            version="1.3.0",
+            version="2.0",
             developers=devs_list,
             artists=["Brage Fuglseth", "kramo https://kramo.hu"],
-            translator_credits=translators_list,
+            # Translators: Translate this string as your translator credits.
+            # Name only:    gregorni
+            # Name + URL:   gregorni https://gitlab.com/gregorni/
+            # Name + Email: gregorni <gregorniehl@web.de>
+            # Do not remove existing names.
+            # Names are separated with newlines.
+            translator_credits=_("translator-credits"),
             copyright=_("Copyright © 2023 Letterpress Contributors"),
             license_type=Gtk.License.GPL_3_0,
             website="https://gitlab.com/gregorni/Letterpress",

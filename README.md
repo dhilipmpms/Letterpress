@@ -21,8 +21,6 @@ The easiest way to work on this project is by cloning it with GNOME Builder:
 3. Clone `https://gitlab.com/gregorni/letterpress.git` (or your fork)
 4. Run the project with the ▶ button at the top, or by pressing `Ctrl`+`Shift`+`Space`.
 
-If you want to propose a Merge Request, please open an issue first so that the idea can be discussed.
-
 ## Code of Conduct
 
 This project follows the [GNOME Code of Conduct](https://wiki.gnome.org/Foundation/CodeOfConduct)
