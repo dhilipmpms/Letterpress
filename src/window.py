@@ -38,8 +38,8 @@ class LetterpressWindow(Adw.ApplicationWindow):
     output_text_view = Gtk.Template.Child()
     to_file_btn = Gtk.Template.Child()
     to_clipboard_btn = Gtk.Template.Child()
-    width_spin = Gtk.Template.Child()
     width_row = Gtk.Template.Child()
+    width_spin = Gtk.Template.Child()
     toolbox = Gtk.Template.Child()
     gesture_zoom = Gtk.Template.Child()
 
