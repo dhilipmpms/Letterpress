@@ -17,9 +17,9 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-import subprocess
 import filecmp
 import imghdr
+import subprocess
 from os import path
 
 from gi.repository import Adw, Gdk, Gio, GLib, Gtk
@@ -106,7 +106,10 @@ class LetterpressWindow(Adw.ApplicationWindow):
 
         print(f"Input file: {file.get_path()}")
 
-        if imghdr.what(file.get_path()) != "png" and imghdr.what(file.get_path()) != "jpeg":
+        if (
+            imghdr.what(file.get_path()) != "png"
+            and imghdr.what(file.get_path()) != "jpeg"
+        ):
             print(f"{file.get_path()} is not of a supported image type.")
             self.toast_overlay.add_toast(
                 Adw.Toast.new(
