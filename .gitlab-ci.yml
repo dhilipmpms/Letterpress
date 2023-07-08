@@ -33,4 +33,4 @@ black:
 isort:
   script:
     - pip install isort --quiet
-    - isort --check-only --diff src/
+    - isort --check-only --diff --profile black src/
