@@ -18,11 +18,11 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 import filecmp
-import imghdr
 import subprocess
 from os import path
 
 from gi.repository import Adw, Gdk, Gio, GLib, Gtk
+from PIL import Image
 
 from .file_chooser import FileChooser
 
@@ -106,10 +106,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
 
         print(f"Input file: {file.get_path()}")
 
-        if (
-            imghdr.what(file.get_path()) != "png"
-            and imghdr.what(file.get_path()) != "jpeg"
-        ):
+        def __wrong_image_type():
             print(f"{file.get_path()} is not of a supported image type.")
             self.toast_overlay.add_toast(
                 Adw.Toast.new(
@@ -120,10 +117,15 @@ class LetterpressWindow(Adw.ApplicationWindow):
                 )
             )
             self.main_stack.set_visible_child_name(self.previous_stack)
-            return
 
-        self.file = file
-        self.__convert_image(file)
+        try:
+            if Image.open(file.get_path()).format in ["JPEG", "PNG"]:
+                self.file = file
+                self.__convert_image(file)
+            else:
+                __wrong_image_type()
+        except IOError:
+            __wrong_image_type()
 
     def zoom(self, zoom_out=False, zoom_reset=False, step=11):
         if not self.zoom_box.get_sensitive():

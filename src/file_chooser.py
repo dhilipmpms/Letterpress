@@ -22,6 +22,7 @@ from gi.repository import Adw, Gio, GLib, Gtk
 
 class FileChooser:
     """Open and load file."""
+
     @staticmethod
     def open_file(parent, last_view_page, *args):
         def __on_response(_dialog, response):
