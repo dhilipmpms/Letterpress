@@ -19,10 +19,11 @@
 
 import filecmp
 import subprocess
+import tempfile
 from os import path
 
 from gi.repository import Adw, Gdk, Gio, GLib, Gtk
-from PIL import Image
+from PIL import Image, ImageOps
 
 from .file_chooser import FileChooser
 
@@ -100,7 +101,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
         self.__show_spinner()
 
         if self.file and file:
-            if filecmp.cmp(self.file.get_path(), file.get_path()):
+            if filecmp.cmp(self.file, file.get_path()):
                 self.main_stack.set_visible_child_name(self.previous_stack)
                 return
 
@@ -119,9 +120,13 @@ class LetterpressWindow(Adw.ApplicationWindow):
             self.main_stack.set_visible_child_name(self.previous_stack)
 
         try:
-            if Image.open(file.get_path()).format in ["JPEG", "PNG"]:
-                self.file = file
-                self.__convert_image(file)
+            image_format = Image.open(file.get_path()).format
+            if image_format in ["JPEG", "PNG"]:
+                self.file = f"{tempfile.NamedTemporaryFile().name}img.{image_format}"
+                img = ImageOps.exif_transpose(Image.open(file.get_path()))
+                img.save(self.file, format=image_format)
+
+                self.__convert_image(self.file)
             else:
                 __wrong_image_type()
         except IOError:
@@ -156,10 +161,8 @@ class LetterpressWindow(Adw.ApplicationWindow):
         self.zoom_box.decrease_btn.set_sensitive(new_font_size_percent > 1)
         self.zoom_box.increase_btn.set_sensitive(new_font_size_percent < 100)
 
-    def __convert_image(self, file):
-        file = file.get_path()
-
-        arguments = ["jp2a", f"--width={self.width_spin.get_value()}", file]
+    def __convert_image(self, file_path):
+        arguments = ["jp2a", f"--width={self.width_spin.get_value()}", file_path]
         if not self.style_manager.get_dark():
             arguments.append("--invert")
 
