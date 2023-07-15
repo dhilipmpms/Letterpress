@@ -22,7 +22,7 @@ import tempfile
 from os import path
 
 from gi.repository import Adw, Gdk, Gio, GLib, Gtk
-from PIL import Image, ImageOps, ImageChops
+from PIL import Image, ImageChops, ImageOps
 
 from .file_chooser import FileChooser
 
