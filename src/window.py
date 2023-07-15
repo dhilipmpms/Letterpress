@@ -17,13 +17,12 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-import filecmp
 import subprocess
 import tempfile
 from os import path
 
 from gi.repository import Adw, Gdk, Gio, GLib, Gtk
-from PIL import Image, ImageOps
+from PIL import Image, ImageOps, ImageChops
 
 from .file_chooser import FileChooser
 
@@ -101,7 +100,10 @@ class LetterpressWindow(Adw.ApplicationWindow):
         self.__show_spinner()
 
         if self.file and file:
-            if filecmp.cmp(self.file, file.get_path()):
+            if not ImageChops.difference(
+                Image.open(self.file).convert("RGB"),
+                Image.open(file.get_path()).convert("RGB"),
+            ).getbbox():
                 self.main_stack.set_visible_child_name(self.previous_stack)
                 return
 
