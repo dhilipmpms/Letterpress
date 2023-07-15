@@ -122,10 +122,11 @@ class LetterpressWindow(Adw.ApplicationWindow):
             self.main_stack.set_visible_child_name(self.previous_stack)
 
         try:
-            image_format = Image.open(file.get_path()).format
+            img = Image.open(file.get_path())
+            image_format = img.format
             if image_format in ["JPEG", "PNG"]:
                 self.file = f"{tempfile.NamedTemporaryFile().name}img.{image_format}"
-                img = ImageOps.exif_transpose(Image.open(file.get_path()))
+                img = ImageOps.exif_transpose(img)
                 img.save(self.file, format=image_format)
 
                 self.__convert_image(self.file)
