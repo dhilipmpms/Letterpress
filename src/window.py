@@ -136,33 +136,32 @@ class LetterpressWindow(Adw.ApplicationWindow):
             __wrong_image_type()
 
     def zoom(self, zoom_out=False, zoom_reset=False, step=11):
-        if not self.zoom_box.get_sensitive():
-            return
+        if self.zoom_box.get_sensitive():
 
-        new_font_size_percent = int(self.zoom_box.zoom_indicator.get_label()[:-1])
-        if zoom_out:
-            new_font_size_percent -= step
-        elif zoom_reset:
-            new_font_size_percent = int(
-                round((min(2000 / self.width_spin.get_value(), 11) - 1) * 10, 0)
+            new_font_size_percent = int(self.zoom_box.zoom_indicator.get_label()[:-1])
+            if zoom_out:
+                new_font_size_percent -= step
+            elif zoom_reset:
+                new_font_size_percent = int(
+                    round((min(2000 / self.width_spin.get_value(), 11) - 1) * 10, 0)
+                )
+            else:
+                new_font_size_percent += step
+
+            new_font_size_percent = min(max(new_font_size_percent, 1), 100)
+
+            css_provider = Gtk.CssProvider.new()
+            css_provider.load_from_data(
+                f"textview{{font-size:{new_font_size_percent / 10 + 1}pt;}}", -1
             )
-        else:
-            new_font_size_percent += step
+            context = (
+                self.output_text_view.get_style_context()
+            )  # get_style_context will be deprecated in Gtk 4.10
+            context.add_provider(css_provider, 10)
 
-        new_font_size_percent = min(max(new_font_size_percent, 1), 100)
-
-        css_provider = Gtk.CssProvider.new()
-        css_provider.load_from_data(
-            f"textview{{font-size:{new_font_size_percent / 10 + 1}pt;}}", -1
-        )
-        context = (
-            self.output_text_view.get_style_context()
-        )  # get_style_context will be deprecated in Gtk 4.10
-        context.add_provider(css_provider, 10)
-
-        self.zoom_box.zoom_indicator.set_label(f"{new_font_size_percent}%")
-        self.zoom_box.decrease_btn.set_sensitive(new_font_size_percent > 1)
-        self.zoom_box.increase_btn.set_sensitive(new_font_size_percent < 100)
+            self.zoom_box.zoom_indicator.set_label(f"{new_font_size_percent}%")
+            self.zoom_box.decrease_btn.set_sensitive(new_font_size_percent > 1)
+            self.zoom_box.increase_btn.set_sensitive(new_font_size_percent < 100)
 
     def __convert_image(self, file_path):
         arguments = ["jp2a", f"--width={self.width_spin.get_value()}", file_path]
