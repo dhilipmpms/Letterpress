@@ -172,7 +172,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
         arguments = [
             "artem",
             f"--size={int(self.width_spin.get_value())}",
-            "--ratio=0.5",
+            "--ratio=0.46",
             file,
         ]
         if not self.style_manager.get_dark():
