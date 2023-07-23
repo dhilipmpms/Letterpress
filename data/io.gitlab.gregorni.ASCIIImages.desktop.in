@@ -1,7 +1,7 @@
 [Desktop Entry]
 # Translators: Translate as "Letterpress"
 Name=Letterpress
-Comment=Convert images into ASCII characters
+Comment=Create beautiful ASCII art
 Exec=letterpress %u
 Icon=io.gitlab.gregorni.ASCIIImages
 Terminal=false

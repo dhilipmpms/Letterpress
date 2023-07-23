@@ -21,7 +21,6 @@ from gi.repository import Adw, Gio, GLib, Gtk
 
 
 class FileChooser:
-
     """Open and load file."""
 
     @staticmethod

@@ -18,11 +18,11 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 import subprocess
-from filecmp import cmp
-from imghdr import what
-from os.path import basename
+import tempfile
+from os import path
 
 from gi.repository import Adw, Gdk, Gio, GLib, Gtk
+from PIL import Image, ImageChops, ImageOps
 
 from .file_chooser import FileChooser
 
@@ -38,8 +38,8 @@ class LetterpressWindow(Adw.ApplicationWindow):
     output_text_view = Gtk.Template.Child()
     to_file_btn = Gtk.Template.Child()
     to_clipboard_btn = Gtk.Template.Child()
-    width_spin = Gtk.Template.Child()
     width_row = Gtk.Template.Child()
+    width_spin = Gtk.Template.Child()
     toolbox = Gtk.Template.Child()
     gesture_zoom = Gtk.Template.Child()
 
@@ -100,56 +100,67 @@ class LetterpressWindow(Adw.ApplicationWindow):
         self.__show_spinner()
 
         if self.file and file:
-            if cmp(self.file.get_path(), file.get_path()):
+            if not ImageChops.difference(
+                Image.open(self.file).convert("RGB"),
+                Image.open(file.get_path()).convert("RGB"),
+            ).getbbox():
                 self.main_stack.set_visible_child_name(self.previous_stack)
                 return
 
         print(f"Input file: {file.get_path()}")
 
-        if what(file.get_path()) != "png" and what(file.get_path()) != "jpeg":
+        def __wrong_image_type():
             print(f"{file.get_path()} is not of a supported image type.")
             self.toast_overlay.add_toast(
                 Adw.Toast.new(
                     # Translators: Do not translate "{basename}"
                     _('"{basename}" is not of a supported image type.').format(
-                        basename=basename(file.get_path())
+                        basename=path.basename(file.get_path())
                     )
                 )
             )
             self.main_stack.set_visible_child_name(self.previous_stack)
-            return
 
-        self.file = file
-        self.__convert_image(file)
+        try:
+            img = Image.open(file.get_path())
+            image_format = img.format
+            if image_format in ["JPEG", "PNG"]:
+                self.file = f"{tempfile.NamedTemporaryFile().name}img.{image_format}"
+                img = ImageOps.exif_transpose(img)
+                img.save(self.file, format=image_format)
+
+                self.__convert_image(self.file)
+            else:
+                __wrong_image_type()
+        except IOError:
+            __wrong_image_type()
 
     def zoom(self, zoom_out=False, zoom_reset=False, step=11):
-        if not self.zoom_box.get_sensitive():
-            return
+        if self.zoom_box.get_sensitive():
+            new_font_size_percent = int(self.zoom_box.zoom_indicator.get_label()[:-1])
+            if zoom_out:
+                new_font_size_percent -= step
+            elif zoom_reset:
+                new_font_size_percent = int(
+                    round((min(2000 / self.width_spin.get_value(), 11) - 1) * 10, 0)
+                )
+            else:
+                new_font_size_percent += step
 
-        new_font_size_percent = int(self.zoom_box.zoom_indicator.get_label()[:-1])
-        if zoom_out:
-            new_font_size_percent -= step
-        elif zoom_reset:
-            new_font_size_percent = int(
-                round((min(15000 / self.width_spin.get_value(), 11) - 1) * 10, 0)
+            new_font_size_percent = min(max(new_font_size_percent, 1), 100)
+
+            css_provider = Gtk.CssProvider.new()
+            css_provider.load_from_data(
+                f"textview{{font-size:{new_font_size_percent / 10 + 1}pt;}}", -1
             )
-        else:
-            new_font_size_percent += step
+            context = (
+                self.output_text_view.get_style_context()
+            )  # get_style_context will be deprecated in Gtk 4.10
+            context.add_provider(css_provider, 10)
 
-        new_font_size_percent = min(max(new_font_size_percent, 1), 100)
-
-        css_provider = Gtk.CssProvider.new()
-        css_provider.load_from_data(
-            f"textview{{font-size:{new_font_size_percent / 10 + 1}pt;}}", -1
-        )
-        context = (
-            self.output_text_view.get_style_context()
-        )  # get_style_context will be deprecated in Gtk 4.10
-        context.add_provider(css_provider, 10)
-
-        self.zoom_box.zoom_indicator.set_label(f"{new_font_size_percent}%")
-        self.zoom_box.decrease_btn.set_sensitive(new_font_size_percent > 1)
-        self.zoom_box.increase_btn.set_sensitive(new_font_size_percent < 100)
+            self.zoom_box.zoom_indicator.set_label(f"{new_font_size_percent}%")
+            self.zoom_box.decrease_btn.set_sensitive(new_font_size_percent > 1)
+            self.zoom_box.increase_btn.set_sensitive(new_font_size_percent < 100)
 
     def __convert_image(self, file):
         file = file.get_path()

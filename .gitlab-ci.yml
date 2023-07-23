@@ -27,10 +27,10 @@ flatpak@aarch64:
 black:
   script:
     - pip install black --quiet
-    - black --check src/
+    - black --check --diff src/
 
 # Sorting imports
 isort:
   script:
     - pip install isort --quiet
-    - isort --check-only src/
+    - isort --check-only --diff --profile black src/
