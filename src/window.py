@@ -163,12 +163,10 @@ class LetterpressWindow(Adw.ApplicationWindow):
             self.zoom_box.increase_btn.set_sensitive(new_font_size_percent < 100)
 
     def __convert_image(self, file):
-        file = file.get_path()
-
         arguments = [
             "artem",
             f"--size={int(self.width_spin.get_value())}",
-            "--ratio=0.5",
+            "--ratio=0.46",
             file,
         ]
         if not self.style_manager.get_dark():
