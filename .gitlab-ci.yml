@@ -33,4 +33,10 @@ black:
 isort:
   script:
     - pip install isort --quiet
-    - isort --check-only --diff --profile black src/
+    - isort --check-only --diff src/ --profile black
+
+# Removing unused imports
+unimport:
+  script:
+    - pip install unimport --quiet
+    - unimport --check --diff src/
