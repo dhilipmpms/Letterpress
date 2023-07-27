@@ -6,10 +6,11 @@ template $LetterpressWindow : Adw.ApplicationWindow {
   default-width: 800;
   default-height: 600;
 
-  Box {
-    orientation: vertical;
+  Adw.ToolbarView {
 
-    HeaderBar {
+    [top]
+    Adw.HeaderBar {
+
       [end]
       MenuButton menu_btn {
         icon-name: "open-menu-symbolic";
@@ -18,9 +19,8 @@ template $LetterpressWindow : Adw.ApplicationWindow {
       }
     }
 
-    Adw.ToastOverlay toast_overlay {
-      vexpand: true;
-      child: 
+    content: Adw.ToastOverlay toast_overlay {
+      child:
       Box {
         orientation: vertical;
 
@@ -199,6 +199,8 @@ template $LetterpressWindow : Adw.ApplicationWindow {
 
       ;
     }
+
+    ;
   }
 }
 
