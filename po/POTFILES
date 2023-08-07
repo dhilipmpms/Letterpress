@@ -1,9 +1,11 @@
 data/io.gitlab.gregorni.ASCIIImages.desktop.in
 data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in
 data/io.gitlab.gregorni.ASCIIImages.gschema.xml
+
 src/main.py
 src/window.py
 src/file_chooser.py
+
 src/gtk/window.blp
 src/gtk/zoom-box.blp
 src/gtk/help-overlay.blp
