@@ -137,8 +137,8 @@ class LetterpressApplication(Adw.Application):
             win.destroy()
 
     def __on_about_action(self, *args):
-        """If you contributed code or translations,
-        feel free to add yourself to the appropriate list.
+        """If you contributed code to the project,
+        feel free to add yourself to the devs list.
         To add yourself into the list, you can add your
         name/username, and optionally an email or URL:
 
