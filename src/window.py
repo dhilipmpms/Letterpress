@@ -124,7 +124,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
             img = Image.open(file.get_path())
             image_format = img.format
             if image_format in ["JPEG", "PNG"]:
-                self.file = f"{tempfile.NamedTemporaryFile().name}img.{image_format}"
+                self.file = f"{tempfile.NamedTemporaryFile().name}.{image_format}"
                 img = ImageOps.exif_transpose(img)
                 img.save(self.file, format=image_format)
 
