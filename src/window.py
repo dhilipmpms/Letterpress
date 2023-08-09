@@ -127,12 +127,11 @@ class LetterpressWindow(Adw.ApplicationWindow):
                 self.file = file.get_path()
                 try:
                     if img._getexif()[274] != 1:
-                        temp_file = (
+                        self.file = (
                             f"{tempfile.NamedTemporaryFile().name}.{image_format}"
                         )
                         img = ImageOps.exif_transpose(img)
                         img.save(self.file, format=image_format)
-                        self.__convert_image(temp_file)
                 except:
                     pass
 
