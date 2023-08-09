@@ -21,7 +21,7 @@ import subprocess
 import tempfile
 from os import path
 
-from gi.repository import Adw, Gdk, Gio, GLib, Gtk
+from gi.repository import Adw, Gdk, Gio, Gtk
 from PIL import Image, ImageChops, ImageOps
 
 from .file_chooser import FileChooser
@@ -97,18 +97,6 @@ class LetterpressWindow(Adw.ApplicationWindow):
         FileChooser.open_file(self, self.previous_stack)
 
     def check_is_image(self, file):
-        self.__show_spinner()
-
-        if self.file and file:
-            if not ImageChops.difference(
-                Image.open(self.file).convert("RGB"),
-                Image.open(file.get_path()).convert("RGB"),
-            ).getbbox():
-                self.main_stack.set_visible_child_name(self.previous_stack)
-                return
-
-        print(f"Input file: {file.get_path()}")
-
         def __wrong_image_type():
             print(f"{file.get_path()} is not of a supported image type.")
             self.toast_overlay.add_toast(
@@ -122,6 +110,17 @@ class LetterpressWindow(Adw.ApplicationWindow):
             self.main_stack.set_visible_child_name(self.previous_stack)
 
         try:
+            if self.file and file:
+                if not ImageChops.difference(
+                    Image.open(self.file).convert("RGB"),
+                    Image.open(file.get_path()).convert("RGB"),
+                ).getbbox():
+                    self.main_stack.set_visible_child_name(self.previous_stack)
+                    return
+
+            self.__show_spinner()
+            print(f"Input file: {file.get_path()}")
+
             img = Image.open(file.get_path())
             image_format = img.format
             if image_format in ["JPEG", "PNG"]:
