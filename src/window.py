@@ -124,9 +124,17 @@ class LetterpressWindow(Adw.ApplicationWindow):
             img = Image.open(file.get_path())
             image_format = img.format
             if image_format in ["JPEG", "PNG"]:
-                self.file = f"{tempfile.NamedTemporaryFile().name}.{image_format}"
-                img = ImageOps.exif_transpose(img)
-                img.save(self.file, format=image_format)
+                self.file = file.get_path()
+                try:
+                    if img._getexif()[274] != 1:
+                        temp_file = (
+                            f"{tempfile.NamedTemporaryFile().name}.{image_format}"
+                        )
+                        img = ImageOps.exif_transpose(img)
+                        img.save(self.file, format=image_format)
+                        self.__convert_image(temp_file)
+                except:
+                    pass
 
                 self.__convert_image(self.file)
             else:
