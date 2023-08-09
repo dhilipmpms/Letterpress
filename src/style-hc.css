@@ -1,4 +1,4 @@
-row.property label.title {
-  opacity: 0.9;
+.dragndrop_overlay {
+  background-color: @accent_bg_color;
 }
 
