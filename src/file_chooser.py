@@ -51,7 +51,7 @@ class FileChooser:
 
     @staticmethod
     def save_file(parent, *args):
-        def on_save_file(file):
+        def __on_save_file(file):
             print(f"Output file: {file.get_path()}")
             text = parent.buffer.get_text(
                 parent.buffer.get_start_iter(), parent.buffer.get_end_iter(), False
@@ -98,7 +98,7 @@ class FileChooser:
         def __on_response(_dialog, response):
             """Run if the user selects a file."""
             if response == Gtk.ResponseType.ACCEPT:
-                on_save_file(_dialog.get_file())
+                __on_save_file(_dialog.get_file())
 
         dialog = Gtk.FileChooserNative.new(
             title=_("Select a file"), parent=parent, action=Gtk.FileChooserAction.SAVE
