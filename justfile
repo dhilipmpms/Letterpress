@@ -1,4 +1,4 @@
-default: black isort unimport
+default: black isort
 
 # Format with black formatter
 black:
