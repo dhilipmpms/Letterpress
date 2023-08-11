@@ -20,7 +20,7 @@
 import subprocess
 import tempfile
 
-from gi.repository import Adw, Gdk, Gio, GLib, Gtk
+from gi.repository import Adw, Gdk, Gio, Gtk
 from PIL import Image, ImageChops, ImageOps
 
 from .file_chooser import FileChooser
@@ -102,7 +102,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
                 Adw.Toast.new(
                     # Translators: Do not translate "{basename}"
                     _('"{basename}" is not of a supported image type.').format(
-                        basename=GLib.basename(file.get_path())
+                        basename=file.get_basename()
                     )
                 )
             )
