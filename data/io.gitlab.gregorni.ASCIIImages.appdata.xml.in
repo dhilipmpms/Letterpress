@@ -51,18 +51,22 @@
   <screenshots>
     <screenshot>
       <image>https://gitlab.com/gregorni/Letterpress/-/raw/main/data/screenshots/overview.png</image>
+      <!--Translators: This is a screenshot caption-->
       <caption>Overview</caption>
     </screenshot>
     <screenshot>
       <image>https://gitlab.com/gregorni/Letterpress/-/raw/main/data/screenshots/copied.png</image>
+      <!--Translators: This is a screenshot caption-->
       <caption>Copy output</caption>
     </screenshot>
     <screenshot>
       <image>https://gitlab.com/gregorni/Letterpress/-/raw/main/data/screenshots/saved.png</image>
+      <!--Translators: This is a screenshot caption-->
       <caption>Save output</caption>
     </screenshot>
     <screenshot>
       <image>https://gitlab.com/gregorni/Letterpress/-/raw/main/data/screenshots/width.png</image>
+      <!--Translators: This is a screenshot caption-->
       <caption>Adjust output width</caption>
     </screenshot>
   </screenshots>
