@@ -25,10 +25,15 @@
   </categories>
   
   <keywords>
+    <!--Translators: This is a search term and should be lowercase-->
     <keyword>image</keyword>
+    <!--Translators: This is a search term and should be lowercase-->
     <keyword>ascii</keyword>
+    <!--Translators: This is a search term and should be lowercase-->
     <keyword>convert</keyword>
+    <!--Translators: This is a search term and should be lowercase-->
     <keyword>conversion</keyword>
+    <!--Translators: This is a search term and should be lowercase-->
     <keyword>text</keyword>
   </keywords>
   
