@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: letterpress\n"
 "Report-Msgid-Bugs-To: https://gitlab.com/gregorni/Letterpress/-/issues\n"
 "POT-Creation-Date: 2023-06-06 18:10+0200\n"
-"PO-Revision-Date: 2023-05-01 12:52+0200\n"
+"PO-Revision-Date: 2023-08-13 09:56+0200\n"
 "Last-Translator: Amerey.eu <info@amerey.eu>\n"
 "Language-Team: \n"
 "Language: cs\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.3.1\n"
 
 #. Translators: Translate as "Letterpress"
 #: data/io.gitlab.gregorni.ASCIIImages.desktop.in:4
@@ -42,17 +42,17 @@ msgstr "Přispěvatelé Letterpress"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:9
 msgid "Create beautiful ASCII art"
-msgstr ""
+msgstr "Vytvořte krásné ASCII art"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:12
-#, fuzzy
 msgid ""
 "Letterpress converts your images into a picture made up of ASCII characters. "
 "You can save the output to a file, copy it, and even change its resolution! "
 "High-res output can still be viewed comfortably by lowering the zoom factor."
 msgstr ""
-"Letterpress používá jp2a k převodu obrázků na znaky ASCII. Výstup můžete "
-"uložit do souboru, zkopírovat a dokonce změnit jeho rozlišení!"
+"Letterpress převede vaše obrázky na obrázek složený ze znaků ASCII. Výstup "
+"můžete uložit do souboru, zkopírovat a dokonce změnit jeho rozlišení! Výstup "
+"ve vysokém rozlišení lze stále pohodlně sledovat snížením přiblížení."
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:28
 msgid "image"
@@ -91,40 +91,36 @@ msgid "Adjust output width"
 msgstr "Upravit šířku výstupu"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:84
-#, fuzzy
 msgid "Rebrand to Letterpress"
-msgstr "O aplikaci Letterpress"
+msgstr "Přejmenováno na Letterpress"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:85
 msgid "Replaced icon on welcome screen with illustration"
-msgstr ""
+msgstr "Ikona na uvítací obrazovce nahrazena ilustrací"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:86
 msgid "Changed warning dialog to Adw.MessageDialog"
-msgstr ""
+msgstr "Dialog upozornění byl změněn na Adw.MessageDialog"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:87
 msgid "Improved adaptiveness of \"Output Width\" subtitle"
-msgstr ""
+msgstr "Vylepšená adaptivita titulků \"Output Width\"."
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:88
 msgid "Swapped buttons for copying and saving output"
-msgstr ""
+msgstr "Vyměněná tlačítka pro kopírování a ukládání výstupu"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:89
-#, fuzzy
 msgid "Added a string to translations"
-msgstr "Přidán ruský překlad"
+msgstr "Přidán řetězec k překladům"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:90
-#, fuzzy
 msgid "Added Turkish translation"
-msgstr "Přidán francouzský překlad"
+msgstr "Přidán turecký překlad"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:91
-#, fuzzy
 msgid "Added Czech translation"
-msgstr "Přidán francouzský překlad"
+msgstr "Přidán český překlad"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:98
 msgid "Added French translation"
@@ -144,7 +140,7 @@ msgstr "Přidán italský překlad"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:102
 msgid "Fixed \"Open with…\" functionality"
-msgstr "Opravena funkce „Otevřít pomocí…“."
+msgstr "Opravena funkce „Otevřít pomocí…“"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:103
 msgid "The app now remembers window size and state"
@@ -176,7 +172,7 @@ msgstr "Šířka obrázku ASCII ve znacích"
 
 #. Translators: Do not translate "{basename}"
 #: src/window.py:120
-#, fuzzy, python-brace-format
+#, python-brace-format
 msgid "\"{basename}\" is not of a supported image type."
 msgstr "\"{basename}\" není platný obrázek."
 
@@ -226,11 +222,11 @@ msgstr "Hlavní menu"
 
 #: src/gtk/window.blp:46
 msgid "Create ASCII Art"
-msgstr ""
+msgstr "Vytvořte ASCII Art"
 
 #: src/gtk/window.blp:55
 msgid "Open or drag and drop an image to generate an ASCII art version of it"
-msgstr ""
+msgstr "Otevřete nebo přetáhněte obrázek a vytvořte jeho uměleckou verzi ASCII"
 
 #: src/gtk/window.blp:65
 msgid "Open File…"
@@ -253,9 +249,8 @@ msgid "Save to file"
 msgstr "Uložit do souboru"
 
 #: src/gtk/window.blp:191
-#, fuzzy
 msgid "_Open File…"
-msgstr "Otevřít soubor…"
+msgstr "_Otevřít soubor…"
 
 #: src/gtk/window.blp:198
 msgid "_Keyboard Shortcuts"
@@ -267,15 +262,15 @@ msgstr "O aplikaci Letterpress"
 
 #: src/gtk/zoom-box.blp:12
 msgid "Zoom out"
-msgstr ""
+msgstr "Oddálit"
 
 #: src/gtk/zoom-box.blp:28
 msgid "Reset zoom"
-msgstr ""
+msgstr "Obnovit přiblížení"
 
 #: src/gtk/zoom-box.blp:40
 msgid "Zoom in"
-msgstr ""
+msgstr "Přiblížit"
 
 #: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
@@ -300,17 +295,17 @@ msgstr "Ukončit"
 #: src/gtk/help-overlay.blp:30
 msgctxt "shortcut window"
 msgid "Text View"
-msgstr ""
+msgstr "Zobrazení textu"
 
 #: src/gtk/help-overlay.blp:33
 msgctxt "shortcut window"
 msgid "Zoom in"
-msgstr ""
+msgstr "Přiblížit"
 
 #: src/gtk/help-overlay.blp:38
 msgctxt "shortcut window"
 msgid "Zoom out"
-msgstr ""
+msgstr "Oddálit"
 
 #~ msgid "Turn images into text"
 #~ msgstr "Převeďte obrázky na text"
