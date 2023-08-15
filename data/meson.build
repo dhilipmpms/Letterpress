@@ -1,6 +1,6 @@
 desktop_file = i18n.merge_file(
-        input: 'io.gitlab.gregorni.ASCIIImages.desktop.in',
-       output: 'io.gitlab.gregorni.ASCIIImages.desktop',
+        input: 'io.gitlab.gregorni.Letterpress.desktop.in',
+       output: 'io.gitlab.gregorni.Letterpress.desktop',
          type: 'desktop',
        po_dir: '../po',
       install: true,
@@ -13,8 +13,8 @@ if desktop_utils.found()
 endif
 
 appstream_file = i18n.merge_file(
-        input: 'io.gitlab.gregorni.ASCIIImages.appdata.xml.in',
-       output: 'io.gitlab.gregorni.ASCIIImages.appdata.xml',
+        input: 'io.gitlab.gregorni.Letterpress.appdata.xml.in',
+       output: 'io.gitlab.gregorni.Letterpress.appdata.xml',
        po_dir: '../po',
       install: true,
   install_dir: join_paths(get_option('datadir'), 'appdata')
@@ -25,7 +25,7 @@ if appstream_util.found()
   test('Validate appstream file', appstream_util, args: ['validate', appstream_file])
 endif
 
-install_data('io.gitlab.gregorni.ASCIIImages.gschema.xml',
+install_data('io.gitlab.gregorni.Letterpress.gschema.xml',
   install_dir: join_paths(get_option('datadir'), 'glib-2.0/schemas')
 )
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist gettext-domain="letterpress">
-	<schema id="io.gitlab.gregorni.ASCIIImages" path="/io/gitlab/gregorni/ASCIIImages/">
+	<schema id="io.gitlab.gregorni.Letterpress" path="/io/gitlab/gregorni/Letterpress/">
 	  <key name="width" type="i">
       <default>800</default>
     </key>

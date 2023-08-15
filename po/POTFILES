@@ -1,6 +1,6 @@
-data/io.gitlab.gregorni.ASCIIImages.desktop.in
-data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in
-data/io.gitlab.gregorni.ASCIIImages.gschema.xml
+data/io.gitlab.gregorni.Letterpress.desktop.in
+data/io.gitlab.gregorni.Letterpress.appdata.xml.in
+data/io.gitlab.gregorni.Letterpress.gschema.xml
 
 src/main.py
 src/window.py

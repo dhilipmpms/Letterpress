@@ -1,4 +1,4 @@
-application_id = 'io.gitlab.gregorni.ASCIIImages'
+application_id = 'io.gitlab.gregorni.Letterpress'
 
 scalable_dir = join_paths('hicolor', 'scalable', 'apps')
 install_data(

@@ -3,9 +3,9 @@ include: https://gitlab.gnome.org/GNOME/citemplates/raw/master/flatpak/flatpak_c
 
 .vars:
   variables:
-    MANIFEST_PATH: io.gitlab.gregorni.ASCIIImages.json
+    MANIFEST_PATH: io.gitlab.gregorni.Letterpress.json
     FLATPAK_MODULE: letterpress
-    APP_ID: io.gitlab.gregorni.ASCIIImages
+    APP_ID: io.gitlab.gregorni.Letterpress
     RUNTIME_REPO: https://nightly.gnome.org/gnome-nightly.flatpakrepo
     BUNDLE: letterpress.flatpak
 

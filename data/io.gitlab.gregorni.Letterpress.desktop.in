@@ -3,7 +3,7 @@
 Name=Letterpress
 Comment=Create beautiful ASCII art
 Exec=letterpress %u
-Icon=io.gitlab.gregorni.ASCIIImages
+Icon=io.gitlab.gregorni.Letterpress
 Terminal=false
 Type=Application
 Categories=GTK;GNOME;TextTools;Graphics;ImageProcessing;
