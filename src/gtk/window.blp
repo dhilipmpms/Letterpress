@@ -10,6 +10,7 @@ template $LetterpressWindow : Adw.ApplicationWindow {
 
     [top]
     Adw.HeaderBar {
+
       [start]
       Button {
         action-name: "app.tips";
@@ -26,8 +27,8 @@ template $LetterpressWindow : Adw.ApplicationWindow {
     }
 
     content: Adw.ToastOverlay toast_overlay {
-      child:
-      Box {
+
+      child: Box {
         orientation: vertical;
 
         Stack main_stack {
@@ -35,10 +36,10 @@ template $LetterpressWindow : Adw.ApplicationWindow {
 
           StackPage {
             name: "welcome";
-            child:
+
               // If we want an illustration
 
-              // Box {
+              // child: Box {
               //   orientation: vertical;
               //   spacing: 12;
               //   margin-top: 24;
@@ -81,7 +82,9 @@ template $LetterpressWindow : Adw.ApplicationWindow {
               //   }
               // }
 
-              Adw.StatusPage {
+              // ;
+
+              child: Adw.StatusPage {
                 icon-name: "io.gitlab.gregorni.ASCIIImages";
                 title: _("Create ASCII Art");
                 description: _("Open or drag and drop an image to generate an ASCII art version of it");
@@ -130,8 +133,8 @@ template $LetterpressWindow : Adw.ApplicationWindow {
 
           StackPage {
             name: "view-page";
-            child: 
-            ScrolledWindow {
+
+            child: ScrolledWindow {
               hexpand: true;
               vexpand: true;
 
@@ -151,62 +154,60 @@ template $LetterpressWindow : Adw.ApplicationWindow {
             ;
           }
         }
-
-        Revealer toolbox {
-          transition-type: slide_up;
-          child: 
-          Box {
-            orientation: vertical;
-
-            Separator {
-            }
-
-            Box {
-              margin-start: 4;
-              margin-end: 16;
-              margin-top: 8;
-              margin-bottom: 8;
-              spacing: 8;
-
-              Adw.ActionRow width_row {
-                title: _("Output Width");
-                subtitle-lines: 1;
-
-                SpinButton width_spin {
-                  halign: start;
-                  valign: center;
-                  numeric: true;
-                }
-              }
-
-              Box {
-                hexpand: true;
-              }
-
-              Button to_clipboard_btn {
-                valign: center;
-                halign: end;
-                icon-name: "edit-copy-symbolic";
-                tooltip-text: _("Copy to clipboard");
-              }
-
-              Button to_file_btn {
-                valign: center;
-                halign: end;
-                icon-name: "document-save-symbolic";
-                tooltip-text: _("Save to file");
-              }
-            }
-          }
-
-          ;
-        }
       }
 
       ;
     }
 
     ;
+
+    [bottom]
+    Revealer toolbox {
+      transition-type: slide_up;
+
+      child: Box {
+        orientation: vertical;
+
+        Box {
+          margin-start: 4;
+          margin-end: 16;
+          margin-top: 8;
+          margin-bottom: 8;
+          spacing: 8;
+
+          Adw.ActionRow width_row {
+            title: _("Output Width");
+            subtitle-lines: 1;
+
+            SpinButton width_spin {
+              halign: start;
+              valign: center;
+              numeric: true;
+            }
+          }
+
+          Box {
+            hexpand: true;
+          }
+
+          Button to_clipboard_btn {
+            valign: center;
+            halign: end;
+            icon-name: "edit-copy-symbolic";
+            tooltip-text: _("Copy to clipboard");
+          }
+
+          Button to_file_btn {
+            valign: center;
+            halign: end;
+            icon-name: "document-save-symbolic";
+            tooltip-text: _("Save to file");
+          }
+        }
+      }
+
+      ;
+    }
   }
 
   ;
