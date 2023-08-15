@@ -7,3 +7,7 @@
   color: @accent_fg_color;
 }
 
+textview {
+  background: none;
+  color: inherit;
+}
