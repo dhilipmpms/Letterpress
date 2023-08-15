@@ -10,6 +10,12 @@ template $LetterpressWindow : Adw.ApplicationWindow {
 
     [top]
     Adw.HeaderBar {
+      [start]
+      Button {
+        action-name: "app.tips";
+        tooltip-text: _("Tips");
+        icon-name: "lightbulb-symbolic";
+      }
 
       [end]
       MenuButton menu_btn {
