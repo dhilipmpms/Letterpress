@@ -139,12 +139,14 @@ template $LetterpressWindow : Adw.ApplicationWindow {
               vexpand: true;
 
               TextView output_text_view {
+                valign: center;
                 editable: false;
                 monospace: true;
                 cursor-visible: false;
                 hexpand: true;
                 vexpand: true;
                 accessible-role: none;
+                justification: center;
 
                 GestureZoom gesture_zoom {
                 }
