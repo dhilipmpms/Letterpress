@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-  <gresource prefix="/io/gitlab/gregorni/ASCIIImages">
+  <gresource prefix="/io/gitlab/gregorni/Letterpress">
     <file preprocess="xml-stripblanks">gtk/window.ui</file>
     <file preprocess="xml-stripblanks">gtk/zoom-box.ui</file>
     <file preprocess="xml-stripblanks">gtk/help-overlay.ui</file>
@@ -16,7 +16,7 @@
     <file alias="vibrant-colors.svg" preprocess="xml-stripblanks">assets/vibrant-colors.svg</file>
   </gresource>
 
-  <gresource prefix="/io/gitlab/gregorni/ASCIIImages/icons/scalable/actions">
+  <gresource prefix="/io/gitlab/gregorni/Letterpress/icons/scalable/actions">
     <file alias="lightbulb-symbolic.svg" preprocess="xml-stripblanks">assets/lightbulb-symbolic.svg</file>
   </gresource>
 </gresources>

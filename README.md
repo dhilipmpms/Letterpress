@@ -10,7 +10,7 @@ Letterpress uses [jp2a](https://github.com/Talinx/jp2a) to turn your pictures in
 
 The currently supported method of installation is via Flathub:
 
-<a href='https://flathub.org/apps/details/io.gitlab.gregorni.ASCIIImages'><img width='240' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.png'/></a>
+<a href='https://flathub.org/apps/details/io.gitlab.gregorni.Letterpress'><img width='240' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.png'/></a>
 
 ## Development
 

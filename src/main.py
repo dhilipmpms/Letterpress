@@ -34,7 +34,7 @@ class LetterpressApplication(Adw.Application):
 
     def __init__(self):
         super().__init__(
-            application_id="io.gitlab.gregorni.ASCIIImages",
+            application_id="io.gitlab.gregorni.Letterpress",
             flags=Gio.ApplicationFlags.HANDLES_COMMAND_LINE,
         )
         self.create_action("quit", self.__quit, ["<primary>q"])
@@ -154,7 +154,7 @@ class LetterpressApplication(Adw.Application):
         about = Adw.AboutWindow(
             transient_for=self.props.active_window,
             application_name=_("Letterpress"),
-            application_icon="io.gitlab.gregorni.ASCIIImages",
+            application_icon="io.gitlab.gregorni.Letterpress",
             developer_name=_("Letterpress Contributors"),
             version="2.0",
             developers=devs_list,
@@ -221,6 +221,6 @@ def main(version):
     return app.run(sys.argv)
 
 
-@Gtk.Template(resource_path="/io/gitlab/gregorni/ASCIIImages/gtk/tips-dialog.ui")
+@Gtk.Template(resource_path="/io/gitlab/gregorni/Letterpress/gtk/tips-dialog.ui")
 class TipsDialog(Adw.Window):
     __gtype_name__ = "TipsDialog"

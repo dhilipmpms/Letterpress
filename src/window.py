@@ -26,7 +26,7 @@ from PIL import Image, ImageChops, ImageOps
 from .file_chooser import FileChooser
 
 
-@Gtk.Template(resource_path="/io/gitlab/gregorni/ASCIIImages/gtk/window.ui")
+@Gtk.Template(resource_path="/io/gitlab/gregorni/Letterpress/gtk/window.ui")
 class LetterpressWindow(Adw.ApplicationWindow):
     __gtype_name__ = "LetterpressWindow"
 
@@ -58,7 +58,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
         target.connect("leave", self.__on_leave)
         self.add_controller(target)
 
-        settings = Gio.Settings(schema_id="io.gitlab.gregorni.ASCIIImages")
+        settings = Gio.Settings(schema_id="io.gitlab.gregorni.Letterpress")
         settings.bind("width", self, "default-width", Gio.SettingsBindFlags.DEFAULT)
         settings.bind("height", self, "default-height", Gio.SettingsBindFlags.DEFAULT)
         settings.bind("is-maximized", self, "maximized", Gio.SettingsBindFlags.DEFAULT)
@@ -240,7 +240,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
         self.main_stack.set_visible_child_name(self.previous_stack)
 
 
-@Gtk.Template(resource_path="/io/gitlab/gregorni/ASCIIImages/gtk/zoom-box.ui")
+@Gtk.Template(resource_path="/io/gitlab/gregorni/Letterpress/gtk/zoom-box.ui")
 class ZoomBox(Gtk.Box):
     __gtype_name__ = "ZoomBox"
 
