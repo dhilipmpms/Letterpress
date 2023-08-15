@@ -39,6 +39,7 @@ class LetterpressApplication(Adw.Application):
         )
         self.create_action("quit", self.__quit, ["<primary>q"])
         self.create_action("open-menu", self.__open_menu, ["F10"])
+        self.create_action("tips", self.__on_tips_action)
         self.create_action("about", self.__on_about_action)
         self.create_action("open-file", self.__open_file, ["<primary>o"])
         self.create_action("zoom-out", self.__zoom_out, ["<primary>minus"])
@@ -157,7 +158,10 @@ class LetterpressApplication(Adw.Application):
             developer_name=_("Letterpress Contributors"),
             version="2.0",
             developers=devs_list,
-            artists=["Brage Fuglseth", "kramo https://kramo.hu"],
+            artists=[
+                "Brage Fuglseth https://bragefuglseth.dev",
+                "kramo https://kramo.hu",
+            ],
             # Translators: Translate this string as your translator credits.
             # Name only:    gregorni
             # Name + URL:   gregorni https://gitlab.com/gregorni/
@@ -188,6 +192,12 @@ class LetterpressApplication(Adw.Application):
 
         about.present()
 
+    def __on_tips_action(self, *args):
+        tips_window = TipsDialog(
+            transient_for=self.props.active_window,
+        )
+        tips_window.present()
+
     def create_action(self, name, callback, shortcuts=None, param=None):
         """Add an application action.
 
@@ -209,3 +219,8 @@ def main(version):
     """The application's entry point."""
     app = LetterpressApplication()
     return app.run(sys.argv)
+
+
+@Gtk.Template(resource_path="/io/gitlab/gregorni/ASCIIImages/gtk/tips-dialog.ui")
+class TipsDialog(Adw.Window):
+    __gtype_name__ = "TipsDialog"

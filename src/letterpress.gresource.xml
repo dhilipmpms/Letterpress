@@ -4,12 +4,20 @@
     <file preprocess="xml-stripblanks">gtk/window.ui</file>
     <file preprocess="xml-stripblanks">gtk/zoom-box.ui</file>
     <file preprocess="xml-stripblanks">gtk/help-overlay.ui</file>
+    <file preprocess="xml-stripblanks">gtk/tips-dialog.ui</file>
 
     <file>style.css</file>
     <file>style-hc.css</file>
     <file>style-hc-dark.css</file>
 
-    <file compressed="true">assets/welcome.svg</file>
+    <file alias="defined-edges.svg" preprocess="xml-stripblanks">assets/defined-edges.svg</file>
+    <file alias="high-contrast.svg" preprocess="xml-stripblanks">assets/high-contrast.svg</file>
+    <file alias="recognizable-shapes.svg" preprocess="xml-stripblanks">assets/recognizable-shapes.svg</file>
+    <file alias="vibrant-colors.svg" preprocess="xml-stripblanks">assets/vibrant-colors.svg</file>
+  </gresource>
+
+  <gresource prefix="/io/gitlab/gregorni/ASCIIImages/icons/scalable/actions">
+    <file alias="lightbulb-symbolic.svg" preprocess="xml-stripblanks">assets/lightbulb-symbolic.svg</file>
   </gresource>
 </gresources>
 
