@@ -41,6 +41,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
     width_spin = Gtk.Template.Child()
     toolbox = Gtk.Template.Child()
     gesture_zoom = Gtk.Template.Child()
+    conscroller = Gtk.Template.Child()
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -76,6 +77,8 @@ class LetterpressWindow(Adw.ApplicationWindow):
 
         self.gesture_zoom.connect("scale-changed", self.__on_gesture)
         self.scale_delta = 1
+
+        self.conscroller.connect("scroll", self.__on_scroll)
 
         self.buffer = self.output_text_view.get_buffer()
         self.previous_stack = "welcome"
@@ -158,28 +161,29 @@ class LetterpressWindow(Adw.ApplicationWindow):
             css_provider.load_from_data(
                 f"textview{{font-size:{new_font_size_percent / 10 + 1}pt;}}", -1
             )
-            context = (
-                self.output_text_view.get_style_context()
+            self.output_text_view.get_style_context().add_provider(
+                css_provider, 10
             )  # get_style_context will be deprecated in Gtk 4.10
-            context.add_provider(css_provider, 10)
 
             self.zoom_box.zoom_indicator.set_label(f"{new_font_size_percent}%")
             self.zoom_box.decrease_btn.set_sensitive(new_font_size_percent > 1)
             self.zoom_box.increase_btn.set_sensitive(new_font_size_percent < 100)
 
     def __convert_image(self, file_path):
+        self.__show_spinner()
         arguments = ["jp2a", f"--width={self.width_spin.get_value()}", file_path]
         if not self.style_manager.get_dark():
             arguments.append("--invert")
 
-        process = subprocess.Popen(
-            arguments,
-            stdout=subprocess.PIPE,
-            universal_newlines=True,
-        )
-
         self.image_as_text = ""
-        for line in iter(process.stdout.readline, ""):
+        for line in iter(
+            subprocess.Popen(
+                arguments,
+                stdout=subprocess.PIPE,
+                universal_newlines=True,
+            ).stdout.readline,
+            "",
+        ):
             self.image_as_text += line
         self.buffer.set_text(self.image_as_text)
 
@@ -215,6 +219,13 @@ class LetterpressWindow(Adw.ApplicationWindow):
                 step=max(int(abs(scale - self.scale_delta) * 100), 1),
             )
         self.scale_delta = scale
+
+    def __on_scroll(self, scroll, dx, dy, *args):
+        if (
+            scroll.get_current_event_state() == Gdk.ModifierType.CONTROL_MASK
+            and scroll.get_current_event_device().get_source() == Gdk.InputSource.MOUSE
+        ):
+            self.zoom(zoom_out=dy > 0, step=int(abs(dy) * 2))
 
     def __set_color_scheme(self, *args):
         if self.file:
