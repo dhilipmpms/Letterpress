@@ -67,7 +67,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
             "output-width", self.width_spin, "value", Gio.SettingsBindFlags.DEFAULT
         )
         self.width_spin.set_adjustment(
-            Gtk.Adjustment.new(settings["output-width"], 100, 2000, 10, 100, 0)
+            Gtk.Adjustment.new(settings["output-width"], 50, 500, 10, 100, 0)
         )
 
         self.to_clipboard_btn.connect("clicked", self.__copy_output_to_clipboard)
