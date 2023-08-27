@@ -151,7 +151,11 @@ class LetterpressWindow(Adw.ApplicationWindow):
 
             css_provider = Gtk.CssProvider.new()
             css_provider.load_from_data(
-                f"textview{{font-size:{new_font_size_percent / 10 + 1}pt;}}", -1
+                f"""textview{{
+                font-size:{new_font_size_percent / 10 + 1}pt;
+                line-height:{1 if self.width_spin.get_value() < 460 else 0.8};
+                }}""",
+                -1,
             )
             self.output_text_view.get_style_context().add_provider(
                 css_provider, 10
