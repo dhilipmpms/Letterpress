@@ -5,6 +5,7 @@ template $LetterpressWindow : Adw.ApplicationWindow {
   title: _("Letterpress");
   default-width: 800;
   default-height: 600;
+  width-request: 360;
 
   content: Adw.ToolbarView {
 
@@ -181,15 +182,15 @@ template $LetterpressWindow : Adw.ApplicationWindow {
           margin-bottom: 8;
           spacing: 8;
 
-          Adw.ActionRow width_row {
+          Adw.SpinRow width_spin {
             title: _("Output Width");
+            subtitle: _("Width of the ASCII image in characters");
             subtitle-lines: 1;
+            numeric: true;
 
-            SpinButton width_spin {
-              halign: start;
-              valign: center;
-              numeric: true;
-            }
+            styles [
+              "flat",
+            ]
           }
 
           Box {

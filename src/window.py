@@ -37,7 +37,6 @@ class LetterpressWindow(Adw.ApplicationWindow):
     output_text_view = Gtk.Template.Child()
     to_file_btn = Gtk.Template.Child()
     to_clipboard_btn = Gtk.Template.Child()
-    width_row = Gtk.Template.Child()
     width_spin = Gtk.Template.Child()
     toolbox = Gtk.Template.Child()
     gesture_zoom = Gtk.Template.Child()
@@ -73,7 +72,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
 
         self.to_clipboard_btn.connect("clicked", self.__copy_output_to_clipboard)
         self.to_file_btn.connect("clicked", self.__save_output_to_file)
-        self.width_spin.connect("value-changed", self.__on_spin_value_changed)
+        self.width_spin.connect("changed", self.__on_spin_value_changed)
 
         self.gesture_zoom.connect("scale-changed", self.__on_gesture)
         self.scale_delta = 1
@@ -86,13 +85,6 @@ class LetterpressWindow(Adw.ApplicationWindow):
 
         self.zoom_box = ZoomBox()
         self.menu_btn.props.popover.add_child(self.zoom_box, "zoom")
-
-    def do_size_allocate(self, width, height, baseline):
-        self.width_row.set_subtitle(_("Width of the ASCII image in characters"))
-        if width < 350:
-            self.width_row.set_subtitle("")
-
-        Adw.ApplicationWindow.do_size_allocate(self, width, height, baseline)
 
     def on_open_file(self):
         self.__show_spinner()
