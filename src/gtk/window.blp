@@ -176,21 +176,22 @@ template $LetterpressWindow : Adw.ApplicationWindow {
         orientation: vertical;
 
         Box {
-          margin-start: 4;
-          margin-end: 16;
+          margin-start: 17;
+          margin-end: 17;
           margin-top: 8;
           margin-bottom: 8;
           spacing: 8;
+          height-request: 50;
 
-          Adw.SpinRow width_spin {
-            title: _("Output Width");
-            subtitle: _("Width of the ASCII image in characters");
-            subtitle-lines: 1;
+          Label {
+            label: _("Width (in characters)");
+            xalign: 0;
+            margin-end: 8;
+          }
+
+          Gtk.SpinButton width_spin {
+            valign: center;
             numeric: true;
-
-            styles [
-              "flat",
-            ]
           }
 
           Box {

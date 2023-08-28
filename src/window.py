@@ -72,7 +72,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
 
         self.to_clipboard_btn.connect("clicked", self.__copy_output_to_clipboard)
         self.to_file_btn.connect("clicked", self.__save_output_to_file)
-        self.width_spin.connect("output", self.__on_spin_value_changed)
+        self.width_spin.connect("value-changed", self.__on_spin_value_changed)
 
         self.gesture_zoom.connect("scale-changed", self.__on_gesture)
         self.scale_delta = 1
