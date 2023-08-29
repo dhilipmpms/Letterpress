@@ -221,7 +221,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
             scroll.get_current_event_state() == Gdk.ModifierType.CONTROL_MASK
             and scroll.get_current_event_device().get_source() == Gdk.InputSource.MOUSE
         ):
-            self.zoom(zoom_out=dy > 0, step=int(abs(dy) * 2))
+            self.zoom(zoom_out=dy > 0, step=int(abs(dy) * 11))
 
     def __set_color_scheme(self, *args):
         if self.file:
