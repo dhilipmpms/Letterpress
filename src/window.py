@@ -86,9 +86,15 @@ class LetterpressWindow(Adw.ApplicationWindow):
 
         self.zoom_box = ZoomBox()
         self.menu_btn.props.popover.add_child(self.zoom_box, "zoom")
+        self.height = 0
 
     def do_size_allocate(self, width, height, baseline):
-        self.zoom(zoom_reset=True)
+        if (
+            self.height != height
+            or self.height != self.output_scrolled_window.get_height()
+        ):
+            self.zoom(zoom_reset=True)
+            self.height = height
 
         Adw.ApplicationWindow.do_size_allocate(self, width, height, baseline)
 
@@ -141,34 +147,41 @@ class LetterpressWindow(Adw.ApplicationWindow):
         except IOError:
             __wrong_image_type()
 
-    def zoom(self, zoom_out=False, zoom_reset=False, step=11):
+    def zoom(self, zoom_out=False, zoom_reset=False):
         if self.zoom_box.get_sensitive():
-            new_font_size_percent = int(self.zoom_box.zoom_indicator.get_label()[:-1])
-            if zoom_out:
-                new_font_size_percent -= step
-            elif zoom_reset:
-                new_font_size_percent = int(
-                    min(
-                        self.output_scrolled_window.get_width()
-                        / 10
-                        / self.width_spin.get_value()
-                        * 100,
-                        self.output_scrolled_window.get_height()
-                        / 22
-                        / self.buffer.get_line_count()
-                        * 100,
+            new_font_size = min(
+                max(
+                    int(
+                        min(
+                            self.output_scrolled_window.get_width()
+                            / self.width_spin.get_value()
+                            / 0.75,
+                            self.output_scrolled_window.get_height()
+                            / self.buffer.get_line_count()
+                            / 1.5,
+                        )
                     )
-                )
-            else:
-                new_font_size_percent += step
+                    if zoom_reset
+                    else int(self.zoom_box.zoom_indicator.get_label()[:-2])
+                    + (-1 if zoom_out else 1),
+                    1,
+                ),
+                11,
+            )
 
-            new_font_size_percent = min(max(new_font_size_percent, 1), 100)
+            new_font_size_str = f"{new_font_size}pt"
+
+            line_height = 1
+            if new_font_size in (5, 8, 9, 10):
+                line_height = 0.9
+            elif new_font_size in (1, 3, 4):
+                line_height = 0.8
 
             css_provider = Gtk.CssProvider.new()
             css_provider.load_from_data(
                 f"""textview{{
-                font-size:{new_font_size_percent / 10 + 1}pt;
-                line-height:{1 if self.width_spin.get_value() < 460 else 0.8};
+                  font-size: {new_font_size_str};
+                  line-height: {line_height};
                 }}""",
                 -1,
             )
@@ -176,9 +189,9 @@ class LetterpressWindow(Adw.ApplicationWindow):
                 css_provider, 10
             )  # get_style_context will be deprecated in Gtk 4.10
 
-            self.zoom_box.zoom_indicator.set_label(f"{new_font_size_percent}%")
-            self.zoom_box.decrease_btn.set_sensitive(new_font_size_percent > 1)
-            self.zoom_box.increase_btn.set_sensitive(new_font_size_percent < 100)
+            self.zoom_box.zoom_indicator.set_label(new_font_size_str)
+            self.zoom_box.decrease_btn.set_sensitive(new_font_size > 1)
+            self.zoom_box.increase_btn.set_sensitive(new_font_size < 11)
 
     def __convert_image(self, file_path):
         self.__show_spinner()
@@ -227,7 +240,6 @@ class LetterpressWindow(Adw.ApplicationWindow):
         if scale != self.scale_delta:
             self.zoom(
                 zoom_out=scale < self.scale_delta,
-                step=max(int(abs(scale - self.scale_delta) * 100), 1),
             )
         self.scale_delta = scale
 
@@ -236,7 +248,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
             scroll.get_current_event_state() == Gdk.ModifierType.CONTROL_MASK
             and scroll.get_current_event_device().get_source() == Gdk.InputSource.MOUSE
         ):
-            self.zoom(zoom_out=dy > 0, step=int(abs(dy) * 11))
+            self.zoom(zoom_out=dy > 0)
 
     def __set_color_scheme(self, *args):
         if self.file:
