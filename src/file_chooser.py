@@ -56,17 +56,16 @@ class FileChooser:
             text = parent.buffer.get_text(
                 parent.buffer.get_start_iter(), parent.buffer.get_end_iter(), False
             )
-            if not text:
-                return
-            bytes = GLib.Bytes.new(text.encode("utf-8"))
-            file.replace_contents_bytes_async(
-                bytes,
-                None,
-                False,
-                Gio.FileCreateFlags.NONE,
-                None,
-                __save_file_complete,
-            )
+            if text:
+                bytes = GLib.Bytes.new(text.encode("utf-8"))
+                file.replace_contents_bytes_async(
+                    bytes,
+                    None,
+                    False,
+                    Gio.FileCreateFlags.NONE,
+                    None,
+                    __save_file_complete,
+                )
 
         def __save_file_complete(file, result):
             info = file.query_info(
