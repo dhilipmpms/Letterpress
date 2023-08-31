@@ -34,6 +34,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
     toast_overlay = Gtk.Template.Child()
     main_stack = Gtk.Template.Child()
     spinner = Gtk.Template.Child()
+    output_scrolled_window = Gtk.Template.Child()
     output_text_view = Gtk.Template.Child()
     to_file_btn = Gtk.Template.Child()
     to_clipboard_btn = Gtk.Template.Child()
@@ -85,6 +86,11 @@ class LetterpressWindow(Adw.ApplicationWindow):
 
         self.zoom_box = ZoomBox()
         self.menu_btn.props.popover.add_child(self.zoom_box, "zoom")
+
+    def do_size_allocate(self, width, height, baseline):
+        self.zoom(zoom_reset=True)
+
+        Adw.ApplicationWindow.do_size_allocate(self, width, height, baseline)
 
     def on_open_file(self):
         self.__show_spinner()
@@ -142,7 +148,16 @@ class LetterpressWindow(Adw.ApplicationWindow):
                 new_font_size_percent -= step
             elif zoom_reset:
                 new_font_size_percent = int(
-                    round((min(2000 / self.width_spin.get_value(), 11) - 1) * 10, 0)
+                    min(
+                        self.output_scrolled_window.get_width()
+                        / 10
+                        / self.width_spin.get_value()
+                        * 100,
+                        self.output_scrolled_window.get_height()
+                        / 22
+                        / self.buffer.get_line_count()
+                        * 100,
+                    )
                 )
             else:
                 new_font_size_percent += step

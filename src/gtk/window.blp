@@ -6,6 +6,7 @@ template $LetterpressWindow : Adw.ApplicationWindow {
   default-width: 800;
   default-height: 600;
   width-request: 360;
+  height-request: 300;
 
   content: Adw.ToolbarView {
 
@@ -135,7 +136,7 @@ template $LetterpressWindow : Adw.ApplicationWindow {
           StackPage {
             name: "view-page";
 
-            child: ScrolledWindow {
+            child: ScrolledWindow output_scrolled_window {
               hexpand: true;
               vexpand: true;
 
