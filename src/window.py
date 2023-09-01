@@ -82,7 +82,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
 
         self.buffer = self.output_text_view.get_buffer()
         self.previous_stack = "welcome"
-        self.file = None
+        self.filepath = None
 
         self.zoom_box = ZoomBox()
         self.menu_btn.props.popover.add_child(self.zoom_box, "zoom")
@@ -90,12 +90,10 @@ class LetterpressWindow(Adw.ApplicationWindow):
 
     def do_size_allocate(self, width, height, baseline):
         scr_win_height = self.output_scrolled_window.get_height()
-        if (
-            self.heights[0] != height
-            or self.heights[1] != scr_win_height
-        ):
+        new_heights = (height, scr_win_height)
+        if self.heights != new_heights:
             self.zoom(zoom_reset=True)
-            self.heights = (height, scr_win_height)
+            self.heights = new_heights
 
         Adw.ApplicationWindow.do_size_allocate(self, width, height, baseline)
 
@@ -104,8 +102,10 @@ class LetterpressWindow(Adw.ApplicationWindow):
         FileChooser.open_file(self, self.previous_stack)
 
     def check_is_image(self, file):
+        filepath = file.get_path()
+
         def __wrong_image_type():
-            print(f"{file.get_path()} is not of a supported image type.")
+            print(f"{filepath} is not of a supported image type.")
             self.toast_overlay.add_toast(
                 Adw.Toast.new(
                     # Translators: Do not translate "{basename}"
@@ -117,32 +117,32 @@ class LetterpressWindow(Adw.ApplicationWindow):
             self.main_stack.set_visible_child_name(self.previous_stack)
 
         try:
-            if self.file and file:
+            if self.filepath and file:
                 if not ImageChops.difference(
-                    Image.open(self.file).convert("RGB"),
-                    Image.open(file.get_path()).convert("RGB"),
+                    Image.open(self.filepath).convert("RGB"),
+                    Image.open(filepath).convert("RGB"),
                 ).getbbox():
                     self.main_stack.set_visible_child_name(self.previous_stack)
                     return
 
             self.__show_spinner()
-            print(f"Input file: {file.get_path()}")
+            print(f"Input file: {filepath}")
 
-            img = Image.open(file.get_path())
+            img = Image.open(filepath)
             image_format = img.format
             if image_format in ["JPEG", "PNG"]:
-                self.file = file.get_path()
+                self.filepath = filepath
                 try:
                     if img._getexif()[274] != 1:
-                        self.file = (
+                        self.filepath = (
                             f"{tempfile.NamedTemporaryFile().name}.{image_format}"
                         )
                         img = ImageOps.exif_transpose(img)
-                        img.save(self.file, format=image_format)
+                        img.save(self.filepath, format=image_format)
                 except:
                     pass
 
-                self.__convert_image(self.file)
+                self.__convert_image(self.filepath)
             else:
                 __wrong_image_type()
         except IOError:
@@ -194,9 +194,9 @@ class LetterpressWindow(Adw.ApplicationWindow):
             self.zoom_box.decrease_btn.set_sensitive(new_font_size > 1)
             self.zoom_box.increase_btn.set_sensitive(new_font_size < 11)
 
-    def __convert_image(self, file_path):
+    def __convert_image(self, filepath):
         self.__show_spinner()
-        arguments = ["jp2a", f"--width={self.width_spin.get_value()}", file_path]
+        arguments = ["jp2a", f"--width={self.width_spin.get_value()}", filepath]
         if not self.style_manager.get_dark():
             arguments.append("--invert")
 
@@ -252,12 +252,12 @@ class LetterpressWindow(Adw.ApplicationWindow):
             self.zoom(zoom_out=dy > 0)
 
     def __set_color_scheme(self, *args):
-        if self.file:
-            self.__convert_image(self.file)
+        if self.filepath:
+            self.__convert_image(self.filepath)
 
     def __on_spin_value_changed(self, spin_button):
         self.__show_spinner()
-        self.__convert_image(self.file)
+        self.__convert_image(self.filepath)
 
     def __show_spinner(self):
         self.main_stack.set_visible_child_name("spinner-page")
