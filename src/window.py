@@ -89,8 +89,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
         self.heights = (0, 0)
 
     def do_size_allocate(self, width, height, baseline):
-        scr_win_height = self.output_scrolled_window.get_height()
-        new_heights = (height, scr_win_height)
+        new_heights = (height, self.output_scrolled_window.get_height())
         if self.heights != new_heights:
             self.zoom(zoom_reset=True)
             self.heights = new_heights
@@ -137,8 +136,9 @@ class LetterpressWindow(Adw.ApplicationWindow):
                         self.filepath = (
                             f"{tempfile.NamedTemporaryFile().name}.{image_format}"
                         )
-                        img = ImageOps.exif_transpose(img)
-                        img.save(self.filepath, format=image_format)
+                        ImageOps.exif_transpose(img).save(
+                            self.filepath, format=image_format
+                        )
                 except:
                     pass
 
