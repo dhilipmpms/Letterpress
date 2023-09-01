@@ -86,15 +86,16 @@ class LetterpressWindow(Adw.ApplicationWindow):
 
         self.zoom_box = ZoomBox()
         self.menu_btn.props.popover.add_child(self.zoom_box, "zoom")
-        self.height = 0
+        self.heights = (0, 0)
 
     def do_size_allocate(self, width, height, baseline):
+        scr_win_height = self.output_scrolled_window.get_height()
         if (
-            self.height != height
-            or self.height != self.output_scrolled_window.get_height()
+            self.heights[0] != height
+            or self.heights[1] != scr_win_height
         ):
             self.zoom(zoom_reset=True)
-            self.height = height
+            self.heights = (height, scr_win_height)
 
         Adw.ApplicationWindow.do_size_allocate(self, width, height, baseline)
 
