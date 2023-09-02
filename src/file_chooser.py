@@ -90,8 +90,8 @@ class FileChooser:
                     _('"{display_name}" saved').format(display_name=display_name)
                 )
                 toast.set_button_label(_("Open"))
-                toast.props.action_name = "app.open-output"
-                toast.props.action_target = GLib.Variant("s", file.get_path())
+                toast.set_action_name("app.open-output")
+                toast.set_action_target_value(GLib.Variant("s", file.get_path()))
             parent.toast_overlay.add_toast(toast)
 
         def __on_response(_dialog, response):
