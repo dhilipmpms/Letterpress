@@ -93,6 +93,7 @@ class LetterpressApplication(Adw.Application):
 
     def __open_output(self, app, data):
         try:
+            file = open(data.unpack(), "r")
             Gio.DBusProxy.new_sync(
                 Gio.bus_get_sync(Gio.BusType.SESSION, None),
                 Gio.DBusProxyFlags.NONE,
@@ -106,7 +107,7 @@ class LetterpressApplication(Adw.Application):
                 GLib.Variant("(sha{sv})", ("", 0, {"ask": GLib.Variant("b", True)})),
                 Gio.DBusCallFlags.NONE,
                 -1,
-                Gio.UnixFDList.new_from_array([open(data.unpack(), "r").fileno()]),
+                Gio.UnixFDList.new_from_array([file.fileno()]),
                 None,
             )
         except Exception as e:
