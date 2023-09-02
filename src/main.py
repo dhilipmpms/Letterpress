@@ -66,64 +66,54 @@ class LetterpressApplication(Adw.Application):
         We raise the application's main window, creating it if
         necessary.
         """
-        win = self.props.active_window
-        if not win:
-            win = LetterpressWindow(application=self)
-        win.present()
+        self.win = self.props.active_window
+        if not self.win:
+            self.win = LetterpressWindow(application=self)
+        self.win.present()
         if self.file is not None:
-            win.check_is_image(Gio.File.new_for_path(self.file))
+            self.win.check_is_image(Gio.File.new_for_path(self.file))
 
     def __open_file(self, *args):
-        self.props.active_window.on_open_file()
+        self.win.on_open_file()
 
     def __zoom_out(self, *args):
-        self.props.active_window.zoom(zoom_out=True)
+        self.win.zoom(zoom_out=True)
 
     def __zoom_in(self, *args):
-        self.props.active_window.zoom()
+        self.win.zoom()
 
     def __reset_zoom(self, *args):
-        self.props.active_window.zoom(zoom_reset=True)
+        self.win.zoom(zoom_reset=True)
 
     def __increase_output_width(self, *args):
-        self.props.active_window.width_spin.set_value(
-            self.props.active_window.width_spin.get_value() + 100
-        )
+        self.win.width_spin.set_value(self.win.width_spin.get_value() + 100)
 
     def __decrease_output_width(self, *args):
-        self.props.active_window.width_spin.set_value(
-            self.props.active_window.width_spin.get_value() - 100
-        )
+        self.win.width_spin.set_value(self.win.width_spin.get_value() - 100)
 
     def __open_output(self, app, data):
-        file_path = data.unpack()
-        file = open(file_path, "r")
-        fid = file.fileno()
-        connection = Gio.bus_get_sync(Gio.BusType.SESSION, None)
-        proxy = Gio.DBusProxy.new_sync(
-            connection,
-            Gio.DBusProxyFlags.NONE,
-            None,
-            "org.freedesktop.portal.Desktop",
-            "/org/freedesktop/portal/desktop",
-            "org.freedesktop.portal.OpenURI",
-            None,
-        )
-
         try:
-            proxy.call_with_unix_fd_list_sync(
+            Gio.DBusProxy.new_sync(
+                Gio.bus_get_sync(Gio.BusType.SESSION, None),
+                Gio.DBusProxyFlags.NONE,
+                None,
+                "org.freedesktop.portal.Desktop",
+                "/org/freedesktop/portal/desktop",
+                "org.freedesktop.portal.OpenURI",
+                None,
+            ).call_with_unix_fd_list_sync(
                 "OpenFile",
                 GLib.Variant("(sha{sv})", ("", 0, {"ask": GLib.Variant("b", True)})),
                 Gio.DBusCallFlags.NONE,
                 -1,
-                Gio.UnixFDList.new_from_array([fid]),
+                Gio.UnixFDList.new_from_array([open(data.unpack(), "r").fileno()]),
                 None,
             )
         except Exception as e:
             print(f"Error: {e}")
 
     def __open_menu(self, *args):
-        self.props.active_window.menu_btn.activate()
+        self.win.menu_btn.activate()
 
     def do_command_line(self, command_line):
         args = command_line.get_arguments()
@@ -133,31 +123,20 @@ class LetterpressApplication(Adw.Application):
         return 0
 
     def __quit(self, *args):
-        win = self.props.active_window
-        if win:
-            win.destroy()
+        if self.win:
+            self.win.destroy()
 
     def __on_about_action(self, *args):
-        """If you contributed code to the project,
-        feel free to add yourself to the devs list.
-        To add yourself into the list, you can add your
-        name/username, and optionally an email or URL:
-
-        Name only:    gregorni
-        Name + URL:   gregorni https://gitlab.com/gregorni/
-        Name + Email: gregorni <gregorniehl@web.de>
-        """
-        # This is a Python list: Add your string to the list (separated by a comma)
-        devs_list = ["gregorni https://gitlab.com/gregorni"]
-
         """Callback for the app.about action."""
         about = Adw.AboutWindow(
-            transient_for=self.props.active_window,
+            transient_for=self.win,
             application_name=_("Letterpress"),
             application_icon="io.gitlab.gregorni.Letterpress",
             developer_name=_("Letterpress Contributors"),
             version="2.0",
-            developers=devs_list,
+            # These are Python lists: Add your string to the list (separated by a comma)
+            # See the translator comment below for possible formats
+            developers=["gregorni https://gitlab.com/gregorni"],
             artists=[
                 "Brage Fuglseth https://bragefuglseth.dev",
                 "kramo https://kramo.hu",
@@ -193,10 +172,9 @@ class LetterpressApplication(Adw.Application):
         about.present()
 
     def __on_tips_action(self, *args):
-        tips_window = TipsDialog(
-            transient_for=self.props.active_window,
-        )
-        tips_window.present()
+        TipsDialog(
+            transient_for=self.win,
+        ).present()
 
     def create_action(self, name, callback, shortcuts=None, param=None):
         """Add an application action.
@@ -217,8 +195,7 @@ class LetterpressApplication(Adw.Application):
 
 def main(version):
     """The application's entry point."""
-    app = LetterpressApplication()
-    return app.run(sys.argv)
+    return LetterpressApplication().run(sys.argv)
 
 
 @Gtk.Template(resource_path="/io/gitlab/gregorni/Letterpress/gtk/tips-dialog.ui")
