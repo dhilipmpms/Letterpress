@@ -9,7 +9,6 @@ template $TipsDialog : Adw.Window {
   modal: true;
 
   Adw.ToolbarView {
-
     [top]
     Adw.HeaderBar {
     }
@@ -40,6 +39,7 @@ template $TipsDialog : Adw.Window {
           can-shrink: false;
           file: "resource:///io/gitlab/gregorni/Letterpress/high-contrast.svg";
         }
+
         Label {
           label: _("High Contrast");
           margin-top: 10;
@@ -56,6 +56,7 @@ template $TipsDialog : Adw.Window {
           can-shrink: false;
           file: "resource:///io/gitlab/gregorni/Letterpress/vibrant-colors.svg";
         }
+
         Label {
           label: _("Vibrant Colors");
           margin-top: 10;
@@ -72,6 +73,7 @@ template $TipsDialog : Adw.Window {
           can-shrink: false;
           file: "resource:///io/gitlab/gregorni/Letterpress/defined-edges.svg";
         }
+
         Label {
           label: _("Defined Edges");
           margin-top: 10;
@@ -88,6 +90,7 @@ template $TipsDialog : Adw.Window {
           can-shrink: false;
           file: "resource:///io/gitlab/gregorni/Letterpress/recognizable-shapes.svg";
         }
+
         Label {
           label: _("Recognizable Shapes");
           margin-top: 10;
@@ -101,6 +104,7 @@ template $TipsDialog : Adw.Window {
 
       ;
     }
-  ;
+
+    ;
   }
 }

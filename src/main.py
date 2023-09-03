@@ -37,14 +37,14 @@ class LetterpressApplication(Adw.Application):
             application_id="io.gitlab.gregorni.Letterpress",
             flags=Gio.ApplicationFlags.HANDLES_COMMAND_LINE,
         )
-        self.create_action("quit", self.__quit, ["<primary>q"])
+        self.create_action("quit", self.__quit, ["<primary>q", "<primary>w"])
         self.create_action("open-menu", self.__open_menu, ["F10"])
         self.create_action("tips", self.__on_tips_action)
         self.create_action("about", self.__on_about_action)
         self.create_action("open-file", self.__open_file, ["<primary>o"])
-        self.create_action("zoom-out", self.__zoom_out, ["<primary>minus"])
+        self.create_action("zoom-out", self.__zoom_out, ["<primary>minus", "<primary>underscore"])
         self.create_action("zoom-in", self.__zoom_in, ["<primary>plus"])
-        self.create_action("reset-zoom", self.__reset_zoom)
+        self.create_action("reset-zoom", self.__reset_zoom, ["<primary>0", "<primary>r"])
         self.create_action(
             "increase-output-width",
             self.__increase_output_width,
@@ -86,10 +86,12 @@ class LetterpressApplication(Adw.Application):
         self.win.zoom(zoom_reset=True)
 
     def __increase_output_width(self, *args):
-        self.win.width_spin.set_value(self.win.width_spin.get_value() + 100)
+        if self.win.filepath:
+            self.win.width_spin.set_value(self.win.width_spin.get_value() + 100)
 
     def __decrease_output_width(self, *args):
-        self.win.width_spin.set_value(self.win.width_spin.get_value() - 100)
+        if self.win.filepath:
+            self.win.width_spin.set_value(self.win.width_spin.get_value() - 100)
 
     def __open_output(self, app, data):
         try:
