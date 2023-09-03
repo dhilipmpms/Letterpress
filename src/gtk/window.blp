@@ -196,18 +196,20 @@ template $LetterpressWindow : Adw.ApplicationWindow {
               hexpand: true;
             }
 
-            Button to_clipboard_btn {
+            Button {
               valign: center;
               halign: end;
               icon-name: "edit-copy-symbolic";
               tooltip-text: _("Copy to clipboard");
+              action-name: "app.copy-output";
             }
 
-            Button to_file_btn {
+            Button {
               valign: center;
               halign: end;
               icon-name: "document-save-symbolic";
               tooltip-text: _("Save to file");
+              action-name: "app.save-output";
             }
           }
         }

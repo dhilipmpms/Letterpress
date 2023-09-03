@@ -36,8 +36,6 @@ class LetterpressWindow(Adw.ApplicationWindow):
     spinner = Gtk.Template.Child()
     output_scrolled_window = Gtk.Template.Child()
     output_text_view = Gtk.Template.Child()
-    to_file_btn = Gtk.Template.Child()
-    to_clipboard_btn = Gtk.Template.Child()
     width_spin = Gtk.Template.Child()
     toolbox = Gtk.Template.Child()
     gesture_zoom = Gtk.Template.Child()
@@ -71,8 +69,6 @@ class LetterpressWindow(Adw.ApplicationWindow):
             Gtk.Adjustment.new(settings["output-width"], 50, 500, 10, 100, 0)
         )
 
-        self.to_clipboard_btn.connect("clicked", self.__copy_output_to_clipboard)
-        self.to_file_btn.connect("clicked", self.__save_output_to_file)
         self.width_spin.connect("value-changed", self.__on_spin_value_changed)
 
         self.gesture_zoom.connect("scale-changed", self.__on_gesture)
@@ -218,13 +214,6 @@ class LetterpressWindow(Adw.ApplicationWindow):
 
         self.zoom_box.set_sensitive(True)
         self.zoom(zoom_reset=True)
-
-    def __copy_output_to_clipboard(self, *args):
-        Gdk.Display.get_default().get_clipboard().set(self.image_as_text)
-        self.toast_overlay.add_toast(Adw.Toast(title=_("Output copied to clipboard")))
-
-    def __save_output_to_file(self, *args):
-        FileChooser.save_file(self)
 
     def __on_gesture(self, gesture, scale, *args):
         if scale != self.scale_delta:

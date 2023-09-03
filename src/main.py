@@ -24,8 +24,9 @@ import gi
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 
-from gi.repository import Adw, Gio, GLib, Gtk
+from gi.repository import Adw, Gdk, Gio, GLib, Gtk
 
+from .file_chooser import FileChooser
 from .window import LetterpressWindow
 
 
@@ -42,9 +43,13 @@ class LetterpressApplication(Adw.Application):
         self.create_action("tips", self.__on_tips_action)
         self.create_action("about", self.__on_about_action)
         self.create_action("open-file", self.__open_file, ["<primary>o"])
-        self.create_action("zoom-out", self.__zoom_out, ["<primary>minus", "<primary>underscore"])
+        self.create_action(
+            "zoom-out", self.__zoom_out, ["<primary>minus", "<primary>underscore"]
+        )
         self.create_action("zoom-in", self.__zoom_in, ["<primary>plus"])
-        self.create_action("reset-zoom", self.__reset_zoom, ["<primary>0", "<primary>r"])
+        self.create_action(
+            "reset-zoom", self.__reset_zoom, ["<primary>0", "<primary>r"]
+        )
         self.create_action(
             "increase-output-width",
             self.__increase_output_width,
@@ -55,6 +60,10 @@ class LetterpressApplication(Adw.Application):
             self.__decrease_output_width,
             ["<primary><alt>minus"],
         )
+        self.create_action(
+            "copy-output", self.__copy_output_to_clipboard, ["<primary>c"]
+        )
+        self.create_action("save-output", self.__save_output_to_file, ["<primary>s"])
         self.create_action(
             "open-output", self.__open_output, param=GLib.VariantType("s")
         )
@@ -93,6 +102,15 @@ class LetterpressApplication(Adw.Application):
         if self.win.filepath:
             self.win.width_spin.set_value(self.win.width_spin.get_value() - 100)
 
+    def __copy_output_to_clipboard(self, *args):
+        Gdk.Display.get_default().get_clipboard().set(self.win.image_as_text)
+        self.win.toast_overlay.add_toast(
+            Adw.Toast(title=_("Output copied to clipboard"))
+        )
+
+    def __save_output_to_file(self, *args):
+        FileChooser.save_file(self.win)
+
     def __open_output(self, app, data):
         try:
             file = open(data.unpack(), "r")
@@ -126,7 +144,7 @@ class LetterpressApplication(Adw.Application):
         return 0
 
     def __quit(self, *args):
-        if self.win:
+        if self.win is not None:
             self.win.destroy()
 
     def __on_about_action(self, *args):
