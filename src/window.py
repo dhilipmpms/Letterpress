@@ -220,17 +220,6 @@ class LetterpressWindow(Adw.ApplicationWindow):
         self.zoom(zoom_reset=True)
 
     def __copy_output_to_clipboard(self, *args):
-        if self.buffer.get_char_count() > 262088:
-            dialog = Adw.MessageDialog(
-                transient_for=self,
-                heading=_("The output is too large to be copied."),
-                body=_(
-                    "Please save it to a file instead or decrease the output width."
-                ),
-            )
-            dialog.add_response("ok", _("_OK"))
-            dialog.present()
-            return
         Gdk.Display.get_default().get_clipboard().set(self.image_as_text)
         self.toast_overlay.add_toast(Adw.Toast(title=_("Output copied to clipboard")))
 
