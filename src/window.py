@@ -220,7 +220,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
             self.zoom(
                 zoom_out=scale < self.scale_delta,
             )
-        self.scale_delta = scale
+            self.scale_delta = scale
 
     def __on_scroll(self, scroll, dx, dy, *args):
         if (
