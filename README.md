@@ -3,7 +3,7 @@
 Letterpress uses [jp2a](https://github.com/Talinx/jp2a) to turn your pictures into images made up of ASCII Characters.
 
 <div align="center">
-  <img src="data/screenshots/saved.png">
+  <img src="data/screenshots/copied.png">
 </div>
 
 ## Installation
