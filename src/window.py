@@ -82,6 +82,8 @@ class LetterpressWindow(Adw.ApplicationWindow):
 
         self.zoom_box = ZoomBox()
         self.menu_btn.props.popover.add_child(self.zoom_box, "zoom")
+        self.pinch_counter = 0
+
         self.heights = (0, 0)
 
     def do_size_allocate(self, width, height, baseline):
@@ -216,11 +218,13 @@ class LetterpressWindow(Adw.ApplicationWindow):
         self.zoom(zoom_reset=True)
 
     def __on_gesture(self, gesture, scale, *args):
-        if scale != self.scale_delta:
+        self.pinch_counter += 1
+        if scale != self.scale_delta and self.pinch_counter == 6:
             self.zoom(
                 zoom_out=scale < self.scale_delta,
             )
             self.scale_delta = scale
+            self.pinch_counter = 0
 
     def __on_scroll(self, scroll, dx, dy, *args):
         if (
