@@ -38,7 +38,8 @@ class LetterpressApplication(Adw.Application):
             application_id="io.gitlab.gregorni.Letterpress",
             flags=Gio.ApplicationFlags.HANDLES_COMMAND_LINE,
         )
-        self.create_action("quit", self.__quit, ["<primary>q", "<primary>w"])
+        self.create_action("quit", self.__quit, ["<primary>q"])
+        self.create_action("close-active-win", self.__close_active_win, ["<primary>w"])
         self.create_action("open-menu", self.__open_menu, ["F10"])
         self.create_action("tips", self.__on_tips_action)
         self.create_action("about", self.__on_about_action)
@@ -67,6 +68,7 @@ class LetterpressApplication(Adw.Application):
         self.create_action(
             "open-output", self.__open_output, param=GLib.VariantType("s")
         )
+        self.create_action("close-tips", self.__close_tips_dialog, ["Escape"])
         self.file = None
 
     def do_activate(self):
@@ -78,6 +80,7 @@ class LetterpressApplication(Adw.Application):
         self.win = self.props.active_window
         if not self.win:
             self.win = LetterpressWindow(application=self)
+            self.tips_dialog = None
         self.win.present()
         if self.file is not None:
             self.win.check_is_image(Gio.File.new_for_path(self.file))
@@ -143,6 +146,9 @@ class LetterpressApplication(Adw.Application):
         self.activate()
         return 0
 
+    def __close_active_win(self, *args):
+        self.props.active_window.destroy()
+
     def __quit(self, *args):
         if self.win is not None:
             self.win.destroy()
@@ -192,10 +198,14 @@ class LetterpressApplication(Adw.Application):
 
         about.present()
 
+    def __close_tips_dialog(self, *args):
+        if self.tips_dialog is not None:
+            self.tips_dialog.destroy()
+            self.tips_dialog = None
+
     def __on_tips_action(self, *args):
-        TipsDialog(
-            transient_for=self.win,
-        ).present()
+        self.tips_dialog = TipsDialog(transient_for=self.win, application=self)
+        self.tips_dialog.present()
 
     def create_action(self, name, callback, shortcuts=None, param=None):
         """Add an application action.
