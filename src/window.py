@@ -83,6 +83,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
         self.zoom_box = ZoomBox()
         self.menu_btn.props.popover.add_child(self.zoom_box, "zoom")
         self.pinch_counter = 0
+        self.scrolled = 0
 
         self.heights = (0, 0)
 
@@ -219,7 +220,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
 
     def __on_gesture(self, gesture, scale, *args):
         self.pinch_counter += 1
-        if scale != self.scale_delta and self.pinch_counter == 6:
+        if scale != self.scale_delta and self.pinch_counter >= 6:
             self.zoom(
                 zoom_out=scale < self.scale_delta,
             )
@@ -227,11 +228,15 @@ class LetterpressWindow(Adw.ApplicationWindow):
             self.pinch_counter = 0
 
     def __on_scroll(self, scroll, dx, dy, *args):
+
         if (
             scroll.get_current_event_state() == Gdk.ModifierType.CONTROL_MASK
             and scroll.get_current_event_device().get_source() == Gdk.InputSource.MOUSE
         ):
-            self.zoom(zoom_out=dy > 0)
+            self.scrolled += abs(dy)
+            if self.scrolled >= 1:
+                self.zoom(zoom_out=dy > 0)
+                self.scrolled = 0
 
     def __set_color_scheme(self, *args):
         if self.filepath:
