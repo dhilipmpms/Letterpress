@@ -228,7 +228,6 @@ class LetterpressWindow(Adw.ApplicationWindow):
             self.pinch_counter = 0
 
     def __on_scroll(self, scroll, dx, dy, *args):
-
         if (
             scroll.get_current_event_state() == Gdk.ModifierType.CONTROL_MASK
             and scroll.get_current_event_device().get_source() == Gdk.InputSource.MOUSE
