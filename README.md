@@ -18,7 +18,7 @@ The easiest way to work on this project is by cloning it with GNOME Builder:
 
 1. Install and open [GNOME Builder](https://flathub.org/apps/details/org.gnome.Builder)
 2. Select "Clone Repository..."
-3. Clone `https://gitlab.com/gregorni/letterpress.git` (or your fork)
+3. Clone `https://gitlab.gnome.org/gregorni/letterpress.git` (or your fork)
 4. Run the project with the ▶ button at the top, or by pressing `Ctrl`+`Shift`+`Space`.
 
 ## Code of Conduct
