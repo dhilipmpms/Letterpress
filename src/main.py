@@ -163,29 +163,29 @@ class LetterpressApplication(Adw.Application):
             version="2.0",
             # These are Python lists: Add your string to the list (separated by a comma)
             # See the translator comment below for possible formats
-            developers=["gregorni https://gitlab.com/gregorni"],
+            developers=["gregorni https://gitlab.gnome.org/gregorni"],
             artists=[
                 "Brage Fuglseth https://bragefuglseth.dev",
                 "kramo https://kramo.hu",
             ],
             # Translators: Translate this string as your translator credits.
             # Name only:    gregorni
-            # Name + URL:   gregorni https://gitlab.com/gregorni/
+            # Name + URL:   gregorni https://gitlab.gnome.org/gregorni/
             # Name + Email: gregorni <gregorniehl@web.de>
             # Do not remove existing names.
             # Names are separated with newlines.
             translator_credits=_("translator-credits"),
             copyright=_("Copyright © 2023 Letterpress Contributors"),
             license_type=Gtk.License.GPL_3_0,
-            website="https://gitlab.com/gregorni/Letterpress",
-            issue_url="https://gitlab.com/gregorni/Letterpress/-/issues",
+            website="https://gitlab.gnome.org/World/Letterpress",
+            issue_url="https://gitlab.gnome.org/World/Letterpress/-/issues",
             support_url="https://matrix.to/#/#gregorni-apps:matrix.org",
         )
 
         about.add_acknowledgement_section(
             _("Code and Design borrowed from"),
             [
-                "Upscaler https://gitlab.com/TheEvilSkeleton/Upscaler",
+                "Upscaler https://gitlab.gnome.org/World/Upscaler",
                 "Frog https://github.com/TenderOwl/Frog",
             ],
         )

@@ -50,22 +50,22 @@
   
   <screenshots>
     <screenshot>
-      <image>https://gitlab.com/gregorni/Letterpress/-/raw/main/data/screenshots/overview.png</image>
+      <image>https://gitlab.gnome.org/World/Letterpress/-/raw/main/data/screenshots/overview.png</image>
       <!--Translators: This is a screenshot caption-->
       <caption>Landing page</caption>
     </screenshot>
     <screenshot>
-      <image>https://gitlab.com/gregorni/Letterpress/-/raw/main/data/screenshots/copied.png</image>
+      <image>https://gitlab.gnome.org/World/Letterpress/-/raw/main/data/screenshots/copied.png</image>
       <!--Translators: This is a screenshot caption-->
       <caption>Copy output</caption>
     </screenshot>
     <screenshot>
-      <image>https://gitlab.com/gregorni/Letterpress/-/raw/main/data/screenshots/saved.png</image>
+      <image>https://gitlab.gnome.org/World/Letterpress/-/raw/main/data/screenshots/saved.png</image>
       <!--Translators: This is a screenshot caption-->
       <caption>Save output</caption>
     </screenshot>
     <screenshot>
-      <image>https://gitlab.com/gregorni/Letterpress/-/raw/main/data/screenshots/width.png</image>
+      <image>https://gitlab.gnome.org/World/Letterpress/-/raw/main/data/screenshots/width.png</image>
       <!--Translators: This is a screenshot caption-->
       <caption>Adjust output width</caption>
     </screenshot>
@@ -73,11 +73,11 @@
   
   <launchable type="desktop-id">io.gitlab.gregorni.Letterpress.desktop</launchable>
   
-  <url type="homepage">https://gitlab.com/gregorni/Letterpress</url>
-  <url type="bugtracker">https://gitlab.com/gregorni/Letterpress/-/issues</url>
-  <url type="help">https://gitlab.com/gregorni/Letterpress/-/issues</url>
-  <url type="vcs-browser">https://gitlab.com/gregorni/Letterpress</url>
-  <url type="contribute">https://gitlab.com/gregorni/Letterpress</url>
+  <url type="homepage">https://gitlab.gnome.org/World/Letterpress</url>
+  <url type="bugtracker">https://gitlab.gnome.org/World/Letterpress/-/issues</url>
+  <url type="help">https://gitlab.gnome.org/World/Letterpress/-/issues</url>
+  <url type="vcs-browser">https://gitlab.gnome.org/World/Letterpress</url>
+  <url type="contribute">https://gitlab.gnome.org/World/Letterpress</url>
   <url type="contact">https://matrix.to/#/#gregorni-apps:matrix.org</url>
   
   <update_contact>gregorniehl@web.de</update_contact>
