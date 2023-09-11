@@ -142,6 +142,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
                     pass
 
                 self.__convert_image(self.filepath)
+                self.zoom(zoom_reset=True)
             else:
                 __wrong_image_type()
         except IOError:
@@ -216,7 +217,6 @@ class LetterpressWindow(Adw.ApplicationWindow):
         self.previous_stack = "view-page"
 
         self.zoom_box.set_sensitive(True)
-        self.zoom(zoom_reset=True)
 
     def __on_gesture(self, gesture, scale, *args):
         self.pinch_counter += 1
@@ -244,6 +244,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
     def __on_spin_value_changed(self, spin_button):
         self.__show_spinner()
         self.__convert_image(self.filepath)
+        self.zoom(zoom_reset=True)
 
     def __show_spinner(self):
         self.main_stack.set_visible_child_name("spinner-page")
