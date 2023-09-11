@@ -3,10 +3,8 @@ using Adw 1;
 
 template $LetterpressWindow : Adw.ApplicationWindow {
   title: _("Letterpress");
-  default-width: 800;
-  default-height: 600;
   width-request: 360;
-  height-request: 300;
+  height-request: 294;
 
   content: Adw.ToastOverlay toast_overlay {
 
@@ -183,6 +181,7 @@ template $LetterpressWindow : Adw.ApplicationWindow {
 
             Label {
               label: _("Width (in characters)");
+              ellipsize: end;
               xalign: 0;
               margin-end: 8;
             }
