@@ -8,13 +8,16 @@ msgstr ""
 "Project-Id-Version: letterpress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-15 02:04+0200\n"
-"PO-Revision-Date: 2023-04-15 17:58+0200\n"
-"Last-Translator: gregorni <gregorniehl@web.de>\n"
-"Language-Team: German <gnome-de@gnome.org>\n"
+"PO-Revision-Date: 2023-09-14 14:56+0000\n"
+"Last-Translator: FineFindus <FineFindus@users.noreply.hosted.weblate.org>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/letterpress/"
+"letterpress/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.0.1-dev\n"
 
 #. Translators: Translate as "Letterpress"
 #: data/io.gitlab.gregorni.ASCIIImages.desktop.in:4
@@ -227,7 +230,7 @@ msgstr "Öffnen"
 
 #: src/gtk/window.blp:16
 msgid "Tips"
-msgstr ""
+msgstr "Tipps"
 
 #: src/gtk/window.blp:24
 msgid "Main Menu"
@@ -313,16 +316,14 @@ msgid "Text View"
 msgstr "Textansicht"
 
 #: src/gtk/help-overlay.blp:33
-#, fuzzy
 msgctxt "shortcut window"
 msgid "Increase Output Width"
-msgstr "Output-Breite"
+msgstr "Output-Breite erhöhen"
 
 #: src/gtk/help-overlay.blp:38
-#, fuzzy
 msgctxt "shortcut window"
 msgid "Decrease Output Width"
-msgstr "Output-Breite"
+msgstr "Output-Breite verkleinern"
 
 #: src/gtk/help-overlay.blp:43
 msgctxt "shortcut window"
