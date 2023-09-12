@@ -8,36 +8,40 @@ msgstr ""
 "Project-Id-Version: letterpress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-15 02:04+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2023-09-12 19:11+0000\n"
+"Last-Translator: Shadin <shadin_omari@yahoo.com>\n"
+"Language-Team: Arabic <https://hosted.weblate.org/projects/letterpress/"
+"letterpress/ar/>\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Weblate 5.0.1-dev\n"
 
 #. Translators: Translate as "Letterpress"
 #: data/io.gitlab.gregorni.ASCIIImages.desktop.in:4
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:7 src/main.py:161
 #: src/gtk/window.blp:5
 msgid "Letterpress"
-msgstr ""
+msgstr "مطبعة الحروف"
 
 #: data/io.gitlab.gregorni.ASCIIImages.desktop.in:5
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:9
 msgid "Create beautiful ASCII art"
-msgstr ""
+msgstr "إنشاء فن ASCII الجميل"
 
 #. Translators: These are search terms for the application;
 #. the translation should contain the original list AND the translated strings.
 #. The list must end with a semicolon.
 #: data/io.gitlab.gregorni.ASCIIImages.desktop.in:14
 msgid "image;ascii;convert;conversion;text;"
-msgstr ""
+msgstr "image;ascii;convert;conversion;text;"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:8 src/main.py:163
 msgid "Letterpress Contributors"
-msgstr ""
+msgstr "المساهمين في الحروف المطبوعة"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:12
 msgid ""
@@ -45,111 +49,114 @@ msgid ""
 "You can save the output to a file, copy it, and even change its resolution! "
 "High-res output can still be viewed comfortably by lowering the zoom factor."
 msgstr ""
+"يقوم برنامج Letterpress بتحويل صورك إلى صورة تتكون من أحرف ASCII. يمكنك حفظ "
+"الإخراج في ملف، ونسخه، وحتى تغيير دقته! لا يزال من الممكن مشاهدة الإخراج "
+"عالي الدقة بشكل مريح عن طريق خفض عامل التكبير/التصغير."
 
 #. Translators: This is a search term and should be lowercase
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:29
 msgid "image"
-msgstr ""
+msgstr "صورة"
 
 #. Translators: This is a search term and should be lowercase
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:31
 msgid "ascii"
-msgstr ""
+msgstr "أسكي"
 
 #. Translators: This is a search term and should be lowercase
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:33
 msgid "convert"
-msgstr ""
+msgstr "يتحول"
 
 #. Translators: This is a search term and should be lowercase
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:35
 msgid "conversion"
-msgstr ""
+msgstr "محادثة"
 
 #. Translators: This is a search term and should be lowercase
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:37
 msgid "text"
-msgstr ""
+msgstr "نص"
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:55
 msgid "Overview"
-msgstr ""
+msgstr "ملخص"
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:60
 msgid "Copy output"
-msgstr ""
+msgstr "نسخ الإخراج"
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:65
 msgid "Save output"
-msgstr ""
+msgstr "حفظ الإخراج"
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:70
 msgid "Adjust output width"
-msgstr ""
+msgstr "ضبط عرض الإخراج"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:93
 msgid "Rebrand to Letterpress"
-msgstr ""
+msgstr "إعادة صياغة العلامة التجارية إلى Letterpress"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:94
 msgid "Replaced icon on welcome screen with illustration"
-msgstr ""
+msgstr "تم استبدال الأيقونة الموجودة على شاشة الترحيب بالرسم التوضيحي"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:95
 msgid "Changed warning dialog to Adw.MessageDialog"
-msgstr ""
+msgstr "تم تغيير مربع حوار التحذير إلى Adw.MessageDialog"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:96
 msgid "Improved adaptiveness of \"Output Width\" subtitle"
-msgstr ""
+msgstr "تحسين القدرة على التكيف من العنوان الفرعي \"عرض الإخراج\""
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:97
 msgid "Swapped buttons for copying and saving output"
-msgstr ""
+msgstr "أزرار متبادلة لنسخ وحفظ المخرجات"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:98
 msgid "Added a string to translations"
-msgstr ""
+msgstr "تمت إضافة سلسلة إلى الترجمات"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:99
 msgid "Added Turkish translation"
-msgstr ""
+msgstr "تمت إضافة الترجمة التركية"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:100
 msgid "Added Czech translation"
-msgstr ""
+msgstr "تمت إضافة الترجمة التشيكية"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:107
 msgid "Added French translation"
-msgstr ""
+msgstr "تمت إضافة الترجمة الفرنسية"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:108
 msgid "Added Russian translation"
-msgstr ""
+msgstr "تمت إضافة الترجمة الروسية"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:109
 msgid "Added Occitan translation"
-msgstr ""
+msgstr "تمت إضافة الترجمة الأوكيتانية"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:110
 msgid "Added Italian translation"
-msgstr ""
+msgstr "تمت إضافة الترجمة الايطالية"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:111
 msgid "Fixed \"Open with…\" functionality"
-msgstr ""
+msgstr "تم إصلاح وظيفة \"فتح باستخدام...\""
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:112
 msgid "The app now remembers window size and state"
-msgstr ""
+msgstr "يتذكر التطبيق الآن حجم النافذة وحالتها"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:118
 msgid "First Release! 🎉"
-msgstr ""
+msgstr "الإصدار الأول! 🎉"
 
 #. Translators: Translate this string as your translator credits.
 #. Name only:    gregorni
