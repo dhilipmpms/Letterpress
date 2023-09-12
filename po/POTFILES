@@ -8,4 +8,5 @@ src/file_chooser.py
 
 src/gtk/window.blp
 src/gtk/zoom-box.blp
+src/gtk/tips-dialog.blp
 src/gtk/help-overlay.blp
