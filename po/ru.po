@@ -8,13 +8,17 @@ msgstr ""
 "Project-Id-Version: letterpress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-15 02:04+0200\n"
-"PO-Revision-Date: 2023-04-25 23:18+0300\n"
-"Last-Translator: Fyodor Sobolev\n"
-"Language-Team: \n"
-"Language: ru_RU\n"
+"PO-Revision-Date: 2023-09-14 14:56+0000\n"
+"Last-Translator: Fyodor Sobolev <fyodor-sobolev@protonmail.com>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/letterpress/"
+"letterpress/ru/>\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 5.0.1-dev\n"
 
 #. Translators: Translate as "Letterpress"
 #: data/io.gitlab.gregorni.ASCIIImages.desktop.in:4
@@ -26,7 +30,7 @@ msgstr "Letterpress"
 #: data/io.gitlab.gregorni.ASCIIImages.desktop.in:5
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:9
 msgid "Create beautiful ASCII art"
-msgstr ""
+msgstr "Создайте красивые ASCII-арты"
 
 #. Translators: These are search terms for the application;
 #. the translation should contain the original list AND the translated strings.
@@ -41,15 +45,15 @@ msgid "Letterpress Contributors"
 msgstr "Разработчики Letterpress"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:12
-#, fuzzy
 msgid ""
 "Letterpress converts your images into a picture made up of ASCII characters. "
 "You can save the output to a file, copy it, and even change its resolution! "
 "High-res output can still be viewed comfortably by lowering the zoom factor."
 msgstr ""
-"Letterpress использует jp2a для конвертирования изображений в символы ASCII. "
-"Вы можете сохранить результат в файл, копировать, и даже менять его "
-"разрешение!"
+"Letterpress конвертирует ваши изображения в картинку, состоящую из символов "
+"ASCII. Вы можете сохранить результат в файл, копировать, и даже менять его "
+"разрешение! Уменьшая масштаб, можно с комфортом увидеть результат в высоком "
+"разрешении."
 
 #. Translators: This is a search term and should be lowercase
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:29
@@ -97,40 +101,36 @@ msgid "Adjust output width"
 msgstr "Изменить ширину вывода"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:93
-#, fuzzy
 msgid "Rebrand to Letterpress"
-msgstr "_О приложении"
+msgstr "Переименовано в Letterpress"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:94
 msgid "Replaced icon on welcome screen with illustration"
-msgstr ""
+msgstr "Иконка на приветственном экране заменена на иллюстрацию"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:95
 msgid "Changed warning dialog to Adw.MessageDialog"
-msgstr ""
+msgstr "Диалог с предупреждением изменён на Adw.MessageDialog"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:96
 msgid "Improved adaptiveness of \"Output Width\" subtitle"
-msgstr ""
+msgstr "Улучшена адаптивность надписи \"Ширина вывода\""
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:97
 msgid "Swapped buttons for copying and saving output"
-msgstr ""
+msgstr "Кнопки для копирования и сохранения результата поменяны местами"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:98
-#, fuzzy
 msgid "Added a string to translations"
-msgstr "Добавлен русский перевод"
+msgstr "Добавлена строка для перевода"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:99
-#, fuzzy
 msgid "Added Turkish translation"
-msgstr "Добавлен французский перевод"
+msgstr "Добавлен турецкий перевод"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:100
-#, fuzzy
 msgid "Added Czech translation"
-msgstr "Добавлен французский перевод"
+msgstr "Добавлен чешский перевод"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:107
 msgid "Added French translation"
@@ -184,9 +184,9 @@ msgstr "Ширина ASCII изображения в символах"
 
 #. Translators: Do not translate "{basename}"
 #: src/window.py:104
-#, fuzzy, python-brace-format
+#, python-brace-format
 msgid "\"{basename}\" is not of a supported image type."
-msgstr "\"{basename}\" не является корректным файлом изображения."
+msgstr "\"{basename}\" не является поддерживаемым файлом изображения."
 
 #: src/window.py:197
 msgid "The output is too large to be copied."
@@ -230,7 +230,7 @@ msgstr "Открыть"
 
 #: src/gtk/window.blp:16
 msgid "Tips"
-msgstr ""
+msgstr "Подсказки"
 
 #: src/gtk/window.blp:24
 msgid "Main Menu"
@@ -238,11 +238,11 @@ msgstr "Главное меню"
 
 #: src/gtk/window.blp:86
 msgid "Create ASCII Art"
-msgstr ""
+msgstr "Создайте ASCII-арт"
 
 #: src/gtk/window.blp:87
 msgid "Open or drag and drop an image to generate an ASCII art version of it"
-msgstr ""
+msgstr "Откройте или перетащите изображение для создания из него ASCII-арта"
 
 #: src/gtk/window.blp:92
 msgid "Open File…"
@@ -265,9 +265,8 @@ msgid "Save to file"
 msgstr "Сохранить в файл"
 
 #: src/gtk/window.blp:224
-#, fuzzy
 msgid "_Open File…"
-msgstr "Открыть файл..."
+msgstr "_Открыть файл…"
 
 #: src/gtk/window.blp:231
 msgid "_Keyboard Shortcuts"
@@ -279,15 +278,15 @@ msgstr "_О приложении"
 
 #: src/gtk/zoom-box.blp:12
 msgid "Zoom out"
-msgstr ""
+msgstr "Отдалить"
 
 #: src/gtk/zoom-box.blp:28
 msgid "Reset zoom"
-msgstr ""
+msgstr "Сбросить масштаб"
 
 #: src/gtk/zoom-box.blp:40
 msgid "Zoom in"
-msgstr ""
+msgstr "Приблизить"
 
 #: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
@@ -312,29 +311,27 @@ msgstr "Выход"
 #: src/gtk/help-overlay.blp:30
 msgctxt "shortcut window"
 msgid "Text View"
-msgstr ""
+msgstr "Отображение текста"
 
 #: src/gtk/help-overlay.blp:33
-#, fuzzy
 msgctxt "shortcut window"
 msgid "Increase Output Width"
-msgstr "Ширина вывода"
+msgstr "Увеличить ширину вывода"
 
 #: src/gtk/help-overlay.blp:38
-#, fuzzy
 msgctxt "shortcut window"
 msgid "Decrease Output Width"
-msgstr "Ширина вывода"
+msgstr "Уменьшить ширину вывода"
 
 #: src/gtk/help-overlay.blp:43
 msgctxt "shortcut window"
 msgid "Zoom in"
-msgstr ""
+msgstr "Приблизить"
 
 #: src/gtk/help-overlay.blp:48
 msgctxt "shortcut window"
 msgid "Zoom out"
-msgstr ""
+msgstr "Отдалить"
 
 #~ msgid "Convert images into ASCII characters"
 #~ msgstr "Конвертируйте изображения в символы ASCII"
