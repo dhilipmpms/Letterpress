@@ -23,9 +23,7 @@ The easiest way to work on this project is by cloning it with GNOME Builder:
 
 ## Translation
 
-<a href="https://hosted.weblate.org/engage/letterpress/">
-  <img src="https://hosted.weblate.org/widget/letterpress/multi-auto.svg" alt="Translation status" />
-</a>
+[![Translation status](https://hosted.weblate.org/widget/letterpress/horizontal-auto.svg)](https://hosted.weblate.org/engage/letterpress/)
 
 Letterpress uses [Weblate](https://hosted.weblate.org/projects/letterpress/letterpress/) for translation. Translations can be contributed there, or via a simple merge request. Don't forget to translate `"translator-credits"` with your credits!
 
