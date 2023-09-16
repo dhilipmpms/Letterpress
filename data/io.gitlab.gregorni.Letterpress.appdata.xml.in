@@ -89,34 +89,28 @@
   <releases>
     <release version="1.3.0" date="2023-05-07">
       <description>
-        <p>
-          New in version 1.3.0:
-          <ul>
-            <li>Rebrand to Letterpress</li>
-            <li>Replaced icon on welcome screen with illustration</li>
-            <li>Changed warning dialog to Adw.MessageDialog</li>
-            <li>Improved adaptiveness of "Output Width" subtitle</li>
-            <li>Swapped buttons for copying and saving output</li>
-            <li>Added a string to translations</li>
-            <li>Added Turkish translation</li>
-            <li>Added Czech translation</li>
-          </ul>
-        </p>
+        <ul>
+          <li>Rebrand to Letterpress</li>
+          <li>Replaced icon on welcome screen with illustration</li>
+          <li>Changed warning dialog to Adw.MessageDialog</li>
+          <li>Improved adaptiveness of "Output Width" subtitle</li>
+          <li>Swapped buttons for copying and saving output</li>
+          <li>Added a string to translations</li>
+          <li>Added Turkish translation</li>
+          <li>Added Czech translation</li>
+        </ul>
       </description>
     </release>
     <release version="1.2.0" date="2023-04-10">
       <description>
-        <p>
-          New in version 1.2.0:
-          <ul>
-            <li>Added French translation</li>
-            <li>Added Russian translation</li>
-            <li>Added Occitan translation</li>
-            <li>Added Italian translation</li>
-            <li>Fixed "Open with…" functionality</li>
-            <li>The app now remembers window size and state</li>
-          </ul>
-        </p>
+        <ul>
+          <li>Added French translation</li>
+          <li>Added Russian translation</li>
+          <li>Added Occitan translation</li>
+          <li>Added Italian translation</li>
+          <li>Fixed "Open with…" functionality</li>
+          <li>The app now remembers window size and state</li>
+        </ul>
       </description>
     </release>
     <release version="1.0.1" date="2023-03-25">
