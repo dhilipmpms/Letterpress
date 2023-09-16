@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: letterpress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-15 02:04+0200\n"
-"PO-Revision-Date: 2023-09-12 19:11+0000\n"
-"Last-Translator: Shadin <shadin_omari@yahoo.com>\n"
+"PO-Revision-Date: 2023-09-17 17:59+0000\n"
+"Last-Translator: ButterflyOfFire <boffire@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/letterpress/"
 "letterpress/ar/>\n"
 "Language: ar\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 5.0.1-dev\n"
+"X-Generator: Weblate 5.0.2\n"
 
 #. Translators: Translate as "Letterpress"
 #: data/io.gitlab.gregorni.ASCIIImages.desktop.in:4
@@ -174,7 +174,7 @@ msgstr ""
 
 #: src/main.py:182
 msgid "Code and Design borrowed from"
-msgstr ""
+msgstr "الرمز والتصميم مستعار من"
 
 #: src/window.py:88
 msgid "Width of the ASCII image in characters"
@@ -188,7 +188,7 @@ msgstr ""
 
 #: src/window.py:197
 msgid "The output is too large to be copied."
-msgstr ""
+msgstr "الناتج كبير جداً لكي يتم نسخه."
 
 #: src/window.py:199
 msgid "Please save it to a file instead or decrease the output width."
@@ -204,11 +204,11 @@ msgstr ""
 
 #: src/file_chooser.py:37 src/file_chooser.py:104
 msgid "Select a file"
-msgstr ""
+msgstr "اختر ملفا"
 
 #: src/file_chooser.py:44
 msgid "Supported image files"
-msgstr ""
+msgstr "ملفات الصور المدعومة"
 
 #. Translators: Do not translate "{display_name}"
 #: src/file_chooser.py:82
@@ -224,7 +224,7 @@ msgstr ""
 
 #: src/file_chooser.py:93
 msgid "Open"
-msgstr ""
+msgstr "افتح"
 
 #: src/gtk/window.blp:16
 msgid "Tips"
@@ -232,7 +232,7 @@ msgstr ""
 
 #: src/gtk/window.blp:24
 msgid "Main Menu"
-msgstr ""
+msgstr "القائمة الرئيسية"
 
 #: src/gtk/window.blp:86
 msgid "Create ASCII Art"
@@ -244,7 +244,7 @@ msgstr ""
 
 #: src/gtk/window.blp:92
 msgid "Open File…"
-msgstr ""
+msgstr "افتح الملف…"
 
 #: src/gtk/window.blp:111
 msgid "Drop Here to Open"
@@ -256,11 +256,11 @@ msgstr ""
 
 #: src/gtk/window.blp:190
 msgid "Copy to clipboard"
-msgstr ""
+msgstr "انسخ إلى الحافظة"
 
 #: src/gtk/window.blp:197
 msgid "Save to file"
-msgstr ""
+msgstr "حفظ في ملف"
 
 #: src/gtk/window.blp:224
 msgid "_Open File…"
@@ -304,7 +304,7 @@ msgstr ""
 #: src/gtk/help-overlay.blp:24
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr ""
+msgstr "خروج"
 
 #: src/gtk/help-overlay.blp:30
 msgctxt "shortcut window"
