@@ -116,12 +116,15 @@ class LetterpressWindow(Adw.ApplicationWindow):
 
         try:
             if self.filepath and file:
-                if not ImageChops.difference(
-                    Image.open(self.filepath).convert("RGB"),
-                    Image.open(filepath).convert("RGB"),
-                ).getbbox():
-                    self.main_stack.set_visible_child_name(self.previous_stack)
-                    return
+                with Image.open(self.filepath) as old_img, Image.open(
+                    filepath
+                ) as new_img:
+                    if not ImageChops.difference(
+                        old_img.convert("RGB"),
+                        new_img.convert("RGB"),
+                    ).getbbox():
+                        self.main_stack.set_visible_child_name(self.previous_stack)
+                        return
 
             self.__show_spinner()
             print(f"Input file: {filepath}")
