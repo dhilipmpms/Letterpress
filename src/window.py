@@ -126,25 +126,25 @@ class LetterpressWindow(Adw.ApplicationWindow):
             self.__show_spinner()
             print(f"Input file: {filepath}")
 
-            img = Image.open(filepath)
-            image_format = img.format
-            if image_format in ["JPEG", "PNG"]:
-                self.filepath = filepath
-                try:
-                    if img._getexif()[274] != 1:
-                        self.filepath = (
-                            f"{tempfile.NamedTemporaryFile().name}.{image_format}"
-                        )
-                        ImageOps.exif_transpose(img).save(
-                            self.filepath, format=image_format
-                        )
-                except:
-                    pass
+            with Image.open(filepath) as img:
+                image_format = img.format
+                if image_format in ["JPEG", "PNG"]:
+                    self.filepath = filepath
+                    try:
+                        if img._getexif()[274] != 1:
+                            self.filepath = (
+                                f"{tempfile.NamedTemporaryFile().name}.{image_format}"
+                            )
+                            ImageOps.exif_transpose(img).save(
+                                self.filepath, format=image_format
+                            )
+                    except:
+                        pass
 
-                self.__convert_image(self.filepath)
-                self.zoom(zoom_reset=True)
-            else:
-                __wrong_image_type()
+                    self.__convert_image(self.filepath)
+                    self.zoom(zoom_reset=True)
+                else:
+                    __wrong_image_type()
         except IOError:
             __wrong_image_type()
 
