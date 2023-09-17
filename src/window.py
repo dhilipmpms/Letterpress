@@ -204,17 +204,19 @@ class LetterpressWindow(Adw.ApplicationWindow):
         if not self.style_manager.get_dark():
             arguments.append("--invert")
 
-        self.image_as_text = ""
-        for line in iter(
-            subprocess.Popen(
-                arguments,
-                stdout=subprocess.PIPE,
-                universal_newlines=True,
-            ).stdout.readline,
-            "",
-        ):
-            self.image_as_text += line
-        self.buffer.set_text(self.image_as_text)
+        self.buffer.set_text(
+            "".join(
+                line
+                for line in iter(
+                    subprocess.Popen(
+                        arguments,
+                        stdout=subprocess.PIPE,
+                        universal_newlines=True,
+                    ).stdout.readline,
+                    "",
+                )
+            )
+        )
 
         self.toolbox.set_reveal_child(True)
         self.main_stack.set_visible_child_name("view-page")

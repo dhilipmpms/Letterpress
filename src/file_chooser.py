@@ -53,7 +53,9 @@ class FileChooser:
     def save_file(parent, *args):
         def __on_save_file(file):
             print(f"Output file: {file.get_path()}")
-            text = parent.image_as_text
+            text = parent.buffer.get_text(
+                parent.buffer.get_start_iter(), parent.buffer.get_end_iter(), False
+            )
             if text:
                 file.replace_contents_bytes_async(
                     GLib.Bytes.new(text.encode("utf-8")),
