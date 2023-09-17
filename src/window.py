@@ -18,7 +18,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 import subprocess
-import tempfile
+from tempfile import NamedTemporaryFile
 
 from gi.repository import Adw, Gdk, Gio, Gtk
 from PIL import Image, ImageChops, ImageOps
@@ -52,9 +52,9 @@ class LetterpressWindow(Adw.ApplicationWindow):
             actions=Gdk.DragAction.COPY,
         )
 
-        target.connect("drop", self.__on_drop)
+        target.connect("drop", lambda widget, file, *args: self.check_is_image(file))
         target.connect("enter", self.__on_enter)
-        target.connect("leave", self.__on_leave)
+        target.connect("leave", lambda *_: self.main_stack.set_visible_child_name(self.previous_stack))
         self.add_controller(target)
 
         settings = Gio.Settings(schema_id="io.gitlab.gregorni.Letterpress")
@@ -115,28 +115,26 @@ class LetterpressWindow(Adw.ApplicationWindow):
             self.main_stack.set_visible_child_name(self.previous_stack)
 
         try:
-            if self.filepath and file:
-                with Image.open(self.filepath) as old_img, Image.open(
-                    filepath
-                ) as new_img:
-                    if not ImageChops.difference(
-                        old_img.convert("RGB"),
-                        new_img.convert("RGB"),
-                    ).getbbox():
-                        self.main_stack.set_visible_child_name(self.previous_stack)
-                        return
-
-            self.__show_spinner()
-            print(f"Input file: {filepath}")
-
             with Image.open(filepath) as img:
+                if self.filepath and file:
+                    with Image.open(self.filepath) as old_img:
+                        if not ImageChops.difference(
+                            old_img.convert("RGB"),
+                            img.convert("RGB"),
+                        ).getbbox():
+                            self.main_stack.set_visible_child_name(self.previous_stack)
+                            return
+
+                self.__show_spinner()
+                print(f"Input file: {filepath}")
+
                 image_format = img.format
                 if image_format in ["JPEG", "PNG"]:
                     self.filepath = filepath
                     try:
                         if img._getexif()[274] != 1:
                             self.filepath = (
-                                f"{tempfile.NamedTemporaryFile().name}.{image_format}"
+                                f"{NamedTemporaryFile().name}.{image_format}"
                             )
                             ImageOps.exif_transpose(img).save(
                                 self.filepath, format=image_format
@@ -253,16 +251,10 @@ class LetterpressWindow(Adw.ApplicationWindow):
         self.main_stack.set_visible_child_name("spinner-page")
         self.spinner.start()
 
-    def __on_drop(self, widget, file, *args):
-        self.check_is_image(file)
-
     def __on_enter(self, *args):
         self.previous_stack = self.main_stack.get_visible_child_name()
         self.main_stack.set_visible_child_name("drop-page")
         return Gdk.DragAction.COPY
-
-    def __on_leave(self, *args):
-        self.main_stack.set_visible_child_name(self.previous_stack)
 
 
 @Gtk.Template(resource_path="/io/gitlab/gregorni/Letterpress/gtk/zoom-box.ui")
