@@ -53,11 +53,15 @@ class LetterpressApplication(Adw.Application):
             "open-file", lambda *_: self.win.on_open_file(), ["<primary>o"]
         )
         self.create_action(
-            "zoom-out", self.__zoom_out, ["<primary>minus", "<primary>underscore"]
+            "zoom-out",
+            lambda *_: self.win.zoom(zoom_out=True),
+            ["<primary>minus", "<primary>underscore"],
         )
-        self.create_action("zoom-in", self.__zoom_in, ["<primary>plus"])
+        self.create_action("zoom-in", lambda *_: self.win.zoom(), ["<primary>plus"])
         self.create_action(
-            "reset-zoom", self.__reset_zoom, ["<primary>0", "<primary>r"]
+            "reset-zoom",
+            lambda *_: self.win.zoom(zoom_reset=True),
+            ["<primary>0", "<primary>r"],
         )
         self.create_action(
             "increase-output-width",
@@ -96,15 +100,6 @@ class LetterpressApplication(Adw.Application):
         self.win.present()
         if self.file is not None:
             self.win.check_is_image(Gio.File.new_for_path(self.file))
-
-    def __zoom_out(self, *args):
-        self.win.zoom(zoom_out=True)
-
-    def __zoom_in(self, *args):
-        self.win.zoom()
-
-    def __reset_zoom(self, *args):
-        self.win.zoom(zoom_reset=True)
 
     def __increase_output_width(self, *args):
         if self.win.filepath:

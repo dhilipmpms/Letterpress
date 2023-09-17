@@ -53,13 +53,10 @@ class FileChooser:
     def save_file(parent, *args):
         def __on_save_file(file):
             print(f"Output file: {file.get_path()}")
-            text = parent.buffer.get_text(
-                parent.buffer.get_start_iter(), parent.buffer.get_end_iter(), False
-            )
+            text = parent.image_as_text
             if text:
-                bytes = GLib.Bytes.new(text.encode("utf-8"))
                 file.replace_contents_bytes_async(
-                    bytes,
+                    GLib.Bytes.new(text.encode("utf-8")),
                     None,
                     False,
                     Gio.FileCreateFlags.NONE,
