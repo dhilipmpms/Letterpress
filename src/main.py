@@ -39,11 +39,19 @@ class LetterpressApplication(Adw.Application):
             flags=Gio.ApplicationFlags.HANDLES_COMMAND_LINE,
         )
         self.create_action("quit", self.__quit, ["<primary>q"])
-        self.create_action("close-active-win", self.__close_active_win, ["<primary>w"])
-        self.create_action("open-menu", self.__open_menu, ["F10"])
+        self.create_action(
+            "close-active-win",
+            lambda *_: self.props.active_window.destroy(),
+            ["<primary>w"],
+        )
+        self.create_action(
+            "open-menu", lambda *_: self.win.menu_btn.activate(), ["F10"]
+        )
         self.create_action("tips", self.__on_tips_action)
         self.create_action("about", self.__on_about_action)
-        self.create_action("open-file", self.__open_file, ["<primary>o"])
+        self.create_action(
+            "open-file", lambda *_: self.win.on_open_file(), ["<primary>o"]
+        )
         self.create_action(
             "zoom-out", self.__zoom_out, ["<primary>minus", "<primary>underscore"]
         )
@@ -62,9 +70,13 @@ class LetterpressApplication(Adw.Application):
             ["<primary><alt>minus"],
         )
         self.create_action(
-            "copy-output", self.__copy_output_to_clipboard, ["<primary>c"]
+            "copy-output", self.__copy_output_to_clipboard, ["<primary><shift>c"]
         )
-        self.create_action("save-output", self.__save_output_to_file, ["<primary>s"])
+        self.create_action(
+            "save-output",
+            lambda *_: FileChooser.save_file(self.win),
+            ["<primary>s", "<primary><shift>c"],
+        )
         self.create_action(
             "open-output", self.__open_output, param=GLib.VariantType("s")
         )
@@ -84,9 +96,6 @@ class LetterpressApplication(Adw.Application):
         self.win.present()
         if self.file is not None:
             self.win.check_is_image(Gio.File.new_for_path(self.file))
-
-    def __open_file(self, *args):
-        self.win.on_open_file()
 
     def __zoom_out(self, *args):
         self.win.zoom(zoom_out=True)
@@ -111,9 +120,6 @@ class LetterpressApplication(Adw.Application):
             Adw.Toast(title=_("Output copied to clipboard"))
         )
 
-    def __save_output_to_file(self, *args):
-        FileChooser.save_file(self.win)
-
     def __open_output(self, app, data):
         try:
             file = open(data.unpack(), "r")
@@ -136,18 +142,12 @@ class LetterpressApplication(Adw.Application):
         except Exception as e:
             print(f"Error: {e}")
 
-    def __open_menu(self, *args):
-        self.win.menu_btn.activate()
-
     def do_command_line(self, command_line):
         args = command_line.get_arguments()
         if len(args) > 1:
             self.file = command_line.create_file_for_arg(args[1]).get_path()
         self.activate()
         return 0
-
-    def __close_active_win(self, *args):
-        self.props.active_window.destroy()
 
     def __quit(self, *args):
         if self.win is not None:

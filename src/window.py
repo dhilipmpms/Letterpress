@@ -54,7 +54,10 @@ class LetterpressWindow(Adw.ApplicationWindow):
 
         target.connect("drop", lambda widget, file, *args: self.check_is_image(file))
         target.connect("enter", self.__on_enter)
-        target.connect("leave", lambda *_: self.main_stack.set_visible_child_name(self.previous_stack))
+        target.connect(
+            "leave",
+            lambda *_: self.main_stack.set_visible_child_name(self.previous_stack),
+        )
         self.add_controller(target)
 
         settings = Gio.Settings(schema_id="io.gitlab.gregorni.Letterpress")
