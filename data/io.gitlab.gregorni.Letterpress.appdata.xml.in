@@ -130,7 +130,7 @@
   </kudos>
 
   <custom>
-    <value key="GnomeSoftware::key-colors">[(151, 84, 251)]</value>
+    <value key="GnomeSoftware::key-colors">[(221, 107, 6)]</value>
     <value key="Purism::form_factor">workstation</value>
     <value key="Purism::form_factor">mobile</value>
   </custom>
