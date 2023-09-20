@@ -38,53 +38,59 @@ class LetterpressApplication(Adw.Application):
             application_id="io.gitlab.gregorni.Letterpress",
             flags=Gio.ApplicationFlags.HANDLES_COMMAND_LINE,
         )
-        self.create_action("quit", self.__quit, ["<primary>q"])
-        self.create_action(
+        self.__create_action("quit", self.__quit, ["<primary>q"])
+        self.__create_action(
             "close-active-win",
-            lambda *_: self.props.active_window.destroy(),
+            lambda *_: self.get_active_window.destroy(),
             ["<primary>w"],
         )
-        self.create_action(
-            "open-menu", lambda *_: self.win.menu_btn.activate(), ["F10"]
+        self.__create_action(
+            "open-menu",
+            lambda *_: self.get_active_window().menu_btn.activate(),
+            ["F10"],
         )
-        self.create_action("tips", self.__on_tips_action)
-        self.create_action("about", self.__on_about_action)
-        self.create_action(
-            "open-file", lambda *_: self.win.on_open_file(), ["<primary>o"]
+        self.__create_action("tips", self.__on_tips_action)
+        self.__create_action("about", self.__on_about_action)
+        self.__create_action(
+            "open-file",
+            lambda *_: self.get_active_window().on_open_file(),
+            ["<primary>o"],
         )
-        self.create_action(
+        self.__create_action(
             "zoom-out",
-            lambda *_: self.win.zoom(zoom_out=True),
+            lambda *_: self.get_active_window().zoom(zoom_out=True),
             ["<primary>minus", "<primary>underscore"],
         )
-        self.create_action("zoom-in", lambda *_: self.win.zoom(), ["<primary>plus"])
-        self.create_action(
+        self.__create_action(
+            "zoom-in", lambda *_: self.get_active_window().zoom(), ["<primary>plus"]
+        )
+        self.__create_action(
             "reset-zoom",
-            lambda *_: self.win.zoom(zoom_reset=True),
+            lambda *_: self.get_active_window().zoom(zoom_reset=True),
             ["<primary>0", "<primary>r"],
         )
-        self.create_action(
+        self.__create_action(
             "increase-output-width",
             self.__increase_output_width,
             ["<primary><alt>plus"],
         )
-        self.create_action(
+        self.__create_action(
             "decrease-output-width",
             self.__decrease_output_width,
             ["<primary><alt>minus"],
         )
-        self.create_action(
+        self.__create_action(
             "copy-output", self.__copy_output_to_clipboard, ["<primary><shift>c"]
         )
-        self.create_action(
+        self.__create_action(
             "save-output",
-            lambda *_: FileChooser.save_file(self.win),
+            lambda *_: FileChooser.save_file(self.get_active_window()),
             ["<primary>s", "<primary><shift>c"],
         )
-        self.create_action(
+        self.__create_action(
             "open-output", self.__open_output, param=GLib.VariantType("s")
         )
-        self.create_action("close-tips", self.__close_tips_dialog, ["Escape"])
+        self.__create_action("close-tips", self.__close_tips_dialog, ["Escape"])
         self.file = None
 
     def do_activate(self):
@@ -93,27 +99,30 @@ class LetterpressApplication(Adw.Application):
         We raise the application's main window, creating it if
         necessary.
         """
-        self.win = self.props.active_window
-        if not self.win:
-            self.win = LetterpressWindow(application=self)
+        win = self.get_active_window()
+        if not win:
+            win = LetterpressWindow(application=self)
             self.tips_dialog = None
-        self.win.present()
+        win.present()
         if self.file is not None:
-            self.win.check_is_image(Gio.File.new_for_path(self.file))
+            win.check_is_image(Gio.File.new_for_path(self.file))
 
     def __increase_output_width(self, *args):
-        if self.win.filepath:
-            self.win.width_spin.set_value(self.win.width_spin.get_value() + 100)
+        win = self.get_active_window()
+        if win.filepath:
+            spin_btn = win.width_spin
+            spin_btn.set_value(spin_btn.get_value() + 100)
 
     def __decrease_output_width(self, *args):
-        if self.win.filepath:
-            self.win.width_spin.set_value(self.win.width_spin.get_value() - 100)
+        win = self.get_active_window()
+        if win.filepath:
+            spin_btn = win.width_spin
+            spin_btn.set_value(spin_btn.get_value() - 100)
 
     def __copy_output_to_clipboard(self, *args):
-        Gdk.Display.get_default().get_clipboard().set(self.win.image_as_text)
-        self.win.toast_overlay.add_toast(
-            Adw.Toast(title=_("Output copied to clipboard"))
-        )
+        win = self.get_active_window()
+        Gdk.Display.get_default().get_clipboard().set(win.image_as_text)
+        win.toast_overlay.add_toast(Adw.Toast(title=_("Output copied to clipboard")))
 
     def __open_output(self, app, data):
         try:
@@ -135,7 +144,7 @@ class LetterpressApplication(Adw.Application):
                 None,
             )
         except Exception as e:
-            print(f"Error: {e}")
+            print(f"Error saving file: {e}")
 
     def do_command_line(self, command_line):
         args = command_line.get_arguments()
@@ -145,13 +154,14 @@ class LetterpressApplication(Adw.Application):
         return 0
 
     def __quit(self, *args):
-        if self.win is not None:
-            self.win.destroy()
+        win = self.get_active_window()
+        if win is not None:
+            win.destroy()
 
     def __on_about_action(self, *args):
         """Callback for the app.about action."""
         about = Adw.AboutWindow(
-            transient_for=self.win,
+            transient_for=self.get_active_window(),
             application_name=_("Letterpress"),
             application_icon="io.gitlab.gregorni.Letterpress",
             developer_name=_("Letterpress Contributors"),
@@ -199,10 +209,12 @@ class LetterpressApplication(Adw.Application):
             self.tips_dialog = None
 
     def __on_tips_action(self, *args):
-        self.tips_dialog = TipsDialog(transient_for=self.win, application=self)
+        self.tips_dialog = TipsDialog(
+            transient_for=self.get_active_window(), application=self
+        )
         self.tips_dialog.present()
 
-    def create_action(self, name, callback, shortcuts=None, param=None):
+    def __create_action(self, name, callback, shortcuts=None, param=None):
         """Add an application action.
 
         Args:
