@@ -111,7 +111,7 @@ class LetterpressApplication(Adw.Application):
         win = self.get_active_window()
         if win.filepath:
             spin_btn = win.width_spin
-            spin_btn.set_value(spin_btn.get_value() + (- 100 if down else 100))
+            spin_btn.set_value(spin_btn.get_value() + (-100 if down else 100))
 
     def __copy_output_to_clipboard(self, *args):
         win = self.get_active_window()
