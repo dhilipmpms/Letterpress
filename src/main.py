@@ -71,12 +71,12 @@ class LetterpressApplication(Adw.Application):
         )
         self.__create_action(
             "increase-output-width",
-            self.__increase_output_width,
+            lambda *_: self.__change_output_width(),
             ["<primary><alt>plus"],
         )
         self.__create_action(
             "decrease-output-width",
-            self.__decrease_output_width,
+            lambda *_: self.__change_output_width(True),
             ["<primary><alt>minus"],
         )
         self.__create_action(
@@ -107,17 +107,11 @@ class LetterpressApplication(Adw.Application):
         if self.file is not None:
             win.check_is_image(Gio.File.new_for_path(self.file))
 
-    def __increase_output_width(self, *args):
+    def __change_output_width(self, down=False):
         win = self.get_active_window()
         if win.filepath:
             spin_btn = win.width_spin
-            spin_btn.set_value(spin_btn.get_value() + 100)
-
-    def __decrease_output_width(self, *args):
-        win = self.get_active_window()
-        if win.filepath:
-            spin_btn = win.width_spin
-            spin_btn.set_value(spin_btn.get_value() - 100)
+            spin_btn.set_value(spin_btn.get_value() + (- 100 if down else 100))
 
     def __copy_output_to_clipboard(self, *args):
         win = self.get_active_window()
