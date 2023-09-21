@@ -8,36 +8,39 @@ msgstr ""
 "Project-Id-Version: letterpress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-15 02:04+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2023-09-22 08:18+0000\n"
+"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
+"Language-Team: Finnish <https://hosted.weblate.org/projects/letterpress/"
+"letterpress/fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.1-dev\n"
 
 #. Translators: Translate as "Letterpress"
 #: data/io.gitlab.gregorni.ASCIIImages.desktop.in:4
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:7 src/main.py:161
 #: src/gtk/window.blp:5
 msgid "Letterpress"
-msgstr ""
+msgstr "Letterpress"
 
 #: data/io.gitlab.gregorni.ASCIIImages.desktop.in:5
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:9
 msgid "Create beautiful ASCII art"
-msgstr ""
+msgstr "Luo nättiä ASCII-taidetta"
 
 #. Translators: These are search terms for the application;
 #. the translation should contain the original list AND the translated strings.
 #. The list must end with a semicolon.
 #: data/io.gitlab.gregorni.ASCIIImages.desktop.in:14
 msgid "image;ascii;convert;conversion;text;"
-msgstr ""
+msgstr "image;ascii;convert;conversion;text;kuva;teksti;"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:8 src/main.py:163
 msgid "Letterpress Contributors"
-msgstr ""
+msgstr "Letterpress-avustajat"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:12
 msgid ""
@@ -45,51 +48,55 @@ msgid ""
 "You can save the output to a file, copy it, and even change its resolution! "
 "High-res output can still be viewed comfortably by lowering the zoom factor."
 msgstr ""
+"Letterpress muuntaa kuvat ASCII-merkeistä koostuvaksi taiteeksi. Voit "
+"tallentaa tulosteen tiedostoon, kopioida sen leikepöydälle tai vaihtaa sen "
+"tarkkuutta! Korkealaatuista tulostetta on mahdollista katsella vaivatta "
+"loitontamalla kuvaa."
 
 #. Translators: This is a search term and should be lowercase
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:29
 msgid "image"
-msgstr ""
+msgstr "kuva"
 
 #. Translators: This is a search term and should be lowercase
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:31
 msgid "ascii"
-msgstr ""
+msgstr "ascii"
 
 #. Translators: This is a search term and should be lowercase
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:33
 msgid "convert"
-msgstr ""
+msgstr "muunna"
 
 #. Translators: This is a search term and should be lowercase
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:35
 msgid "conversion"
-msgstr ""
+msgstr "muunnos"
 
 #. Translators: This is a search term and should be lowercase
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:37
 msgid "text"
-msgstr ""
+msgstr "teksti"
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:55
 msgid "Overview"
-msgstr ""
+msgstr "Yleisnäkymä"
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:60
 msgid "Copy output"
-msgstr ""
+msgstr "Kopioi tuloste"
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:65
 msgid "Save output"
-msgstr ""
+msgstr "Tallenna tuloste"
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:70
 msgid "Adjust output width"
-msgstr ""
+msgstr "Säädä tulosteen leveyttä"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:93
 msgid "Rebrand to Letterpress"
@@ -149,7 +156,7 @@ msgstr ""
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:118
 msgid "First Release! 🎉"
-msgstr ""
+msgstr "Ensimmäinen julkaisu! 🎉"
 
 #. Translators: Translate this string as your translator credits.
 #. Name only:    gregorni
@@ -159,167 +166,168 @@ msgstr ""
 #. Names are separated with newlines.
 #: src/main.py:173
 msgid "translator-credits"
-msgstr ""
+msgstr "Jiri Grönroos <jiri.gronroos+l10n@iki.fi>"
 
 #: src/main.py:174
 msgid "Copyright © 2023 Letterpress Contributors"
-msgstr ""
+msgstr "Tekijänoikeus © 2023 Letterpress-avustajat"
 
 #: src/main.py:182
 msgid "Code and Design borrowed from"
-msgstr ""
+msgstr "Koodi ja suunnittelu lainattu seuraavista sovelluksista"
 
 #: src/window.py:88
 msgid "Width of the ASCII image in characters"
-msgstr ""
+msgstr "ASCII-kuvan leveys merkkeinä"
 
 #. Translators: Do not translate "{basename}"
 #: src/window.py:104
 #, python-brace-format
 msgid "\"{basename}\" is not of a supported image type."
-msgstr ""
+msgstr "\"{basename}\" ei ole tuettu kuvatyyppi."
 
 #: src/window.py:197
 msgid "The output is too large to be copied."
-msgstr ""
+msgstr "Tuloste on liian suuri kopioitavaksi."
 
 #: src/window.py:199
 msgid "Please save it to a file instead or decrease the output width."
-msgstr ""
+msgstr "Tallenna se tiedostoon tai pienennä tulosteen leveyttä."
 
 #: src/window.py:202
 msgid "_OK"
-msgstr ""
+msgstr "_OK"
 
 #: src/window.py:206
 msgid "Output copied to clipboard"
-msgstr ""
+msgstr "Tuloste kopioitu leikepöydälle"
 
 #: src/file_chooser.py:37 src/file_chooser.py:104
 msgid "Select a file"
-msgstr ""
+msgstr "Valitse tiedosto"
 
 #: src/file_chooser.py:44
 msgid "Supported image files"
-msgstr ""
+msgstr "Tuetut kuvatiedostot"
 
 #. Translators: Do not translate "{display_name}"
 #: src/file_chooser.py:82
 #, python-brace-format
 msgid "Unable to save \"{display_name}\""
-msgstr ""
+msgstr "Tiedostoa \"{display_name}\" ei voi tallentaa"
 
 #. Translators: Do not translate "{display_name}"
 #: src/file_chooser.py:91
 #, python-brace-format
 msgid "\"{display_name}\" saved"
-msgstr ""
+msgstr "\"{display_name}\" tallennettu"
 
 #: src/file_chooser.py:93
 msgid "Open"
-msgstr ""
+msgstr "Avaa"
 
 #: src/gtk/window.blp:16
 msgid "Tips"
-msgstr ""
+msgstr "Vinkit"
 
 #: src/gtk/window.blp:24
 msgid "Main Menu"
-msgstr ""
+msgstr "Päävalikko"
 
 #: src/gtk/window.blp:86
 msgid "Create ASCII Art"
-msgstr ""
+msgstr "Luo ASCII-taidetta"
 
 #: src/gtk/window.blp:87
 msgid "Open or drag and drop an image to generate an ASCII art version of it"
 msgstr ""
+"Avaa tai vedä ja pudota kuva luodaksesi taiteellisen ASCII-version siitä"
 
 #: src/gtk/window.blp:92
 msgid "Open File…"
-msgstr ""
+msgstr "Avaa tiedosto…"
 
 #: src/gtk/window.blp:111
 msgid "Drop Here to Open"
-msgstr ""
+msgstr "Pudota tähän avataksesi"
 
 #: src/gtk/window.blp:172
 msgid "Output Width"
-msgstr ""
+msgstr "Tulosteen leveys"
 
 #: src/gtk/window.blp:190
 msgid "Copy to clipboard"
-msgstr ""
+msgstr "Kopioi leikepöydälle"
 
 #: src/gtk/window.blp:197
 msgid "Save to file"
-msgstr ""
+msgstr "Tallenna tiedostoon"
 
 #: src/gtk/window.blp:224
 msgid "_Open File…"
-msgstr ""
+msgstr "_Avaa tiedosto…"
 
 #: src/gtk/window.blp:231
 msgid "_Keyboard Shortcuts"
-msgstr ""
+msgstr "_Pikanäppäimet"
 
 #: src/gtk/window.blp:236
 msgid "_About Letterpress"
-msgstr ""
+msgstr "_Tietoja - Letterpress"
 
 #: src/gtk/zoom-box.blp:12
 msgid "Zoom out"
-msgstr ""
+msgstr "Loitonna"
 
 #: src/gtk/zoom-box.blp:28
 msgid "Reset zoom"
-msgstr ""
+msgstr "Palauta mittakaava"
 
 #: src/gtk/zoom-box.blp:40
 msgid "Zoom in"
-msgstr ""
+msgstr "Lähennä"
 
 #: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "General"
-msgstr ""
+msgstr "Yleiset"
 
 #: src/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
 msgid "Open File"
-msgstr ""
+msgstr "Avaa tiedosto"
 
 #: src/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr ""
+msgstr "Näytä pikanäppäimet"
 
 #: src/gtk/help-overlay.blp:24
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr ""
+msgstr "Lopeta"
 
 #: src/gtk/help-overlay.blp:30
 msgctxt "shortcut window"
 msgid "Text View"
-msgstr ""
+msgstr "Tekstinäkymä"
 
 #: src/gtk/help-overlay.blp:33
 msgctxt "shortcut window"
 msgid "Increase Output Width"
-msgstr ""
+msgstr "Lisää tulosteen leveyttä"
 
 #: src/gtk/help-overlay.blp:38
 msgctxt "shortcut window"
 msgid "Decrease Output Width"
-msgstr ""
+msgstr "Vähennä tulosteen leveyttä"
 
 #: src/gtk/help-overlay.blp:43
 msgctxt "shortcut window"
 msgid "Zoom in"
-msgstr ""
+msgstr "Lähennä"
 
 #: src/gtk/help-overlay.blp:48
 msgctxt "shortcut window"
 msgid "Zoom out"
-msgstr ""
+msgstr "Loitonna"
