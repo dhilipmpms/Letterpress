@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: letterpress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-15 02:04+0200\n"
-"PO-Revision-Date: 2023-09-14 14:56+0000\n"
-"Last-Translator: Fyodor Sobolev <fyodor-sobolev@protonmail.com>\n"
+"PO-Revision-Date: 2023-09-22 08:18+0000\n"
+"Last-Translator: gregorni <gregorniehl@web.de>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/letterpress/"
 "letterpress/ru/>\n"
 "Language: ru\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.0.1-dev\n"
+"X-Generator: Weblate 5.1-dev\n"
 
 #. Translators: Translate as "Letterpress"
 #: data/io.gitlab.gregorni.ASCIIImages.desktop.in:4
@@ -246,7 +246,7 @@ msgstr "Откройте или перетащите изображение дл
 
 #: src/gtk/window.blp:92
 msgid "Open File…"
-msgstr "Открыть файл..."
+msgstr "Открыть файл…"
 
 #: src/gtk/window.blp:111
 msgid "Drop Here to Open"
