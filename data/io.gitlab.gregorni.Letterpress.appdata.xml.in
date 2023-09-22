@@ -87,6 +87,22 @@
   <project_group>GNOME</project_group>
   
   <releases>
+  <release version="2.0" date="2023-09-20">
+      <description>
+        <ul>
+          <li>New icon and accent color</li>
+          <li>Added Zoom in output view</li>
+          <li>Fixed output looking weird in light mode</li>
+          <li>Added keyboard shortcuts</li>
+          <li>Improved window style</li>
+          <li>Added a tips dialog</li>
+          <li>Output view is now properly centered</li>
+          <li>The app no longer tries to open SVG images</li>
+          <li>Pictures shot on phones no longer show up rotated</li>
+          <li>Added Ukrainian translation</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.3.0" date="2023-05-07">
       <description>
         <ul>
