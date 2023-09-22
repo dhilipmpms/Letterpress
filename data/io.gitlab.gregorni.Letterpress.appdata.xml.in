@@ -99,7 +99,7 @@
           <li>Output view is now properly centered</li>
           <li>The app no longer tries to open SVG images</li>
           <li>Pictures shot on phones no longer show up rotated</li>
-          <li>Lower minimum and maximum output width</li>
+          <li>Lowered minimum and maximum output width</li>
           <li>Added Ukrainian translation</li>
         </ul>
       </description>
