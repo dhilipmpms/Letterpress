@@ -154,32 +154,28 @@ class LetterpressApplication(Adw.Application):
 
     def __on_about_action(self, *args):
         """Callback for the app.about action."""
-        about = Adw.AboutWindow(
-            transient_for=self.get_active_window(),
-            application_name=_("Letterpress"),
-            application_icon="io.gitlab.gregorni.Letterpress",
-            developer_name=_("Letterpress Contributors"),
-            version="2.0",
-            # These are Python lists: Add your string to the list (separated by a comma)
-            # See the translator comment below for possible formats
-            developers=["gregorni https://gitlab.gnome.org/gregorni"],
-            artists=[
+        about = Adw.AboutWindow.new_from_appdata(
+            "/io/gitlab/gregorni/Letterpress/appdata.xml"
+        )
+        about.set_transient_for(self.get_active_window())
+        about.set_artists(
+            [
                 "Brage Fuglseth https://bragefuglseth.dev",
                 "kramo https://kramo.hu",
-            ],
-            # Translators: Translate this string as your translator credits.
-            # Name only:    gregorni
-            # Name + URL:   gregorni https://gitlab.gnome.org/gregorni/
-            # Name + Email: gregorni <gregorniehl@web.de>
-            # Do not remove existing names.
-            # Names are separated with newlines.
-            translator_credits=_("translator-credits"),
-            copyright=_("Copyright © 2023 Letterpress Contributors"),
-            license_type=Gtk.License.GPL_3_0,
-            website="https://gitlab.gnome.org/World/Letterpress",
-            issue_url="https://gitlab.gnome.org/World/Letterpress/-/issues",
-            support_url="https://matrix.to/#/#gregorni-apps:matrix.org",
+            ]
         )
+        about.set_developer_name(_("Letterpress Contributors"))
+        # These are Python lists: Add your string to the list (separated by a comma)
+        # See the translator comment below for possible formats
+        about.set_developers(["gregorni https://gitlab.gnome.org/gregorni"])
+        about.set_copyright(_("Copyright © 2023 Letterpress Contributors"))
+        # Translators: Translate this string as your translator credits.
+        # Name only:    gregorni
+        # Name + URL:   gregorni https://gitlab.gnome.org/gregorni/
+        # Name + Email: gregorni <gregorniehl@web.de>
+        # Do not remove existing names.
+        # Names are separated with newlines.
+        about.set_translator_credits(_("translator-credits"))
 
         about.add_acknowledgement_section(
             _("Code and Design borrowed from"),
