@@ -38,7 +38,7 @@ class LetterpressApplication(Adw.Application):
             application_id="io.gitlab.gregorni.Letterpress",
             flags=Gio.ApplicationFlags.HANDLES_COMMAND_LINE,
         )
-        self.__create_action("quit", self.__quit, ["<primary>q"])
+        self.__create_action("quit", lambda *_: self.quit(), ["<primary>q"])
         self.__create_action(
             "close-active-win",
             lambda *_: self.get_active_window.destroy(),
@@ -146,11 +146,6 @@ class LetterpressApplication(Adw.Application):
             self.file = command_line.create_file_for_arg(args[1]).get_path()
         self.activate()
         return 0
-
-    def __quit(self, *args):
-        win = self.get_active_window()
-        if win is not None:
-            win.destroy()
 
     def __on_about_action(self, *args):
         """Callback for the app.about action."""
