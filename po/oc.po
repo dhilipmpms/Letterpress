@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: letterpress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-15 02:04+0200\n"
-"PO-Revision-Date: 2023-09-24 15:21+0000\n"
+"PO-Revision-Date: 2023-09-25 15:59+0000\n"
 "Last-Translator: Quentin PAGÈS <quentinantonin@free.fr>\n"
 "Language-Team: Occitan <https://hosted.weblate.org/projects/letterpress/"
 "letterpress/oc/>\n"
@@ -124,27 +124,27 @@ msgstr ""
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:99
 msgid "Added Turkish translation"
-msgstr ""
+msgstr "Traduccion en turc aponduda"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:100
 msgid "Added Czech translation"
-msgstr ""
+msgstr "Traduccion en chèc aponduda"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:107
 msgid "Added French translation"
-msgstr ""
+msgstr "Traduccion en francés aponduda"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:108
 msgid "Added Russian translation"
-msgstr ""
+msgstr "Traduccion en rus aponduda"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:109
 msgid "Added Occitan translation"
-msgstr ""
+msgstr "Traduccion en occitan aponduda"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:110
 msgid "Added Italian translation"
-msgstr ""
+msgstr "Traduccion en italian aponduda"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:111
 msgid "Fixed \"Open with…\" functionality"
@@ -182,9 +182,9 @@ msgstr "Largor en caractèrs de l’imatge en ASCII"
 
 #. Translators: Do not translate "{basename}"
 #: src/window.py:104
-#, fuzzy, python-brace-format
+#, python-brace-format
 msgid "\"{basename}\" is not of a supported image type."
-msgstr "« {basename} » es pas un imatge valid."
+msgstr "« {basename} » es pas un tipe d’imatge pres en carga."
 
 #: src/window.py:197
 msgid "The output is too large to be copied."
@@ -230,7 +230,7 @@ msgstr "Dobrir"
 
 #: src/gtk/window.blp:16
 msgid "Tips"
-msgstr ""
+msgstr "Astúcias"
 
 #: src/gtk/window.blp:24
 msgid "Main Menu"
@@ -238,11 +238,11 @@ msgstr "Menú principal"
 
 #: src/gtk/window.blp:86
 msgid "Create ASCII Art"
-msgstr ""
+msgstr "Creat d’ASCII Art"
 
 #: src/gtk/window.blp:87
 msgid "Open or drag and drop an image to generate an ASCII art version of it"
-msgstr ""
+msgstr "Dobrir o depausar un imatge per generar sa version en ASCII art"
 
 #: src/gtk/window.blp:92
 msgid "Open File…"
@@ -265,9 +265,8 @@ msgid "Save to file"
 msgstr "Enregistrar lo fichièr"
 
 #: src/gtk/window.blp:224
-#, fuzzy
 msgid "_Open File…"
-msgstr "Dobrir un fichièr…"
+msgstr "_Dobrir un fichièr…"
 
 #: src/gtk/window.blp:231
 msgid "_Keyboard Shortcuts"
@@ -275,19 +274,19 @@ msgstr "_Acorchis de clavièr"
 
 #: src/gtk/window.blp:236
 msgid "_About Letterpress"
-msgstr ""
+msgstr "_A prepaus de Letterpress"
 
 #: src/gtk/zoom-box.blp:12
 msgid "Zoom out"
-msgstr ""
+msgstr "Zoom arrièr"
 
 #: src/gtk/zoom-box.blp:28
 msgid "Reset zoom"
-msgstr ""
+msgstr "Reïnicializar lo zoom"
 
 #: src/gtk/zoom-box.blp:40
 msgid "Zoom in"
-msgstr ""
+msgstr "Zoom avant"
 
 #: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
@@ -312,7 +311,7 @@ msgstr "Sortir"
 #: src/gtk/help-overlay.blp:30
 msgctxt "shortcut window"
 msgid "Text View"
-msgstr ""
+msgstr "Vista tèxte"
 
 #: src/gtk/help-overlay.blp:33
 #, fuzzy
@@ -329,12 +328,12 @@ msgstr "Largor de la sortida"
 #: src/gtk/help-overlay.blp:43
 msgctxt "shortcut window"
 msgid "Zoom in"
-msgstr ""
+msgstr "Zoom avant"
 
 #: src/gtk/help-overlay.blp:48
 msgctxt "shortcut window"
 msgid "Zoom out"
-msgstr ""
+msgstr "Zoom arrièr"
 
 #~ msgid "Convert images into ASCII characters"
 #~ msgstr "Convertir d’imatges en caractèrs ASCII"
