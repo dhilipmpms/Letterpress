@@ -8,14 +8,16 @@ msgstr ""
 "Project-Id-Version: letterpress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-15 02:04+0200\n"
-"PO-Revision-Date: 2023-04-01 15:12+0200\n"
-"Last-Translator: Quentin PAGÈS\n"
-"Language-Team: \n"
+"PO-Revision-Date: 2023-09-24 15:21+0000\n"
+"Last-Translator: Quentin PAGÈS <quentinantonin@free.fr>\n"
+"Language-Team: Occitan <https://hosted.weblate.org/projects/letterpress/"
+"letterpress/oc/>\n"
 "Language: oc\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.2.2\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 5.1-dev\n"
 
 #. Translators: Translate as "Letterpress"
 #: data/io.gitlab.gregorni.ASCIIImages.desktop.in:4
@@ -27,7 +29,7 @@ msgstr "Letterpress"
 #: data/io.gitlab.gregorni.ASCIIImages.desktop.in:5
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:9
 msgid "Create beautiful ASCII art"
-msgstr ""
+msgstr "Crear òbras bèlas en ASCII art"
 
 #. Translators: These are search terms for the application;
 #. the translation should contain the original list AND the translated strings.
@@ -97,13 +99,12 @@ msgid "Adjust output width"
 msgstr "Ajustar la largor de la sortida"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:93
-#, fuzzy
 msgid "Rebrand to Letterpress"
-msgstr "Letterpress"
+msgstr "Cambiament de nom per Letterpress"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:94
 msgid "Replaced icon on welcome screen with illustration"
-msgstr ""
+msgstr "Icòna de l’ecran d’acuèlh remplaçat per una illustracion"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:95
 msgid "Changed warning dialog to Adw.MessageDialog"
