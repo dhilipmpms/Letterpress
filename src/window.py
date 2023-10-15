@@ -139,9 +139,9 @@ class LetterpressWindow(Adw.ApplicationWindow):
                             self.filepath = (
                                 f"{NamedTemporaryFile().name}.{image_format}"
                             )
-                            ImageOps.exif_transpose(img).save(
-                                self.filepath, format=image_format
-                            )
+                            ImageOps.exif_transpose(
+                                ImageOps.cover(img, (500, 500))
+                            ).save(self.filepath, format=image_format)
                     except:
                         pass
 
