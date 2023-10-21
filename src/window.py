@@ -107,24 +107,21 @@ class LetterpressWindow(Adw.ApplicationWindow):
 
         def __wrong_image_type():
             print(f"{filepath} is not of a supported image type.")
-            self.toast_overlay.add_toast(
-                Adw.Toast.new(
-                    # Translators: Do not translate "{basename}"
-                    _('"{basename}" is not of a supported image type.').format(
-                        basename=file.get_basename()
-                    )
-                )
+            # Translators: Do not translate "{basename}"
+            toast_text = _('"{basename}" is not of a supported image type.').format(
+                basename=file.get_basename()
             )
+            self.toast_overlay.add_toast(Adw.Toast.new(toast_text))
             self.main_stack.set_visible_child_name(self.previous_stack)
 
         try:
             with Image.open(filepath) as img:
                 if self.filepath and file:
                     with Image.open(self.filepath) as old_img:
-                        if not ImageChops.difference(
-                            old_img.convert("RGB"),
-                            img.convert("RGB"),
-                        ).getbbox():
+                        same_image = not ImageChops.difference(
+                            old_img.convert("RGB"), img.convert("RGB")
+                        ).getbbox()
+                        if same_image:
                             self.main_stack.set_visible_child_name(self.previous_stack)
                             return
 
@@ -139,9 +136,9 @@ class LetterpressWindow(Adw.ApplicationWindow):
                             self.filepath = (
                                 f"{NamedTemporaryFile().name}.{image_format}"
                             )
-                            ImageOps.exif_transpose(
-                                ImageOps.cover(img, (500, 500))
-                            ).save(self.filepath, format=image_format)
+                            shrunken_img = ImageOps.cover(img, (500, 500))
+                            exif_rotated_img = ImageOps.exif_transpose(shrunken_img)
+                            exif_rotated_img.save(self.filepath, format=image_format)
                     except:
                         pass
 
@@ -154,45 +151,51 @@ class LetterpressWindow(Adw.ApplicationWindow):
 
     def zoom(self, zoom_out=False, zoom_reset=False):
         if self.zoom_box.get_sensitive():
-            new_font_size = min(
-                max(
-                    int(
-                        min(
-                            self.output_scrolled_window.get_width()
-                            / self.width_spin.get_value()
-                            / 0.75,
-                            self.output_scrolled_window.get_height()
-                            / self.buffer.get_line_count()
-                            / 1.5,
-                        )
-                    )
-                    if zoom_reset
-                    else int(self.zoom_box.zoom_indicator.get_label()[:-2])
-                    + (-1 if zoom_out else 1),
-                    1,
-                ),
-                11,
-            )
+            if zoom_reset:
+                available_height = self.output_scrolled_window.get_width()
+                available_width = self.output_scrolled_window.get_height()
 
+                output_width_in_chars = self.width_spin.get_value()
+                output_height_in_lines = self.buffer.get_line_count()
+
+                norm_char_width = 0.75
+                norm_char_height = 1.5
+
+                norm_max_width = (
+                    available_width / output_width_in_chars / norm_char_width
+                )
+                norm_max_height = (
+                    available_height / output_height_in_lines / norm_char_height
+                )
+
+                requested_font_size = int(min(norm_max_height, norm_max_width))
+            else:
+                current_font_size = int(self.zoom_box.zoom_indicator.get_label()[:-2])
+                requested_font_size = current_font_size + (-1 if zoom_out else 1)
+
+            max_font_size = 11
+            min_font_size = 1
+
+            new_font_size = min(max_font_size, max(min_font_size, requested_font_size))
             new_font_size_str = f"{new_font_size}pt"
 
             line_height = 1
-            if new_font_size in (5, 8, 9, 10):
+            weird_sizes1 = (5, 8, 9, 10)
+            weird_sizes2 = (1, 3, 4)
+
+            if new_font_size in weird_sizes1:
                 line_height = 0.9
-            elif new_font_size in (1, 3, 4):
+            elif new_font_size in weird_sizes2:
                 line_height = 0.8
 
             css_provider = Gtk.CssProvider.new()
-            css_provider.load_from_data(
+            css_provider.load_from_string(
                 f"""textview{{
                   font-size: {new_font_size_str};
                   line-height: {line_height};
-                }}""",
-                -1,
+                }}"""
             )
-            self.output_text_view.get_style_context().add_provider(
-                css_provider, 10
-            )  # get_style_context will be deprecated in Gtk 4.10
+            self.output_text_view.get_style_context().add_provider(css_provider, 10)
 
             self.zoom_box.zoom_indicator.set_label(new_font_size_str)
             self.zoom_box.decrease_btn.set_sensitive(new_font_size > 1)
@@ -204,19 +207,13 @@ class LetterpressWindow(Adw.ApplicationWindow):
         if not self.style_manager.get_dark():
             arguments.append("--invert")
 
-        self.buffer.set_text(
-            "".join(
-                line
-                for line in iter(
-                    subprocess.Popen(
-                        arguments,
-                        stdout=subprocess.PIPE,
-                        universal_newlines=True,
-                    ).stdout.readline,
-                    "",
-                )
-            )
-        )
+        output = subprocess.Popen(
+            arguments,
+            stdout=subprocess.PIPE,
+            universal_newlines=True,
+        ).stdout.readline
+
+        self.buffer.set_text("".join(line for line in iter(output, "")))
 
         self.toolbox.set_reveal_child(True)
         self.main_stack.set_visible_child_name("view-page")
@@ -226,25 +223,28 @@ class LetterpressWindow(Adw.ApplicationWindow):
 
     def __on_gesture(self, gesture, scale, *args):
         self.pinch_counter += 1
-        if scale != self.scale_delta and self.pinch_counter >= 6:
-            self.zoom(
-                zoom_out=scale < self.scale_delta,
-            )
+        scale_changed = scale != self.scale_delta
+        change_is_big_enough = self.pinch_counter >= 6
+
+        if scale_changed and change_is_big_enough:
+            self.zoom(zoom_out=scale < self.scale_delta)
             self.scale_delta = scale
             self.pinch_counter = 0
 
     def __on_scroll(self, scroll, dx, dy, *args):
-        if (
-            scroll.get_current_event_state() == Gdk.ModifierType.CONTROL_MASK
-            and scroll.get_current_event_device().get_source() == Gdk.InputSource.MOUSE
-        ):
+        ctrl_is_held = scroll.get_current_event_state() == Gdk.ModifierType.CONTROL_MASK
+        device_is_mouse = (
+            scroll.get_current_event_device().get_source() == Gdk.InputSource.MOUSE
+        )
+
+        if ctrl_is_held and device_is_mouse:
             self.scrolled += abs(dy)
             if self.scrolled >= 1:
                 self.zoom(zoom_out=dy > 0)
                 self.scrolled = 0
 
     def __set_color_scheme(self, *args):
-        if self.filepath:
+        if self.filepath is not None:
             self.__convert_image(self.filepath)
 
     def __on_spin_value_changed(self, spin_button):

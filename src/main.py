@@ -122,20 +122,22 @@ class LetterpressApplication(Adw.Application):
         try:
             file = open(data.unpack(), "r")
             Gio.DBusProxy.new_sync(
-                Gio.bus_get_sync(Gio.BusType.SESSION, None),
-                Gio.DBusProxyFlags.NONE,
-                None,
-                "org.freedesktop.portal.Desktop",
-                "/org/freedesktop/portal/desktop",
-                "org.freedesktop.portal.OpenURI",
-                None,
+                connection=Gio.bus_get_sync(Gio.BusType.SESSION, None),
+                flags=Gio.DBusProxyFlags.NONE,
+                info=None,
+                name="org.freedesktop.portal.Desktop",
+                object_path="/org/freedesktop/portal/desktop",
+                interface_name="org.freedesktop.portal.OpenURI",
+                cancellable=None,
             ).call_with_unix_fd_list_sync(
-                "OpenFile",
-                GLib.Variant("(sha{sv})", ("", 0, {"ask": GLib.Variant("b", True)})),
-                Gio.DBusCallFlags.NONE,
-                -1,
-                Gio.UnixFDList.new_from_array([file.fileno()]),
-                None,
+                method_name="OpenFile",
+                parameters=GLib.Variant(
+                    "(sha{sv})", ("", 0, {"ask": GLib.Variant("b", True)})
+                ),
+                flags=Gio.DBusCallFlags.NONE,
+                timeout_msec=-1,
+                fd_list=Gio.UnixFDList.new_from_array([file.fileno()]),
+                cancellable=None,
             )
         except Exception as e:
             print(f"Error saving file: {e}")
@@ -143,7 +145,8 @@ class LetterpressApplication(Adw.Application):
     def do_command_line(self, command_line):
         args = command_line.get_arguments()
         if len(args) > 1:
-            self.file = command_line.create_file_for_arg(args[1]).get_path()
+            file = command_line.create_file_for_arg(args[1])
+            self.file = file.get_path()
         self.activate()
         return 0
 

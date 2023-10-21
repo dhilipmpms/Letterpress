@@ -29,7 +29,6 @@ class FileChooser:
             """Run if the user selects a file."""
             if response == Gtk.ResponseType.ACCEPT:
                 parent.check_is_image(_dialog.get_file())
-
             else:
                 parent.main_stack.set_visible_child_name(last_view_page)
 
@@ -52,17 +51,20 @@ class FileChooser:
     def save_file(parent, *args):
         def __on_save_file(file):
             print(f"Output file: {file.get_path()}")
+            include_hidden_chars = False
             text = parent.buffer.get_text(
-                parent.buffer.get_start_iter(), parent.buffer.get_end_iter(), False
+                parent.buffer.get_start_iter(),
+                parent.buffer.get_end_iter(),
+                include_hidden_chars,
             )
-            if text:
+            if text is not None:
                 file.replace_contents_bytes_async(
-                    GLib.Bytes.new(text.encode("utf-8")),
-                    None,
-                    False,
-                    Gio.FileCreateFlags.NONE,
-                    None,
-                    __save_file_complete,
+                    contents=GLib.Bytes.new(text.encode("utf-8")),
+                    etag=None,
+                    make_backup=False,
+                    flags=Gio.FileCreateFlags.NONE,
+                    cancellable=None,
+                    callback=__save_file_complete,
                 )
 
         def __save_file_complete(file, result):
