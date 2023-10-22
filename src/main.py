@@ -100,7 +100,7 @@ class LetterpressApplication(Adw.Application):
         necessary.
         """
         win = self.get_active_window()
-        if not win:
+        if win is None:
             win = LetterpressWindow(application=self)
             self.tips_dialog = None
         win.present()
@@ -109,7 +109,7 @@ class LetterpressApplication(Adw.Application):
 
     def __change_output_width(self, down=False):
         win = self.get_active_window()
-        if win.filepath:
+        if win.filepath is not None:
             spin_btn = win.width_spin
             spin_btn.set_value(spin_btn.get_value() + (-100 if down else 100))
 
