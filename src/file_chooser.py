@@ -51,12 +51,7 @@ class FileChooser:
     def save_file(parent, *args):
         def __on_save_file(file):
             print(f"Output file: {file.get_path()}")
-            include_hidden_chars = False
-            text = parent.buffer.get_text(
-                parent.buffer.get_start_iter(),
-                parent.buffer.get_end_iter(),
-                include_hidden_chars,
-            )
+            text = parent.output_label.get_label()
             if text is not None:
                 file.replace_contents_bytes_async(
                     contents=GLib.Bytes.new(text.encode("utf-8")),

@@ -35,7 +35,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
     main_stack = Gtk.Template.Child()
     spinner = Gtk.Template.Child()
     output_scrolled_window = Gtk.Template.Child()
-    output_text_view = Gtk.Template.Child()
+    output_label = Gtk.Template.Child()
     width_spin = Gtk.Template.Child()
     toolbox = Gtk.Template.Child()
     gesture_zoom = Gtk.Template.Child()
@@ -79,7 +79,6 @@ class LetterpressWindow(Adw.ApplicationWindow):
 
         self.conscroller.connect("scroll", self.__on_scroll)
 
-        self.buffer = self.output_text_view.get_buffer()
         self.previous_stack = "welcome"
         self.filepath = None
 
@@ -156,7 +155,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
                 available_width = self.output_scrolled_window.get_height()
 
                 output_width_in_chars = self.width_spin.get_value()
-                output_height_in_lines = self.buffer.get_line_count()
+                output_height_in_lines = len(self.output_label.get_label().splitlines())
 
                 norm_char_width = 0.75
                 norm_char_height = 1.5
@@ -190,12 +189,12 @@ class LetterpressWindow(Adw.ApplicationWindow):
 
             css_provider = Gtk.CssProvider.new()
             css_provider.load_from_string(
-                f"""textview{{
-                  font-size: {new_font_size_str};
-                  line-height: {line_height};
+                f"""label {{
+                    font-size: {new_font_size_str};
+                    line-height: {line_height};
                 }}"""
             )
-            self.output_text_view.get_style_context().add_provider(css_provider, 10)
+            self.output_label.get_style_context().add_provider(css_provider, 10)
 
             self.zoom_box.zoom_indicator.set_label(new_font_size_str)
             self.zoom_box.decrease_btn.set_sensitive(new_font_size > 1)
@@ -213,7 +212,8 @@ class LetterpressWindow(Adw.ApplicationWindow):
             universal_newlines=True,
         ).stdout.readline
 
-        self.buffer.set_text("".join(line for line in iter(output, "")))
+        joint_output = "".join(line for line in iter(output, ""))
+        self.output_label.set_label(joint_output)
 
         self.toolbox.set_reveal_child(True)
         self.main_stack.set_visible_child_name("view-page")

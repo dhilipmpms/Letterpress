@@ -115,7 +115,8 @@ class LetterpressApplication(Adw.Application):
 
     def __copy_output_to_clipboard(self, *args):
         win = self.get_active_window()
-        Gdk.Display.get_default().get_clipboard().set(win.image_as_text)
+        output_text = win.output_label.get_label()
+        Gdk.Display.get_default().get_clipboard().set(output_text)
         win.toast_overlay.add_toast(Adw.Toast(title=_("Output copied to clipboard")))
 
     def __open_output(self, app, data):
