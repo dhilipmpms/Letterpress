@@ -1,5 +1,8 @@
 default: black isort
 
+format: black unimport isort
+test: codespell
+
 # Format with black formatter
 black:
     black src/
@@ -11,3 +14,7 @@ isort:
 # Remove unused imports using unimport
 unimport:
     unimport src/
+
+# Check for typos with codespell
+codespell:
+    codespell -S po/
