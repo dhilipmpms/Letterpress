@@ -17,4 +17,4 @@ unimport:
 
 # Check for typos with codespell
 codespell:
-    codespell -S po/
+    codespell --skip po

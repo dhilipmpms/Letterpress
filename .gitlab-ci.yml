@@ -45,4 +45,4 @@ unimport:
 codespell:
   script:
     - pip install codespell --quiet
-    - codespell -S po/
+    - codespell --skip po
