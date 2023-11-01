@@ -120,28 +120,25 @@ class LetterpressApplication(Adw.Application):
         win.toast_overlay.add_toast(Adw.Toast(title=_("Output copied to clipboard")))
 
     def __open_output(self, app, data):
-        try:
-            file = open(data.unpack(), "r")
-            Gio.DBusProxy.new_sync(
-                connection=Gio.bus_get_sync(Gio.BusType.SESSION, None),
-                flags=Gio.DBusProxyFlags.NONE,
-                info=None,
-                name="org.freedesktop.portal.Desktop",
-                object_path="/org/freedesktop/portal/desktop",
-                interface_name="org.freedesktop.portal.OpenURI",
-                cancellable=None,
-            ).call_with_unix_fd_list_sync(
-                method_name="OpenFile",
-                parameters=GLib.Variant(
-                    "(sha{sv})", ("", 0, {"ask": GLib.Variant("b", True)})
-                ),
-                flags=Gio.DBusCallFlags.NONE,
-                timeout_msec=-1,
-                fd_list=Gio.UnixFDList.new_from_array([file.fileno()]),
-                cancellable=None,
-            )
-        except Exception as e:
-            print(f"Error saving file: {e}")
+        file = open(data.unpack(), "r")
+        Gio.DBusProxy.new_sync(
+            connection=Gio.bus_get_sync(Gio.BusType.SESSION, None),
+            flags=Gio.DBusProxyFlags.NONE,
+            info=None,
+            name="org.freedesktop.portal.Desktop",
+            object_path="/org/freedesktop/portal/desktop",
+            interface_name="org.freedesktop.portal.OpenURI",
+            cancellable=None,
+        ).call_with_unix_fd_list_sync(
+            method_name="OpenFile",
+            parameters=GLib.Variant(
+                "(sha{sv})", ("", 0, {"ask": GLib.Variant("b", True)})
+            ),
+            flags=Gio.DBusCallFlags.NONE,
+            timeout_msec=-1,
+            fd_list=Gio.UnixFDList.new_from_array([file.fileno()]),
+            cancellable=None,
+        )
 
     def do_command_line(self, command_line):
         args = command_line.get_arguments()
