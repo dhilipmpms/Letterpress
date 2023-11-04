@@ -66,10 +66,11 @@ class FileChooser:
             info = file.query_info(
                 "standard::display-name", Gio.FileQueryInfoFlags.NONE
             )
-            if info:
-                display_name = info.get_attribute_string("standard::display-name")
-            else:
-                display_name = file.get_basename()
+            display_name = (
+                info.get_attribute_string("standard::display-name")
+                if info is not None
+                else file.get_basename()
+            )
 
             toast = Adw.Toast(
                 # Translators: Do not translate "{display_name}"
