@@ -89,7 +89,7 @@
   
   <releases>
   <release version="2.0" date="2023-09-20">
-      <description>
+      <description translatable="no">
         <ul>
           <li>New icon and accent color</li>
           <li>Added Zoom in output view</li>
@@ -106,7 +106,7 @@
       </description>
     </release>
     <release version="1.3.0" date="2023-05-07">
-      <description>
+      <description translatable="no">
         <ul>
           <li>Rebrand to Letterpress</li>
           <li>Replaced icon on welcome screen with illustration</li>
@@ -120,7 +120,7 @@
       </description>
     </release>
     <release version="1.2.0" date="2023-04-10">
-      <description>
+      <description translatable="no">
         <ul>
           <li>Added French translation</li>
           <li>Added Russian translation</li>
@@ -132,7 +132,7 @@
       </description>
     </release>
     <release version="1.0.1" date="2023-03-25">
-      <description>
+      <description translatable="no">
         <p>First Release! 🎉</p>
       </description>
     </release>
