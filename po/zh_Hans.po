@@ -1,0 +1,325 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the letterpress package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: letterpress\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-15 02:04+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: zh_Hans\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Translators: Translate as "Letterpress"
+#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:4
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:7 src/main.py:161
+#: src/gtk/window.blp:5
+msgid "Letterpress"
+msgstr ""
+
+#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:5
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:9
+msgid "Create beautiful ASCII art"
+msgstr ""
+
+#. Translators: These are search terms for the application;
+#. the translation should contain the original list AND the translated strings.
+#. The list must end with a semicolon.
+#: data/io.gitlab.gregorni.ASCIIImages.desktop.in:14
+msgid "image;ascii;convert;conversion;text;"
+msgstr ""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:8 src/main.py:163
+msgid "Letterpress Contributors"
+msgstr ""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:12
+msgid ""
+"Letterpress converts your images into a picture made up of ASCII characters. "
+"You can save the output to a file, copy it, and even change its resolution! "
+"High-res output can still be viewed comfortably by lowering the zoom factor."
+msgstr ""
+
+#. Translators: This is a search term and should be lowercase
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:29
+msgid "image"
+msgstr ""
+
+#. Translators: This is a search term and should be lowercase
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:31
+msgid "ascii"
+msgstr ""
+
+#. Translators: This is a search term and should be lowercase
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:33
+msgid "convert"
+msgstr ""
+
+#. Translators: This is a search term and should be lowercase
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:35
+msgid "conversion"
+msgstr ""
+
+#. Translators: This is a search term and should be lowercase
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:37
+msgid "text"
+msgstr ""
+
+#. Translators: This is a screenshot caption
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:55
+msgid "Overview"
+msgstr ""
+
+#. Translators: This is a screenshot caption
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:60
+msgid "Copy output"
+msgstr ""
+
+#. Translators: This is a screenshot caption
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:65
+msgid "Save output"
+msgstr ""
+
+#. Translators: This is a screenshot caption
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:70
+msgid "Adjust output width"
+msgstr ""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:93
+msgid "Rebrand to Letterpress"
+msgstr ""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:94
+msgid "Replaced icon on welcome screen with illustration"
+msgstr ""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:95
+msgid "Changed warning dialog to Adw.MessageDialog"
+msgstr ""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:96
+msgid "Improved adaptiveness of \"Output Width\" subtitle"
+msgstr ""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:97
+msgid "Swapped buttons for copying and saving output"
+msgstr ""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:98
+msgid "Added a string to translations"
+msgstr ""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:99
+msgid "Added Turkish translation"
+msgstr ""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:100
+msgid "Added Czech translation"
+msgstr ""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:107
+msgid "Added French translation"
+msgstr ""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:108
+msgid "Added Russian translation"
+msgstr ""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:109
+msgid "Added Occitan translation"
+msgstr ""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:110
+msgid "Added Italian translation"
+msgstr ""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:111
+msgid "Fixed \"Open with…\" functionality"
+msgstr ""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:112
+msgid "The app now remembers window size and state"
+msgstr ""
+
+#: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:118
+msgid "First Release! 🎉"
+msgstr ""
+
+#. Translators: Translate this string as your translator credits.
+#. Name only:    gregorni
+#. Name + URL:   gregorni https://gitlab.com/gregorni/
+#. Name + Email: gregorni <gregorniehl@web.de>
+#. Do not remove existing names.
+#. Names are separated with newlines.
+#: src/main.py:173
+msgid "translator-credits"
+msgstr ""
+
+#: src/main.py:174
+msgid "Copyright © 2023 Letterpress Contributors"
+msgstr ""
+
+#: src/main.py:182
+msgid "Code and Design borrowed from"
+msgstr ""
+
+#: src/window.py:88
+msgid "Width of the ASCII image in characters"
+msgstr ""
+
+#. Translators: Do not translate "{basename}"
+#: src/window.py:104
+#, python-brace-format
+msgid "\"{basename}\" is not of a supported image type."
+msgstr ""
+
+#: src/window.py:197
+msgid "The output is too large to be copied."
+msgstr ""
+
+#: src/window.py:199
+msgid "Please save it to a file instead or decrease the output width."
+msgstr ""
+
+#: src/window.py:202
+msgid "_OK"
+msgstr ""
+
+#: src/window.py:206
+msgid "Output copied to clipboard"
+msgstr ""
+
+#: src/file_chooser.py:37 src/file_chooser.py:104
+msgid "Select a file"
+msgstr ""
+
+#: src/file_chooser.py:44
+msgid "Supported image files"
+msgstr ""
+
+#. Translators: Do not translate "{display_name}"
+#: src/file_chooser.py:82
+#, python-brace-format
+msgid "Unable to save \"{display_name}\""
+msgstr ""
+
+#. Translators: Do not translate "{display_name}"
+#: src/file_chooser.py:91
+#, python-brace-format
+msgid "\"{display_name}\" saved"
+msgstr ""
+
+#: src/file_chooser.py:93
+msgid "Open"
+msgstr ""
+
+#: src/gtk/window.blp:16
+msgid "Tips"
+msgstr ""
+
+#: src/gtk/window.blp:24
+msgid "Main Menu"
+msgstr ""
+
+#: src/gtk/window.blp:86
+msgid "Create ASCII Art"
+msgstr ""
+
+#: src/gtk/window.blp:87
+msgid "Open or drag and drop an image to generate an ASCII art version of it"
+msgstr ""
+
+#: src/gtk/window.blp:92
+msgid "Open File…"
+msgstr ""
+
+#: src/gtk/window.blp:111
+msgid "Drop Here to Open"
+msgstr ""
+
+#: src/gtk/window.blp:172
+msgid "Output Width"
+msgstr ""
+
+#: src/gtk/window.blp:190
+msgid "Copy to clipboard"
+msgstr ""
+
+#: src/gtk/window.blp:197
+msgid "Save to file"
+msgstr ""
+
+#: src/gtk/window.blp:224
+msgid "_Open File…"
+msgstr ""
+
+#: src/gtk/window.blp:231
+msgid "_Keyboard Shortcuts"
+msgstr ""
+
+#: src/gtk/window.blp:236
+msgid "_About Letterpress"
+msgstr ""
+
+#: src/gtk/zoom-box.blp:12
+msgid "Zoom out"
+msgstr ""
+
+#: src/gtk/zoom-box.blp:28
+msgid "Reset zoom"
+msgstr ""
+
+#: src/gtk/zoom-box.blp:40
+msgid "Zoom in"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:14
+msgctxt "shortcut window"
+msgid "Open File"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:19
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:24
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:30
+msgctxt "shortcut window"
+msgid "Text View"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:33
+msgctxt "shortcut window"
+msgid "Increase Output Width"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:38
+msgctxt "shortcut window"
+msgid "Decrease Output Width"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:43
+msgctxt "shortcut window"
+msgid "Zoom in"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:48
+msgctxt "shortcut window"
+msgid "Zoom out"
+msgstr ""
