@@ -8,36 +8,39 @@ msgstr ""
 "Project-Id-Version: letterpress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-15 02:04+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2023-11-24 13:10+0000\n"
+"Last-Translator: Samuel Stabilizer <Stabilizer1071@outlook.com>\n"
+"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
+"letterpress/letterpress/zh_Hans/>\n"
 "Language: zh_Hans\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.2.1-rc\n"
 
 #. Translators: Translate as "Letterpress"
 #: data/io.gitlab.gregorni.ASCIIImages.desktop.in:4
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:7 src/main.py:161
 #: src/gtk/window.blp:5
 msgid "Letterpress"
-msgstr ""
+msgstr "Letterpress"
 
 #: data/io.gitlab.gregorni.ASCIIImages.desktop.in:5
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:9
 msgid "Create beautiful ASCII art"
-msgstr ""
+msgstr "创造漂亮的ASCII艺术"
 
 #. Translators: These are search terms for the application;
 #. the translation should contain the original list AND the translated strings.
 #. The list must end with a semicolon.
 #: data/io.gitlab.gregorni.ASCIIImages.desktop.in:14
 msgid "image;ascii;convert;conversion;text;"
-msgstr ""
+msgstr "image;ascii;convert;conversion;text;图像;ASCII;转换;转换结果;文本;"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:8 src/main.py:163
 msgid "Letterpress Contributors"
-msgstr ""
+msgstr "Letterpress贡献者"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:12
 msgid ""
@@ -45,31 +48,34 @@ msgid ""
 "You can save the output to a file, copy it, and even change its resolution! "
 "High-res output can still be viewed comfortably by lowering the zoom factor."
 msgstr ""
+"Letterpress可将图像转换成由ASCII字符组成的图画。您可以将输出保存到文件中，也"
+"可以将其复制，甚至更改其分辨率！通过降低缩放系数，您可以舒适地观看高分辨率的"
+"输出结果。"
 
 #. Translators: This is a search term and should be lowercase
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:29
 msgid "image"
-msgstr ""
+msgstr "图像"
 
 #. Translators: This is a search term and should be lowercase
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:31
 msgid "ascii"
-msgstr ""
+msgstr "ASCII"
 
 #. Translators: This is a search term and should be lowercase
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:33
 msgid "convert"
-msgstr ""
+msgstr "转换"
 
 #. Translators: This is a search term and should be lowercase
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:35
 msgid "conversion"
-msgstr ""
+msgstr "转换结果"
 
 #. Translators: This is a search term and should be lowercase
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:37
 msgid "text"
-msgstr ""
+msgstr "文本"
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:55
@@ -79,17 +85,17 @@ msgstr ""
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:60
 msgid "Copy output"
-msgstr ""
+msgstr "复制输出"
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:65
 msgid "Save output"
-msgstr ""
+msgstr "保存输出"
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:70
 msgid "Adjust output width"
-msgstr ""
+msgstr "更改输出尺寸"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:93
 msgid "Rebrand to Letterpress"
@@ -159,15 +165,15 @@ msgstr ""
 #. Names are separated with newlines.
 #: src/main.py:173
 msgid "translator-credits"
-msgstr ""
+msgstr "Stabilizer1071"
 
 #: src/main.py:174
 msgid "Copyright © 2023 Letterpress Contributors"
-msgstr ""
+msgstr "版权所有 © 2023 Letterpress贡献者"
 
 #: src/main.py:182
 msgid "Code and Design borrowed from"
-msgstr ""
+msgstr "代码与设计借鉴了"
 
 #: src/window.py:88
 msgid "Width of the ASCII image in characters"
@@ -177,7 +183,7 @@ msgstr ""
 #: src/window.py:104
 #, python-brace-format
 msgid "\"{basename}\" is not of a supported image type."
-msgstr ""
+msgstr "\"{basename}\" 不是受支持的图像格式。"
 
 #: src/window.py:197
 msgid "The output is too large to be copied."
@@ -193,55 +199,55 @@ msgstr ""
 
 #: src/window.py:206
 msgid "Output copied to clipboard"
-msgstr ""
+msgstr "输出已复制到剪贴板"
 
 #: src/file_chooser.py:37 src/file_chooser.py:104
 msgid "Select a file"
-msgstr ""
+msgstr "选择文件"
 
 #: src/file_chooser.py:44
 msgid "Supported image files"
-msgstr ""
+msgstr "支持的图像文件"
 
 #. Translators: Do not translate "{display_name}"
 #: src/file_chooser.py:82
 #, python-brace-format
 msgid "Unable to save \"{display_name}\""
-msgstr ""
+msgstr "无法保存 \"{display_name}\""
 
 #. Translators: Do not translate "{display_name}"
 #: src/file_chooser.py:91
 #, python-brace-format
 msgid "\"{display_name}\" saved"
-msgstr ""
+msgstr "\"{display_name}\" 已保存"
 
 #: src/file_chooser.py:93
 msgid "Open"
-msgstr ""
+msgstr "打开"
 
 #: src/gtk/window.blp:16
 msgid "Tips"
-msgstr ""
+msgstr "提示"
 
 #: src/gtk/window.blp:24
 msgid "Main Menu"
-msgstr ""
+msgstr "主菜单"
 
 #: src/gtk/window.blp:86
 msgid "Create ASCII Art"
-msgstr ""
+msgstr "创造ASCII艺术"
 
 #: src/gtk/window.blp:87
 msgid "Open or drag and drop an image to generate an ASCII art version of it"
-msgstr ""
+msgstr "打开或拖放图像来生成图像的ASCII艺术版本"
 
 #: src/gtk/window.blp:92
 msgid "Open File…"
-msgstr ""
+msgstr "打开文件…"
 
 #: src/gtk/window.blp:111
 msgid "Drop Here to Open"
-msgstr ""
+msgstr "拖放到此处来打开"
 
 #: src/gtk/window.blp:172
 msgid "Output Width"
@@ -249,77 +255,77 @@ msgstr ""
 
 #: src/gtk/window.blp:190
 msgid "Copy to clipboard"
-msgstr ""
+msgstr "复制到剪贴板"
 
 #: src/gtk/window.blp:197
 msgid "Save to file"
-msgstr ""
+msgstr "保存为文件"
 
 #: src/gtk/window.blp:224
 msgid "_Open File…"
-msgstr ""
+msgstr "_打开文件…"
 
 #: src/gtk/window.blp:231
 msgid "_Keyboard Shortcuts"
-msgstr ""
+msgstr "_快捷键"
 
 #: src/gtk/window.blp:236
 msgid "_About Letterpress"
-msgstr ""
+msgstr "_关于Letterpress"
 
 #: src/gtk/zoom-box.blp:12
 msgid "Zoom out"
-msgstr ""
+msgstr "缩小"
 
 #: src/gtk/zoom-box.blp:28
 msgid "Reset zoom"
-msgstr ""
+msgstr "重置缩放"
 
 #: src/gtk/zoom-box.blp:40
 msgid "Zoom in"
-msgstr ""
+msgstr "放大"
 
 #: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "General"
-msgstr ""
+msgstr "常规"
 
 #: src/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
 msgid "Open File"
-msgstr ""
+msgstr "打开文件"
 
 #: src/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr ""
+msgstr "显示快捷键"
 
 #: src/gtk/help-overlay.blp:24
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr ""
+msgstr "退出"
 
 #: src/gtk/help-overlay.blp:30
 msgctxt "shortcut window"
 msgid "Text View"
-msgstr ""
+msgstr "文本视图"
 
 #: src/gtk/help-overlay.blp:33
 msgctxt "shortcut window"
 msgid "Increase Output Width"
-msgstr ""
+msgstr "增大输出尺寸"
 
 #: src/gtk/help-overlay.blp:38
 msgctxt "shortcut window"
 msgid "Decrease Output Width"
-msgstr ""
+msgstr "减小输出尺寸"
 
 #: src/gtk/help-overlay.blp:43
 msgctxt "shortcut window"
 msgid "Zoom in"
-msgstr ""
+msgstr "放大"
 
 #: src/gtk/help-overlay.blp:48
 msgctxt "shortcut window"
 msgid "Zoom out"
-msgstr ""
+msgstr "缩小"
