@@ -20,7 +20,7 @@
       <gnome:userid>gregorni</gnome:userid>
       <foaf:account>
         <foaf:OnlineAccount>
-          <foaf:accountServiceHomepage rdf:resource="https://gitlab.com"/>
+          <foaf:accountServiceHomepage rdf:resource="https://gitlab.gnome.org"/>
           <foaf:accountName>gregorni</foaf:accountName>
         </foaf:OnlineAccount>
       </foaf:account>
