@@ -1,7 +1,7 @@
 using Gtk 4.0;
 using Adw 1;
 
-template $TipsDialog : Adw.Window {
+template $TipsDialog: Adw.Window {
   title: _("Tips");
   height-request: 200;
   default-width: 500;
@@ -10,8 +10,7 @@ template $TipsDialog : Adw.Window {
 
   Adw.ToolbarView {
     [top]
-    Adw.HeaderBar {
-    }
+    Adw.HeaderBar {}
 
     content: ScrolledWindow {
       hscrollbar-policy: never;
@@ -100,11 +99,7 @@ template $TipsDialog : Adw.Window {
             "title-4",
           ]
         }
-      }
-
-      ;
-    }
-
-    ;
+      };
+    };
   }
 }

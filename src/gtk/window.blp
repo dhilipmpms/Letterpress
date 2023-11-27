@@ -1,18 +1,15 @@
 using Gtk 4.0;
 using Adw 1;
 
-template $LetterpressWindow : Adw.ApplicationWindow {
+template $LetterpressWindow: Adw.ApplicationWindow {
   title: _("Letterpress");
   width-request: 360;
   height-request: 294;
 
   content: Adw.ToastOverlay toast_overlay {
-
     child: Adw.ToolbarView {
-
       [top]
       Adw.HeaderBar {
-
         [start]
         Button {
           action-name: "app.tips";
@@ -40,9 +37,7 @@ template $LetterpressWindow : Adw.ApplicationWindow {
             styles [
               "dragndrop_overlay",
             ]
-          }
-
-          ;
+          };
         }
 
         child: Stack main_stack {
@@ -50,84 +45,69 @@ template $LetterpressWindow : Adw.ApplicationWindow {
 
           StackPage {
             name: "welcome";
+            // If we want an illustration
+            // child: Box {
+            //   orientation: vertical;
+            //   spacing: 12;
+            //   margin-top: 24;
+            //   margin-bottom: 36;
+            //   halign: center;
+            //   valign: center;
+            //   Picture {
+            //     height-request: 100;
+            //     file: "resource:///io/gitlab/gregorni/Letterpress/assets/welcome.svg";
+            //   }
+            //   Label {
+            //     label: _("Create ASCII Art");
+            //     margin-top: 36;
+            //     styles [
+            //       "title-1",
+            //     ]
+            //   }
+            //   Label {
+            //     label: _("Open or drag and drop an image to generate an ASCII art version of it");
+            //     wrap: true;
+            //     halign: center;
+            //     margin-start: 20;
+            //     margin-end: 20;
+            //   }
+            //   Button open_file_btn {
+            //     halign: center;
+            //     action-name: "app.open-file";
+            //     label: _("Open File…");
+            //     margin-top: 24;
+            //     styles [
+            //       "pill",
+            //       "suggested-action",
+            //     ]
+            //   }
+            // }
+            // ;
+            child: Adw.StatusPage {
+              icon-name: "io.gitlab.gregorni.Letterpress";
+              title: _("Create ASCII Art");
+              description: _("Open or drag and drop an image to generate an ASCII art version of it");
 
-              // If we want an illustration
+              child: Button open_file_btn {
+                halign: center;
+                action-name: "app.open-file";
+                label: _("Open File…");
+                margin-top: 24;
 
-              // child: Box {
-              //   orientation: vertical;
-              //   spacing: 12;
-              //   margin-top: 24;
-              //   margin-bottom: 36;
-              //   halign: center;
-              //   valign: center;
-
-              //   Picture {
-              //     height-request: 100;
-              //     file: "resource:///io/gitlab/gregorni/Letterpress/assets/welcome.svg";
-              //   }
-
-              //   Label {
-              //     label: _("Create ASCII Art");
-              //     margin-top: 36;
-
-              //     styles [
-              //       "title-1",
-              //     ]
-              //   }
-
-              //   Label {
-              //     label: _("Open or drag and drop an image to generate an ASCII art version of it");
-              //     wrap: true;
-              //     halign: center;
-              //     margin-start: 20;
-              //     margin-end: 20;
-              //   }
-
-              //   Button open_file_btn {
-              //     halign: center;
-              //     action-name: "app.open-file";
-              //     label: _("Open File…");
-              //     margin-top: 24;
-
-              //     styles [
-              //       "pill",
-              //       "suggested-action",
-              //     ]
-              //   }
-              // }
-
-              // ;
-
-              child: Adw.StatusPage {
-                icon-name: "io.gitlab.gregorni.Letterpress";
-                title: _("Create ASCII Art");
-                description: _("Open or drag and drop an image to generate an ASCII art version of it");
-
-                child: Button open_file_btn {
-                  halign: center;
-                  action-name: "app.open-file";
-                  label: _("Open File…");
-                  margin-top: 24;
-
-                  styles [
-                    "pill",
-                    "suggested-action",
-                  ]
-                }
-
-                ;
-              }
-            ;
+                styles [
+                  "pill",
+                  "suggested-action",
+                ]
+              };
+            };
           }
 
           StackPage {
             name: "spinner-page";
-            child: 
-            Spinner spinner {
-              valign: center;
-            }
 
-            ;
+            child: Spinner spinner {
+              valign: center;
+            };
           }
 
           StackPage {
@@ -147,23 +127,16 @@ template $LetterpressWindow : Adw.ApplicationWindow {
                   "monospace",
                 ]
 
-                GestureZoom gesture_zoom {
-                }
+                GestureZoom gesture_zoom {}
 
                 EventControllerScroll conscroller {
                   flags: vertical;
                 }
               }
-            }
-
-            ;
+            };
           }
-        }
-
-        ;
-      }
-
-      ;
+        };
+      };
 
       [bottom]
       Revealer toolbox {
@@ -212,16 +185,10 @@ template $LetterpressWindow : Adw.ApplicationWindow {
               action-name: "app.save-output";
             }
           }
-        }
-
-        ;
+        };
       }
-    }
-
-    ;
-  }
-
-  ;
+    };
+  };
 }
 
 menu primary_menu {
