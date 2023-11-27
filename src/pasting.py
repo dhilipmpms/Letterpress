@@ -21,6 +21,13 @@ from gi.repository import Adw, Gdk, Gio
 
 
 class Paster:
+    def paste_image(self, parent_window, callback) -> None:
+        self.parent_window = parent_window
+        self.callback = callback
+
+        clipboard = Gdk.Display.get_default().get_clipboard()
+        clipboard.read_value_async(Gio.File, 0, None, self.__on_file_pasted)
+
     def __on_file_pasted(self, clipboard, result):
         try:
             paste_as_file = clipboard.read_value_finish(result)
@@ -40,10 +47,3 @@ class Paster:
         except:
             toast = Adw.Toast.new(_("No image found in clipboard"))
             self.parent_window.toast_overlay.add_toast(toast)
-
-    def paste_image(self, parent_window, callback) -> None:
-        self.parent_window = parent_window
-        self.callback = callback
-
-        clipboard = Gdk.Display.get_default().get_clipboard()
-        clipboard.read_value_async(Gio.File, 0, None, self.__on_file_pasted)
