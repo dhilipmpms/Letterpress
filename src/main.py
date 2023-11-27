@@ -38,45 +38,45 @@ class LetterpressApplication(Adw.Application):
             application_id="io.gitlab.gregorni.Letterpress",
             flags=Gio.ApplicationFlags.HANDLES_COMMAND_LINE,
         )
-        self.__create_action("quit", lambda *_: self.quit(), ["<primary>q"])
+        self.__create_action("quit", lambda *args: self.quit(), ["<primary>q"])
         self.__create_action(
             "close-active-win",
-            lambda *_: self.get_active_window.destroy(),
+            lambda *args: self.get_active_window.destroy(),
             ["<primary>w"],
         )
         self.__create_action(
             "open-menu",
-            lambda *_: self.get_active_window().menu_btn.activate(),
+            lambda *args: self.get_active_window().menu_btn.activate(),
             ["F10"],
         )
         self.__create_action("tips", self.__on_tips_action)
         self.__create_action("about", self.__on_about_action)
         self.__create_action(
             "open-file",
-            lambda *_: self.get_active_window().on_open_file(),
+            lambda *args: self.get_active_window().on_open_file(),
             ["<primary>o"],
         )
         self.__create_action(
             "zoom-out",
-            lambda *_: self.get_active_window().zoom(zoom_out=True),
+            lambda *args: self.get_active_window().zoom(zoom_out=True),
             ["<primary>minus", "<primary>underscore"],
         )
         self.__create_action(
-            "zoom-in", lambda *_: self.get_active_window().zoom(), ["<primary>plus"]
+            "zoom-in", lambda *args: self.get_active_window().zoom(), ["<primary>plus"]
         )
         self.__create_action(
             "reset-zoom",
-            lambda *_: self.get_active_window().zoom(zoom_reset=True),
+            lambda *args: self.get_active_window().zoom(zoom_reset=True),
             ["<primary>0", "<primary>r"],
         )
         self.__create_action(
             "increase-output-width",
-            lambda *_: self.__change_output_width(),
+            lambda *args: self.__change_output_width(),
             ["<primary><alt>plus"],
         )
         self.__create_action(
             "decrease-output-width",
-            lambda *_: self.__change_output_width(True),
+            lambda *args: self.__change_output_width(True),
             ["<primary><alt>minus"],
         )
         self.__create_action(
@@ -84,7 +84,7 @@ class LetterpressApplication(Adw.Application):
         )
         self.__create_action(
             "save-output",
-            lambda *_: FileChooser.save_file(self.get_active_window()),
+            lambda *args: FileChooser.save_file(self.get_active_window()),
             ["<primary>s", "<primary><shift>c"],
         )
         self.__create_action(

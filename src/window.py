@@ -56,7 +56,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
         target.connect("enter", self.__on_enter)
         target.connect(
             "leave",
-            lambda *_: self.main_stack.set_visible_child_name(self.previous_stack),
+            lambda *args: self.main_stack.set_visible_child_name(self.previous_stack),
         )
         self.add_controller(target)
 
