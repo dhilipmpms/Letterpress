@@ -27,6 +27,7 @@ gi.require_version("Adw", "1")
 from gi.repository import Adw, Gdk, Gio, GLib, Gtk
 
 from .file_chooser import FileChooser
+from .pasting import Paster
 from .window import LetterpressWindow
 
 
@@ -79,6 +80,7 @@ class LetterpressApplication(Adw.Application):
             lambda *args: self.__change_output_width(True),
             ["<primary><alt>minus"],
         )
+        self.__create_action("paste-image", self.__paste_image, ["<primary>v"])
         self.__create_action(
             "copy-output", self.__copy_output_to_clipboard, ["<primary><shift>c"]
         )
@@ -106,6 +108,10 @@ class LetterpressApplication(Adw.Application):
         win.present()
         if self.file is not None:
             win.check_is_image(Gio.File.new_for_path(self.file))
+
+    def __paste_image(self, *args) -> None:
+        win = self.get_active_window()
+        Paster().paste_image(win, win.check_is_image)
 
     def __change_output_width(self, down=False):
         win = self.get_active_window()
