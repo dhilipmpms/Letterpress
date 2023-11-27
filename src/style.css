@@ -3,8 +3,10 @@
 @define-color accent_fg_color alpha(white, 1);
 
 .dragndrop_overlay {
-  background-color: alpha(@accent_bg_color, 0.5);
+  background-color: alpha(@accent_color, 0.35);
   color: @accent_fg_color;
+  margin: 24px;
+  border-radius: 8px;
 }
 
 textview {

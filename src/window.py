@@ -31,6 +31,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
     __gtype_name__ = "LetterpressWindow"
 
     menu_btn = Gtk.Template.Child()
+    drag_revealer = Gtk.Template.Child()
     toast_overlay = Gtk.Template.Child()
     main_stack = Gtk.Template.Child()
     spinner = Gtk.Template.Child()
@@ -55,8 +56,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
         target.connect("drop", lambda widget, file, *args: self.check_is_image(file))
         target.connect("enter", self.__on_enter)
         target.connect(
-            "leave",
-            lambda *args: self.main_stack.set_visible_child_name(self.previous_stack),
+            "leave", lambda *args: self.drag_revealer.set_reveal_child(False)
         )
         self.add_controller(target)
 
@@ -250,8 +250,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
         self.spinner.start()
 
     def __on_enter(self, *args):
-        self.previous_stack = self.main_stack.get_visible_child_name()
-        self.main_stack.set_visible_child_name("drop-page")
+        self.drag_revealer.set_reveal_child(True)
         return Gdk.DragAction.COPY
 
 

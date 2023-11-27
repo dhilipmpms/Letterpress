@@ -28,10 +28,24 @@ template $LetterpressWindow : Adw.ApplicationWindow {
         }
       }
 
-      content: Box {
-        orientation: vertical;
+      content: Overlay {
+        [overlay]
+        Revealer drag_revealer {
+          can-target: false;
+          transition-type: crossfade;
 
-        Stack main_stack {
+          child: Adw.Bin {
+            can-target: false;
+
+            styles [
+              "dragndrop_overlay",
+            ]
+          }
+
+          ;
+        }
+
+        child: Stack main_stack {
           transition-type: crossfade;
 
           StackPage {
@@ -107,21 +121,6 @@ template $LetterpressWindow : Adw.ApplicationWindow {
           }
 
           StackPage {
-            name: "drop-page";
-            child: 
-            Adw.StatusPage drop_overlay {
-              icon-name: "system-run-symbolic";
-              title: _("Drop Here to Open");
-
-              styles [
-                "dragndrop_overlay",
-              ]
-            }
-
-            ;
-          }
-
-          StackPage {
             name: "spinner-page";
             child: 
             Spinner spinner {
@@ -160,6 +159,8 @@ template $LetterpressWindow : Adw.ApplicationWindow {
             ;
           }
         }
+
+        ;
       }
 
       ;
