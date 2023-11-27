@@ -38,7 +38,7 @@ class Paster:
             self.callback(save_file)
 
         except:
-            toast = Adw.Toast.new(_("No Image in Clipboard"))
+            toast = Adw.Toast.new(_("No image found in clipboard"))
             self.parent_window.toast_overlay.add_toast(toast)
 
     def paste_image(self, parent_window, callback) -> None:
