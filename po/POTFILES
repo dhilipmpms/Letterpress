@@ -5,6 +5,7 @@ data/io.gitlab.gregorni.Letterpress.gschema.xml
 src/main.py
 src/window.py
 src/file_chooser.py
+src/pasting.py
 
 src/gtk/window.blp
 src/gtk/zoom-box.blp

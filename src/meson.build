@@ -42,6 +42,7 @@ letterpress_sources = [
   'main.py',
   'window.py',
   'file_chooser.py',
+  'pasting.py',
 ]
 
 install_data(letterpress_sources, install_dir: moduledir)

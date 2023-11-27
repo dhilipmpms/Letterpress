@@ -127,19 +127,12 @@ class LetterpressWindow(Adw.ApplicationWindow):
                 self.__show_spinner()
                 print(f"Input file: {filepath}")
 
-                image_format = img.format
-                if image_format in ["JPEG", "PNG"]:
-                    self.filepath = filepath
-                    try:
-                        if img._getexif()[274] != 1:
-                            self.filepath = (
-                                f"{NamedTemporaryFile().name}.{image_format}"
-                            )
-                            shrunken_img = ImageOps.cover(img, (500, 500))
-                            exif_rotated_img = ImageOps.exif_transpose(shrunken_img)
-                            exif_rotated_img.save(self.filepath, format=image_format)
-                    except:
-                        pass
+                if img.format in ["JPEG", "PNG"]:
+                    self.filepath = NamedTemporaryFile(suffix=f".{img.format}").name
+
+                    shrunken_img = ImageOps.cover(img, (500, 500))
+                    exif_rotated_img = ImageOps.exif_transpose(shrunken_img)
+                    exif_rotated_img.save(self.filepath, format=img.format)
 
                     self.__convert_image(self.filepath)
                     self.zoom(zoom_reset=True)
