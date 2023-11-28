@@ -34,11 +34,11 @@ class Paster:
             self.callback(paste_as_file)
 
         except:
-            clipboard.read_value_async(Gdk.Texture, 0, None, self.__on_texture_pasted)
+            clipboard.read_texture_async(None, self.__on_texture_pasted)
 
     def __on_texture_pasted(self, clipboard, result):
         try:
-            paste_as_texture = clipboard.read_value_finish(result)
+            paste_as_texture = clipboard.read_texture_finish(result)
             save_file = Gio.File.new_tmp()[0]
             save_path = save_file.get_path()
             paste_as_texture.save_to_png(save_path)
