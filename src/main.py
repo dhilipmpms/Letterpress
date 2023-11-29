@@ -87,7 +87,7 @@ class LetterpressApplication(Adw.Application):
         self.__create_action(
             "save-output",
             lambda *args: FileChooser.save_file(self.get_active_window()),
-            ["<primary>s", "<primary><shift>c"],
+            ["<primary>s", "<primary><shift>s"],
         )
         self.__create_action(
             "open-output", self.__open_output, param=GLib.VariantType("s")
