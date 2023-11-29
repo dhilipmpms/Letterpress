@@ -6,6 +6,7 @@ src/main.py
 src/window.py
 src/file_chooser.py
 src/pasting.py
+src/texture_to_file.py
 
 src/gtk/window.blp
 src/gtk/zoom-box.blp

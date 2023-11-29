@@ -43,6 +43,7 @@ letterpress_sources = [
   'window.py',
   'file_chooser.py',
   'pasting.py',
+  'texture_to_file.py',
 ]
 
 install_data(letterpress_sources, install_dir: moduledir)

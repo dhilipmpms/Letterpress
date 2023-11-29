@@ -23,6 +23,7 @@ from tempfile import NamedTemporaryFile
 from gi.repository import Adw, Gdk, Gio, Gtk
 from PIL import Image, ImageChops, ImageOps
 
+from . import texture_to_file
 from .file_chooser import FileChooser
 
 
@@ -53,7 +54,8 @@ class LetterpressWindow(Adw.ApplicationWindow):
             actions=Gdk.DragAction.COPY,
         )
 
-        target.connect("drop", lambda widget, file, *args: self.check_is_image(file))
+        target.set_gtypes([Gdk.Texture, Gio.File])
+        target.connect("drop", self.__on_drop)
         target.connect("enter", self.__on_enter)
         target.connect(
             "leave", lambda *args: self.drag_revealer.set_reveal_child(False)
@@ -252,6 +254,21 @@ class LetterpressWindow(Adw.ApplicationWindow):
     def __on_enter(self, *args):
         self.drag_revealer.set_reveal_child(True)
         return Gdk.DragAction.COPY
+
+    def __on_drop(self, widget, drop, *args):
+        failed_as_file = False
+        try:
+            self.check_is_image(drop)
+        except:
+            failed_as_file = True
+
+        if failed_as_file:
+            try:
+                file = texture_to_file.to_file(drop)
+                self.check_is_image(file)
+            except:
+                toast = Adw.Toast.new(_("Dropped item is not a valid image"))
+                self.toast_overlay.add_toast(toast)
 
 
 @Gtk.Template(resource_path="/io/gitlab/gregorni/Letterpress/gtk/zoom-box.ui")

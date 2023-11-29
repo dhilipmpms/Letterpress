@@ -19,6 +19,8 @@
 
 from gi.repository import Adw, Gdk, Gio
 
+from . import texture_to_file
+
 
 class Paster:
     def paste_image(self, parent_window, callback) -> None:
@@ -39,10 +41,8 @@ class Paster:
     def __on_texture_pasted(self, clipboard, result):
         try:
             paste_as_texture = clipboard.read_texture_finish(result)
-            save_file = Gio.File.new_tmp()[0]
-            save_path = save_file.get_path()
-            paste_as_texture.save_to_png(save_path)
-            self.callback(save_file)
+            file = texture_to_file.to_file(paste_as_texture)
+            self.callback(file)
 
         except:
             toast = Adw.Toast.new(_("No image found in clipboard"))
