@@ -109,7 +109,7 @@ class LetterpressApplication(Adw.Application):
         if self.file is not None:
             win.check_is_image(Gio.File.new_for_path(self.file))
 
-    def __paste_image(self, *args) -> None:
+    def __paste_image(self, *args):
         win = self.get_active_window()
         Paster().paste_image(win, win.check_is_image)
 

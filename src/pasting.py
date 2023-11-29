@@ -23,7 +23,7 @@ from . import texture_to_file
 
 
 class Paster:
-    def paste_image(self, parent_window, callback) -> None:
+    def paste_image(self, parent_window, callback):
         self.parent_window = parent_window
         self.callback = callback
 
