@@ -7,84 +7,86 @@ template $LetterpressWindow: Adw.ApplicationWindow {
   height-request: 294;
 
   content: Adw.ToastOverlay toast_overlay {
-    child: Adw.ToolbarView {
-      [top]
-      Adw.HeaderBar {
-        [start]
-        Button {
-          action-name: "app.tips";
-          tooltip-text: _("Tips");
-          icon-name: "lightbulb-symbolic";
+    child: WindowHandle {
+      Adw.ToolbarView {
+        [top]
+        Adw.HeaderBar {
+          [start]
+          Button {
+            action-name: "app.tips";
+            tooltip-text: _("Tips");
+            icon-name: "lightbulb-symbolic";
+          }
+
+          [end]
+          MenuButton menu_btn {
+            icon-name: "open-menu-symbolic";
+            menu-model: primary_menu;
+            tooltip-text: _("Main Menu");
+          }
         }
 
-        [end]
-        MenuButton menu_btn {
-          icon-name: "open-menu-symbolic";
-          menu-model: primary_menu;
-          tooltip-text: _("Main Menu");
-        }
-      }
-
-      content: Overlay {
-        [overlay]
-        Revealer drag_revealer {
-          can-target: false;
-          transition-type: crossfade;
-
-          child: Adw.Bin {
+        content: Overlay {
+          [overlay]
+          Revealer drag_revealer {
             can-target: false;
+            transition-type: crossfade;
 
-            styles [
-              "dragndrop_overlay",
-            ]
-          };
-        }
+            child: Adw.Bin {
+              can-target: false;
 
-        child: Stack main_stack {
-          transition-type: crossfade;
+              styles [
+                "dragndrop_overlay",
+              ]
+            };
+          }
 
-          StackPage {
-            name: "welcome";
-            // If we want an illustration
-            // child: Box {
-            //   orientation: vertical;
-            //   spacing: 12;
-            //   margin-top: 24;
-            //   margin-bottom: 36;
-            //   halign: center;
-            //   valign: center;
-            //   Picture {
-            //     height-request: 100;
-            //     file: "resource:///io/gitlab/gregorni/Letterpress/assets/welcome.svg";
-            //   }
-            //   Label {
-            //     label: _("Create ASCII Art");
-            //     margin-top: 36;
-            //     styles [
-            //       "title-1",
-            //     ]
-            //   }
-            //   Label {
-            //     label: _("Open or drag and drop an image to generate an ASCII art version of it");
-            //     wrap: true;
-            //     halign: center;
-            //     margin-start: 20;
-            //     margin-end: 20;
-            //   }
-            //   Button open_file_btn {
-            //     halign: center;
-            //     action-name: "app.open-file";
-            //     label: _("Open File…");
-            //     margin-top: 24;
-            //     styles [
-            //       "pill",
-            //       "suggested-action",
-            //     ]
-            //   }
-            // }
-            // ;
-            child: WindowHandle {
-              Adw.StatusPage {
+          child: Stack main_stack {
+            transition-type: crossfade;
+
+            StackPage {
+              name: "welcome";
+
+              // If we want an illustration
+              // child: Box {
+              //   orientation: vertical;
+              //   spacing: 12;
+              //   margin-top: 24;
+              //   margin-bottom: 36;
+              //   halign: center;
+              //   valign: center;
+              //   Picture {
+              //     height-request: 100;
+              //     file: "resource:///io/gitlab/gregorni/Letterpress/assets/welcome.svg";
+              //   }
+              //   Label {
+              //     label: _("Create ASCII Art");
+              //     margin-top: 36;
+              //     styles [
+              //       "title-1",
+              //     ]
+              //   }
+              //   Label {
+              //     label: _("Open or drag and drop an image to generate an ASCII art version of it");
+              //     wrap: true;
+              //     halign: center;
+              //     margin-start: 20;
+              //     margin-end: 20;
+              //   }
+              //   Button open_file_btn {
+              //     halign: center;
+              //     action-name: "app.open-file";
+              //     label: _("Open File…");
+              //     margin-top: 24;
+              //     styles [
+              //       "pill",
+              //       "suggested-action",
+              //     ]
+              //   }
+              // }
+              // ;
+
+              child: Adw.StatusPage {
                 icon-name: "io.gitlab.gregorni.Letterpress";
                 title: _("Create ASCII Art");
                 description: _("Open or drag and drop an image to generate an ASCII art version of it");
@@ -100,91 +102,91 @@ template $LetterpressWindow: Adw.ApplicationWindow {
                     "suggested-action",
                   ]
                 };
-              }
-            };
-          }
+              };
+            }
 
-          StackPage {
-            name: "spinner-page";
+            StackPage {
+              name: "spinner-page";
 
-            child: Spinner spinner {
-              spinning: true;
-              valign: center;
-            };
-          }
-
-          StackPage {
-            name: "view-page";
-
-            child: ScrolledWindow output_scrolled_window {
-              hexpand: true;
-              vexpand: true;
-
-              Label output_label {
+              child: Spinner spinner {
+                spinning: true;
                 valign: center;
+              };
+            }
+
+            StackPage {
+              name: "view-page";
+
+              child: ScrolledWindow output_scrolled_window {
                 hexpand: true;
                 vexpand: true;
-                accessible-role: none;
 
-                styles [
-                  "monospace",
-                ]
+                Label output_label {
+                  valign: center;
+                  hexpand: true;
+                  vexpand: true;
+                  accessible-role: none;
 
-                GestureZoom gesture_zoom {}
+                  styles [
+                    "monospace",
+                  ]
 
-                EventControllerScroll conscroller {
-                  flags: vertical;
+                  GestureZoom gesture_zoom {}
+
+                  EventControllerScroll conscroller {
+                    flags: vertical;
+                  }
                 }
-              }
-            };
-          }
+              };
+            }
+          };
         };
-      };
 
-      [bottom]
-      Revealer toolbox {
-        transition-type: slide_up;
+        [bottom]
+        Revealer toolbox {
+          transition-type: slide_up;
 
-        child: Box {
-          margin-start: 17;
-          margin-end: 17;
-          margin-top: 8;
-          margin-bottom: 8;
-          spacing: 8;
-          height-request: 50;
+          child: Box {
+            margin-start: 17;
+            margin-end: 17;
+            margin-top: 8;
+            margin-bottom: 8;
+            spacing: 8;
+            height-request: 50;
 
-          Label {
-            label: _("Width (in characters)");
-            ellipsize: end;
-            xalign: 0;
-            margin-end: 8;
-          }
+            Label {
+              label: _("Width (in characters)");
+              ellipsize: end;
+              xalign: 0;
+              margin-end: 8;
+            }
 
-          Gtk.SpinButton width_spin {
-            valign: center;
-            numeric: true;
-          }
+            Gtk.SpinButton width_spin {
+              valign: center;
+              numeric: true;
+            }
 
-          Box {
-            hexpand: true;
-          }
+            Box {
+              hexpand: true;
+            }
 
-          Button {
-            valign: center;
-            halign: end;
-            icon-name: "edit-copy-symbolic";
-            tooltip-text: _("Copy to clipboard");
-            action-name: "app.copy-output";
-          }
+            Button {
+              valign: center;
+              halign: end;
+              icon-name: "edit-copy-symbolic";
+              tooltip-text: _("Copy to clipboard");
+              action-name: "app.copy-output";
+            }
 
-          Button {
-            valign: center;
-            halign: end;
-            icon-name: "document-save-symbolic";
-            tooltip-text: _("Save to file");
-            action-name: "app.save-output";
-          }
-        };
+            Button {
+              valign: center;
+              halign: end;
+              icon-name: "document-save-symbolic";
+              tooltip-text: _("Save to file");
+              action-name: "app.save-output";
+            }
+          };
+        }
       }
     };
   };
