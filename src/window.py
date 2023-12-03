@@ -41,7 +41,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
     width_spin = Gtk.Template.Child()
     toolbox = Gtk.Template.Child()
     gesture_zoom = Gtk.Template.Child()
-    conscroller = Gtk.Template.Child()
+    scroll_controller = Gtk.Template.Child()
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -79,7 +79,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
         self.gesture_zoom.connect("scale-changed", self.__on_gesture)
         self.scale_delta = 1
 
-        self.conscroller.connect("scroll", self.__on_scroll)
+        self.scroll_controller.connect("scroll", self.__on_scroll)
 
         self.previous_stack = "welcome"
         self.filepath = None
