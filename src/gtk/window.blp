@@ -145,47 +145,43 @@ template $LetterpressWindow: Adw.ApplicationWindow {
         transition-type: slide_up;
 
         child: Box {
-          orientation: vertical;
+          margin-start: 17;
+          margin-end: 17;
+          margin-top: 8;
+          margin-bottom: 8;
+          spacing: 8;
+          height-request: 50;
+
+          Label {
+            label: _("Width (in characters)");
+            ellipsize: end;
+            xalign: 0;
+            margin-end: 8;
+          }
+
+          Gtk.SpinButton width_spin {
+            valign: center;
+            numeric: true;
+          }
 
           Box {
-            margin-start: 17;
-            margin-end: 17;
-            margin-top: 8;
-            margin-bottom: 8;
-            spacing: 8;
-            height-request: 50;
+            hexpand: true;
+          }
 
-            Label {
-              label: _("Width (in characters)");
-              ellipsize: end;
-              xalign: 0;
-              margin-end: 8;
-            }
+          Button {
+            valign: center;
+            halign: end;
+            icon-name: "edit-copy-symbolic";
+            tooltip-text: _("Copy to clipboard");
+            action-name: "app.copy-output";
+          }
 
-            Gtk.SpinButton width_spin {
-              valign: center;
-              numeric: true;
-            }
-
-            Box {
-              hexpand: true;
-            }
-
-            Button {
-              valign: center;
-              halign: end;
-              icon-name: "edit-copy-symbolic";
-              tooltip-text: _("Copy to clipboard");
-              action-name: "app.copy-output";
-            }
-
-            Button {
-              valign: center;
-              halign: end;
-              icon-name: "document-save-symbolic";
-              tooltip-text: _("Save to file");
-              action-name: "app.save-output";
-            }
+          Button {
+            valign: center;
+            halign: end;
+            icon-name: "document-save-symbolic";
+            tooltip-text: _("Save to file");
+            action-name: "app.save-output";
           }
         };
       }
