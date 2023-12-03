@@ -92,10 +92,11 @@ class LetterpressWindow(Adw.ApplicationWindow):
         self.heights = (0, 0)
 
     def do_size_allocate(self, width, height, baseline):
-        new_heights = (height, self.output_scrolled_window.get_height())
-        if self.heights != new_heights:
-            self.zoom(zoom_reset=True)
-            self.heights = new_heights
+        if self.main_stack.get_visible_child_name() == "view-page":
+            new_heights = (height, self.output_scrolled_window.get_height())
+            if self.heights != new_heights:
+                self.zoom(zoom_reset=True)
+                self.heights = new_heights
 
         Adw.ApplicationWindow.do_size_allocate(self, width, height, baseline)
 
