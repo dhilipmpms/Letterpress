@@ -35,7 +35,6 @@ class LetterpressWindow(Adw.ApplicationWindow):
     drag_revealer = Gtk.Template.Child()
     toast_overlay = Gtk.Template.Child()
     main_stack = Gtk.Template.Child()
-    spinner = Gtk.Template.Child()
     output_scrolled_window = Gtk.Template.Child()
     output_label = Gtk.Template.Child()
     width_spin = Gtk.Template.Child()
