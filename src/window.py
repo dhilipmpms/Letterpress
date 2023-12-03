@@ -175,13 +175,13 @@ class LetterpressWindow(Adw.ApplicationWindow):
             new_font_size_str = f"{new_font_size}pt"
 
             line_height = 1
-            weird_sizes1 = (5, 8, 9, 10)
-            weird_sizes2 = (1, 3, 4)
-
-            if new_font_size in weird_sizes1:
-                line_height = 0.9
-            elif new_font_size in weird_sizes2:
-                line_height = 0.8
+            match new_font_size:
+                case 5 | 8 | 9 | 10:
+                    line_height = 0.9
+                case 3 | 4:
+                    line_height = 0.8
+                case 1:
+                    line_height = 0.7
 
             css_provider = Gtk.CssProvider.new()
             css_provider.load_from_string(
