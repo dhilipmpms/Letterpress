@@ -101,7 +101,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
         Adw.ApplicationWindow.do_size_allocate(self, width, height, baseline)
 
     def on_open_file(self):
-        self.__show_spinner()
+        self.main_stack.set_visible_child_name("spinner-page")
         FileChooser.open_file(self, self.previous_stack)
 
     def check_is_image(self, file):
@@ -127,7 +127,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
                             self.main_stack.set_visible_child_name(self.previous_stack)
                             return
 
-                self.__show_spinner()
+                self.main_stack.set_visible_child_name("spinner-page")
                 print(f"Input file: {filepath}")
 
                 if img.format in ["JPEG", "PNG"]:
@@ -197,7 +197,8 @@ class LetterpressWindow(Adw.ApplicationWindow):
             self.zoom_box.increase_btn.set_sensitive(new_font_size < 11)
 
     def __convert_image(self, filepath):
-        self.__show_spinner()
+        self.main_stack.set_visible_child_name("spinner-page")
+
         arguments = ["jp2a", f"--width={self.width_spin.get_value()}", filepath]
         if not self.style_manager.get_dark():
             arguments.append("--invert")
@@ -244,13 +245,9 @@ class LetterpressWindow(Adw.ApplicationWindow):
             self.__convert_image(self.filepath)
 
     def __on_spin_value_changed(self, spin_button):
-        self.__show_spinner()
+        self.main_stack.set_visible_child_name("spinner-page")
         self.__convert_image(self.filepath)
         self.zoom(zoom_reset=True)
-
-    def __show_spinner(self):
-        self.main_stack.set_visible_child_name("spinner-page")
-        self.spinner.start()
 
     def __on_enter(self, *args):
         self.drag_revealer.set_reveal_child(True)
