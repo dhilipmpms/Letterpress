@@ -52,7 +52,7 @@ class FileChooser:
         def __on_save_file(file):
             print(f"Output file: {file.get_path()}")
             text = parent.output_label.get_label()
-            if text is not None:
+            if text != None:
                 file.replace_contents_bytes_async(
                     contents=GLib.Bytes.new(text.encode("utf-8")),
                     etag=None,
@@ -68,7 +68,7 @@ class FileChooser:
             )
             display_name = (
                 info.get_attribute_string("standard::display-name")
-                if info is not None
+                if info != None
                 else file.get_basename()
             )
 

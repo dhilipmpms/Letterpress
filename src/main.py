@@ -104,11 +104,11 @@ class LetterpressApplication(Adw.Application):
         necessary.
         """
         win = self.get_active_window()
-        if win is None:
+        if win == None:
             win = LetterpressWindow(application=self)
             self.tips_dialog = None
         win.present()
-        if self.file is not None:
+        if self.file != None:
             win.check_is_image(Gio.File.new_for_path(self.file))
 
     def __paste_image(self, *args):
@@ -117,7 +117,7 @@ class LetterpressApplication(Adw.Application):
 
     def __change_output_width(self, down=False):
         win = self.get_active_window()
-        if win.filepath is not None:
+        if win.filepath != None:
             spin_btn = win.width_spin
             spin_btn.set_value(spin_btn.get_value() + (-100 if down else 100))
 
@@ -198,7 +198,7 @@ class LetterpressApplication(Adw.Application):
         about.present()
 
     def __close_tips_dialog(self, *args):
-        if self.tips_dialog is not None:
+        if self.tips_dialog != None:
             self.tips_dialog.destroy()
             self.tips_dialog = None
 

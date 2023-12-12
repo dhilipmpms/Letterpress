@@ -240,7 +240,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
                 self.scrolled = 0
 
     def __set_color_scheme(self, *args):
-        if self.filepath is not None:
+        if self.filepath != None:
             self.__convert_image(self.filepath)
 
     def __on_spin_value_changed(self, spin_button):
