@@ -5,7 +5,9 @@
 	<project_license>GPL-3.0-or-later</project_license>
   
   <name>Letterpress</name>
-  <developer_name translatable="no">gregorni</developer_name>
+  <developer id="gnome.org">
+    <developer_name translatable="no">gregorni</developer_name>
+  </developer>
   <summary>Create beautiful ASCII art</summary>
   
 	<description>
@@ -79,12 +81,11 @@
   <url type="vcs-browser">https://gitlab.gnome.org/World/Letterpress</url>
   <url type="contribute">https://gitlab.gnome.org/World/Letterpress</url>
   <url type="contact">https://matrix.to/#/#gregorni-apps:matrix.org</url>
+  <url type="translate">https://hosted.weblate.org/projects/letterpress/</url>
   
   <update_contact>gregorniehl@web.de</update_contact>
   
   <content_rating type="oars-1.1" />
-  
-  <project_group>GNOME</project_group>
   
   <releases>
   <release version="2.0" date="2023-09-20">
