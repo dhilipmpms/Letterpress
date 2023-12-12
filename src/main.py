@@ -60,15 +60,17 @@ class LetterpressApplication(Adw.Application):
         self.__create_action(
             "zoom-out",
             lambda *args: self.get_active_window().zoom(zoom_out=True),
-            ["<primary>minus", "<primary>underscore"],
+            ["<primary>minus", "<primary>KP_Subtract"],
         )
         self.__create_action(
-            "zoom-in", lambda *args: self.get_active_window().zoom(), ["<primary>plus"]
+            "zoom-in",
+            lambda *args: self.get_active_window().zoom(),
+            ["<primary>plus", "<primary>KP_Add"],
         )
         self.__create_action(
             "reset-zoom",
             lambda *args: self.get_active_window().zoom(zoom_reset=True),
-            ["<primary>0", "<primary>r"],
+            ["<primary>0", "<primary>KP_0"],
         )
         self.__create_action(
             "increase-output-width",
@@ -82,12 +84,12 @@ class LetterpressApplication(Adw.Application):
         )
         self.__create_action("paste-image", self.__paste_image, ["<primary>v"])
         self.__create_action(
-            "copy-output", self.__copy_output_to_clipboard, ["<primary><shift>c"]
+            "copy-output", self.__copy_output_to_clipboard, ["<primary>c"]
         )
         self.__create_action(
             "save-output",
             lambda *args: FileChooser.save_file(self.get_active_window()),
-            ["<primary>s", "<primary><shift>s"],
+            ["<primary>s"],
         )
         self.__create_action(
             "open-output", self.__open_output, param=GLib.VariantType("s")
