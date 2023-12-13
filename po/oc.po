@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: letterpress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-15 02:04+0200\n"
-"PO-Revision-Date: 2023-09-25 15:59+0000\n"
+"PO-Revision-Date: 2023-12-14 20:07+0000\n"
 "Last-Translator: Quentin PAGÈS <quentinantonin@free.fr>\n"
 "Language-Team: Occitan <https://hosted.weblate.org/projects/letterpress/"
 "letterpress/oc/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.1-dev\n"
+"X-Generator: Weblate 5.3\n"
 
 #. Translators: Translate as "Letterpress"
 #: data/io.gitlab.gregorni.ASCIIImages.desktop.in:4
@@ -43,15 +43,15 @@ msgid "Letterpress Contributors"
 msgstr "Contributors de Letterpress"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:12
-#, fuzzy
 msgid ""
 "Letterpress converts your images into a picture made up of ASCII characters. "
 "You can save the output to a file, copy it, and even change its resolution! "
 "High-res output can still be viewed comfortably by lowering the zoom factor."
 msgstr ""
-"Letterpress utiliza jp2a per convertir los imatges en caractèrs ASCII. "
-"Podètz enregistrar lo resultat dins un fichièr, lo copiar e quitament "
-"cambiar sa resolucion !"
+"Letterpress convertís los imatges en caractèrs ASCII. Podètz enregistrar lo "
+"resultat dins un fichièr, lo copiar e quitament cambiar sa resolucion. Los "
+"resultats en nauta resolucion se pòdon veire encara en redusissent l’escala "
+"d’agrandiment."
 
 #. Translators: This is a search term and should be lowercase
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:29
@@ -314,16 +314,14 @@ msgid "Text View"
 msgstr "Vista tèxte"
 
 #: src/gtk/help-overlay.blp:33
-#, fuzzy
 msgctxt "shortcut window"
 msgid "Increase Output Width"
-msgstr "Largor de la sortida"
+msgstr "Aumentar la largor de la sortida"
 
 #: src/gtk/help-overlay.blp:38
-#, fuzzy
 msgctxt "shortcut window"
 msgid "Decrease Output Width"
-msgstr "Largor de la sortida"
+msgstr "Demesir la largor de la sortida"
 
 #: src/gtk/help-overlay.blp:43
 msgctxt "shortcut window"
