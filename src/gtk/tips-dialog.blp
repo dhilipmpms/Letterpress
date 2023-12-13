@@ -8,6 +8,13 @@ template $TipsDialog: Adw.Window {
   default-height: 500;
   modal: true;
 
+  ShortcutController {
+    Shortcut {
+      trigger: "Escape";
+      action: "action(window.close)";
+    }
+  }
+
   Adw.ToolbarView {
     [top]
     Adw.HeaderBar {}

@@ -42,7 +42,7 @@ class LetterpressApplication(Adw.Application):
         self.__create_action("quit", lambda *args: self.quit(), ["<primary>q"])
         self.__create_action(
             "close-active-win",
-            lambda *args: self.get_active_window.destroy(),
+            lambda *args: self.get_active_window.close(),
             ["<primary>w"],
         )
         self.__create_action(
@@ -94,7 +94,6 @@ class LetterpressApplication(Adw.Application):
         self.__create_action(
             "open-output", self.__open_output, param=GLib.VariantType("s")
         )
-        self.__create_action("close-tips", self.__close_tips_dialog, ["Escape"])
         self.file = None
 
     def do_activate(self):
@@ -196,11 +195,6 @@ class LetterpressApplication(Adw.Application):
         )
 
         about.present()
-
-    def __close_tips_dialog(self, *args):
-        if self.tips_dialog != None:
-            self.tips_dialog.destroy()
-            self.tips_dialog = None
 
     def __on_tips_action(self, *args):
         self.tips_dialog = TipsDialog(
