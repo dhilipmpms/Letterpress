@@ -30,4 +30,3 @@ Letterpress uses [Weblate](https://hosted.weblate.org/engage/letterpress/) for t
 ## Code of Conduct
 
 This project follows the [GNOME Code of Conduct](https://wiki.gnome.org/Foundation/CodeOfConduct)
-

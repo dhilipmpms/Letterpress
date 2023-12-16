@@ -22,4 +22,3 @@
     <file alias="lightbulb-symbolic.svg" preprocess="xml-stripblanks">assets/lightbulb-symbolic.svg</file>
   </gresource>
 </gresources>
-

@@ -3,13 +3,13 @@
 	<id>io.gitlab.gregorni.Letterpress.desktop</id>
 	<metadata_license>CC0-1.0</metadata_license>
 	<project_license>GPL-3.0-or-later</project_license>
-  
+
   <name>Letterpress</name>
   <developer id="gnome.org">
     <developer_name translatable="no">gregorni</developer_name>
   </developer>
   <summary>Create beautiful ASCII art</summary>
-  
+
 	<description>
 	  <p>
 	    Letterpress converts your images into a picture made up of ASCII characters.
@@ -17,7 +17,7 @@
 	    High-res output can still be viewed comfortably by lowering the zoom factor.
 	  </p>
 	</description>
-  
+
   <categories>
     <category>GTK</category>
     <category>GNOME</category>
@@ -25,7 +25,7 @@
     <category>Graphics</category>
     <category>ImageProcessing</category>
   </categories>
-  
+
   <keywords>
     <!--Translators: This is a search term and should be lowercase-->
     <keyword>image</keyword>
@@ -38,18 +38,18 @@
     <!--Translators: This is a search term and should be lowercase-->
     <keyword>text</keyword>
   </keywords>
-  
+
   <requires>
     <internet>offline-only</internet>
     <display_length compare="ge">360</display_length>
   </requires>
-  
+
   <recommends>
     <control>pointing</control>
     <control>keyboard</control>
     <control>touch</control>
   </recommends>
-  
+
   <screenshots>
     <screenshot type="default">
       <image>https://gitlab.gnome.org/World/Letterpress/-/raw/main/data/screenshots/overview.png</image>
@@ -72,9 +72,9 @@
       <caption>Adjust output width</caption>
     </screenshot>
   </screenshots>
-  
+
   <launchable type="desktop-id">io.gitlab.gregorni.Letterpress.desktop</launchable>
-  
+
   <url type="homepage">https://gitlab.gnome.org/World/Letterpress</url>
   <url type="bugtracker">https://gitlab.gnome.org/World/Letterpress/-/issues</url>
   <url type="help">https://gitlab.gnome.org/World/Letterpress/-/issues</url>
@@ -82,11 +82,11 @@
   <url type="contribute">https://gitlab.gnome.org/World/Letterpress</url>
   <url type="contact">https://matrix.to/#/#gregorni-apps:matrix.org</url>
   <url type="translate">https://hosted.weblate.org/projects/letterpress/</url>
-  
+
   <update_contact>gregorniehl@web.de</update_contact>
-  
+
   <content_rating type="oars-1.1" />
-  
+
   <releases>
   <release version="2.0" date="2023-09-20">
       <description translatable="no">
@@ -137,7 +137,7 @@
       </description>
     </release>
   </releases>
-  
+
   <kudos>
       <!--
         GNOME Software kudos:
@@ -152,4 +152,3 @@
   </custom>
 
 </component>
-
