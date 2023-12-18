@@ -75,9 +75,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
         settings.bind(
             "output-width", self.width_spin, "value", Gio.SettingsBindFlags.DEFAULT
         )
-        self.width_spin.set_adjustment(
-            Gtk.Adjustment.new(settings["output-width"], 50, 500, 10, 100, 0)
-        )
+        self.width_spin.set_value(settings["output-width"])
 
         self.width_spin.connect("value-changed", self.__on_spin_value_changed)
 

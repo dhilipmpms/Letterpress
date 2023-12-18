@@ -165,6 +165,13 @@ template $LetterpressWindow: Adw.ApplicationWindow {
             Gtk.SpinButton width_spin {
               valign: center;
               numeric: true;
+
+              adjustment: Adjustment {
+                lower: 50;
+                upper: 500;
+                step-increment: 10;
+                page-increment: 100;
+              };
             }
 
             Box {
