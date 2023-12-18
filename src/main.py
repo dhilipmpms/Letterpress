@@ -45,11 +45,6 @@ class LetterpressApplication(Adw.Application):
             lambda *args: self.get_active_window.close(),
             ["<primary>w"],
         )
-        self.__create_action(
-            "open-menu",
-            lambda *args: self.get_active_window().menu_btn.activate(),
-            ["F10"],
-        )
         self.__create_action("tips", self.__on_tips_action)
         self.__create_action("about", self.__on_about_action)
         self.__create_action(
