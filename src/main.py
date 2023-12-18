@@ -164,12 +164,12 @@ class LetterpressApplication(Adw.Application):
         )
         # These are Python lists: Add your string to the list (separated by a comma)
         # See the translator comment below for possible formats
-        about.set_developers(["gregorni https://gitlab.gnome.org/gregorni"])
+        about.set_developers(["Gregor Niehl https://gitlab.gnome.org/gregorni"])
         about.set_copyright(_("Copyright © 2023 Letterpress Contributors"))
         # Translators: Translate this string as your translator credits.
-        # Name only:    gregorni
-        # Name + URL:   gregorni https://gitlab.gnome.org/gregorni/
-        # Name + Email: gregorni <gregorniehl@web.de>
+        # Name only:    Gregor Niehl
+        # Name + URL:   Gregor Niehl https://gitlab.gnome.org/gregorni/
+        # Name + Email: Gregor Niehl <gregorniehl@web.de>
         # Do not remove existing names.
         # Names are separated with newlines.
         about.set_translator_credits(_("translator-credits"))
