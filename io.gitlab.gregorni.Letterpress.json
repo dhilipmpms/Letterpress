@@ -1,16 +1,16 @@
 {
-    "app-id" : "io.gitlab.gregorni.Letterpress",
-    "runtime" : "org.gnome.Platform",
-    "runtime-version" : "master",
-    "sdk" : "org.gnome.Sdk",
-    "command" : "letterpress",
-    "finish-args" : [
+    "app-id": "io.gitlab.gregorni.Letterpress",
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "master",
+    "sdk": "org.gnome.Sdk",
+    "command": "letterpress",
+    "finish-args": [
         "--share=ipc",
         "--socket=fallback-x11",
         "--device=dri",
         "--socket=wayland"
     ],
-    "cleanup" : [
+    "cleanup": [
         "/include",
         "/lib/pkgconfig",
         "/man",
@@ -21,18 +21,18 @@
         "*.la",
         "*.a"
     ],
-    "modules" : [
-    	"build-aux/blueprint-compiler.json",
+    "modules": [
+        "build-aux/blueprint-compiler.json",
         {
-            "name" : "jp2a",
-            "sources" : [
+            "name": "jp2a",
+            "sources": [
                 {
-                    "type" : "git",
-                    "url" : "https://github.com/Talinx/jp2a.git",
-                    "commit" : "988ec7c519ed4b439c13358726559e53ebbdaf3c"
+                    "type": "git",
+                    "url": "https://github.com/Talinx/jp2a.git",
+                    "commit": "988ec7c519ed4b439c13358726559e53ebbdaf3c"
                 },
                 {
-                    "type" : "shell",
+                    "type": "shell",
                     "commands": [
                         "autoreconf -vfi"
                     ]
@@ -40,28 +40,28 @@
             ]
         },
         {
-	    "name": "python-pillow",
-	    "buildsystem": "simple",
-	    "build-commands": [
-	    	"python3 setup.py install --prefix=/app --root=/"
-	    ],
-	    "sources": [
-	      	{
-	            "type": "git",
-	            "url": "https://github.com/python-pillow/Pillow",
-	            "tag": "10.1.0",
-	            "commit": "da59ad000d1405eaecd557175e29083a87d19f7c"
-	      	}
-	    ]
+            "name": "python-pillow",
+            "buildsystem": "simple",
+            "build-commands": [
+                "python3 setup.py install --prefix=/app --root=/"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/python-pillow/Pillow",
+                    "tag": "10.1.0",
+                    "commit": "da59ad000d1405eaecd557175e29083a87d19f7c"
+                }
+            ]
         },
         {
-            "name" : "letterpress",
-            "builddir" : true,
-            "buildsystem" : "meson",
-            "sources" : [
+            "name": "letterpress",
+            "builddir": true,
+            "buildsystem": "meson",
+            "sources": [
                 {
-                    "type" : "dir",
-                    "path" : "."
+                    "type": "dir",
+                    "path": "."
                 }
             ]
         }
