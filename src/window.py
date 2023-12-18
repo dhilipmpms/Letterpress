@@ -109,7 +109,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
         def __wrong_image_type():
             print(f"{filepath} is not of a supported image type.")
             # Translators: Do not translate "{basename}"
-            toast_text = _('"{basename}" is not of a supported image type.').format(
+            toast_text = _("”{basename}” is not of a supported image type.").format(
                 basename=file.get_basename()
             )
             self.toast_overlay.add_toast(Adw.Toast.new(toast_text))

@@ -83,7 +83,7 @@ class FileChooser:
             else:
                 toast.set_title(
                     # Translators: Do not translate "{display_name}"
-                    _('"{display_name}" saved').format(display_name=display_name)
+                    _("“{display_name}” saved").format(display_name=display_name)
                 )
                 toast.set_button_label(_("Open"))
                 toast.set_action_name("app.open-output")
