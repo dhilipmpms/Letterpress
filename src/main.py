@@ -153,7 +153,7 @@ class LetterpressApplication(Adw.Application):
     def __on_about_action(self, *args):
         """Callback for the app.about action."""
         about = Adw.AboutWindow.new_from_appdata(
-            "/io/gitlab/gregorni/Letterpress/appdata.xml"
+            "/io/gitlab/gregorni/Letterpress/appdata.xml", "2.0"
         )
         about.set_transient_for(self.get_active_window())
         about.set_artists(
@@ -162,7 +162,6 @@ class LetterpressApplication(Adw.Application):
                 "kramo https://kramo.hu",
             ]
         )
-        about.set_developer_name(_("Letterpress Contributors"))
         # These are Python lists: Add your string to the list (separated by a comma)
         # See the translator comment below for possible formats
         about.set_developers(["gregorni https://gitlab.gnome.org/gregorni"])
