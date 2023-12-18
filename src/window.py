@@ -62,9 +62,15 @@ class LetterpressWindow(Adw.ApplicationWindow):
         self.add_controller(target)
 
         settings = Gio.Settings(schema_id="io.gitlab.gregorni.Letterpress")
-        settings.bind("width", self, "default-width", Gio.SettingsBindFlags.DEFAULT)
-        settings.bind("height", self, "default-height", Gio.SettingsBindFlags.DEFAULT)
-        settings.bind("is-maximized", self, "maximized", Gio.SettingsBindFlags.DEFAULT)
+        settings.bind(
+            "window-width", self, "default-width", Gio.SettingsBindFlags.DEFAULT
+        )
+        settings.bind(
+            "window-height", self, "default-height", Gio.SettingsBindFlags.DEFAULT
+        )
+        settings.bind(
+            "window-is-maximized", self, "maximized", Gio.SettingsBindFlags.DEFAULT
+        )
 
         settings.bind(
             "output-width", self.width_spin, "value", Gio.SettingsBindFlags.DEFAULT
