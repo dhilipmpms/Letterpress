@@ -213,11 +213,11 @@ class LetterpressApplication(Adw.Application):
             self.set_accels_for_action(f"app.{name}", shortcuts)
 
 
-def main(version):
-    """The application's entry point."""
-    return LetterpressApplication().run(sys.argv)
-
-
 @Gtk.Template(resource_path="/io/gitlab/gregorni/Letterpress/gtk/tips-dialog.ui")
 class TipsDialog(Adw.Window):
     __gtype_name__ = "TipsDialog"
+
+
+def main(version):
+    """The application's entry point."""
+    return LetterpressApplication().run(sys.argv)
