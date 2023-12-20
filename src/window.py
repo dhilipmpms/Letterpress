@@ -90,7 +90,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
         self.zoom_box = ZoomBox()
         self.menu_btn.props.popover.add_child(self.zoom_box, "zoom")
         self.pinch_counter = 0
-        self.scrolled = 0
+        self.scrolled_distance = 0
 
         self.heights = (0, 0)
 
@@ -242,10 +242,11 @@ class LetterpressWindow(Adw.ApplicationWindow):
         )
 
         if ctrl_is_held and device_is_mouse:
-            self.scrolled += abs(dy)
-            if self.scrolled >= 1:
+            self.scrolled_distance += abs(dy)
+
+            if self.scrolled_distance >= 1:
                 self.zoom(zoom_out=dy > 0)
-                self.scrolled = 0
+                self.scrolled_distance = 0
 
     def __set_color_scheme(self, *args):
         if self.filepath != None:
