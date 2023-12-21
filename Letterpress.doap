@@ -6,8 +6,8 @@
 
   <name xml:lang="en">Letterpress</name>
   <shortdesc xml:lang="en">Turn images into text</shortdesc>
-  <homepage rdf:resource="https://gitlab.gnome.org/gregorni/Letterpress" />
-  <bug-database rdf:resource="https://gitlab.gnome.org/gregorni/Letterpress/-/issues/"/>
+  <homepage rdf:resource="https://gitlab.gnome.org/World/Letterpress" />
+  <bug-database rdf:resource="https://gitlab.gnome.org/World/Letterpress/-/issues/"/>
   <programming-language>Python</programming-language>
 
   <platform>GTK 4</platform>
