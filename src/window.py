@@ -268,13 +268,15 @@ class LetterpressWindow(Adw.ApplicationWindow):
         except:
             failed_as_file = True
 
-        if failed_as_file:
-            try:
-                file = texture_to_file.to_file(drop)
-                self.check_is_image(file)
-            except:
-                toast = Adw.Toast.new(_("Dropped item is not a valid image"))
-                self.toast_overlay.add_toast(toast)
+        if not failed_as_file:
+            return
+
+        try:
+            file = texture_to_file.to_file(drop)
+            self.check_is_image(file)
+        except:
+            toast = Adw.Toast.new(_("Dropped item is not a valid image"))
+            self.toast_overlay.add_toast(toast)
 
 
 @Gtk.Template(resource_path="/io/gitlab/gregorni/Letterpress/gtk/zoom-box.ui")
