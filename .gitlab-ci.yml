@@ -1,4 +1,4 @@
-image: python:3.12
+image: python:3.12.1
 
 include:
   - project: "GNOME/citemplates"
@@ -26,26 +26,7 @@ flatpak@aarch64:
     - .flatpak@aarch64
     - .vars
 
-# Linter enforcing black coding style
-black:
+pre-commit:
   script:
-    - pip install black --quiet
-    - black --check --diff src/
-
-# Sorting imports
-isort:
-  script:
-    - pip install isort --quiet
-    - isort --check --diff src/ --profile black
-
-# Removing unused imports
-unimport:
-  script:
-    - pip install unimport --quiet
-    - unimport --check --diff src/
-
-# Checking for typos
-codespell:
-  script:
-    - pip install codespell --quiet
-    - codespell --skip po
+    - pip install pre-commit --quiet
+    - pre-commit run --all-files
