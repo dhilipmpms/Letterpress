@@ -7,8 +7,6 @@
     <file preprocess="xml-stripblanks">gtk/tips-dialog.ui</file>
 
     <file>style.css</file>
-    <file>style-hc.css</file>
-    <file>style-hc-dark.css</file>
 
     <file alias="defined-edges.svg" preprocess="xml-stripblanks">assets/defined-edges.svg</file>
     <file alias="high-contrast.svg" preprocess="xml-stripblanks">assets/high-contrast.svg</file>
