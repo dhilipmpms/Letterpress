@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop">
-	<id>io.gitlab.gregorni.Letterpress.desktop</id>
+	<id>io.gitlab.gregorni.Letterpress</id>
 	<metadata_license>CC0-1.0</metadata_license>
 	<project_license>GPL-3.0-or-later</project_license>
 
-  <name>Letterpress</name>
+  <name translatable="no">Letterpress</name>
+  <!-- developer_name tag deprecated with Appstream 1.0 -->
   <developer_name translatable="no">Gregor Niehl</developer_name>
+  <developer id="gnome.org">
+    <name translatable="no">Gregor Niehl</name>
+  </developer>
   <summary>Create beautiful ASCII art</summary>
 
 	<description>
@@ -15,28 +19,6 @@
 	    High-res output can still be viewed comfortably by lowering the zoom factor.
 	  </p>
 	</description>
-
-  <categories>
-    <category>GTK</category>
-    <category>GNOME</category>
-    <category>TextTools</category>
-    <category>Graphics</category>
-    <category>ImageProcessing</category>
-    <category>Utility</category>
-  </categories>
-
-  <keywords>
-    <!--Translators: This is a search term and should be lowercase-->
-    <keyword>image</keyword>
-    <!--Translators: This is a search term and should be lowercase-->
-    <keyword>ascii</keyword>
-    <!--Translators: This is a search term and should be lowercase-->
-    <keyword>convert</keyword>
-    <!--Translators: This is a search term and should be lowercase-->
-    <keyword>conversion</keyword>
-    <!--Translators: This is a search term and should be lowercase-->
-    <keyword>text</keyword>
-  </keywords>
 
   <requires>
     <internet>offline-only</internet>
@@ -73,6 +55,7 @@
   </screenshots>
 
   <launchable type="desktop-id">io.gitlab.gregorni.Letterpress.desktop</launchable>
+  <translation type="gettext">letterpress</translation>
 
   <url type="homepage">https://gitlab.gnome.org/World/Letterpress</url>
   <url type="bugtracker">https://gitlab.gnome.org/World/Letterpress/-/issues</url>
@@ -80,11 +63,16 @@
   <url type="vcs-browser">https://gitlab.gnome.org/World/Letterpress</url>
   <url type="contribute">https://gitlab.gnome.org/World/Letterpress</url>
   <url type="contact">https://matrix.to/#/#gregorni-apps:matrix.org</url>
-  <url type="translate">https://hosted.weblate.org/projects/letterpress/</url>
+  <url type="translate">https://hosted.weblate.org/engage/letterpress/</url>
 
   <update_contact>gregorniehl@web.de</update_contact>
 
   <content_rating type="oars-1.1" />
+
+  <provides>
+    <binary>letterpress</binary>
+    <id>io.gitlab.gregorni.Letterpress.desktop</id>
+  </provides>
 
   <releases>
   <release version="2.0" date="2023-09-20">
