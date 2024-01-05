@@ -144,6 +144,9 @@ class LetterpressWindow(Adw.ApplicationWindow):
 
     def zoom(self, zoom_out=False, zoom_reset=False):
         if self.zoom_box.get_sensitive():
+            current_font_size = int(self.zoom_box.zoom_indicator.get_label()[:-2])
+            requested_font_size = current_font_size + (-1 if zoom_out else 1)
+
             if zoom_reset:
                 available_height = self.output_scrolled_window.get_width()
                 available_width = self.output_scrolled_window.get_height()
@@ -162,9 +165,6 @@ class LetterpressWindow(Adw.ApplicationWindow):
                 )
 
                 requested_font_size = int(min(norm_max_height, norm_max_width))
-            else:
-                current_font_size = int(self.zoom_box.zoom_indicator.get_label()[:-2])
-                requested_font_size = current_font_size + (-1 if zoom_out else 1)
 
             max_font_size = 11
             min_font_size = 1
