@@ -8,7 +8,7 @@
       <default>600</default>
     </key>
     <key name="window-is-maximized" type="b">
-      <default>false</default>
+      <default>true</default>
     </key>
 	  <key name="output-width" type="i">
       <default>100</default>
