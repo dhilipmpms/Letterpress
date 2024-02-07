@@ -29,6 +29,7 @@ from gi.repository import Adw, Gdk, Gio, GLib, Gtk
 from .file_chooser import FileChooser
 from .pasting import Paster
 from .window import LetterpressWindow
+from .tips_dialog import TipsDialog
 
 
 class LetterpressApplication(Adw.Application):
@@ -201,11 +202,6 @@ class LetterpressApplication(Adw.Application):
         self.add_action(action)
         if shortcuts:
             self.set_accels_for_action(f"app.{name}", shortcuts)
-
-
-@Gtk.Template(resource_path="/io/gitlab/gregorni/Letterpress/gtk/tips-dialog.ui")
-class TipsDialog(Adw.Dialog):
-    __gtype_name__ = "TipsDialog"
 
 
 def main(version):

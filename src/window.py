@@ -25,6 +25,7 @@ from PIL import Image, ImageChops, ImageOps
 
 from . import texture_to_file
 from .file_chooser import FileChooser
+from .zoom_box import ZoomBox
 
 
 @Gtk.Template(resource_path="/io/gitlab/gregorni/Letterpress/gtk/window.ui")
@@ -272,12 +273,3 @@ class LetterpressWindow(Adw.ApplicationWindow):
         except:
             toast = Adw.Toast.new(_("Dropped item is not a valid image"))
             self.toast_overlay.add_toast(toast)
-
-
-@Gtk.Template(resource_path="/io/gitlab/gregorni/Letterpress/gtk/zoom-box.ui")
-class ZoomBox(Gtk.Box):
-    __gtype_name__ = "ZoomBox"
-
-    zoom_indicator = Gtk.Template.Child()
-    decrease_btn = Gtk.Template.Child()
-    increase_btn = Gtk.Template.Child()
