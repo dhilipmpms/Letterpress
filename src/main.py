@@ -95,7 +95,6 @@ class LetterpressApplication(Adw.Application):
         win = self.get_active_window()
         if win == None:
             win = LetterpressWindow(application=self)
-            self.tips_dialog = None
         win.present()
         if self.file != None:
             win.check_is_image(Gio.File.new_for_path(self.file))
@@ -147,10 +146,9 @@ class LetterpressApplication(Adw.Application):
 
     def __on_about_action(self, *args):
         """Callback for the app.about action."""
-        about = Adw.AboutWindow.new_from_appdata(
+        about = Adw.AboutDialog.new_from_appdata(
             "/io/gitlab/gregorni/Letterpress/appdata.xml", "2.0"
         )
-        about.set_transient_for(self.get_active_window())
         about.set_artists(
             [
                 "Brage Fuglseth https://bragefuglseth.dev",
@@ -183,13 +181,10 @@ class LetterpressApplication(Adw.Application):
             license_type=Gtk.License.GPL_2_0,
         )
 
-        about.present()
+        about.present(self.get_active_window())
 
     def __on_tips_action(self, *args):
-        self.tips_dialog = TipsDialog(
-            transient_for=self.get_active_window(), application=self
-        )
-        self.tips_dialog.present()
+        TipsDialog().present(self.get_active_window())
 
     def __create_action(self, name, callback, shortcuts=None, param=None):
         """Add an application action.
@@ -209,7 +204,7 @@ class LetterpressApplication(Adw.Application):
 
 
 @Gtk.Template(resource_path="/io/gitlab/gregorni/Letterpress/gtk/tips-dialog.ui")
-class TipsDialog(Adw.Window):
+class TipsDialog(Adw.Dialog):
     __gtype_name__ = "TipsDialog"
 
 
