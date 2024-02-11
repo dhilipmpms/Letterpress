@@ -26,6 +26,7 @@ from PIL import Image, ImageChops, ImageOps
 from . import texture_to_file
 from .file_chooser import FileChooser
 from .zoom_box import ZoomBox
+from .zoom_consts import INITIAL_ZOOM, ZOOM_FACTOR, MIN_ZOOM, MAX_ZOOM
 
 
 @Gtk.Template(resource_path="/io/gitlab/gregorni/Letterpress/gtk/window.ui")
@@ -85,6 +86,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
 
         self.zoom_box = ZoomBox()
         self.menu_btn.props.popover.add_child(self.zoom_box, "zoom")
+        self.zoom_level = INITIAL_ZOOM
         self.pinch_counter = 0
         self.scrolled_distance = 0
 
@@ -94,7 +96,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
         if self.main_stack.get_visible_child_name() == "view-page":
             new_heights = (height, self.output_scrolled_window.get_height())
             if self.heights != new_heights:
-                self.zoom(zoom_reset=True)
+                self.reset_zoom()
                 self.heights = new_heights
 
         Adw.ApplicationWindow.do_size_allocate(self, width, height, baseline)
@@ -137,63 +139,38 @@ class LetterpressWindow(Adw.ApplicationWindow):
                     exif_rotated_img.save(self.filepath, format=img.format)
 
                     self.__convert_image(self.filepath)
-                    self.zoom(zoom_reset=True)
+                    self.reset_zoom()
                 else:
                     __wrong_image_type()
         except IOError:
             __wrong_image_type()
 
-    def zoom(self, zoom_out=False, zoom_reset=False):
-        if self.zoom_box.get_sensitive():
-            current_font_size = int(self.zoom_box.zoom_indicator.get_label()[:-2])
-            requested_font_size = current_font_size + (-1 if zoom_out else 1)
+    def reset_zoom(self):
+        self.zoom_level = INITIAL_ZOOM
+        self.__apply_zoom()
 
-            if zoom_reset:
-                available_height = self.output_scrolled_window.get_width()
-                available_width = self.output_scrolled_window.get_height()
+    def zoom(self, zoom_out=False):
+        if not self.zoom_box.get_sensitive():
+            return
 
-                output_width_in_chars = self.width_spin.get_value()
-                output_height_in_lines = len(self.output_label.get_label().splitlines())
+        zoom_direction = -ZOOM_FACTOR if zoom_out else ZOOM_FACTOR
+        clamp_zoom = lambda level: max(MIN_ZOOM, min(level, MAX_ZOOM))
+        self.zoom_level = clamp_zoom(self.zoom_level + zoom_direction)
+        self.__apply_zoom()
 
-                norm_char_width = 0.75
-                norm_char_height = 1.5
-
-                norm_max_width = (
-                    available_width / output_width_in_chars / norm_char_width
-                )
-                norm_max_height = (
-                    available_height / output_height_in_lines / norm_char_height
-                )
-
-                requested_font_size = int(min(norm_max_height, norm_max_width))
-
-            max_font_size = 11
-            min_font_size = 1
-
-            new_font_size = min(max_font_size, max(min_font_size, requested_font_size))
-            new_font_size_str = f"{new_font_size}pt"
-
-            line_height = 1
-            match new_font_size:
-                case 5 | 8 | 9 | 10:
-                    line_height = 0.9
-                case 3 | 4:
-                    line_height = 0.8
-                case 1:
-                    line_height = 0.7
-
-            css_provider = Gtk.CssProvider.new()
-            css_provider.load_from_string(
-                f"""label {{
-                    font-size: {new_font_size_str};
-                    line-height: {line_height};
-                }}"""
-            )
-            self.output_label.get_style_context().add_provider(css_provider, 10)
-
-            self.zoom_box.zoom_indicator.set_label(new_font_size_str)
-            self.zoom_box.decrease_btn.set_sensitive(new_font_size > 1)
-            self.zoom_box.increase_btn.set_sensitive(new_font_size < 11)
+    def __apply_zoom(self):
+        # apply zoom by using the CSS `scale` function
+        # see https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale
+        css_provider = Gtk.CssProvider.new()
+        css_provider.load_from_string(
+            f"""label {{
+            transform: scale({self.zoom_level});
+            }}"""
+        )
+        self.output_label.get_style_context().add_provider(
+            css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+        )
+        self.zoom_box.set_zoom(self.zoom_level)
 
     def __convert_image(self, filepath):
         self.main_stack.set_visible_child_name("spinner-page")
@@ -212,8 +189,8 @@ class LetterpressWindow(Adw.ApplicationWindow):
         self.output_label.set_label(joint_output)
 
         self.toolbox.set_reveal_child(True)
-        self.main_stack.set_visible_child_name("view-page")
         self.previous_stack = "view-page"
+        self.main_stack.set_visible_child_name(self.previous_stack)
 
         self.zoom_box.set_sensitive(True)
 
@@ -251,7 +228,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
     def __on_spin_value_changed(self, spin_button):
         self.main_stack.set_visible_child_name("spinner-page")
         self.__convert_image(self.filepath)
-        self.zoom(zoom_reset=True)
+        self.reset_zoom()
 
     def __on_enter(self, *args):
         self.drag_revealer.set_reveal_child(True)

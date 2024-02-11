@@ -44,6 +44,7 @@ letterpress_sources = [
   'file_chooser.py',
   'pasting.py',
   'texture_to_file.py',
+  'zoom_consts.py',
   'zoom_box.py',
   'tips_dialog.py',
 ]
