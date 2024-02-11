@@ -60,7 +60,7 @@ class LetterpressApplication(Adw.Application):
         )
         self.__create_action(
             "reset-zoom",
-            lambda *args: self.get_active_window().zoom(zoom_reset=True),
+            lambda *args: self.get_active_window().reset_zoom(),
             ["<primary>0", "<primary>KP_0"],
         )
         self.__create_action(
