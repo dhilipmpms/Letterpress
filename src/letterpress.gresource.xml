@@ -13,7 +13,7 @@
     <file alias="recognizable-shapes.svg" preprocess="xml-stripblanks">assets/recognizable-shapes.svg</file>
     <file alias="vibrant-colors.svg" preprocess="xml-stripblanks">assets/vibrant-colors.svg</file>
 
-    <file alias="appdata.xml" preprocess="xml-stripblanks">../data/io.gitlab.gregorni.Letterpress.appdata.xml.in</file>
+    <file alias="appdata.xml" preprocess="xml-stripblanks">../data/io.gitlab.gregorni.Letterpress.appdata.xml</file>
   </gresource>
 
   <gresource prefix="/io/gitlab/gregorni/Letterpress/icons/scalable/actions">
