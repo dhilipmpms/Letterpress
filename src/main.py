@@ -177,9 +177,9 @@ class LetterpressApplication(Adw.Application):
         )
 
         about.add_legal_section(
-            title="jp2a",
-            copyright="Copyright © 2020 Christoph Raitzig",
-            license_type=Gtk.License.GPL_2_0,
+            title="artem",
+            copyright="Copyright © 2022 artem contributors",
+            license_type=Gtk.License.MPL_2_0,
         )
 
         about.present(self.get_active_window())
