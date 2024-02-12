@@ -24,17 +24,28 @@
     "modules": [
         "build-aux/blueprint-compiler.json",
         {
-            "name": "jp2a",
+            "name": "artem",
+            "builddir": true,
+            "buildsystem": "simple",
+            "build-commands": [
+                "tar -xf *.tar.gz",
+                "install -Dm755 artem -t /app/bin"
+            ],
             "sources": [
                 {
-                    "type": "git",
-                    "url": "https://github.com/Talinx/jp2a.git",
-                    "commit": "988ec7c519ed4b439c13358726559e53ebbdaf3c"
+                    "type": "file",
+                    "url": "https://github.com/FineFindus/artem/releases/download/v2.0.2/artem-v2.0.2-aarch64-unknown-linux-gnu.tar.gz",
+                    "sha256": "306c66b48c85877e8ea3f2cacc6676077c3e4ea214c2520b2cef3799b08f9e04",
+                    "only-arches": [
+                        "aarch64"
+                    ]
                 },
                 {
-                    "type": "shell",
-                    "commands": [
-                        "autoreconf -vfi"
+                    "type": "file",
+                    "url": "https://github.com/FineFindus/artem/releases/download/v2.0.2/artem-v2.0.2-x86_64-unknown-linux-gnu.tar.gz",
+                    "sha256": "9764fea8523812900eb9c7e9aba042377da45b762ee84ad8cac9bcb700f806b9",
+                    "only-arches": [
+                        "x86_64"
                     ]
                 }
             ]
