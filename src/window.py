@@ -90,17 +90,6 @@ class LetterpressWindow(Adw.ApplicationWindow):
         self.pinch_counter = 0
         self.scrolled_distance = 0
 
-        self.heights = (0, 0)
-
-    def do_size_allocate(self, width, height, baseline):
-        if self.main_stack.get_visible_child_name() == "view-page":
-            new_heights = (height, self.output_scrolled_window.get_height())
-            if self.heights != new_heights:
-                self.reset_zoom()
-                self.heights = new_heights
-
-        Adw.ApplicationWindow.do_size_allocate(self, width, height, baseline)
-
     def on_open_file(self):
         self.main_stack.set_visible_child_name("spinner-page")
         FileChooser.open_file(self, self.previous_stack)
