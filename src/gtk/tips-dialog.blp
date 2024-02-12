@@ -28,84 +28,85 @@ template $TipsDialog: Adw.Dialog {
         }
       }
 
-    ScrolledWindow {
-      hscrollbar-policy: never;
+      ScrolledWindow {
+        hscrollbar-policy: never;
 
-      child: Gtk.Box {
-        vexpand: true;
-        margin-start: 10;
-        margin-end: 10;
-        margin-bottom: 36;
-        orientation: vertical;
+        child: Gtk.Box {
+          vexpand: true;
+          margin-start: 10;
+          margin-end: 10;
+          margin-bottom: 36;
+          orientation: vertical;
 
-        Picture {
-          margin-top: 24;
-          halign: center;
-          can-shrink: false;
-          file: "resource:///io/gitlab/gregorni/Letterpress/high-contrast.svg";
-        }
+          Picture {
+            margin-top: 24;
+            halign: center;
+            can-shrink: false;
+            file: "resource:///io/gitlab/gregorni/Letterpress/high-contrast.svg";
+          }
 
-        Label {
-          label: _("High Contrast");
-          margin-top: 10;
-          halign: center;
+          Label {
+            label: _("High Contrast");
+            margin-top: 10;
+            halign: center;
 
-          styles [
-            "title-4",
-          ]
-        }
+            styles [
+              "title-4",
+            ]
+          }
 
-        Picture {
-          margin-top: 48;
-          halign: center;
-          can-shrink: false;
-          file: "resource:///io/gitlab/gregorni/Letterpress/vibrant-colors.svg";
-        }
+          Picture {
+            margin-top: 48;
+            halign: center;
+            can-shrink: false;
+            file: "resource:///io/gitlab/gregorni/Letterpress/vibrant-colors.svg";
+          }
 
-        Label {
-          label: _("Vibrant Colors");
-          margin-top: 10;
-          halign: center;
+          Label {
+            label: _("Vibrant Colors");
+            margin-top: 10;
+            halign: center;
 
-          styles [
-            "title-4",
-          ]
-        }
+            styles [
+              "title-4",
+            ]
+          }
 
-        Picture {
-          margin-top: 48;
-          halign: center;
-          can-shrink: false;
-          file: "resource:///io/gitlab/gregorni/Letterpress/defined-edges.svg";
-        }
+          Picture {
+            margin-top: 48;
+            halign: center;
+            can-shrink: false;
+            file: "resource:///io/gitlab/gregorni/Letterpress/defined-edges.svg";
+          }
 
-        Label {
-          label: _("Defined Edges");
-          margin-top: 10;
-          halign: center;
+          Label {
+            label: _("Defined Edges");
+            margin-top: 10;
+            halign: center;
 
-          styles [
-            "title-4",
-          ]
-        }
+            styles [
+              "title-4",
+            ]
+          }
 
-        Picture {
-          margin-top: 48;
-          halign: center;
-          can-shrink: false;
-          file: "resource:///io/gitlab/gregorni/Letterpress/recognizable-shapes.svg";
-        }
+          Picture {
+            margin-top: 48;
+            halign: center;
+            can-shrink: false;
+            file: "resource:///io/gitlab/gregorni/Letterpress/recognizable-shapes.svg";
+          }
 
-        Label {
-          label: _("Recognizable Shapes");
-          margin-top: 10;
-          halign: center;
+          Label {
+            label: _("Recognizable Shapes");
+            margin-top: 10;
+            halign: center;
 
-          styles [
-            "title-4",
-          ]
-        }
-      };
-    }};
+            styles [
+              "title-4",
+            ]
+          }
+        };
+      }
+    };
   }
 }
