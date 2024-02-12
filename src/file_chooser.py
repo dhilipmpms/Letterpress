@@ -19,6 +19,8 @@
 
 from gi.repository import Adw, Gio, GLib, Gtk
 
+from . import supported_formats
+
 
 class FileChooser:
     """Open and load file."""
@@ -41,10 +43,8 @@ class FileChooser:
 
         file_filter = Gtk.FileFilter.new()
         file_filter.set_name(_("Supported image files"))
-        file_filter.add_mime_type("image/png")
-        file_filter.add_mime_type("image/jpeg")
-        file_filter.add_mime_type("image/webp")
-        file_filter.add_mime_type("image/gif")
+        for file_format in supported_formats.formats:
+            file_filter.add_mime_type(f"image/{file_format}")
         dialog.add_filter(file_filter)
 
         dialog.show()

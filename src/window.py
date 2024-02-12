@@ -23,7 +23,7 @@ from tempfile import NamedTemporaryFile
 from gi.repository import Adw, Gdk, Gio, Gtk
 from PIL import Image, ImageChops, ImageOps
 
-from . import texture_to_file
+from . import texture_to_file, supported_formats
 from .file_chooser import FileChooser
 from .zoom_box import ZoomBox
 from .zoom_consts import INITIAL_ZOOM, ZOOM_FACTOR, MIN_ZOOM, MAX_ZOOM
@@ -132,18 +132,21 @@ class LetterpressWindow(Adw.ApplicationWindow):
                 print(f"Input file: {filepath}")
 
                 img_format = img.format
-
-                if img_format in ["JPEG", "PNG", "WEBP", "GIF"]:
-                    self.filepath = NamedTemporaryFile(suffix=f".{img_format}").name
-
-                    shrunken_img = ImageOps.cover(img, (500, 500))
-                    exif_rotated_img = ImageOps.exif_transpose(shrunken_img)
-                    exif_rotated_img.save(self.filepath, format=img_format)
-
-                    self.__convert_image(self.filepath)
-                    self.reset_zoom()
-                else:
+                uppercase_formats = list(
+                    map(lambda x: x.upper(), supported_formats.formats)
+                )
+                if img_format not in uppercase_formats:
                     __wrong_image_type()
+                    return
+
+                self.filepath = NamedTemporaryFile(suffix=f".{img_format}").name
+
+                shrunken_img = ImageOps.cover(img, (500, 500))
+                exif_rotated_img = ImageOps.exif_transpose(shrunken_img)
+                exif_rotated_img.save(self.filepath, format=img_format)
+
+                self.__convert_image(self.filepath)
+                self.reset_zoom()
         except IOError:
             __wrong_image_type()
 

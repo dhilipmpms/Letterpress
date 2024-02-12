@@ -47,6 +47,7 @@ letterpress_sources = [
   'zoom_consts.py',
   'zoom_box.py',
   'tips_dialog.py',
+  'supported_formats.py',
 ]
 
 install_data(letterpress_sources, install_dir: moduledir)
