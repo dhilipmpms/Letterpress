@@ -222,7 +222,6 @@ class LetterpressWindow(Adw.ApplicationWindow):
     def __on_spin_value_changed(self, spin_button):
         self.main_stack.set_visible_child_name("spinner-page")
         self.__convert_image(self.filepath)
-        self.reset_zoom()
 
     def __on_enter(self, *args):
         self.drag_revealer.set_reveal_child(True)
