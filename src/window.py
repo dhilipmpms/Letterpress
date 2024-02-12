@@ -131,12 +131,14 @@ class LetterpressWindow(Adw.ApplicationWindow):
                 self.main_stack.set_visible_child_name("spinner-page")
                 print(f"Input file: {filepath}")
 
-                if img.format in ["JPEG", "PNG"]:
-                    self.filepath = NamedTemporaryFile(suffix=f".{img.format}").name
+                img_format = img.format
+
+                if img_format in ["JPEG", "PNG", "WEBP", "GIF"]:
+                    self.filepath = NamedTemporaryFile(suffix=f".{img_format}").name
 
                     shrunken_img = ImageOps.cover(img, (500, 500))
                     exif_rotated_img = ImageOps.exif_transpose(shrunken_img)
-                    exif_rotated_img.save(self.filepath, format=img.format)
+                    exif_rotated_img.save(self.filepath, format=img_format)
 
                     self.__convert_image(self.filepath)
                     self.reset_zoom()

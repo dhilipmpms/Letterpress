@@ -43,6 +43,8 @@ class FileChooser:
         file_filter.set_name(_("Supported image files"))
         file_filter.add_mime_type("image/png")
         file_filter.add_mime_type("image/jpeg")
+        file_filter.add_mime_type("image/webp")
+        file_filter.add_mime_type("image/gif")
         dialog.add_filter(file_filter)
 
         dialog.show()
