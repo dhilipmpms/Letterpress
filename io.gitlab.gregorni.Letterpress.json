@@ -34,16 +34,16 @@
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://github.com/FineFindus/artem/releases/download/v2.0.2/artem-v2.0.2-aarch64-unknown-linux-gnu.tar.gz",
-                    "sha256": "306c66b48c85877e8ea3f2cacc6676077c3e4ea214c2520b2cef3799b08f9e04",
+                    "url": "https://github.com/FineFindus/artem/releases/download/v2.0.6/artem-v2.0.6-aarch64-unknown-linux-gnu.tar.gz",
+                    "sha256": "f7e54a1d5788b8a8d2889b624b020a6c790aa065fd3eaee6d141ac99e0605237",
                     "only-arches": [
                         "aarch64"
                     ]
                 },
                 {
                     "type": "file",
-                    "url": "https://github.com/FineFindus/artem/releases/download/v2.0.2/artem-v2.0.2-x86_64-unknown-linux-gnu.tar.gz",
-                    "sha256": "9764fea8523812900eb9c7e9aba042377da45b762ee84ad8cac9bcb700f806b9",
+                    "url": "https://github.com/FineFindus/artem/releases/download/v2.0.6/artem-v2.0.6-x86_64-unknown-linux-gnu.tar.gz",
+                    "sha256": "70e19367d6ac8c2077a09dc362d4b11e6f26891265c53c35ee9d491d4d6a9945",
                     "only-arches": [
                         "x86_64"
                     ]
