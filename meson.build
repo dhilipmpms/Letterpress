@@ -5,6 +5,12 @@ project('letterpress',
   default_options: [ 'warning_level=2', 'werror=false', ],
 )
 
+app_id = 'io.gitlab.gregorni.Letterpress'
+if get_option('profile') == 'development'
+    app_id += '.' + 'Devel'
+endif
+
+
 i18n = import('i18n')
 gnome = import('gnome')
 

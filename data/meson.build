@@ -1,6 +1,14 @@
+conf = configuration_data()
+conf.set('app_id', app_id)
+
 desktop_file = i18n.merge_file(
-        input: 'io.gitlab.gregorni.Letterpress.desktop.in',
-       output: 'io.gitlab.gregorni.Letterpress.desktop',
+	input: configure_file(
+		         input: 'io.gitlab.gregorni.Letterpress.desktop.in.in',
+		        output: 'io.gitlab.gregorni.Letterpress.desktop.in',
+		 configuration: conf
+		),
+       output: app_id + '.desktop',
+
          type: 'desktop',
        po_dir: '../po',
       install: true,
@@ -13,8 +21,13 @@ if desktop_utils.found()
 endif
 
 appstream_file = i18n.merge_file(
-        input: 'io.gitlab.gregorni.Letterpress.appdata.xml.in',
-       output: 'io.gitlab.gregorni.Letterpress.appdata.xml',
+        input: configure_file(
+                  input: 'io.gitlab.gregorni.Letterpress.appdata.xml.in.in',
+                 output: 'io.gitlab.gregorni.Letterpress.appdata.xml.in',
+          configuration: conf
+        ),
+       output: app_id + '.appdata.xml',
+
        po_dir: '../po',
       install: true,
   install_dir: join_paths(get_option('datadir'), 'appdata')

@@ -31,14 +31,17 @@ from .pasting import Paster
 from .window import LetterpressWindow
 from .tips_dialog import TipsDialog
 
+from .profile import APP_ID, PROFILE
+
 
 class LetterpressApplication(Adw.Application):
     """The main application singleton class."""
 
     def __init__(self):
         super().__init__(
-            application_id="io.gitlab.gregorni.Letterpress",
+            application_id=APP_ID,
             flags=Gio.ApplicationFlags.HANDLES_COMMAND_LINE,
+            resource_base_path="/io/gitlab/gregorni/Letterpress",
         )
         self.__create_action("quit", lambda *args: self.quit(), ["<primary>q"])
         self.__create_action("tips", self.__on_tips_action)
@@ -97,6 +100,10 @@ class LetterpressApplication(Adw.Application):
         if win == None:
             win = LetterpressWindow(application=self)
         win.present()
+
+        if PROFILE == "development":
+            win.add_css_class("devel")
+
         if self.file != None:
             win.check_is_image(Gio.File.new_for_path(self.file))
 

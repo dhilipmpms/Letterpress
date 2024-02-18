@@ -6,9 +6,9 @@ include:
 
 .vars:
   variables:
-    MANIFEST_PATH: io.gitlab.gregorni.Letterpress.json
+    MANIFEST_PATH: io.gitlab.gregorni.Letterpress.Devel.json
     FLATPAK_MODULE: letterpress
-    APP_ID: io.gitlab.gregorni.Letterpress
+    APP_ID: io.gitlab.gregorni.Letterpress.Devel
     RUNTIME_REPO: https://nightly.gnome.org/gnome-nightly.flatpakrepo
     BUNDLE: letterpress.flatpak
 

@@ -13,14 +13,6 @@ blueprints = custom_target('blueprints',
   command: [find_program('blueprint-compiler'), 'batch-compile', '@OUTPUT@', '@CURRENT_SOURCE_DIR@', '@INPUT@'],
 )
 
-gnome.compile_resources('letterpress',
-  'letterpress.gresource.xml',
-  gresource_bundle: true,
-  install: true,
-  install_dir: pkgdatadir,
-  dependencies: [blueprints, appstream_file],
-)
-
 python = import('python')
 
 conf = configuration_data()
@@ -28,6 +20,20 @@ conf.set('PYTHON', python.find_installation('python3').path())
 conf.set('VERSION', meson.project_version())
 conf.set('localedir', join_paths(get_option('prefix'), get_option('localedir')))
 conf.set('pkgdatadir', pkgdatadir)
+conf.set('app_id', app_id)
+conf.set('profile', get_option('profile'))
+
+gnome.compile_resources('letterpress',
+  configure_file(
+            input: 'letterpress.gresource.xml.in',
+           output: 'letterpress.gresource.xml',
+    configuration: conf
+  ),
+  gresource_bundle: true,
+  install: true,
+  install_dir: pkgdatadir,
+  dependencies: [blueprints, appstream_file],
+)
 
 configure_file(
   input: 'letterpress.in',
@@ -35,6 +41,14 @@ configure_file(
   configuration: conf,
   install: true,
   install_dir: get_option('bindir')
+)
+
+configure_file(
+  input: 'profile.py.in',
+  output: 'profile.py',
+  configuration: conf,
+  install: true,
+  install_dir: moduledir
 )
 
 letterpress_sources = [
