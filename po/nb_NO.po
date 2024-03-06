@@ -8,24 +8,27 @@ msgstr ""
 "Project-Id-Version: letterpress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-04 02:32+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2024-03-07 21:01+0000\n"
+"Last-Translator: Brage Fuglseth <brage.fuglseth@gmail.com>\n"
+"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/"
+"letterpress/letterpress/nb_NO/>\n"
 "Language: nb_NO\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.5-dev\n"
 
 #. Translators: Translate as "Letterpress"
 #: data/io.gitlab.gregorni.Letterpress.desktop.in:4
 #: data/io.gitlab.gregorni.Letterpress.appdata.xml.in:7 src/gtk/window.blp:5
 msgid "Letterpress"
-msgstr ""
+msgstr "Letterpress"
 
 #: data/io.gitlab.gregorni.Letterpress.desktop.in:5
 #: data/io.gitlab.gregorni.Letterpress.appdata.xml.in:10
 msgid "Create beautiful ASCII art"
-msgstr ""
+msgstr "Gjør bilder om til tekst"
 
 #. Translators: These are search terms for the application;
 #. the translation should contain the original list AND the translated strings.
@@ -33,11 +36,13 @@ msgstr ""
 #: data/io.gitlab.gregorni.Letterpress.desktop.in:14
 msgid "image;ascii;convert;conversion;text;"
 msgstr ""
+"bilde;fotografi;ascii;kunst;generering;tekst;word;art;bokstaver;tekst;konvert"
+"ering;forvandle;gjøre om;"
 
 #. Translators: Leave this as is, or blank
 #: data/io.gitlab.gregorni.Letterpress.appdata.xml.in:9
 msgid "gregorni"
-msgstr ""
+msgstr "gregorni"
 
 #: data/io.gitlab.gregorni.Letterpress.appdata.xml.in:13
 msgid ""
@@ -45,63 +50,67 @@ msgid ""
 "You can save the output to a file, copy it, and even change its resolution! "
 "High-res output can still be viewed comfortably by lowering the zoom factor."
 msgstr ""
+"Det har aldri vært lettere å lage sin egen ASCII-kunst. Bare finn et bilde "
+"du liker, hiv det inn i Letterpress, og se magien utspille seg. Juster "
+"oppløsningen på ASCII-bildet om nødvendig, kopier teksten rett til "
+"utklippstavlen, og del den hvor som helst."
 
 #. Translators: This is a search term and should be lowercase
 #: data/io.gitlab.gregorni.Letterpress.appdata.xml.in:30
 msgid "image"
-msgstr ""
+msgstr "bilde"
 
 #. Translators: This is a search term and should be lowercase
 #: data/io.gitlab.gregorni.Letterpress.appdata.xml.in:32
 msgid "ascii"
-msgstr ""
+msgstr "ascii"
 
 #. Translators: This is a search term and should be lowercase
 #: data/io.gitlab.gregorni.Letterpress.appdata.xml.in:34
 msgid "convert"
-msgstr ""
+msgstr "konvertere"
 
 #. Translators: This is a search term and should be lowercase
 #: data/io.gitlab.gregorni.Letterpress.appdata.xml.in:36
 msgid "conversion"
-msgstr ""
+msgstr "konvertering"
 
 #. Translators: This is a search term and should be lowercase
 #: data/io.gitlab.gregorni.Letterpress.appdata.xml.in:38
 msgid "text"
-msgstr ""
+msgstr "tekst"
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Letterpress.appdata.xml.in:56
 msgid "Landing page"
-msgstr ""
+msgstr "Hovedvindu"
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Letterpress.appdata.xml.in:61
 msgid "Copy output"
-msgstr ""
+msgstr "Kopiering av bilde"
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Letterpress.appdata.xml.in:66
 msgid "Save output"
-msgstr ""
+msgstr "Lagring av bilde"
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Letterpress.appdata.xml.in:71
 msgid "Adjust output width"
-msgstr ""
+msgstr "Justering av størrelse"
 
 #: src/main.py:119
 msgid "Output copied to clipboard"
-msgstr ""
+msgstr "Tekst kopiert til utklippstavlen"
 
 #: src/main.py:162
 msgid "Letterpress Contributors"
-msgstr ""
+msgstr "Letterpress-gruppen"
 
 #: src/main.py:166
 msgid "Copyright © 2023 Letterpress Contributors"
-msgstr ""
+msgstr "Opphavsrett © 2023 Letterpress-gruppen"
 
 #. Translators: Translate this string as your translator credits.
 #. Name only:    gregorni
@@ -111,173 +120,173 @@ msgstr ""
 #. Names are separated with newlines.
 #: src/main.py:173
 msgid "translator-credits"
-msgstr ""
+msgstr "Brage Fuglseth https://bragefuglseth.dev"
 
 #: src/main.py:176
 msgid "Code and Design borrowed from"
-msgstr ""
+msgstr "Inspirert av"
 
 #. Translators: Do not translate "{basename}"
 #: src/window.py:113
 #, python-brace-format
 msgid "\"{basename}\" is not of a supported image type."
-msgstr ""
+msgstr "«{basename}» sitt bildeformat støttes ikke."
 
 #: src/file_chooser.py:37 src/file_chooser.py:101
 msgid "Select a file"
-msgstr ""
+msgstr "Velg bilde"
 
 #: src/file_chooser.py:44
 msgid "Supported image files"
-msgstr ""
+msgstr "Støttede bildeformater"
 
 #. Translators: Do not translate "{display_name}"
 #: src/file_chooser.py:79
 #, python-brace-format
 msgid "Unable to save \"{display_name}\""
-msgstr ""
+msgstr "Lagring av «{display_name}» mislyktes"
 
 #. Translators: Do not translate "{display_name}"
 #: src/file_chooser.py:88
 #, python-brace-format
 msgid "\"{display_name}\" saved"
-msgstr ""
+msgstr "«{display_name}» lagret"
 
 #: src/file_chooser.py:90
 msgid "Open"
-msgstr ""
+msgstr "Åpne"
 
 #: src/gtk/window.blp:19 src/gtk/tips-dialog.blp:5
 msgid "Tips"
-msgstr ""
+msgstr "Tips"
 
 #: src/gtk/window.blp:27
 msgid "Main Menu"
-msgstr ""
+msgstr "Hovedmeny"
 
 #: src/gtk/window.blp:89
 msgid "Create ASCII Art"
-msgstr ""
+msgstr "Gjør bilder om til tekst"
 
 #: src/gtk/window.blp:90
 msgid "Open or drag and drop an image to generate an ASCII art version of it"
-msgstr ""
+msgstr "Åpne eller dra og slipp ett bilde her for å lage ASCII-kunst av det"
 
 #: src/gtk/window.blp:95
 msgid "Open File…"
-msgstr ""
+msgstr "Åpne fil…"
 
 #: src/gtk/window.blp:114
 msgid "Drop Here to Open"
-msgstr ""
+msgstr "Slipp her for å åpne"
 
 #: src/gtk/window.blp:183
 msgid "Width (in characters)"
-msgstr ""
+msgstr "Bredde (i tegn)"
 
 #: src/gtk/window.blp:202
 msgid "Copy to clipboard"
-msgstr ""
+msgstr "Kopier til utklippstavlen"
 
 #: src/gtk/window.blp:210
 msgid "Save to file"
-msgstr ""
+msgstr "Lagre som fil"
 
 #: src/gtk/window.blp:235
 msgid "_Open File…"
-msgstr ""
+msgstr "_Åpne fil…"
 
 #: src/gtk/window.blp:242
 msgid "_Keyboard Shortcuts"
-msgstr ""
+msgstr "_Tastatursnarveier"
 
 #: src/gtk/window.blp:247
 msgid "_About Letterpress"
-msgstr ""
+msgstr "_Om Letterpress"
 
 #: src/gtk/zoom-box.blp:12
 msgid "Zoom out"
-msgstr ""
+msgstr "Forminsk"
 
 #: src/gtk/zoom-box.blp:28
 msgid "Reset zoom"
-msgstr ""
+msgstr "Tilbakestill skalering"
 
 #: src/gtk/zoom-box.blp:40
 msgid "Zoom in"
-msgstr ""
+msgstr "Forstørr"
 
 #: src/gtk/tips-dialog.blp:30
 msgid "Pictures used for ASCII art should have the following qualities:"
-msgstr ""
+msgstr "Bilder som brukes til ASCII-kunst bør ha disse egenskapene:"
 
 #: src/gtk/tips-dialog.blp:44
 msgid "High Contrast"
-msgstr ""
+msgstr "Høy kontrast"
 
 #: src/gtk/tips-dialog.blp:61
 msgid "Vibrant Colors"
-msgstr ""
+msgstr "Sterke farger"
 
 #: src/gtk/tips-dialog.blp:78
 msgid "Defined Edges"
-msgstr ""
+msgstr "Tydelige kanter"
 
 #: src/gtk/tips-dialog.blp:95
 msgid "Recognizable Shapes"
-msgstr ""
+msgstr "Gjenkjennelige former"
 
 #: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "General"
-msgstr ""
+msgstr "Generelt"
 
 #: src/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
 msgid "Open File"
-msgstr ""
+msgstr "Åpne fil"
 
 #: src/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr ""
+msgstr "Vis tastatursnarveier"
 
 #: src/gtk/help-overlay.blp:24
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr ""
+msgstr "Avslutt"
 
 #: src/gtk/help-overlay.blp:30
 msgctxt "shortcut window"
 msgid "Text View"
-msgstr ""
+msgstr "Tekstvisning"
 
 #: src/gtk/help-overlay.blp:33
 msgctxt "shortcut window"
 msgid "Increase Output Width"
-msgstr ""
+msgstr "Øk oppløsning"
 
 #: src/gtk/help-overlay.blp:38
 msgctxt "shortcut window"
 msgid "Decrease Output Width"
-msgstr ""
+msgstr "Senk oppløsning"
 
 #: src/gtk/help-overlay.blp:43
 msgctxt "shortcut window"
 msgid "Zoom in"
-msgstr ""
+msgstr "Forstørr"
 
 #: src/gtk/help-overlay.blp:48
 msgctxt "shortcut window"
 msgid "Zoom out"
-msgstr ""
+msgstr "Forminsk"
 
 #: src/gtk/help-overlay.blp:53
 msgctxt "shortcut window"
 msgid "Copy Output to Clipboard"
-msgstr ""
+msgstr "Kopier til utklippstavlen"
 
 #: src/gtk/help-overlay.blp:58
 msgctxt "shortcut window"
 msgid "Save Output to File"
-msgstr ""
+msgstr "Lagre som fil"
