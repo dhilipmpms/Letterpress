@@ -32,11 +32,6 @@
   </recommends>
 
   <screenshots>
-    <screenshot type="default">
-      <image>https://gitlab.gnome.org/World/Letterpress/-/raw/main/data/screenshots/overview.png</image>
-      <!--Translators: This is a screenshot caption-->
-      <caption>Landing page</caption>
-    </screenshot>
     <screenshot>
       <image>https://gitlab.gnome.org/World/Letterpress/-/raw/main/data/screenshots/copied.png</image>
       <!--Translators: This is a screenshot caption-->
@@ -47,7 +42,7 @@
       <!--Translators: This is a screenshot caption-->
       <caption>Save output</caption>
     </screenshot>
-    <screenshot>
+    <screenshot type="default">
       <image>https://gitlab.gnome.org/World/Letterpress/-/raw/main/data/screenshots/width.png</image>
       <!--Translators: This is a screenshot caption-->
       <caption>Adjust output width</caption>
@@ -134,8 +129,9 @@
       <kudo>HiDpiIcon</kudo>
   </kudos>
 
-  <custom>
-    <value key="GnomeSoftware::key-colors">[(221, 107, 6)]</value>
-  </custom>
+  <branding>
+    <color type="primary" scheme_preference="light">#ecceaa</color>
+    <color type="primary" scheme_preference="dark">#aa5d19</color>
+  </branding>
 
 </component>
