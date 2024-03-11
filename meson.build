@@ -7,7 +7,7 @@ project('letterpress',
 
 app_id = 'io.gitlab.gregorni.Letterpress'
 if get_option('profile') == 'development'
-    app_id += '.' + 'Devel'
+    app_id += '.Devel'
 endif
 
 
