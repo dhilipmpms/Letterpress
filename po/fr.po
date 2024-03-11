@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: letterpress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-15 02:04+0200\n"
-"PO-Revision-Date: 2023-05-08 09:44+0200\n"
-"Last-Translator: Irénée Thirion <irenee.thirion@e.email>\n"
-"Language-Team: \n"
-"Language: fr_FR\n"
+"PO-Revision-Date: 2024-03-12 10:01+0000\n"
+"Last-Translator: Turcan Francois <francoisturcan31@gmail.com>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/letterpress/"
+"letterpress/fr/>\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 5.5-dev\n"
 
 #. Translators: Translate as "Letterpress"
 #: data/io.gitlab.gregorni.ASCIIImages.desktop.in:4
@@ -28,7 +29,7 @@ msgstr "Letterpress"
 #: data/io.gitlab.gregorni.ASCIIImages.desktop.in:5
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:9
 msgid "Create beautiful ASCII art"
-msgstr ""
+msgstr "Créer une magnifique image ASCII"
 
 #. Translators: These are search terms for the application;
 #. the translation should contain the original list AND the translated strings.
@@ -42,7 +43,6 @@ msgid "Letterpress Contributors"
 msgstr "Les contributeurs de Letterpress"
 
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:12
-#, fuzzy
 msgid ""
 "Letterpress converts your images into a picture made up of ASCII characters. "
 "You can save the output to a file, copy it, and even change its resolution! "
@@ -50,7 +50,7 @@ msgid ""
 msgstr ""
 "Letterpress utilise jp2a pour convertir des images en caractères ASCII. Vous "
 "pouvez enregistrer le résultat dans un fichier, le copier, et même modifier "
-"sa résolution !"
+"sa résolution."
 
 #. Translators: This is a search term and should be lowercase
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:29
@@ -167,7 +167,9 @@ msgstr "Première version ! 🎉"
 #. Names are separated with newlines.
 #: src/main.py:173
 msgid "translator-credits"
-msgstr "Irénée Thirion"
+msgstr ""
+"Irénée Thirion\n"
+"Turcan François"
 
 #: src/main.py:174
 msgid "Copyright © 2023 Letterpress Contributors"
@@ -183,9 +185,9 @@ msgstr "Largeur de l’image ASCII en caractères"
 
 #. Translators: Do not translate "{basename}"
 #: src/window.py:104
-#, fuzzy, python-brace-format
+#, python-brace-format
 msgid "\"{basename}\" is not of a supported image type."
-msgstr "« {basename} » n’est pas une image valide."
+msgstr "« {basename} » ne fait pas parti des types d'images pris en charge."
 
 #: src/window.py:197
 msgid "The output is too large to be copied."
@@ -231,7 +233,7 @@ msgstr "Ouvrir"
 
 #: src/gtk/window.blp:16
 msgid "Tips"
-msgstr ""
+msgstr "Conseils"
 
 #: src/gtk/window.blp:24
 msgid "Main Menu"
@@ -239,11 +241,11 @@ msgstr "Menu principal"
 
 #: src/gtk/window.blp:86
 msgid "Create ASCII Art"
-msgstr ""
+msgstr "Créer l'image ASCII"
 
 #: src/gtk/window.blp:87
 msgid "Open or drag and drop an image to generate an ASCII art version of it"
-msgstr ""
+msgstr "Ouvrir ou glisser une image pour en générer une version ASCII"
 
 #: src/gtk/window.blp:92
 msgid "Open File…"
@@ -266,9 +268,8 @@ msgid "Save to file"
 msgstr "Enregistrer dans un fichier"
 
 #: src/gtk/window.blp:224
-#, fuzzy
 msgid "_Open File…"
-msgstr "Ouvrir un fichier…"
+msgstr "_Ouvrir un fichier…"
 
 #: src/gtk/window.blp:231
 msgid "_Keyboard Shortcuts"
@@ -276,19 +277,19 @@ msgstr "_Raccourcis clavier"
 
 #: src/gtk/window.blp:236
 msgid "_About Letterpress"
-msgstr "À _propos de Letterpress"
+msgstr "_À propos de Letterpress"
 
 #: src/gtk/zoom-box.blp:12
 msgid "Zoom out"
-msgstr ""
+msgstr "Dézoomer"
 
 #: src/gtk/zoom-box.blp:28
 msgid "Reset zoom"
-msgstr ""
+msgstr "Réinitialiser le zoom"
 
 #: src/gtk/zoom-box.blp:40
 msgid "Zoom in"
-msgstr ""
+msgstr "Zoomer"
 
 #: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
@@ -313,29 +314,27 @@ msgstr "Quitter"
 #: src/gtk/help-overlay.blp:30
 msgctxt "shortcut window"
 msgid "Text View"
-msgstr ""
+msgstr "Texte"
 
 #: src/gtk/help-overlay.blp:33
-#, fuzzy
 msgctxt "shortcut window"
 msgid "Increase Output Width"
-msgstr "Largeur du résultat"
+msgstr "Augmenter la largeur du résultat"
 
 #: src/gtk/help-overlay.blp:38
-#, fuzzy
 msgctxt "shortcut window"
 msgid "Decrease Output Width"
-msgstr "Largeur du résultat"
+msgstr "Diminuer la largeur du résultat"
 
 #: src/gtk/help-overlay.blp:43
 msgctxt "shortcut window"
 msgid "Zoom in"
-msgstr ""
+msgstr "Zoomer"
 
 #: src/gtk/help-overlay.blp:48
 msgctxt "shortcut window"
 msgid "Zoom out"
-msgstr ""
+msgstr "Dézoomer"
 
 #~ msgid "Convert images into ASCII characters"
 #~ msgstr "Convertir des images en caractères ASCII"
