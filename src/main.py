@@ -155,7 +155,7 @@ class LetterpressApplication(Adw.Application):
     def __on_about_action(self, *args):
         """Callback for the app.about action."""
         about = Adw.AboutDialog.new_from_appdata(
-            "/io/gitlab/gregorni/Letterpress/appdata.xml", "2.0"
+            "/io/gitlab/gregorni/Letterpress/metainfo.xml", "2.0"
         )
         about.set_artists(
             [

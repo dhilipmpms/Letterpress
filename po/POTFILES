@@ -1,5 +1,5 @@
 data/io.gitlab.gregorni.Letterpress.desktop.in.in
-data/io.gitlab.gregorni.Letterpress.appdata.xml.in.in
+data/io.gitlab.gregorni.Letterpress.metainfo.xml.in.in
 data/io.gitlab.gregorni.Letterpress.gschema.xml
 
 src/main.py

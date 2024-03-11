@@ -22,15 +22,15 @@ endif
 
 appstream_file = i18n.merge_file(
         input: configure_file(
-                  input: 'io.gitlab.gregorni.Letterpress.appdata.xml.in.in',
-                 output: 'io.gitlab.gregorni.Letterpress.appdata.xml.in',
+                  input: 'io.gitlab.gregorni.Letterpress.metainfo.xml.in.in',
+                 output: 'io.gitlab.gregorni.Letterpress.metainfo.xml.in',
           configuration: conf
         ),
-       output: app_id + '.appdata.xml',
+       output: app_id + '.metainfo.xml',
 
        po_dir: '../po',
       install: true,
-  install_dir: join_paths(get_option('datadir'), 'appdata')
+  install_dir: join_paths(get_option('datadir'), 'metainfo')
 )
 
 appstreamcli = find_program('appstreamcli', required: false)
