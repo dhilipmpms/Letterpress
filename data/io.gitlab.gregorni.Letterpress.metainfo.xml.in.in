@@ -64,7 +64,6 @@
 
   <provides>
     <binary>letterpress</binary>
-    <id>@app_id@</id>
   </provides>
 
   <releases>
