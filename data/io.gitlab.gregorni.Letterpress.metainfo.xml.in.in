@@ -128,7 +128,7 @@
 
   <branding>
     <color type="primary" scheme_preference="light">#ecceaa</color>
-    <color type="primary" scheme_preference="dark">#aa5d19</color>
+    <color type="primary" scheme_preference="dark">#d46401</color>
   </branding>
 
 </component>
