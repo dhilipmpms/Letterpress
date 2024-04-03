@@ -4,9 +4,9 @@
 	<metadata_license>CC0-1.0</metadata_license>
 	<project_license>GPL-3.0-or-later</project_license>
 
-  <name translatable="no">Letterpress</name>
+  <name translate="no">Letterpress</name>
   <developer id="io.gitlab.gregorni">
-    <name translatable="no">Gregor Niehl</name>
+    <name translate="no">Gregor Niehl</name>
   </developer>
   <summary>Create beautiful ASCII art</summary>
 
@@ -68,7 +68,7 @@
 
   <releases>
   <release version="2.0" date="2023-09-20">
-      <description translatable="no">
+      <description translate="no">
         <ul>
           <li>New icon and accent color</li>
           <li>Added Zoom in output view</li>
@@ -85,7 +85,7 @@
       </description>
     </release>
     <release version="1.3.0" date="2023-05-07">
-      <description translatable="no">
+      <description translate="no">
         <ul>
           <li>Rebrand to Letterpress</li>
           <li>Replaced icon on welcome screen with illustration</li>
@@ -99,7 +99,7 @@
       </description>
     </release>
     <release version="1.2.0" date="2023-04-10">
-      <description translatable="no">
+      <description translate="no">
         <ul>
           <li>Added French translation</li>
           <li>Added Russian translation</li>
@@ -111,7 +111,7 @@
       </description>
     </release>
     <release version="1.0.1" date="2023-03-25">
-      <description translatable="no">
+      <description translate="no">
         <p>First Release! 🎉</p>
       </description>
     </release>
