@@ -60,8 +60,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/python-pillow/Pillow",
-                    "tag": "10.2.0",
-                    "commit": "6956d0b2853f5c7ec5f6ec4c60725c5a7ee73aeb"
+                    "tag": "10.3.0",
+                    "commit": "5c89d88eee199ba53f64581ea39b6a1bc52feb1a"
                 }
             ]
         },
