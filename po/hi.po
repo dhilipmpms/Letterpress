@@ -8,36 +8,39 @@ msgstr ""
 "Project-Id-Version: letterpress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-04 02:32+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2024-04-16 08:01+0000\n"
+"Last-Translator: Scrambled777 <weblate.scrambled777@simplelogin.com>\n"
+"Language-Team: Hindi <https://hosted.weblate.org/projects/letterpress/"
+"letterpress/hi/>\n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 5.5-dev\n"
 
 #. Translators: Translate as "Letterpress"
 #: data/io.gitlab.gregorni.Letterpress.desktop.in:4
 #: data/io.gitlab.gregorni.Letterpress.appdata.xml.in:7 src/gtk/window.blp:5
 msgid "Letterpress"
-msgstr ""
+msgstr "Letterpress"
 
 #: data/io.gitlab.gregorni.Letterpress.desktop.in:5
 #: data/io.gitlab.gregorni.Letterpress.appdata.xml.in:10
 msgid "Create beautiful ASCII art"
-msgstr ""
+msgstr "सुंदर ASCII कला बनाएं"
 
 #. Translators: These are search terms for the application;
 #. the translation should contain the original list AND the translated strings.
 #. The list must end with a semicolon.
 #: data/io.gitlab.gregorni.Letterpress.desktop.in:14
 msgid "image;ascii;convert;conversion;text;"
-msgstr ""
+msgstr "छवि;ascii;कन्वर्ट;रूपांतरण;टेक्स्ट;"
 
 #. Translators: Leave this as is, or blank
 #: data/io.gitlab.gregorni.Letterpress.appdata.xml.in:9
 msgid "gregorni"
-msgstr ""
+msgstr "ग्रेगोर्नी"
 
 #: data/io.gitlab.gregorni.Letterpress.appdata.xml.in:13
 msgid ""
@@ -45,63 +48,67 @@ msgid ""
 "You can save the output to a file, copy it, and even change its resolution! "
 "High-res output can still be viewed comfortably by lowering the zoom factor."
 msgstr ""
+"Letterpress आपकी छवियों को ASCII वर्णों से बने चित्र में परिवर्तित करता है। "
+"आप आउटपुट को किसी फाइल में सहेज सकते हैं, उसकी प्रतिलिपि बना सकते हैं और उसका"
+" रिज़ॉल्यूशन भी बदल सकते हैं! ज़ूम फैक्टर को कम करके हाई-रेजोल्यूशन आउटपुट को"
+" अभी भी आराम से देखा जा सकता है।"
 
 #. Translators: This is a search term and should be lowercase
 #: data/io.gitlab.gregorni.Letterpress.appdata.xml.in:30
 msgid "image"
-msgstr ""
+msgstr "छवि"
 
 #. Translators: This is a search term and should be lowercase
 #: data/io.gitlab.gregorni.Letterpress.appdata.xml.in:32
 msgid "ascii"
-msgstr ""
+msgstr "ascii"
 
 #. Translators: This is a search term and should be lowercase
 #: data/io.gitlab.gregorni.Letterpress.appdata.xml.in:34
 msgid "convert"
-msgstr ""
+msgstr "परिवर्तन करें"
 
 #. Translators: This is a search term and should be lowercase
 #: data/io.gitlab.gregorni.Letterpress.appdata.xml.in:36
 msgid "conversion"
-msgstr ""
+msgstr "परिवर्तन"
 
 #. Translators: This is a search term and should be lowercase
 #: data/io.gitlab.gregorni.Letterpress.appdata.xml.in:38
 msgid "text"
-msgstr ""
+msgstr "टेक्स्ट"
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Letterpress.appdata.xml.in:56
 msgid "Landing page"
-msgstr ""
+msgstr "लैंडिंग पृष्ठ"
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Letterpress.appdata.xml.in:61
 msgid "Copy output"
-msgstr ""
+msgstr "आउटपुट कॉपी करें"
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Letterpress.appdata.xml.in:66
 msgid "Save output"
-msgstr ""
+msgstr "आउटपुट सहेजें"
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Letterpress.appdata.xml.in:71
 msgid "Adjust output width"
-msgstr ""
+msgstr "आउटपुट चौड़ाई समायोजित करें"
 
 #: src/main.py:119
 msgid "Output copied to clipboard"
-msgstr ""
+msgstr "आउटपुट को क्लिपबोर्ड पर कॉपी किया गया"
 
 #: src/main.py:162
 msgid "Letterpress Contributors"
-msgstr ""
+msgstr "Letterpress योगदानकर्ता"
 
 #: src/main.py:166
 msgid "Copyright © 2023 Letterpress Contributors"
-msgstr ""
+msgstr "कॉपीराइट © 2023 Letterpress योगदानकर्ता"
 
 #. Translators: Translate this string as your translator credits.
 #. Name only:    gregorni
@@ -111,173 +118,174 @@ msgstr ""
 #. Names are separated with newlines.
 #: src/main.py:173
 msgid "translator-credits"
-msgstr ""
+msgstr "Scrambled777 <weblate.scrambled777@simplelogin.com>"
 
 #: src/main.py:176
 msgid "Code and Design borrowed from"
-msgstr ""
+msgstr "कोड और डिज़ाइन इनसे उधार लिया गया"
 
 #. Translators: Do not translate "{basename}"
 #: src/window.py:113
 #, python-brace-format
 msgid "\"{basename}\" is not of a supported image type."
-msgstr ""
+msgstr "\"{basename}\" समर्थित छवि प्रकार का नहीं है।"
 
 #: src/file_chooser.py:37 src/file_chooser.py:101
 msgid "Select a file"
-msgstr ""
+msgstr "एक फाइल चुनें"
 
 #: src/file_chooser.py:44
 msgid "Supported image files"
-msgstr ""
+msgstr "समर्थित छवि फाइलें"
 
 #. Translators: Do not translate "{display_name}"
 #: src/file_chooser.py:79
 #, python-brace-format
 msgid "Unable to save \"{display_name}\""
-msgstr ""
+msgstr "\"{display_name}\" सहेजने में असमर्थ"
 
 #. Translators: Do not translate "{display_name}"
 #: src/file_chooser.py:88
 #, python-brace-format
 msgid "\"{display_name}\" saved"
-msgstr ""
+msgstr "\"{display_name}\" सहेजा गया"
 
 #: src/file_chooser.py:90
 msgid "Open"
-msgstr ""
+msgstr "खोले"
 
 #: src/gtk/window.blp:19 src/gtk/tips-dialog.blp:5
 msgid "Tips"
-msgstr ""
+msgstr "युक्तियाँ"
 
 #: src/gtk/window.blp:27
 msgid "Main Menu"
-msgstr ""
+msgstr "मुख्य मेनू"
 
 #: src/gtk/window.blp:89
 msgid "Create ASCII Art"
-msgstr ""
+msgstr "ASCII कला बनाएँ"
 
 #: src/gtk/window.blp:90
 msgid "Open or drag and drop an image to generate an ASCII art version of it"
 msgstr ""
+"किसी छवि का ASCII कला संस्करण तैयार करने के लिए उसे खोलें या खींचें और छोड़ें"
 
 #: src/gtk/window.blp:95
 msgid "Open File…"
-msgstr ""
+msgstr "फाइल खोलें…"
 
 #: src/gtk/window.blp:114
 msgid "Drop Here to Open"
-msgstr ""
+msgstr "खोलने के लिए यहां छोड़ें"
 
 #: src/gtk/window.blp:183
 msgid "Width (in characters)"
-msgstr ""
+msgstr "चौड़ाई (वर्णों में)"
 
 #: src/gtk/window.blp:202
 msgid "Copy to clipboard"
-msgstr ""
+msgstr "क्लिपबोर्ड पर कॉपी करें"
 
 #: src/gtk/window.blp:210
 msgid "Save to file"
-msgstr ""
+msgstr "फाइल में सहेजें"
 
 #: src/gtk/window.blp:235
 msgid "_Open File…"
-msgstr ""
+msgstr "फाइल खोलें(_O)…"
 
 #: src/gtk/window.blp:242
 msgid "_Keyboard Shortcuts"
-msgstr ""
+msgstr "कीबोर्ड शॉर्टकट (_K)"
 
 #: src/gtk/window.blp:247
 msgid "_About Letterpress"
-msgstr ""
+msgstr "Letterpress के बारे में (_A)"
 
 #: src/gtk/zoom-box.blp:12
 msgid "Zoom out"
-msgstr ""
+msgstr "ज़ूम आउट"
 
 #: src/gtk/zoom-box.blp:28
 msgid "Reset zoom"
-msgstr ""
+msgstr "ज़ूम रीसेट करें"
 
 #: src/gtk/zoom-box.blp:40
 msgid "Zoom in"
-msgstr ""
+msgstr "ज़ूम इन"
 
 #: src/gtk/tips-dialog.blp:30
 msgid "Pictures used for ASCII art should have the following qualities:"
-msgstr ""
+msgstr "ASCII कला के लिए प्रयुक्त चित्रों में निम्नलिखित गुण होने चाहिए:"
 
 #: src/gtk/tips-dialog.blp:44
 msgid "High Contrast"
-msgstr ""
+msgstr "उच्च विषमता"
 
 #: src/gtk/tips-dialog.blp:61
 msgid "Vibrant Colors"
-msgstr ""
+msgstr "जीवंत रंग"
 
 #: src/gtk/tips-dialog.blp:78
 msgid "Defined Edges"
-msgstr ""
+msgstr "परिभाषित किनारे"
 
 #: src/gtk/tips-dialog.blp:95
 msgid "Recognizable Shapes"
-msgstr ""
+msgstr "पहचानने योग्य आकृतियाँ"
 
 #: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "General"
-msgstr ""
+msgstr "सामान्य"
 
 #: src/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
 msgid "Open File"
-msgstr ""
+msgstr "फाइल खोलें"
 
 #: src/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr ""
+msgstr "शॉर्टकट दिखाएँ"
 
 #: src/gtk/help-overlay.blp:24
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr ""
+msgstr "छोड़ें"
 
 #: src/gtk/help-overlay.blp:30
 msgctxt "shortcut window"
 msgid "Text View"
-msgstr ""
+msgstr "टेक्स्ट दृश्य"
 
 #: src/gtk/help-overlay.blp:33
 msgctxt "shortcut window"
 msgid "Increase Output Width"
-msgstr ""
+msgstr "आउटपुट चौड़ाई बढ़ाएँ"
 
 #: src/gtk/help-overlay.blp:38
 msgctxt "shortcut window"
 msgid "Decrease Output Width"
-msgstr ""
+msgstr "आउटपुट चौड़ाई घटाएँ"
 
 #: src/gtk/help-overlay.blp:43
 msgctxt "shortcut window"
 msgid "Zoom in"
-msgstr ""
+msgstr "ज़ूम इन"
 
 #: src/gtk/help-overlay.blp:48
 msgctxt "shortcut window"
 msgid "Zoom out"
-msgstr ""
+msgstr "ज़ूम आउट"
 
 #: src/gtk/help-overlay.blp:53
 msgctxt "shortcut window"
 msgid "Copy Output to Clipboard"
-msgstr ""
+msgstr "आउटपुट को क्लिपबोर्ड पर कॉपी करें"
 
 #: src/gtk/help-overlay.blp:58
 msgctxt "shortcut window"
 msgid "Save Output to File"
-msgstr ""
+msgstr "आउटपुट को फाइल में सहेजें"
