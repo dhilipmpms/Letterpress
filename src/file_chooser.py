@@ -76,7 +76,7 @@ class FileChooser:
 
             toast = Adw.Toast(
                 # Translators: Do not translate "{display_name}"
-                title=_('Unable to save "{display_name}"').format(
+                title=_("Unable to save “{display_name}”").format(
                     display_name=display_name
                 )
             )
