@@ -169,7 +169,8 @@ class LetterpressWindow(Adw.ApplicationWindow):
     def __convert_image(self, filepath):
         self.main_stack.set_visible_child_name("spinner-page")
 
-        arguments = ["artem", f"--size={int(self.width_spin.get_value())}", filepath]
+        arguments = ["jp2a", f"--width={int(self.width_spin.get_value())}", filepath]
+        # arguments = ["artem", f"--size={int(self.width_spin.get_value())}", filepath]
         if not self.style_manager.get_dark():
             arguments.append("--invert")
 
