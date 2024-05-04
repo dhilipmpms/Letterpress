@@ -17,4 +17,4 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-formats = ["jpeg", "png", "webp", "gif"]
+formats = ["jpeg", "png"] #, "webp", "gif"]
