@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: letterpress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-04 02:32+0300\n"
-"PO-Revision-Date: 2024-04-16 08:01+0000\n"
+"PO-Revision-Date: 2024-05-07 01:07+0000\n"
 "Last-Translator: Scrambled777 <weblate.scrambled777@simplelogin.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/letterpress/"
 "letterpress/hi/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.5-dev\n"
+"X-Generator: Weblate 5.5.4-dev\n"
 
 #. Translators: Translate as "Letterpress"
 #: data/io.gitlab.gregorni.Letterpress.desktop.in:4
@@ -50,8 +50,8 @@ msgid ""
 msgstr ""
 "Letterpress आपकी छवियों को ASCII वर्णों से बने चित्र में परिवर्तित करता है। "
 "आप आउटपुट को किसी फाइल में सहेज सकते हैं, उसकी प्रतिलिपि बना सकते हैं और उसका"
-" रिज़ॉल्यूशन भी बदल सकते हैं! ज़ूम फैक्टर को कम करके हाई-रेजोल्यूशन आउटपुट को"
-" अभी भी आराम से देखा जा सकता है।"
+" रिज़ॉल्यूशन भी बदल सकते हैं! जूम फैक्टर को कम करके हाई-रेजोल्यूशन आउटपुट को "
+"अभी भी आराम से देखा जा सकता है।"
 
 #. Translators: This is a search term and should be lowercase
 #: data/io.gitlab.gregorni.Letterpress.appdata.xml.in:30
@@ -156,7 +156,7 @@ msgstr "खोले"
 
 #: src/gtk/window.blp:19 src/gtk/tips-dialog.blp:5
 msgid "Tips"
-msgstr "युक्तियाँ"
+msgstr "युक्तियां"
 
 #: src/gtk/window.blp:27
 msgid "Main Menu"
@@ -164,7 +164,7 @@ msgstr "मुख्य मेनू"
 
 #: src/gtk/window.blp:89
 msgid "Create ASCII Art"
-msgstr "ASCII कला बनाएँ"
+msgstr "ASCII कला बनाएं"
 
 #: src/gtk/window.blp:90
 msgid "Open or drag and drop an image to generate an ASCII art version of it"
@@ -205,15 +205,15 @@ msgstr "Letterpress के बारे में (_A)"
 
 #: src/gtk/zoom-box.blp:12
 msgid "Zoom out"
-msgstr "ज़ूम आउट"
+msgstr "जूम आउट"
 
 #: src/gtk/zoom-box.blp:28
 msgid "Reset zoom"
-msgstr "ज़ूम रीसेट करें"
+msgstr "जूम रीसेट करें"
 
 #: src/gtk/zoom-box.blp:40
 msgid "Zoom in"
-msgstr "ज़ूम इन"
+msgstr "जूम इन"
 
 #: src/gtk/tips-dialog.blp:30
 msgid "Pictures used for ASCII art should have the following qualities:"
@@ -233,7 +233,7 @@ msgstr "परिभाषित किनारे"
 
 #: src/gtk/tips-dialog.blp:95
 msgid "Recognizable Shapes"
-msgstr "पहचानने योग्य आकृतियाँ"
+msgstr "पहचानने योग्य आकृतियां"
 
 #: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
@@ -248,7 +248,7 @@ msgstr "फाइल खोलें"
 #: src/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr "शॉर्टकट दिखाएँ"
+msgstr "शॉर्टकट दिखाएं"
 
 #: src/gtk/help-overlay.blp:24
 msgctxt "shortcut window"
@@ -258,27 +258,27 @@ msgstr "छोड़ें"
 #: src/gtk/help-overlay.blp:30
 msgctxt "shortcut window"
 msgid "Text View"
-msgstr "टेक्स्ट दृश्य"
+msgstr "पाठ दृश्य"
 
 #: src/gtk/help-overlay.blp:33
 msgctxt "shortcut window"
 msgid "Increase Output Width"
-msgstr "आउटपुट चौड़ाई बढ़ाएँ"
+msgstr "आउटपुट चौड़ाई बढ़ाएं"
 
 #: src/gtk/help-overlay.blp:38
 msgctxt "shortcut window"
 msgid "Decrease Output Width"
-msgstr "आउटपुट चौड़ाई घटाएँ"
+msgstr "आउटपुट चौड़ाई घटाएं"
 
 #: src/gtk/help-overlay.blp:43
 msgctxt "shortcut window"
 msgid "Zoom in"
-msgstr "ज़ूम इन"
+msgstr "जूम इन"
 
 #: src/gtk/help-overlay.blp:48
 msgctxt "shortcut window"
 msgid "Zoom out"
-msgstr "ज़ूम आउट"
+msgstr "जूम आउट"
 
 #: src/gtk/help-overlay.blp:53
 msgctxt "shortcut window"
