@@ -49,7 +49,7 @@ The GNOME online community is dedicated to providing a positive experience for e
  * sex characteristics
  * sexual orientation
  * sexual identity
- * socio-economic status
+ * socioeconomic status
  * tribe
  * veteran status
 
