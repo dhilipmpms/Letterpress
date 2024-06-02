@@ -14,32 +14,27 @@ include:
 
 # Build Flatpak for x86_64
 flatpak@x86_64:
-  stage: build
   extends:
     - .flatpak@x86_64
     - .vars
 
 # Build Flatpak for aarch64
 flatpak@aarch64:
-  stage: build
   extends:
     - .flatpak@aarch64
     - .vars
 
 pre-commit:
-  stage: test
   script:
     - pip install pre-commit --quiet
     - pre-commit run --all-files
 
 nightly@x86_64:
-  stage: deploy
   extends: .publish_nightly
   needs:
     - flatpak@x86_64
 
 nightly@aarch64:
-  stage: deploy
   extends: .publish_nightly
   needs:
     - flatpak@aarch64
