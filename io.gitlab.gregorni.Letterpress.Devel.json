@@ -4,6 +4,10 @@
     "runtime-version": "master",
     "sdk": "org.gnome.Sdk",
     "command": "letterpress",
+    "tags": [
+        "nightly"
+    ],
+    "desktop-file-name-suffix": " (Development)",
     "finish-args": [
         "--share=ipc",
         "--socket=fallback-x11",
