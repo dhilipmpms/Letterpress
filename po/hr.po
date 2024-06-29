@@ -8,30 +8,34 @@ msgstr ""
 "Project-Id-Version: letterpress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-04-19 23:52+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2024-06-30 17:09+0000\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Language-Team: Croatian <https://hosted.weblate.org/projects/letterpress/"
+"letterpress/hr/>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 5.7-dev\n"
 
 #. Translators: Translate as "Letterpress"
 #: data/io.gitlab.gregorni.Letterpress.desktop.in.in:4 src/gtk/window.blp:5
 msgid "Letterpress"
-msgstr ""
+msgstr "Letterpress"
 
 #: data/io.gitlab.gregorni.Letterpress.desktop.in.in:5
 #: data/io.gitlab.gregorni.Letterpress.metainfo.xml.in.in:11
 msgid "Create beautiful ASCII art"
-msgstr ""
+msgstr "Stvori predivne ASCII slike"
 
 #. Translators: These are search terms for the application;
 #. the translation should contain the original list AND the translated strings.
 #. The list must end with a semicolon.
 #: data/io.gitlab.gregorni.Letterpress.desktop.in.in:14
 msgid "image;ascii;convert;conversion;text;"
-msgstr ""
+msgstr "slika;ascii;konvertiraj;konverzija;tekst;"
 
 #: data/io.gitlab.gregorni.Letterpress.metainfo.xml.in.in:14
 msgid ""
@@ -39,29 +43,33 @@ msgid ""
 "You can save the output to a file, copy it, and even change its resolution! "
 "High-res output can still be viewed comfortably by lowering the zoom factor."
 msgstr ""
+"Letterpress konvertira slike u sliku sastavljenu od ASCII znakova. Rezultat "
+"se može spremiti u datoteku, kopirati, kao i promijeniti njegovu rezoluciju! "
+"Rezultat visoke rezolucije se može udobno vidjeti smanjenjem faktora "
+"zumiranja."
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Letterpress.metainfo.xml.in.in:36
 msgid "Copy output"
-msgstr ""
+msgstr "Kopiraj rezultat"
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Letterpress.metainfo.xml.in.in:41
 msgid "Save output"
-msgstr ""
+msgstr "Spremi rezultat"
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Letterpress.metainfo.xml.in.in:46
 msgid "Adjust output width"
-msgstr ""
+msgstr "Prilagodi širinu rezultata"
 
 #: src/main.py:124
 msgid "Output copied to clipboard"
-msgstr ""
+msgstr "Rezultat kopiran u međuspremnik"
 
 #: src/main.py:169
 msgid "Copyright © 2023 Letterpress Contributors"
-msgstr ""
+msgstr "Autorska prava © 2023. Letterpress doprinositelji"
 
 #. Translators: Translate this string as your translator credits.
 #. Name only:    Gregor Niehl
@@ -72,186 +80,189 @@ msgstr ""
 #: src/main.py:176
 msgid "translator-credits"
 msgstr ""
+"sheep\n"
+"Milo Ivir <mail@milotype.de>"
 
 #: src/main.py:179
 msgid "Code and Design borrowed from"
-msgstr ""
+msgstr "Kod i dizajn su posuđeni od"
 
 #. Translators: Do not translate "{basename}"
 #: src/window.py:103
 #, python-brace-format
 msgid "“{basename}” is not of a supported image type."
-msgstr ""
+msgstr "„{basename}“ nije podržane vrste slike."
 
 #: src/window.py:244
 msgid "Dropped item is not a valid image"
-msgstr ""
+msgstr "Ispuštena stavka nije valjana slika"
 
 #: src/file_chooser.py:38 src/file_chooser.py:101
 msgid "Select a file"
-msgstr ""
+msgstr "Odaberi datoteku"
 
 #: src/file_chooser.py:45
 msgid "Supported image files"
-msgstr ""
+msgstr "Podržane slikovne datoteke"
 
 #. Translators: Do not translate "{display_name}"
 #: src/file_chooser.py:79
 #, python-brace-format
 msgid "Unable to save “{display_name}”"
-msgstr ""
+msgstr "Nije moguće spremiti „{display_name}“"
 
 #. Translators: Do not translate "{display_name}"
 #: src/file_chooser.py:88
 #, python-brace-format
 msgid "“{display_name}” saved"
-msgstr ""
+msgstr "„{display_name}“ spremljeno"
 
 #: src/file_chooser.py:90
 msgid "Open"
-msgstr ""
+msgstr "Otvori"
 
 #: src/pasting.py:48
 msgid "No image found in clipboard"
-msgstr ""
+msgstr "U međuspremniku nije pronađena nijedna slika"
 
 #: src/gtk/window.blp:17 src/gtk/tips-dialog.blp:5
 msgid "Tips"
-msgstr ""
+msgstr "Savjeti"
 
 #: src/gtk/window.blp:26
 msgid "Main Menu"
-msgstr ""
+msgstr "Glavni izbornik"
 
 #: src/gtk/window.blp:90
 msgid "Create ASCII Art"
-msgstr ""
+msgstr "Stvori ASCII slike"
 
 #: src/gtk/window.blp:91
 msgid "Open or drag and drop an image to generate an ASCII art version of it"
-msgstr ""
+msgstr "Otvori ili povuci i ispusti sliku za generiranja ASCII verzije slike"
 
 #: src/gtk/window.blp:96
 msgid "Open File…"
-msgstr ""
+msgstr "Otvori datoteku …"
 
 #: src/gtk/window.blp:158
 msgid "Width (in characters)"
-msgstr ""
+msgstr "Širina (u znakovima)"
 
 #: src/gtk/window.blp:184
 msgid "Copy to clipboard"
-msgstr ""
+msgstr "Kopiraj u međuspremnik"
 
 #: src/gtk/window.blp:192
 msgid "Save to file"
-msgstr ""
+msgstr "Spremi u datoteku"
 
 #: src/gtk/window.blp:211
 msgid "_Open File…"
-msgstr ""
+msgstr "_Otvori datoteku …"
 
 #: src/gtk/window.blp:218
 msgid "_Keyboard Shortcuts"
-msgstr ""
+msgstr "_Tipkovnički prečaci"
 
 #: src/gtk/window.blp:223
 msgid "_About Letterpress"
-msgstr ""
+msgstr "_O Letterpress"
 
 #: src/gtk/zoom-box.blp:12
 msgid "Zoom out"
-msgstr ""
+msgstr "Smanji prikaz"
 
 #: src/gtk/zoom-box.blp:29
 msgid "Reset zoom"
-msgstr ""
+msgstr "Resetiraj zumiranje"
 
 #: src/gtk/zoom-box.blp:42
 msgid "Zoom in"
-msgstr ""
+msgstr "Povećaj prikaz"
 
 #: src/gtk/tips-dialog.blp:22
 msgid "Pictures used for ASCII art should have the following qualities:"
 msgstr ""
+"Slike koje se koriste za ASCII umjetnost trebaju imati sljedeće kvalitete:"
 
 #: src/gtk/tips-dialog.blp:49
 msgid "High Contrast"
-msgstr ""
+msgstr "Visoki kontrast"
 
 #: src/gtk/tips-dialog.blp:66
 msgid "Vibrant Colors"
-msgstr ""
+msgstr "Jarke boje"
 
 #: src/gtk/tips-dialog.blp:83
 msgid "Defined Edges"
-msgstr ""
+msgstr "Definirani rubovi"
 
 #: src/gtk/tips-dialog.blp:100
 msgid "Recognizable Shapes"
-msgstr ""
+msgstr "Prepoznatljivi oblici"
 
 #: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "General"
-msgstr ""
+msgstr "Općenito"
 
 #: src/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
 msgid "Open File"
-msgstr ""
+msgstr "Otvori datoteku"
 
 #: src/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Paste Image"
-msgstr ""
+msgstr "Umetni sliku"
 
 #: src/gtk/help-overlay.blp:24
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr ""
+msgstr "Prikaži prečace"
 
 #: src/gtk/help-overlay.blp:29
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr ""
+msgstr "Zatvori aplikaciju"
 
 #: src/gtk/help-overlay.blp:35
 msgctxt "shortcut window"
 msgid "Text View"
-msgstr ""
+msgstr "Prikaz teksta"
 
 #: src/gtk/help-overlay.blp:38
 msgctxt "shortcut window"
 msgid "Increase Output Width"
-msgstr ""
+msgstr "Povećaj širinu rezultata"
 
 #: src/gtk/help-overlay.blp:43
 msgctxt "shortcut window"
 msgid "Decrease Output Width"
-msgstr ""
+msgstr "Smanji širinu rezultata"
 
 #: src/gtk/help-overlay.blp:48
 msgctxt "shortcut window"
 msgid "Zoom in"
-msgstr ""
+msgstr "Povećaj prikaz"
 
 #: src/gtk/help-overlay.blp:53
 msgctxt "shortcut window"
 msgid "Zoom out"
-msgstr ""
+msgstr "Smanji prikaz"
 
 #: src/gtk/help-overlay.blp:58
 msgctxt "shortcut window"
 msgid "Reset zoom"
-msgstr ""
+msgstr "Resetiraj zumiranje"
 
 #: src/gtk/help-overlay.blp:63
 msgctxt "shortcut window"
 msgid "Copy Output to Clipboard"
-msgstr ""
+msgstr "Kopiraj rezultat u međuspremnik"
 
 #: src/gtk/help-overlay.blp:68
 msgctxt "shortcut window"
 msgid "Save Output to File"
-msgstr ""
+msgstr "Spremi rezultat u datoteku"
