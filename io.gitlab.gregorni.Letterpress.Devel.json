@@ -1,20 +1,20 @@
 {
-    "id": "io.gitlab.gregorni.Letterpress.Devel",
-    "runtime": "org.gnome.Platform",
-    "runtime-version": "master",
-    "sdk": "org.gnome.Sdk",
-    "command": "letterpress",
-    "tags": [
+    "id" : "io.gitlab.gregorni.Letterpress.Devel",
+    "runtime" : "org.gnome.Platform",
+    "runtime-version" : "master",
+    "sdk" : "org.gnome.Sdk",
+    "command" : "letterpress",
+    "tags" : [
         "nightly"
     ],
-    "desktop-file-name-suffix": " (Development)",
-    "finish-args": [
+    "desktop-file-name-suffix" : " 🚧",
+    "finish-args" : [
         "--share=ipc",
         "--socket=fallback-x11",
         "--device=dri",
         "--socket=wayland"
     ],
-    "cleanup": [
+    "cleanup" : [
         "/include",
         "/lib/pkgconfig",
         "/man",
@@ -25,46 +25,47 @@
         "*.la",
         "*.a"
     ],
-    "modules": [
+    "modules" : [
         "build-aux/blueprint-compiler.json",
         {
-            "name": "jp2a",
-            "buildsystem": "autotools",
-            "sources": [
+            "name" : "jp2a",
+            "buildsystem" : "autotools",
+            "sources" : [
                 {
-                    "type": "git",
-                    "url": "https://github.com/Talinx/jp2a.git",
-                    "tag": "v1.2.0"
+                    "type" : "git",
+                    "url" : "https://github.com/Talinx/jp2a.git",
+                    "tag" : "v1.2.0"
                 }
             ]
         },
         {
-            "name": "python-pillow",
-            "buildsystem": "simple",
-            "build-commands": [
+            "name" : "python-pillow",
+            "buildsystem" : "simple",
+            "build-commands" : [
                 "python3 setup.py install --prefix=/app --root=/"
             ],
-            "sources": [
+            "sources" : [
                 {
-                    "type": "git",
-                    "url": "https://github.com/python-pillow/Pillow",
-                    "tag": "10.4.0",
-                    "commit": "9b4fae77178e827ab17118fbc89c739ffd6a0fab"
+                    "type" : "git",
+                    "url" : "https://github.com/python-pillow/Pillow",
+                    "tag" : "10.4.0",
+                    "commit" : "9b4fae77178e827ab17118fbc89c739ffd6a0fab"
                 }
             ]
         },
         {
-            "name": "letterpress",
-            "builddir": true,
-            "buildsystem": "meson",
-            "run-tests": true,
-            "config-opts": [
-                "-Dprofile=development"
+            "name" : "letterpress",
+            "builddir" : true,
+            "buildsystem" : "meson",
+            "run-tests" : true,
+            "config-opts" : [
+                "-Dprofile=development",
+                "--libdir=lib"
             ],
-            "sources": [
+            "sources" : [
                 {
-                    "type": "dir",
-                    "path": "."
+                    "type" : "dir",
+                    "path" : "."
                 }
             ]
         }
