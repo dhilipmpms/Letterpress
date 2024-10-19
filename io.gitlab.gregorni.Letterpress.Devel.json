@@ -48,8 +48,8 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/python-pillow/Pillow",
-                    "tag" : "10.4.0",
-                    "commit" : "9b4fae77178e827ab17118fbc89c739ffd6a0fab"
+                    "tag" : "11.0.0",
+                    "commit" : "204aae6682fc936f5350b3fe70335776f81480a7"
                 }
             ]
         },
