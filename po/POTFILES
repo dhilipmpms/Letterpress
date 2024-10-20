@@ -7,11 +7,9 @@ src/window.py
 src/file_chooser.py
 src/pasting.py
 src/texture_to_file.py
-src/zoom_box.py
 src/tips_dialog.py
 src/supported_formats.py
 
 src/gtk/window.blp
-src/gtk/zoom-box.blp
 src/gtk/tips-dialog.blp
 src/gtk/help-overlay.blp

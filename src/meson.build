@@ -7,7 +7,6 @@ blueprints = custom_target('blueprints',
     'gtk/help-overlay.blp',
     'gtk/tips-dialog.blp',
     'gtk/window.blp',
-    'gtk/zoom-box.blp'
   ),
   output: '.',
   command: [find_program('blueprint-compiler'), 'batch-compile', '@OUTPUT@', '@CURRENT_SOURCE_DIR@', '@INPUT@'],
@@ -58,8 +57,6 @@ letterpress_sources = [
   'file_chooser.py',
   'pasting.py',
   'texture_to_file.py',
-  'zoom_consts.py',
-  'zoom_box.py',
   'tips_dialog.py',
   'supported_formats.py',
 ]
