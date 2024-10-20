@@ -31,11 +31,10 @@ class FileChooser:
             """Run if the user selects a file."""
             try:
                 parent.check_is_image(_dialog.open_finish(result))
-            except:
+            except GLib.GError:
                 parent.main_stack.set_visible_child_name(last_view_page)
 
         dialog = Gtk.FileDialog.new()
-        dialog.set_modal(True)
 
         file_filters = Gio.ListStore.new(Gtk.FileFilter)
         file_filter = Gtk.FileFilter.new()
@@ -94,10 +93,9 @@ class FileChooser:
             """Run if the user selects a file."""
             try:
                 __on_save_file(_dialog.save_finish(result))
-            except:
+            except GLib.GError:
                 pass
 
         dialog = Gtk.FileDialog.new()
-        dialog.set_modal(True)
         dialog.set_initial_name("output.txt")
         dialog.save(callback=__on_response, parent=parent)
