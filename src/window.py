@@ -120,6 +120,9 @@ class LetterpressWindow(Adw.ApplicationWindow):
                 exif_rotated_img.save(self.filepath, format=img_format)
 
                 self.__convert_image(self.filepath)
+        except Image.DecompressionBombError:
+            print("Warning! Image is HUGE!!")
+            self.__convert_image(filepath)
         except IOError:
             __wrong_image_type()
 
