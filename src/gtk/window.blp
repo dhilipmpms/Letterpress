@@ -126,12 +126,6 @@ template $LetterpressWindow: Adw.ApplicationWindow {
                   styles [
                     "monospace",
                   ]
-
-                  GestureZoom gesture_zoom {}
-
-                  EventControllerScroll scroll_controller {
-                    flags: vertical;
-                  }
                 }
               };
             }
@@ -196,12 +190,6 @@ template $LetterpressWindow: Adw.ApplicationWindow {
 }
 
 menu primary_menu {
-  section {
-    item {
-      custom: "zoom";
-    }
-  }
-
   section {
     item {
       label: _("_Open File…");

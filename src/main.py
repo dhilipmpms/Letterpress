@@ -52,29 +52,14 @@ class LetterpressApplication(Adw.Application):
             ["<primary>o"],
         )
         self.__create_action(
-            "zoom-out",
-            lambda *args: self.get_active_window().zoom(zoom_out=True),
-            ["<primary>minus", "<primary>KP_Subtract"],
-        )
-        self.__create_action(
-            "zoom-in",
-            lambda *args: self.get_active_window().zoom(),
-            ["<primary>plus", "<primary>KP_Add"],
-        )
-        self.__create_action(
-            "reset-zoom",
-            lambda *args: self.get_active_window().reset_zoom(),
-            ["<primary>0", "<primary>KP_0"],
-        )
-        self.__create_action(
             "increase-output-width",
             lambda *args: self.__change_output_width(),
-            ["<primary><alt>plus"],
+            ["<primary>plus"],
         )
         self.__create_action(
             "decrease-output-width",
             lambda *args: self.__change_output_width(True),
-            ["<primary><alt>minus"],
+            ["<primary>minus"],
         )
         self.__create_action("paste-image", self.__paste_image, ["<primary>v"])
         self.__create_action(

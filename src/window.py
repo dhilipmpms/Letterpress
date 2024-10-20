@@ -25,8 +25,6 @@ from PIL import Image, ImageChops, ImageOps
 
 from . import texture_to_file, supported_formats
 from .file_chooser import FileChooser
-from .zoom_box import ZoomBox
-from .zoom_consts import INITIAL_ZOOM, ZOOM_FACTOR, MIN_ZOOM, MAX_ZOOM
 
 
 @Gtk.Template(resource_path="/io/gitlab/gregorni/Letterpress/gtk/window.ui")
@@ -41,8 +39,6 @@ class LetterpressWindow(Adw.ApplicationWindow):
     output_label = Gtk.Template.Child()
     width_spin = Gtk.Template.Child()
     toolbox = Gtk.Template.Child()
-    gesture_zoom = Gtk.Template.Child()
-    scroll_controller = Gtk.Template.Child()
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -76,19 +72,8 @@ class LetterpressWindow(Adw.ApplicationWindow):
 
         self.width_spin.connect("value-changed", self.__on_spin_value_changed)
 
-        self.gesture_zoom.connect("scale-changed", self.__on_gesture)
-        self.scale_delta = 1
-
-        self.scroll_controller.connect("scroll", self.__on_scroll)
-
         self.previous_stack = "welcome"
         self.filepath = None
-
-        self.zoom_box = ZoomBox()
-        self.menu_btn.props.popover.add_child(self.zoom_box, "zoom")
-        self.zoom_level = INITIAL_ZOOM
-        self.pinch_counter = 0
-        self.scrolled_distance = 0
 
     def on_open_file(self):
         self.main_stack.set_visible_child_name("spinner-page")
@@ -135,36 +120,8 @@ class LetterpressWindow(Adw.ApplicationWindow):
                 exif_rotated_img.save(self.filepath, format=img_format)
 
                 self.__convert_image(self.filepath)
-                self.reset_zoom()
         except IOError:
             __wrong_image_type()
-
-    def reset_zoom(self):
-        self.zoom_level = INITIAL_ZOOM
-        self.__apply_zoom()
-
-    def zoom(self, zoom_out=False):
-        if not self.zoom_box.get_sensitive():
-            return
-
-        zoom_direction = -ZOOM_FACTOR if zoom_out else ZOOM_FACTOR
-        clamp_zoom = lambda level: max(MIN_ZOOM, min(level, MAX_ZOOM))
-        self.zoom_level = clamp_zoom(self.zoom_level + zoom_direction)
-        self.__apply_zoom()
-
-    def __apply_zoom(self):
-        # apply zoom by using the CSS `scale` function
-        # see https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale
-        css_provider = Gtk.CssProvider.new()
-        css_provider.load_from_string(
-            f"""label {{
-            transform: scale({self.zoom_level});
-            }}"""
-        )
-        self.output_label.get_style_context().add_provider(
-            css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
-        )
-        self.zoom_box.set_zoom(self.zoom_level)
 
     def __convert_image(self, filepath):
         self.main_stack.set_visible_child_name("spinner-page")
@@ -186,35 +143,6 @@ class LetterpressWindow(Adw.ApplicationWindow):
         self.toolbox.set_reveal_child(True)
         self.previous_stack = "view-page"
         self.main_stack.set_visible_child_name(self.previous_stack)
-
-        self.zoom_box.set_sensitive(True)
-
-    def __on_gesture(self, gesture, scale, *args):
-        self.pinch_counter += 1
-        scale_changed = scale != self.scale_delta
-        change_is_big_enough = self.pinch_counter >= 6
-
-        if scale_changed and change_is_big_enough:
-            self.zoom(zoom_out=scale < self.scale_delta)
-            self.scale_delta = scale
-            self.pinch_counter = 0
-
-    def __on_scroll(self, scroll, dx, dy, *args):
-        current_modifiers = scroll.get_current_event_state()
-        ctrl_is_held = current_modifiers in (
-            Gdk.ModifierType.CONTROL_MASK,
-            (Gdk.ModifierType.CONTROL_MASK | Gdk.ModifierType.LOCK_MASK),
-        )
-        device_is_mouse = (
-            scroll.get_current_event_device().get_source() == Gdk.InputSource.MOUSE
-        )
-
-        if ctrl_is_held and device_is_mouse:
-            self.scrolled_distance += abs(dy)
-
-            if self.scrolled_distance >= 1:
-                self.zoom(zoom_out=dy > 0)
-                self.scrolled_distance = 0
 
     def __set_color_scheme(self, *args):
         if self.filepath != None:
