@@ -11,7 +11,7 @@ Letterpress uses <!--[artem](https://github.com/FineFindus/artem)-->[jp2a](https
 The currently supported method of installation is via Flathub:
 
 <a href='https://flathub.org/apps/io.gitlab.gregorni.Letterpress'>
-    <img width='240' alt='Download on Flathub' src='https://flathub.org/api/badge'/>
+    <img width='240' alt='Get it on Flathub' src='https://flathub.org/api/badge'/>
 </a>
 
 ## Development
