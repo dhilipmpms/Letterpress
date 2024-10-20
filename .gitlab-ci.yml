@@ -24,11 +24,6 @@ flatpak@aarch64:
     - .flatpak@aarch64
     - .vars
 
-pre-commit:
-  script:
-    - pip install pre-commit --quiet
-    - pre-commit run --all-files
-
 nightly@x86_64:
   extends: .publish_nightly
   needs:
