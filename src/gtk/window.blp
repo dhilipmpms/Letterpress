@@ -49,40 +49,40 @@ template $LetterpressWindow: Adw.ApplicationWindow {
               name: "welcome";
               // If we want an illustration
               // child: Box {
-              //   orientation: vertical;
-              //   spacing: 12;
-              //   margin-top: 24;
-              //   margin-bottom: 36;
+              //  orientation: vertical;
+              //  spacing: 12;
+              //  margin-top: 24;
+              //  margin-bottom: 36;
+              //  halign: center;
+              //  valign: center;
+              //  Picture {
+              //   height-request: 100;
+              //   file: "resource:///io/gitlab/gregorni/Letterpress/assets/welcome.svg";
+              //  }
+              //  Label {
+              //   label: _("Create ASCII Art");
+              //   margin-top: 36;
+              //   styles [
+              //    "title-1",
+              //   ]
+              //  }
+              //  Label {
+              //   label: _("Open or drag and drop an image to generate an ASCII art version of it");
+              //   wrap: true;
               //   halign: center;
-              //   valign: center;
-              //   Picture {
-              //     height-request: 100;
-              //     file: "resource:///io/gitlab/gregorni/Letterpress/assets/welcome.svg";
-              //   }
-              //   Label {
-              //     label: _("Create ASCII Art");
-              //     margin-top: 36;
-              //     styles [
-              //       "title-1",
-              //     ]
-              //   }
-              //   Label {
-              //     label: _("Open or drag and drop an image to generate an ASCII art version of it");
-              //     wrap: true;
-              //     halign: center;
-              //     margin-start: 20;
-              //     margin-end: 20;
-              //   }
-              //   Button open_file_btn {
-              //     halign: center;
-              //     action-name: "app.open-file";
-              //     label: _("Open File…");
-              //     margin-top: 24;
-              //     styles [
-              //       "pill",
-              //       "suggested-action",
-              //     ]
-              //   }
+              //   margin-start: 20;
+              //   margin-end: 20;
+              //  }
+              //  Button open_file_btn {
+              //   halign: center;
+              //   action-name: "app.open-file";
+              //   label: _("Open File…");
+              //   margin-top: 24;
+              //   styles [
+              //    "pill",
+              //    "suggested-action",
+              //   ]
+              //  }
               // }
               // ;
               child: Adw.StatusPage {
@@ -113,20 +113,45 @@ template $LetterpressWindow: Adw.ApplicationWindow {
             StackPage {
               name: "view-page";
 
-              child: ScrolledWindow output_scrolled_window {
+              child: Overlay {
                 hexpand: true;
-                vexpand: true;
 
-                Label output_label {
-                  valign: center;
+                [overlay]
+                Box {
+                  valign: end;
+                  halign: end;
+                  margin-top: 18;
+                  margin-bottom: 18;
+                  margin-end: 18;
+                  margin-start: 18;
+                  spacing: 6;
+
+                  Button {
+                    halign: start;
+                    icon-name: "value-increase";
+
+                    styles [
+                      "osd",
+                      "circular",
+                    ]
+                  }
+                }
+
+                child: ScrolledWindow output_scrolled_window {
                   hexpand: true;
                   vexpand: true;
-                  accessible-role: none;
 
-                  styles [
-                    "monospace",
-                  ]
-                }
+                  Label output_label {
+                    valign: center;
+                    hexpand: true;
+                    vexpand: true;
+                    accessible-role: none;
+
+                    styles [
+                      "monospace",
+                    ]
+                  }
+                };
               };
             }
           };
