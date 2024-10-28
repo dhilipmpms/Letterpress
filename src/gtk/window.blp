@@ -161,39 +161,13 @@ template $LetterpressWindow: Adw.ApplicationWindow {
                     hexpand: true;
                     spacing: 6;
 
-                    Button {
+                    MenuButton {
                       height-request: 45;
                       width-request: 45;
-                      tooltip-text: _("Copy to clipboard");
-                      action-name: "app.copy-output";
-                      icon-name: "edit-copy-symbolic";
-
-                      styles [
-                        "osd",
-                        "circular",
-                      ]
-                    }
-
-                    Button {
-                      height-request: 45;
-                      width-request: 45;
-                      icon-name: "document-save-symbolic";
-                      tooltip-text: _("Save to file");
-                      action-name: "app.save-output";
-
-                      styles [
-                        "osd",
-                        "circular",
-                      ]
-                    }
-
-                    Button {
-                      height-request: 45;
-                      width-request: 45;
-                      icon-name: "printer-symbolic";
-                      tooltip-text: _("Print");
-                      action-name: "app.print-output";
-
+                      tooltip-text: _("Export");
+                      icon-name: "send-to-symbolic";
+                      menu-model: export_menu;
+                      
                       styles [
                         "osd",
                         "circular",
@@ -243,6 +217,20 @@ menu primary_menu {
     item {
       label: _("_About Letterpress");
       action: "app.about";
+    }
+  }
+}
+
+menu export_menu {
+  section {
+    item {
+      label: _("_Copy to clipboard");
+      action: "app.copy-output";
+    }
+
+    item {
+      label: _("_Save to file");
+      action: "app.save-output";
     }
   }
 }
