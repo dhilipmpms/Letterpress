@@ -66,9 +66,7 @@ class LetterpressApplication(Adw.Application):
             "copy-output", self.__copy_output_to_clipboard, ["<primary>c"]
         )
         self.__create_action(
-            "save-output",
-            lambda *args: FileChooser.save_file(self.get_active_window()),
-            ["<primary>s"],
+            "save-output", self.__save_output_to_file, ["<primary>s"]
         )
         self.__create_action(
             "open-output", self.__open_output, param=GLib.VariantType("s")
@@ -104,9 +102,17 @@ class LetterpressApplication(Adw.Application):
 
     def __copy_output_to_clipboard(self, *args):
         win = self.get_active_window()
+        if win.filepath is None:
+            return
         output_text = win.output_label.get_label()
         Gdk.Display.get_default().get_clipboard().set(output_text)
         win.toast_overlay.add_toast(Adw.Toast(title=_("Output copied to clipboard")))
+
+    def __save_output_to_file(self, *args):
+        win = self.get_active_window()
+        if win.filepath is None:
+            return
+        FileChooser.save_file(win)
 
     def __open_output(self, app, data):
         file = open(data.unpack(), "r")
