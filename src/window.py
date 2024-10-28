@@ -38,7 +38,6 @@ class LetterpressWindow(Adw.ApplicationWindow):
     output_scrolled_window = Gtk.Template.Child()
     output_label = Gtk.Template.Child()
     width_spin = Gtk.Template.Child()
-    toolbox = Gtk.Template.Child()
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -143,7 +142,6 @@ class LetterpressWindow(Adw.ApplicationWindow):
         joint_output = "".join(line for line in iter(output, ""))
         self.output_label.set_label(joint_output)
 
-        self.toolbox.set_reveal_child(True)
         self.previous_stack = "view-page"
         self.main_stack.set_visible_child_name(self.previous_stack)
 

@@ -49,40 +49,40 @@ template $LetterpressWindow: Adw.ApplicationWindow {
               name: "welcome";
               // If we want an illustration
               // child: Box {
-              //  orientation: vertical;
-              //  spacing: 12;
-              //  margin-top: 24;
-              //  margin-bottom: 36;
-              //  halign: center;
-              //  valign: center;
-              //  Picture {
-              //   height-request: 100;
-              //   file: "resource:///io/gitlab/gregorni/Letterpress/assets/welcome.svg";
-              //  }
-              //  Label {
-              //   label: _("Create ASCII Art");
-              //   margin-top: 36;
-              //   styles [
-              //    "title-1",
-              //   ]
-              //  }
-              //  Label {
-              //   label: _("Open or drag and drop an image to generate an ASCII art version of it");
-              //   wrap: true;
-              //   halign: center;
-              //   margin-start: 20;
-              //   margin-end: 20;
-              //  }
-              //  Button open_file_btn {
-              //   halign: center;
-              //   action-name: "app.open-file";
-              //   label: _("Open File…");
-              //   margin-top: 24;
-              //   styles [
-              //    "pill",
-              //    "suggested-action",
-              //   ]
-              //  }
+              // orientation: vertical;
+              // spacing: 12;
+              // margin-top: 24;
+              // margin-bottom: 36;
+              // halign: center;
+              // valign: center;
+              // Picture {
+              // height-request: 100;
+              // file: "resource:///io/gitlab/gregorni/Letterpress/assets/welcome.svg";
+              // }
+              // Label {
+              // label: _("Create ASCII Art");
+              // margin-top: 36;
+              // styles [
+              // "title-1",
+              // ]
+              // }
+              // Label {
+              // label: _("Open or drag and drop an image to generate an ASCII art version of it");
+              // wrap: true;
+              // halign: center;
+              // margin-start: 20;
+              // margin-end: 20;
+              // }
+              // Button open_file_btn {
+              // halign: center;
+              // action-name: "app.open-file";
+              // label: _("Open File…");
+              // margin-top: 24;
+              // styles [
+              // "pill",
+              // "suggested-action",
+              // ]
+              // }
               // }
               // ;
               child: Adw.StatusPage {
@@ -118,22 +118,87 @@ template $LetterpressWindow: Adw.ApplicationWindow {
 
                 [overlay]
                 Box {
-                  valign: end;
-                  halign: end;
+                  hexpand: true;
                   margin-top: 18;
                   margin-bottom: 18;
                   margin-end: 18;
                   margin-start: 18;
                   spacing: 6;
 
-                  Button {
+                  Box {
+                    valign: end;
                     halign: start;
-                    icon-name: "value-increase";
 
                     styles [
                       "osd",
-                      "circular",
+                      "osd-box"
                     ]
+
+                    Label {
+                      margin-start: 2;
+                      label: _("Width (in characters)");
+                      ellipsize: end;
+                      xalign: 0;
+                      margin-end: 10;
+                    }
+
+                    SpinButton width_spin {
+                      valign: center;
+                      numeric: true;
+
+                      adjustment: Adjustment {
+                        lower: 20;
+                        upper: 100;
+                        step-increment: 10;
+                        page-increment: 20;
+                      };
+                    }
+                  }
+
+                  Box {
+                    valign: end;
+                    halign: end;
+                    hexpand: true;
+                    spacing: 6;
+
+                    Button {
+                      height-request: 45;
+                      width-request: 45;
+                      tooltip-text: _("Copy to clipboard");
+                      action-name: "app.copy-output";
+                      icon-name: "edit-copy-symbolic";
+
+                      styles [
+                        "osd",
+                        "circular",
+                      ]
+                    }
+
+                    Button {
+                      height-request: 45;
+                      width-request: 45;
+                      icon-name: "document-save-symbolic";
+                      tooltip-text: _("Save to file");
+                      action-name: "app.save-output";
+
+                      styles [
+                        "osd",
+                        "circular",
+                      ]
+                    }
+
+                    Button {
+                      height-request: 45;
+                      width-request: 45;
+                      icon-name: "printer-symbolic";
+                      tooltip-text: _("Print");
+                      action-name: "app.print-output";
+
+                      styles [
+                        "osd",
+                        "circular",
+                      ]
+                    }
                   }
                 }
 
@@ -156,59 +221,6 @@ template $LetterpressWindow: Adw.ApplicationWindow {
             }
           };
         };
-
-        [bottom]
-        Revealer toolbox {
-          transition-type: slide_up;
-
-          child: Box {
-            margin-start: 17;
-            margin-end: 17;
-            margin-top: 8;
-            margin-bottom: 8;
-            spacing: 8;
-            height-request: 50;
-
-            Label {
-              label: _("Width (in characters)");
-              ellipsize: end;
-              xalign: 0;
-              margin-end: 8;
-            }
-
-            Gtk.SpinButton width_spin {
-              valign: center;
-              numeric: true;
-
-              adjustment: Adjustment {
-                lower: 20;
-                upper: 100;
-                step-increment: 10;
-                page-increment: 20;
-              };
-            }
-
-            Box {
-              hexpand: true;
-            }
-
-            Button {
-              valign: center;
-              halign: end;
-              icon-name: "edit-copy-symbolic";
-              tooltip-text: _("Copy to clipboard");
-              action-name: "app.copy-output";
-            }
-
-            Button {
-              valign: center;
-              halign: end;
-              icon-name: "document-save-symbolic";
-              tooltip-text: _("Save to file");
-              action-name: "app.save-output";
-            }
-          };
-        }
       }
     };
   };
