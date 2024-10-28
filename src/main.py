@@ -53,7 +53,7 @@ class LetterpressApplication(Adw.Application):
         )
         self.__create_action(
             "increase-output-width",
-            lambda *args: self.__change_output_width(),
+            lambda *args: self.__change_output_width(False),
             ["<primary>plus"],
         )
         self.__create_action(
@@ -94,11 +94,11 @@ class LetterpressApplication(Adw.Application):
         win = self.get_active_window()
         Paster().paste_image(win, win.check_is_image)
 
-    def __change_output_width(self, down=False):
+    def __change_output_width(self, down):
         win = self.get_active_window()
         if win.filepath != None:
             spin_btn = win.width_spin
-            spin_btn.set_value(spin_btn.get_value() + (-100 if down else 100))
+            spin_btn.set_value(spin_btn.get_value() + (-10 if down else 10))
 
     def __copy_output_to_clipboard(self, *args):
         win = self.get_active_window()
