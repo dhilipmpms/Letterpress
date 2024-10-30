@@ -1,6 +1,6 @@
 # Letterpress
 
-Letterpress uses <!--[artem](https://github.com/FineFindus/artem)-->[jp2a](https://github.com/Talinx/jp2a) to turn your pictures into images made up of ASCII Characters.
+Letterpress uses [artem](https://github.com/FineFindus/artem) to turn your pictures into images made up of ASCII Characters.
 
 <div align="center">
   <img src="data/screenshots/copied.png">

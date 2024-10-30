@@ -27,17 +27,7 @@
     ],
     "modules" : [
         "build-aux/blueprint-compiler.json",
-        {
-            "name" : "jp2a",
-            "buildsystem" : "autotools",
-            "sources" : [
-                {
-                    "type" : "git",
-                    "url" : "https://github.com/Talinx/jp2a.git",
-                    "tag" : "v1.3.1"
-                }
-            ]
-        },
+        "build-aux/artem.json",
         {
             "name" : "python-pillow",
             "buildsystem" : "simple",
