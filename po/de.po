@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: letterpress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-15 02:04+0200\n"
-"PO-Revision-Date: 2023-09-14 14:56+0000\n"
-"Last-Translator: FineFindus <FineFindus@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2025-01-21 18:00+0000\n"
+"Last-Translator: Thule <thule1291@gmail.com>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/letterpress/"
 "letterpress/de/>\n"
 "Language: de\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.0.1-dev\n"
+"X-Generator: Weblate 5.10-dev\n"
 
 #. Translators: Translate as "Letterpress"
 #: data/io.gitlab.gregorni.ASCIIImages.desktop.in:4
@@ -86,7 +86,7 @@ msgstr "Übersicht"
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:60
 msgid "Copy output"
-msgstr "Output kopieren"
+msgstr "Ausgabe kopieren"
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.ASCIIImages.appdata.xml.in:65
