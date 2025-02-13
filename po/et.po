@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: letterpress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-04-19 23:52+0300\n"
-"PO-Revision-Date: 2025-02-13 10:55+0000\n"
+"PO-Revision-Date: 2025-02-14 09:27+0000\n"
 "Last-Translator: Priit Jõerüüt <hwlate@joeruut.com>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/letterpress/"
 "letterpress/et/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10-rc\n"
 
 #. Translators: Translate as "Letterpress"
 #: data/io.gitlab.gregorni.Letterpress.desktop.in.in:4 src/gtk/window.blp:5
@@ -27,7 +27,7 @@ msgstr "Letterpress"
 #: data/io.gitlab.gregorni.Letterpress.desktop.in.in:5
 #: data/io.gitlab.gregorni.Letterpress.metainfo.xml.in.in:11
 msgid "Create beautiful ASCII art"
-msgstr "Loo kaunist ASCII-kunsti"
+msgstr "Loo kaunist ASCII-kunsti ehk märgikunsti"
 
 #. Translators: These are search terms for the application;
 #. the translation should contain the original list AND the translated strings.
@@ -35,8 +35,8 @@ msgstr "Loo kaunist ASCII-kunsti"
 #: data/io.gitlab.gregorni.Letterpress.desktop.in.in:14
 msgid "image;ascii;convert;conversion;text;"
 msgstr ""
-"image;ascii;convert;conversion;text;tekst;pilt;pildid;foto;fotod;kunst;konverteerimine;"
-""
+"image;ascii;convert;conversion;text;tekst;pilt;pildid;foto;fotod;kunst;konverteerimine"
+";ascii-kunst;märgikunst;"
 
 #: data/io.gitlab.gregorni.Letterpress.metainfo.xml.in.in:14
 msgid ""
@@ -137,7 +137,8 @@ msgstr "Loo ASCII-kunsti"
 
 #: src/gtk/window.blp:91
 msgid "Open or drag and drop an image to generate an ASCII art version of it"
-msgstr "Ava või lohista pilt loomaks temast ASCII-kunsti tüüpi teose"
+msgstr ""
+"Ava või lohista pilt loomaks temast ASCII-kunsti ehk märgikunsti tüüpi teose"
 
 #: src/gtk/window.blp:96
 msgid "Open File…"
@@ -181,7 +182,7 @@ msgstr "Suumi sisse"
 
 #: src/gtk/tips-dialog.blp:22
 msgid "Pictures used for ASCII art should have the following qualities:"
-msgstr "ASCII-kunstina loodud pildid peaksid olema:"
+msgstr "ASCII-kunstina ehk märgikunstina loodud pildid peaksid olema:"
 
 #: src/gtk/tips-dialog.blp:49
 msgid "High Contrast"
