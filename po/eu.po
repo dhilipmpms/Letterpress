@@ -8,30 +8,33 @@ msgstr ""
 "Project-Id-Version: letterpress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-04-19 23:52+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-05-14 21:01+0000\n"
+"Last-Translator: Ibai Oihanguren Sala <ibaios@disroot.org>\n"
+"Language-Team: Basque <https://hosted.weblate.org/projects/letterpress/"
+"letterpress/eu/>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 #. Translators: Translate as "Letterpress"
 #: data/io.gitlab.gregorni.Letterpress.desktop.in.in:4 src/gtk/window.blp:5
 msgid "Letterpress"
-msgstr ""
+msgstr "Letterpress"
 
 #: data/io.gitlab.gregorni.Letterpress.desktop.in.in:5
 #: data/io.gitlab.gregorni.Letterpress.metainfo.xml.in.in:11
 msgid "Create beautiful ASCII art"
-msgstr ""
+msgstr "Sortu ASCII arte ederra"
 
 #. Translators: These are search terms for the application;
 #. the translation should contain the original list AND the translated strings.
 #. The list must end with a semicolon.
 #: data/io.gitlab.gregorni.Letterpress.desktop.in.in:14
 msgid "image;ascii;convert;conversion;text;"
-msgstr ""
+msgstr "irudi;irudia;ascii;bihurtu;bihurketa;testu;testua;"
 
 #: data/io.gitlab.gregorni.Letterpress.metainfo.xml.in.in:14
 msgid ""
@@ -39,29 +42,33 @@ msgid ""
 "You can save the output to a file, copy it, and even change its resolution! "
 "High-res output can still be viewed comfortably by lowering the zoom factor."
 msgstr ""
+"Letterpressek zure irudiak ASCII karakterez eratutako irudira bihurtzen "
+"ditu. Emaitza fitxategi batean gorde dezakezu, kopiatu, edo bere bereizmena "
+"aldatu! Bereizmen altuko irteerak modu erosoan ikusteko aukera dago, zooma "
+"erabilita."
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Letterpress.metainfo.xml.in.in:36
 msgid "Copy output"
-msgstr ""
+msgstr "Kopiatu irteera"
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Letterpress.metainfo.xml.in.in:41
 msgid "Save output"
-msgstr ""
+msgstr "Gorde irteera"
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Letterpress.metainfo.xml.in.in:46
 msgid "Adjust output width"
-msgstr ""
+msgstr "Doitu irteerako zabalera"
 
 #: src/main.py:124
 msgid "Output copied to clipboard"
-msgstr ""
+msgstr "Irteera arbelera kopiatu da"
 
 #: src/main.py:169
 msgid "Copyright © 2023 Letterpress Contributors"
-msgstr ""
+msgstr "Copyright © 2023 Letterpressen kolaboratzaileak"
 
 #. Translators: Translate this string as your translator credits.
 #. Name only:    Gregor Niehl
@@ -71,187 +78,190 @@ msgstr ""
 #. Names are separated with newlines.
 #: src/main.py:176
 msgid "translator-credits"
-msgstr ""
+msgstr "Ibai Oihanguren Sala"
 
 #: src/main.py:179
 msgid "Code and Design borrowed from"
-msgstr ""
+msgstr "Kodea eta diseinua hemendik hartuta"
 
 #. Translators: Do not translate "{basename}"
 #: src/window.py:103
 #, python-brace-format
 msgid "“{basename}” is not of a supported image type."
-msgstr ""
+msgstr "“{basename}” ez da onartutako irudi motetako bat."
 
 #: src/window.py:244
 msgid "Dropped item is not a valid image"
-msgstr ""
+msgstr "Jaregindako elementua ez da baliozko irudia"
 
 #: src/file_chooser.py:38 src/file_chooser.py:101
 msgid "Select a file"
-msgstr ""
+msgstr "Hautatu fitxategia"
 
 #: src/file_chooser.py:45
 msgid "Supported image files"
-msgstr ""
+msgstr "Onartutako irudi-fitxategiak"
 
 #. Translators: Do not translate "{display_name}"
 #: src/file_chooser.py:79
 #, python-brace-format
 msgid "Unable to save “{display_name}”"
-msgstr ""
+msgstr "Ezin izan da \"{display_name}\" gorde"
 
 #. Translators: Do not translate "{display_name}"
 #: src/file_chooser.py:88
 #, python-brace-format
 msgid "“{display_name}” saved"
-msgstr ""
+msgstr "\"{display_name}\" behar bezala gorde da"
 
 #: src/file_chooser.py:90
 msgid "Open"
-msgstr ""
+msgstr "Ireki"
 
 #: src/pasting.py:48
 msgid "No image found in clipboard"
-msgstr ""
+msgstr "Ez da irudirik aurkitu arbelean"
 
 #: src/gtk/window.blp:17 src/gtk/tips-dialog.blp:5
 msgid "Tips"
-msgstr ""
+msgstr "Aholkuak"
 
 #: src/gtk/window.blp:26
 msgid "Main Menu"
-msgstr ""
+msgstr "Menu nagusia"
 
 #: src/gtk/window.blp:90
 msgid "Create ASCII Art"
-msgstr ""
+msgstr "Sortu ASCII artea"
 
 #: src/gtk/window.blp:91
 msgid "Open or drag and drop an image to generate an ASCII art version of it"
 msgstr ""
+"Ireki edo arrastatu eta jaregin irudi bat, bere ASCII arte bertsioa sortzeko"
 
 #: src/gtk/window.blp:96
 msgid "Open File…"
-msgstr ""
+msgstr "Ireki fitxategia…"
 
 #: src/gtk/window.blp:158
 msgid "Width (in characters)"
-msgstr ""
+msgstr "Zabalera (karakteretan)"
 
 #: src/gtk/window.blp:184
 msgid "Copy to clipboard"
-msgstr ""
+msgstr "Kopiatu arbelera"
 
 #: src/gtk/window.blp:192
 msgid "Save to file"
-msgstr ""
+msgstr "Gorde fitxategian"
 
 #: src/gtk/window.blp:211
 msgid "_Open File…"
-msgstr ""
+msgstr "_Ireki fitxategia…"
 
 #: src/gtk/window.blp:218
 msgid "_Keyboard Shortcuts"
-msgstr ""
+msgstr "_Laster-teklak"
 
 #: src/gtk/window.blp:223
 msgid "_About Letterpress"
-msgstr ""
+msgstr "Letterpressi _buruz"
 
 #: src/gtk/zoom-box.blp:12
 msgid "Zoom out"
-msgstr ""
+msgstr "Urrundu"
 
 #: src/gtk/zoom-box.blp:29
 msgid "Reset zoom"
-msgstr ""
+msgstr "Berrezarri zooma"
 
 #: src/gtk/zoom-box.blp:42
 msgid "Zoom in"
-msgstr ""
+msgstr "Gerturatu"
 
 #: src/gtk/tips-dialog.blp:22
 msgid "Pictures used for ASCII art should have the following qualities:"
 msgstr ""
+"ASCII artea sortzeko erabilitako irudiek honako ezaugarriak izan beharko "
+"lituzkete:"
 
 #: src/gtk/tips-dialog.blp:49
 msgid "High Contrast"
-msgstr ""
+msgstr "Kontraste altua"
 
 #: src/gtk/tips-dialog.blp:66
 msgid "Vibrant Colors"
-msgstr ""
+msgstr "Kolore biziak"
 
 #: src/gtk/tips-dialog.blp:83
 msgid "Defined Edges"
-msgstr ""
+msgstr "Ertz zehatzak"
 
 #: src/gtk/tips-dialog.blp:100
 msgid "Recognizable Shapes"
-msgstr ""
+msgstr "Forma ezagun-errazak"
 
 #: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "General"
-msgstr ""
+msgstr "Orokorra"
 
 #: src/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
 msgid "Open File"
-msgstr ""
+msgstr "Ireki fitxategia"
 
 #: src/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Paste Image"
-msgstr ""
+msgstr "Itsatsi irudia"
 
 #: src/gtk/help-overlay.blp:24
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr ""
+msgstr "Erakutsi laster-teklak"
 
 #: src/gtk/help-overlay.blp:29
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr ""
+msgstr "Irten"
 
 #: src/gtk/help-overlay.blp:35
 msgctxt "shortcut window"
 msgid "Text View"
-msgstr ""
+msgstr "Testu ikuspegia"
 
 #: src/gtk/help-overlay.blp:38
 msgctxt "shortcut window"
 msgid "Increase Output Width"
-msgstr ""
+msgstr "Handitu irteerako zabalera"
 
 #: src/gtk/help-overlay.blp:43
 msgctxt "shortcut window"
 msgid "Decrease Output Width"
-msgstr ""
+msgstr "Txikitu irteerako zabalera"
 
 #: src/gtk/help-overlay.blp:48
 msgctxt "shortcut window"
 msgid "Zoom in"
-msgstr ""
+msgstr "Gerturatu"
 
 #: src/gtk/help-overlay.blp:53
 msgctxt "shortcut window"
 msgid "Zoom out"
-msgstr ""
+msgstr "Urrundu"
 
 #: src/gtk/help-overlay.blp:58
 msgctxt "shortcut window"
 msgid "Reset zoom"
-msgstr ""
+msgstr "Berrezarri zooma"
 
 #: src/gtk/help-overlay.blp:63
 msgctxt "shortcut window"
 msgid "Copy Output to Clipboard"
-msgstr ""
+msgstr "Kopiatu irteera arbelera"
 
 #: src/gtk/help-overlay.blp:68
 msgctxt "shortcut window"
 msgid "Save Output to File"
-msgstr ""
+msgstr "Gorde irteera fitxategian"
