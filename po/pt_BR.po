@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: letterpress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-04-19 23:52+0300\n"
-"PO-Revision-Date: 2025-05-28 18:03+0000\n"
-"Last-Translator: Matheus Carvalho <matheuscarvalho850@gmail.com>\n"
+"PO-Revision-Date: 2025-05-30 06:01+0000\n"
+"Last-Translator: Tiago Lucas Flach <tiagolucas9830@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "letterpress/letterpress/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -27,7 +27,7 @@ msgstr "Letterpress"
 #: data/io.gitlab.gregorni.Letterpress.desktop.in.in:5
 #: data/io.gitlab.gregorni.Letterpress.metainfo.xml.in.in:11
 msgid "Create beautiful ASCII art"
-msgstr "Cria lindas artes ASCII"
+msgstr "Crie belas artes ASCII"
 
 #. Translators: These are search terms for the application;
 #. the translation should contain the original list AND the translated strings.
