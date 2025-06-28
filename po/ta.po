@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: letterpress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-04-19 23:52+0300\n"
-"PO-Revision-Date: 2025-01-12 17:00+0000\n"
+"PO-Revision-Date: 2025-06-29 09:03+0000\n"
 "Last-Translator: தமிழ்நேரம் <anishprabu.t@gmail.com>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/letterpress/"
 "letterpress/ta/>\n"
@@ -17,12 +17,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 #. Translators: Translate as "Letterpress"
 #: data/io.gitlab.gregorni.Letterpress.desktop.in.in:4 src/gtk/window.blp:5
 msgid "Letterpress"
-msgstr "லெட்டர்பிரச்"
+msgstr "எழுத்துஅச்சு"
 
 #: data/io.gitlab.gregorni.Letterpress.desktop.in.in:5
 #: data/io.gitlab.gregorni.Letterpress.metainfo.xml.in.in:11
@@ -163,7 +163,7 @@ msgstr "விசைப்பலகை குறுக்குவழிகள�
 
 #: src/gtk/window.blp:223
 msgid "_About Letterpress"
-msgstr "லெட்டர்பிரச்"
+msgstr "எழுத்துஅச்சு பற்றி"
 
 #: src/gtk/zoom-box.blp:12
 msgid "Zoom out"
