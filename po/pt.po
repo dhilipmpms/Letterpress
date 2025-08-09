@@ -8,31 +8,33 @@ msgstr ""
 "Project-Id-Version: letterpress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-04-19 23:52+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-08-10 07:02+0000\n"
+"Last-Translator: ssantos <ssantos@web.de>\n"
+"Language-Team: Portuguese <https://hosted.weblate.org/projects/letterpress/"
+"letterpress/pt/>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 #. Translators: Translate as "Letterpress"
 #: data/io.gitlab.gregorni.Letterpress.desktop.in.in:4 src/gtk/window.blp:5
 msgid "Letterpress"
-msgstr ""
+msgstr "Letterpress"
 
 #: data/io.gitlab.gregorni.Letterpress.desktop.in.in:5
 #: data/io.gitlab.gregorni.Letterpress.metainfo.xml.in.in:11
 msgid "Create beautiful ASCII art"
-msgstr ""
+msgstr "Crie belas artes ASCII"
 
 #. Translators: These are search terms for the application;
 #. the translation should contain the original list AND the translated strings.
 #. The list must end with a semicolon.
 #: data/io.gitlab.gregorni.Letterpress.desktop.in.in:14
 msgid "image;ascii;convert;conversion;text;"
-msgstr ""
+msgstr "imagem;ascii;converter;conversão;texto;"
 
 #: data/io.gitlab.gregorni.Letterpress.metainfo.xml.in.in:14
 msgid ""
@@ -40,29 +42,33 @@ msgid ""
 "You can save the output to a file, copy it, and even change its resolution! "
 "High-res output can still be viewed comfortably by lowering the zoom factor."
 msgstr ""
+"O Letterpress converte as suas imagens numa figura composta de caracteres "
+"ASCII. Pode gravar a saída num ficheiro, copiá-la e até mesmo alterar a sua "
+"resolução! A saída de alta resolução ainda pode ser visualizada de modo "
+"confortável com a redução do fator de zoom."
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Letterpress.metainfo.xml.in.in:36
 msgid "Copy output"
-msgstr ""
+msgstr "Copiar saída"
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Letterpress.metainfo.xml.in.in:41
 msgid "Save output"
-msgstr ""
+msgstr "Gravar saída"
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Letterpress.metainfo.xml.in.in:46
 msgid "Adjust output width"
-msgstr ""
+msgstr "Ajustar a largura da saída"
 
 #: src/main.py:124
 msgid "Output copied to clipboard"
-msgstr ""
+msgstr "Saída copiada para área de transferência"
 
 #: src/main.py:169
 msgid "Copyright © 2023 Letterpress Contributors"
-msgstr ""
+msgstr "Copyright © 2023 Contribuidores do Letterpress"
 
 #. Translators: Translate this string as your translator credits.
 #. Name only:    Gregor Niehl
@@ -72,187 +78,189 @@ msgstr ""
 #. Names are separated with newlines.
 #: src/main.py:176
 msgid "translator-credits"
-msgstr ""
+msgstr "Créditos para os tradutores"
 
 #: src/main.py:179
 msgid "Code and Design borrowed from"
-msgstr ""
+msgstr "Código e Design emprestados de"
 
 #. Translators: Do not translate "{basename}"
 #: src/window.py:103
 #, python-brace-format
 msgid "“{basename}” is not of a supported image type."
-msgstr ""
+msgstr "“{basename}” tipo de imagem não suportado."
 
 #: src/window.py:244
 msgid "Dropped item is not a valid image"
-msgstr ""
+msgstr "O elemento anexado não é uma imagem válida"
 
 #: src/file_chooser.py:38 src/file_chooser.py:101
 msgid "Select a file"
-msgstr ""
+msgstr "Selecione um ficheiro"
 
 #: src/file_chooser.py:45
 msgid "Supported image files"
-msgstr ""
+msgstr "Ficheiros de imagem suportados"
 
 #. Translators: Do not translate "{display_name}"
 #: src/file_chooser.py:79
 #, python-brace-format
 msgid "Unable to save “{display_name}”"
-msgstr ""
+msgstr "Não é possível gravar “{display_name}”"
 
 #. Translators: Do not translate "{display_name}"
 #: src/file_chooser.py:88
 #, python-brace-format
 msgid "“{display_name}” saved"
-msgstr ""
+msgstr "“{display_name}” gravado"
 
 #: src/file_chooser.py:90
 msgid "Open"
-msgstr ""
+msgstr "Abrir"
 
 #: src/pasting.py:48
 msgid "No image found in clipboard"
-msgstr ""
+msgstr "Nenhuma imagem na área de transferência"
 
 #: src/gtk/window.blp:17 src/gtk/tips-dialog.blp:5
 msgid "Tips"
-msgstr ""
+msgstr "Dicas"
 
 #: src/gtk/window.blp:26
 msgid "Main Menu"
-msgstr ""
+msgstr "Menu principal"
 
 #: src/gtk/window.blp:90
 msgid "Create ASCII Art"
-msgstr ""
+msgstr "Criar arte ASCII"
 
 #: src/gtk/window.blp:91
 msgid "Open or drag and drop an image to generate an ASCII art version of it"
-msgstr ""
+msgstr "Abra ou arraste e solte uma imagem para gerar uma versão ASCII"
 
 #: src/gtk/window.blp:96
 msgid "Open File…"
-msgstr ""
+msgstr "Abrir ficheiro…"
 
 #: src/gtk/window.blp:158
 msgid "Width (in characters)"
-msgstr ""
+msgstr "Largura (em caracteres)"
 
 #: src/gtk/window.blp:184
 msgid "Copy to clipboard"
-msgstr ""
+msgstr "Copiar para área de transferência"
 
 #: src/gtk/window.blp:192
 msgid "Save to file"
-msgstr ""
+msgstr "Gravar ficheiro"
 
 #: src/gtk/window.blp:211
 msgid "_Open File…"
-msgstr ""
+msgstr "_Abrir ficheiro…"
 
 #: src/gtk/window.blp:218
 msgid "_Keyboard Shortcuts"
-msgstr ""
+msgstr "_Atalhos do teclado"
 
 #: src/gtk/window.blp:223
 msgid "_About Letterpress"
-msgstr ""
+msgstr "_Sobre Letterpress"
 
 #: src/gtk/zoom-box.blp:12
 msgid "Zoom out"
-msgstr ""
+msgstr "Reduzir o zoom"
 
 #: src/gtk/zoom-box.blp:29
 msgid "Reset zoom"
-msgstr ""
+msgstr "Reiniciar o zoom"
 
 #: src/gtk/zoom-box.blp:42
 msgid "Zoom in"
-msgstr ""
+msgstr "Aumentar zoom"
 
 #: src/gtk/tips-dialog.blp:22
 msgid "Pictures used for ASCII art should have the following qualities:"
 msgstr ""
+"As imagens usadas para criar artes ASCII devem seguir as seguintes "
+"qualidades:"
 
 #: src/gtk/tips-dialog.blp:49
 msgid "High Contrast"
-msgstr ""
+msgstr "Alto contraste"
 
 #: src/gtk/tips-dialog.blp:66
 msgid "Vibrant Colors"
-msgstr ""
+msgstr "Cores vibrantes"
 
 #: src/gtk/tips-dialog.blp:83
 msgid "Defined Edges"
-msgstr ""
+msgstr "Arestas definidas"
 
 #: src/gtk/tips-dialog.blp:100
 msgid "Recognizable Shapes"
-msgstr ""
+msgstr "Formas reconhecíveis"
 
 #: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "General"
-msgstr ""
+msgstr "Geral"
 
 #: src/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
 msgid "Open File"
-msgstr ""
+msgstr "Abrir ficheiro"
 
 #: src/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Paste Image"
-msgstr ""
+msgstr "Colar imagem"
 
 #: src/gtk/help-overlay.blp:24
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr ""
+msgstr "Mostrar atalhos"
 
 #: src/gtk/help-overlay.blp:29
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr ""
+msgstr "Sair"
 
 #: src/gtk/help-overlay.blp:35
 msgctxt "shortcut window"
 msgid "Text View"
-msgstr ""
+msgstr "Visualização de texto"
 
 #: src/gtk/help-overlay.blp:38
 msgctxt "shortcut window"
 msgid "Increase Output Width"
-msgstr ""
+msgstr "Aumentar a largura da saída"
 
 #: src/gtk/help-overlay.blp:43
 msgctxt "shortcut window"
 msgid "Decrease Output Width"
-msgstr ""
+msgstr "Diminuir largura da saída"
 
 #: src/gtk/help-overlay.blp:48
 msgctxt "shortcut window"
 msgid "Zoom in"
-msgstr ""
+msgstr "Aumentar zoom"
 
 #: src/gtk/help-overlay.blp:53
 msgctxt "shortcut window"
 msgid "Zoom out"
-msgstr ""
+msgstr "Diminuir o zoom"
 
 #: src/gtk/help-overlay.blp:58
 msgctxt "shortcut window"
 msgid "Reset zoom"
-msgstr ""
+msgstr "Resetar zoom"
 
 #: src/gtk/help-overlay.blp:63
 msgctxt "shortcut window"
 msgid "Copy Output to Clipboard"
-msgstr ""
+msgstr "Copiar saída para área de transferência"
 
 #: src/gtk/help-overlay.blp:68
 msgctxt "shortcut window"
 msgid "Save Output to File"
-msgstr ""
+msgstr "Gravar saída para ficheiro"
