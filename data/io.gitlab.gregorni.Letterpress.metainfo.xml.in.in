@@ -66,6 +66,19 @@
   </provides>
 
   <releases>
+    <release version="2.2" date="2025-10-14">
+      <description translate="no">
+        <ul>
+          <li>Added Danish translation</li>
+          <li>Added Slovenian translation</li>
+          <li>Reduced options for output width</li>
+          <li>Removed zoom capabilities</li>
+          <li>Add support for WebP images</li>
+          <li>Fix keyboard shortcuts activating on landing page</li>
+          <li>Switched to artem for the backend from jp2a</li>
+        </ul>
+      </description>
+    </release>
     <release version="2.1" date="2024-05-04">
       <description translate="no">
         <ul>
