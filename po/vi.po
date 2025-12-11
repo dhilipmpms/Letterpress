@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: letterpress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-04-19 23:52+0300\n"
-"PO-Revision-Date: 2025-11-25 00:51+0000\n"
+"PO-Revision-Date: 2025-12-12 02:00+0000\n"
 "Last-Translator: Loc Huynh <huynhloc.contact@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/letterpress/"
 "letterpress/vi/>\n"
@@ -34,7 +34,7 @@ msgstr "Tạo nghệ thuật ASCII đẹp"
 #. The list must end with a semicolon.
 #: data/io.gitlab.gregorni.Letterpress.desktop.in.in:14
 msgid "image;ascii;convert;conversion;text;"
-msgstr "image;ascii;convert;conversion;text;"
+msgstr "image;ascii;convert;conversion;text;hình ảnh;chuyển đổi;văn bản;"
 
 #: data/io.gitlab.gregorni.Letterpress.metainfo.xml.in.in:14
 msgid ""
@@ -68,7 +68,7 @@ msgstr "Đã sao chép đầu ra vào bộ nhớ tạm"
 
 #: src/main.py:169
 msgid "Copyright © 2023 Letterpress Contributors"
-msgstr "Bản quyền © 2023 Letterpress Contributors"
+msgstr "Bản quyền © 2023 Người đóng góp Letterpress"
 
 #. Translators: Translate this string as your translator credits.
 #. Name only:    Gregor Niehl
@@ -78,7 +78,9 @@ msgstr "Bản quyền © 2023 Letterpress Contributors"
 #. Names are separated with newlines.
 #: src/main.py:176
 msgid "translator-credits"
-msgstr "Loc Huynh https://github.com/hthienloc"
+msgstr ""
+"Vietnam Linux L10n <https://github.com/linux-l10n-vi>\n"
+"Loc Huynh <https://github.com/hthienloc>"
 
 #: src/main.py:179
 msgid "Code and Design borrowed from"
@@ -128,11 +130,11 @@ msgstr "Mẹo"
 
 #: src/gtk/window.blp:26
 msgid "Main Menu"
-msgstr "Menu Chính"
+msgstr "Menu chính"
 
 #: src/gtk/window.blp:90
 msgid "Create ASCII Art"
-msgstr "Tạo Nghệ Thuật ASCII"
+msgstr "Tạo nghệ thuật ASCII"
 
 #: src/gtk/window.blp:91
 msgid "Open or drag and drop an image to generate an ASCII art version of it"
@@ -140,7 +142,7 @@ msgstr "Mở hoặc kéo và thả hình ảnh để tạo phiên bản nghệ t
 
 #: src/gtk/window.blp:96
 msgid "Open File…"
-msgstr "Mở Tệp…"
+msgstr "Mở tệp…"
 
 #: src/gtk/window.blp:158
 msgid "Width (in characters)"
@@ -156,15 +158,15 @@ msgstr "Lưu vào tệp"
 
 #: src/gtk/window.blp:211
 msgid "_Open File…"
-msgstr "_Mở Tệp…"
+msgstr "_Mở tệp…"
 
 #: src/gtk/window.blp:218
 msgid "_Keyboard Shortcuts"
-msgstr "_Phím Tắt Bàn Phím"
+msgstr "_Phím tắt bàn phím"
 
 #: src/gtk/window.blp:223
 msgid "_About Letterpress"
-msgstr "_Giới Thiệu Về Letterpress"
+msgstr "_Giới thiệu về Letterpress"
 
 #: src/gtk/zoom-box.blp:12
 msgid "Zoom out"
@@ -184,39 +186,39 @@ msgstr "Hình ảnh được sử dụng cho nghệ thuật ASCII phải có nh�
 
 #: src/gtk/tips-dialog.blp:49
 msgid "High Contrast"
-msgstr "Độ Tương Phản Cao"
+msgstr "Độ tuơng phản cao"
 
 #: src/gtk/tips-dialog.blp:66
 msgid "Vibrant Colors"
-msgstr "Màu Sắc Rực Rỡ"
+msgstr "Màu sắc rực rỡ"
 
 #: src/gtk/tips-dialog.blp:83
 msgid "Defined Edges"
-msgstr "Các Cạnh Được Xác Định"
+msgstr "Các cạnh được xác định"
 
 #: src/gtk/tips-dialog.blp:100
 msgid "Recognizable Shapes"
-msgstr "Hình Dạng Có Thể Nhận Biết"
+msgstr "Hình dạng có thể nhận biết"
 
 #: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "General"
-msgstr "Tổng Quan"
+msgstr "Tổng quan"
 
 #: src/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
 msgid "Open File"
-msgstr "Mở Tệp"
+msgstr "Mở tệp"
 
 #: src/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Paste Image"
-msgstr "Dán Ảnh"
+msgstr "Dán ảnh"
 
 #: src/gtk/help-overlay.blp:24
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr "Hiển Thị Phím Tắt"
+msgstr "Hiển thị phím tắt"
 
 #: src/gtk/help-overlay.blp:29
 msgctxt "shortcut window"
@@ -226,17 +228,17 @@ msgstr "Thoát"
 #: src/gtk/help-overlay.blp:35
 msgctxt "shortcut window"
 msgid "Text View"
-msgstr "Xem Văn Bản"
+msgstr "Xem văn bản"
 
 #: src/gtk/help-overlay.blp:38
 msgctxt "shortcut window"
 msgid "Increase Output Width"
-msgstr "Tăng Chiều Rộng Đầu Ra"
+msgstr "Tăng chiều rộng đầu ra"
 
 #: src/gtk/help-overlay.blp:43
 msgctxt "shortcut window"
 msgid "Decrease Output Width"
-msgstr "Giảm Chiều Rộng Đầu Ra"
+msgstr "Giảm chiều rộng đầu ra"
 
 #: src/gtk/help-overlay.blp:48
 msgctxt "shortcut window"
@@ -256,9 +258,9 @@ msgstr "Đặt lại thu phóng"
 #: src/gtk/help-overlay.blp:63
 msgctxt "shortcut window"
 msgid "Copy Output to Clipboard"
-msgstr "Sao Chép Đầu Ra vào Bộ Nhớ Tạm"
+msgstr "Sao chép đầu ra vào bộ nhớ tạm"
 
 #: src/gtk/help-overlay.blp:68
 msgctxt "shortcut window"
 msgid "Save Output to File"
-msgstr "Lưu Đầu Ra vào Tệp"
+msgstr "Lưu đầu ra vào tệp"
