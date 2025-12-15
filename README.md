@@ -1,3 +1,7 @@
+# Maintenance status
+
+This project is abandoned due to lack of time and interest. If anyone finds interest in maintaining it, please feel free to fork.
+
 # Letterpress
 
 Letterpress uses [artem](https://github.com/FineFindus/artem) to turn your pictures into images made up of ASCII Characters.
