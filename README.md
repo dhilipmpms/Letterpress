@@ -1,10 +1,33 @@
-# Maintenance status
+![Maintenance](https://img.shields.io/badge/maintenance-community--maintained-brightgreen)
 
-This project is abandoned due to lack of time and interest. If anyone finds interest in maintaining it, please feel free to fork.
+# Maintenance Status
+
+## Upstream Status
+
+This project was originally marked as abandoned by its maintainer due to
+lack of time and interest. The original author encouraged others to fork
+and continue maintenance if interested.
+
+## Maintenance Status (This Repository)
+
+This repository is a community-maintained continuation of the original
+Letterpress project.
+
+The goal of this fork is to:
+- Keep the project buildable and usable
+- Fix bugs and compatibility issues
+- Accept community contributions
+- Preserve the original vision and GPL licensing
+
+This is an independent fork and is **not officially maintained by GNOME**
+or the original author.
+
+---
 
 # Letterpress
 
-Letterpress uses [artem](https://github.com/FineFindus/artem) to turn your pictures into images made up of ASCII Characters.
+Letterpress uses [artem](https://github.com/FineFindus/artem) to turn your
+pictures into images made up of ASCII characters.
 
 <div align="center">
   <img src="data/screenshots/copied.png">
@@ -22,17 +45,22 @@ The currently supported method of installation is via Flathub:
 
 The easiest way to work on this project is by cloning it with GNOME Builder:
 
-1. Install and open [GNOME Builder](https://flathub.org/apps/details/org.gnome.Builder)
+1. Install and open GNOME Builder
 2. Select "Clone Repository..."
-3. Clone `https://gitlab.gnome.org/World/letterpress.git` (or your fork)
-4. Run the project with the ▶ button at the top, or by pressing `Ctrl`+`Shift`+`Space`.
+3. Clone the original repository or this fork
+4. Run the project with the ▶ button at the top, or by pressing
+   `Ctrl` + `Shift` + `Space`.
 
 ## Translation
 
 [![Translation status](https://hosted.weblate.org/widget/letterpress/horizontal-auto.svg)](https://hosted.weblate.org/engage/letterpress/)
 
-Letterpress uses [Weblate](https://hosted.weblate.org/engage/letterpress/) for translation. Translations can be contributed there, or via a simple merge request. Don't forget to translate `"translator-credits"` with your credits!
+Letterpress uses Weblate for translation. Translations can be contributed
+there or via merge requests. Don't forget to translate
+`"translator-credits"` with your credits!
 
 ## Code of Conduct
 
-This project follows the [GNOME Code of Conduct](https://conduct.gnome.org/)
+This project follows the GNOME Code of Conduct:
+https://conduct.gnome.org/
+
