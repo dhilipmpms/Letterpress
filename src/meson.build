@@ -59,6 +59,7 @@ letterpress_sources = [
   'texture_to_file.py',
   'tips_dialog.py',
   'supported_formats.py',
+  'character_sets.py',
 ]
 
 install_data(letterpress_sources, install_dir: moduledir)
