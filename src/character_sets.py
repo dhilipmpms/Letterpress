@@ -27,6 +27,11 @@ CHARACTER_SETS = {
         "characters": " .:-=+*#%@",
         "description": _("Standard ASCII characters"),
     },
+    "characters_art": {
+        "name": _("Characters Art"),
+        "characters": " .:-=+*#%@",
+        "description": _("Simple artistic style with dots and symbols"),
+    },
     "chinese": {
         "name": _("Chinese (中文)"),
         "characters": " 。·：丨丶丿乙亅亠人儿入八冂冖冫几凵刀力勹匕匚匸十卜卩厂厶又",
