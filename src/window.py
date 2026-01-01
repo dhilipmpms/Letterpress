@@ -151,9 +151,10 @@ class LetterpressWindow(Adw.ApplicationWindow):
 
         arguments = ["artem", f"--size={int(self.width_spin.get_value())}", filepath]
         
-        # Add character set argument
+        # Add character set argument (only for non-English sets)
+        # English uses artem's default character set
         charset_id = self.charset_combo.get_active_id()
-        if charset_id:
+        if charset_id and charset_id != "english":
             charset_chars = character_sets.get_character_set(charset_id)
             if charset_chars:
                 arguments.insert(1, f"--characters={charset_chars}")
