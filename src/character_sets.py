@@ -29,8 +29,8 @@ CHARACTER_SETS = {
     },
     "characters_art": {
         "name": _("Characters Art"),
-        "characters": " .'`^\",:;Il!i><~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$",
-        "description": _("Rich artistic style with varied symbols"),
+        "characters": " .'`·.,·:;·-_~+=*#%@&$",
+        "description": _("Artistic style with dots, symbols and special characters only"),
     },
     "chinese": {
         "name": _("Chinese (中文)"),
