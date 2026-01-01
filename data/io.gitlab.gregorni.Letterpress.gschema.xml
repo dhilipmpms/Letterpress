@@ -13,5 +13,15 @@
 	  <key name="output-width" type="i">
       <default>100</default>
     </key>
+    <key name="character-set" type="s">
+      <default>"english"</default>
+      <summary>Character set for ASCII art</summary>
+      <description>The character set to use for image-to-text conversion. Can be a preset name (english, chinese, japanese, etc.) or 'custom'.</description>
+    </key>
+    <key name="custom-characters" type="s">
+      <default>" .:-=+*#%@"</default>
+      <summary>Custom character string</summary>
+      <description>Custom characters to use when character-set is set to 'custom'. Characters should be ordered from darkest to lightest.</description>
+    </key>
 	</schema>
 </schemalist>

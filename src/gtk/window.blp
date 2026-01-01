@@ -145,6 +145,23 @@ template $LetterpressWindow: Adw.ApplicationWindow {
             height-request: 50;
 
             Label {
+              label: _("Character Set");
+              ellipsize: end;
+              xalign: 0;
+              margin-end: 8;
+            }
+
+            ComboBoxText charset_combo {
+              valign: center;
+              hexpand: true;
+            }
+
+            Separator {
+              margin-start: 8;
+              margin-end: 8;
+            }
+
+            Label {
               label: _("Width (in characters)");
               ellipsize: end;
               xalign: 0;

@@ -23,7 +23,7 @@ from tempfile import NamedTemporaryFile
 from gi.repository import Adw, Gdk, Gio, Gtk
 from PIL import Image, ImageChops, ImageOps
 
-from . import texture_to_file, supported_formats
+from . import texture_to_file, supported_formats, character_sets
 from .file_chooser import FileChooser
 
 
@@ -38,6 +38,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
     output_scrolled_window = Gtk.Template.Child()
     output_label = Gtk.Template.Child()
     width_spin = Gtk.Template.Child()
+    charset_combo = Gtk.Template.Child()
     toolbox = Gtk.Template.Child()
 
     def __init__(self, **kwargs):
@@ -72,8 +73,27 @@ class LetterpressWindow(Adw.ApplicationWindow):
 
         self.width_spin.connect("value-changed", self.__on_spin_value_changed)
 
+        # Initialize character set combo box
+        self.settings = settings
+        self.__setup_charset_combo()
+        self.charset_combo.connect("changed", self.__on_charset_changed)
+
         self.previous_stack = "welcome"
         self.filepath = None
+
+    def __setup_charset_combo(self):
+        """Setup the character set combo box with available options."""
+        # Clear existing items
+        self.charset_combo.remove_all()
+        
+        # Add all character sets
+        charset_data = character_sets.get_all_character_sets()
+        for key, data in charset_data.items():
+            self.charset_combo.append(key, data["name"])
+        
+        # Set active from settings
+        current_charset = self.settings.get_string("character-set")
+        self.charset_combo.set_active_id(current_charset)
 
     def on_open_file(self):
         self.main_stack.set_visible_child_name("spinner-page")
@@ -130,6 +150,14 @@ class LetterpressWindow(Adw.ApplicationWindow):
         self.main_stack.set_visible_child_name("spinner-page")
 
         arguments = ["artem", f"--size={int(self.width_spin.get_value())}", filepath]
+        
+        # Add character set argument
+        charset_id = self.charset_combo.get_active_id()
+        if charset_id:
+            charset_chars = character_sets.get_character_set(charset_id)
+            if charset_chars:
+                arguments.insert(1, f"--characters={charset_chars}")
+        
         if not self.style_manager.get_dark():
             arguments.append("--invert")
 
@@ -145,6 +173,15 @@ class LetterpressWindow(Adw.ApplicationWindow):
         self.toolbox.set_reveal_child(True)
         self.previous_stack = "view-page"
         self.main_stack.set_visible_child_name(self.previous_stack)
+
+    def __on_charset_changed(self, combo):
+        """Handle character set selection change."""
+        charset_id = combo.get_active_id()
+        if charset_id:
+            self.settings.set_string("character-set", charset_id)
+            # Regenerate if image is loaded
+            if self.filepath:
+                self.__convert_image(self.filepath)
 
     def __set_color_scheme(self, *args):
         if self.filepath != None:
