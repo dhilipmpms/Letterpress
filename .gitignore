@@ -1,3 +1,5 @@
 .flatpak-builder/
 .ruff_cache/
 .devbox/
+test_output/
+__pycache__/
