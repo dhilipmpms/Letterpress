@@ -104,7 +104,7 @@ class LetterpressApplication(Adw.Application):
         win = self.get_active_window()
         if win.filepath is None:
             return
-        output_text = win.output_label.get_label()
+        output_text = win.output_text
         Gdk.Display.get_default().get_clipboard().set(output_text)
         win.toast_overlay.add_toast(Adw.Toast(title=_("Output copied to clipboard")))
 

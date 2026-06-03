@@ -18,13 +18,112 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 import subprocess
+import unicodedata
 from tempfile import NamedTemporaryFile
 
-from gi.repository import Adw, Gdk, Gio, Gtk
+from gi.repository import Adw, Gdk, Gio, Gtk, Pango, PangoCairo
+import cairo
 from PIL import Image, ImageChops, ImageOps
 
 from . import texture_to_file, supported_formats, character_sets
 from .file_chooser import FileChooser
+
+
+def split_graphemes(text):
+    graphemes = []
+    current = ""
+    for char in text:
+        is_mark = unicodedata.category(char).startswith('M')
+        is_zwj = char == '\u200d'
+        is_vs = '\ufe00' <= char <= '\ufe0f'
+        was_zwj = current.endswith('\u200d') if current else False
+        
+        if current and (is_mark or is_zwj or is_vs or was_zwj):
+            current += char
+        else:
+            if current:
+                graphemes.append(current)
+            current = char
+    if current:
+        graphemes.append(current)
+    return graphemes
+
+
+def render_ascii_art(text, is_dark_mode=True):
+    lines = text.splitlines()
+    grid = []
+    max_cols = 0
+    for line in lines:
+        row = split_graphemes(line)
+        grid.append(row)
+        if len(row) > max_cols:
+            max_cols = len(row)
+            
+    rows = len(grid)
+    if rows == 0 or max_cols == 0:
+        return cairo.ImageSurface(cairo.FORMAT_ARGB32, 1, 1)
+
+    dummy_surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, 1, 1)
+    dummy_ctx = cairo.Context(dummy_surface)
+    dummy_layout = PangoCairo.create_layout(dummy_ctx)
+    
+    font_desc_str = "monospace, Noto Sans, Noto Sans Tamil, Noto Sans Devanagari, Noto Color Emoji 12"
+    font_desc = Pango.FontDescription.from_string(font_desc_str)
+    dummy_layout.set_font_description(font_desc)
+    
+    dummy_layout.set_text("M", -1)
+    cell_w, cell_h = dummy_layout.get_pixel_size()
+    
+    if cell_w == 0:
+        cell_w = 10
+    if cell_h == 0:
+        cell_h = 20
+
+    img_width = max_cols * cell_w
+    img_height = rows * cell_h
+
+    surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, img_width, img_height)
+    ctx = cairo.Context(surface)
+    
+    if is_dark_mode:
+        ctx.set_source_rgb(0.07, 0.07, 0.07)
+    else:
+        ctx.set_source_rgb(1.0, 1.0, 1.0)
+    ctx.paint()
+
+    if is_dark_mode:
+        ctx.set_source_rgb(1.0, 1.0, 1.0)
+    else:
+        ctx.set_source_rgb(0.0, 0.0, 0.0)
+
+    layout = PangoCairo.create_layout(ctx)
+    layout.set_font_description(font_desc)
+    
+    for r in range(rows):
+        row = grid[r]
+        for c in range(len(row)):
+            grapheme = row[c]
+            if not grapheme or grapheme.isspace():
+                continue
+                
+            layout.set_text(grapheme, -1)
+            lw, lh = layout.get_pixel_size()
+            
+            if lw == 0 or lh == 0:
+                continue
+                
+            scale_x = cell_w / lw
+            scale_y = cell_h / lh
+            scale = min(scale_x, scale_y)
+            
+            ctx.save()
+            ctx.translate(c * cell_w + cell_w / 2.0, r * cell_h + cell_h / 2.0)
+            ctx.scale(scale, scale)
+            ctx.translate(-lw / 2.0, -lh / 2.0)
+            PangoCairo.show_layout(ctx, layout)
+            ctx.restore()
+
+    return surface
 
 
 @Gtk.Template(resource_path="/io/gitlab/gregorni/Letterpress/gtk/window.ui")
@@ -36,7 +135,7 @@ class LetterpressWindow(Adw.ApplicationWindow):
     toast_overlay = Gtk.Template.Child()
     main_stack = Gtk.Template.Child()
     output_scrolled_window = Gtk.Template.Child()
-    output_label = Gtk.Template.Child()
+    output_picture = Gtk.Template.Child()
     width_spin = Gtk.Template.Child()
     charset_combo = Gtk.Template.Child()
     toolbox = Gtk.Template.Child()
@@ -80,6 +179,8 @@ class LetterpressWindow(Adw.ApplicationWindow):
 
         self.previous_stack = "welcome"
         self.filepath = None
+        self.output_text = ""
+        self.render_temp_file = None
 
     def __setup_charset_combo(self):
         """Setup the character set combo box with available options."""
@@ -169,11 +270,27 @@ class LetterpressWindow(Adw.ApplicationWindow):
         ).stdout.readline
 
         joint_output = "".join(line for line in iter(output, ""))
-        self.output_label.set_label(joint_output)
+        self.output_text = joint_output
+
+        try:
+            surface = self.render_output_to_surface()
+            if surface:
+                if not self.render_temp_file:
+                    self.render_temp_file = NamedTemporaryFile(suffix=".png").name
+                surface.write_to_png(self.render_temp_file)
+                texture = Gdk.Texture.new_from_filename(self.render_temp_file)
+                self.output_picture.set_paintable(texture)
+        except Exception as e:
+            print(f"Error rendering output image: {e}")
 
         self.toolbox.set_reveal_child(True)
         self.previous_stack = "view-page"
         self.main_stack.set_visible_child_name(self.previous_stack)
+
+    def render_output_to_surface(self):
+        if not self.output_text:
+            return None
+        return render_ascii_art(self.output_text, self.style_manager.get_dark())
 
     def __on_charset_changed(self, combo):
         """Handle character set selection change."""

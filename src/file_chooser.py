@@ -18,6 +18,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 from gi.repository import Adw, Gio, GLib, Gtk
+from PIL import Image
 
 from . import supported_formats
 
@@ -49,17 +50,53 @@ class FileChooser:
     @staticmethod
     def save_file(parent, *args):
         def __on_save_file(file):
-            print(f"Output file: {file.get_path()}")
-            text = parent.output_label.get_label()
-            if text != None:
-                file.replace_contents_bytes_async(
-                    contents=GLib.Bytes.new(text.encode("utf-8")),
-                    etag=None,
-                    make_backup=False,
-                    flags=Gio.FileCreateFlags.NONE,
-                    cancellable=None,
-                    callback=__save_file_complete,
-                )
+            filepath = file.get_path()
+            display_name = file.get_basename()
+            ext = filepath.split('.')[-1].lower() if '.' in filepath else ''
+            
+            if ext in ['png', 'jpg', 'jpeg', 'webp']:
+                success = False
+                try:
+                    surface = parent.render_output_to_surface()
+                    if surface:
+                        if ext == 'png':
+                            surface.write_to_png(filepath)
+                            success = True
+                        else:
+                            width = surface.get_width()
+                            height = surface.get_height()
+                            data = surface.get_data()
+                            img = Image.frombuffer("RGBA", (width, height), data, "raw", "BGRA", 0, 1)
+                            if ext in ['jpg', 'jpeg']:
+                                img.convert("RGB").save(filepath, "JPEG")
+                                success = True
+                            elif ext == 'webp':
+                                img.save(filepath, "WEBP")
+                                success = True
+                except Exception as e:
+                    print(f"Error saving image: {e}")
+                    success = False
+                
+                toast = Adw.Toast()
+                if success:
+                    toast.set_title(_("“{display_name}” saved").format(display_name=display_name))
+                    toast.set_button_label(_("Open"))
+                    toast.set_action_name("app.open-output")
+                    toast.set_action_target_value(GLib.Variant("s", filepath))
+                else:
+                    toast.set_title(_("Unable to save “{display_name}”").format(display_name=display_name))
+                parent.toast_overlay.add_toast(toast)
+            else:
+                text = parent.output_text
+                if text != None:
+                    file.replace_contents_bytes_async(
+                        contents=GLib.Bytes.new(text.encode("utf-8")),
+                        etag=None,
+                        make_backup=False,
+                        flags=Gio.FileCreateFlags.NONE,
+                        cancellable=None,
+                        callback=__save_file_complete,
+                    )
 
         def __save_file_complete(file, result):
             info = file.query_info(
@@ -98,4 +135,27 @@ class FileChooser:
 
         dialog = Gtk.FileDialog.new()
         dialog.set_initial_name("output.txt")
+        
+        file_filters = Gio.ListStore.new(Gtk.FileFilter)
+        
+        # Plain text filter
+        txt_filter = Gtk.FileFilter.new()
+        txt_filter.set_name(_("Plain Text (.txt)"))
+        txt_filter.add_mime_type("text/plain")
+        txt_filter.add_pattern("*.txt")
+        file_filters.append(txt_filter)
+        
+        # Image filter
+        img_filter = Gtk.FileFilter.new()
+        img_filter.set_name(_("Images (.png, .jpg, .webp)"))
+        img_filter.add_mime_type("image/png")
+        img_filter.add_mime_type("image/jpeg")
+        img_filter.add_mime_type("image/webp")
+        img_filter.add_pattern("*.png")
+        img_filter.add_pattern("*.jpg")
+        img_filter.add_pattern("*.jpeg")
+        img_filter.add_pattern("*.webp")
+        file_filters.append(img_filter)
+        
+        dialog.set_filters(file_filters)
         dialog.save(callback=__on_response, parent=parent)

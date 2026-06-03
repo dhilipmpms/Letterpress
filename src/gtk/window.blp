@@ -117,15 +117,13 @@ template $LetterpressWindow: Adw.ApplicationWindow {
                 hexpand: true;
                 vexpand: true;
 
-                Label output_label {
+                Picture output_picture {
                   valign: center;
+                  halign: center;
                   hexpand: true;
                   vexpand: true;
-                  accessible-role: none;
-
-                  styles [
-                    "monospace",
-                  ]
+                  can-shrink: false;
+                  keep-aspect-ratio: true;
                 }
               };
             }
